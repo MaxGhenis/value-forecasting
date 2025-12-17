@@ -54,3 +54,9 @@ results/*.json
 # OS
 .DS_Store
 Thumbs.db
+
+# GSS data files (too large for GitHub)
+data/*.dta
+data/*.zip
+data/*.pdf
+data/*.txt

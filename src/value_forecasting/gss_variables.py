@@ -81,7 +81,7 @@ GSS_VARIABLES = {
 }
 
 # Known historical trajectories (for validation)
-# Source: GSS Data Explorer
+# Source: GSS cumulative data file gss7224_r2.dta
 HISTORICAL_TRAJECTORIES = {
     "HOMOSEX": {
         # % saying "Not wrong at all"
@@ -89,9 +89,14 @@ HISTORICAL_TRAJECTORIES = {
         1980: 14,
         1990: 13,
         2000: 27,
-        2010: 41,
-        2018: 58,
-        2021: 64,
+        2010: 42,  # Updated from microdata
+        2012: 45,
+        2014: 49,
+        2016: 52,
+        2018: 57,
+        2021: 62,
+        2022: 61,
+        2024: 55,  # REVERSAL - dropped from 62% in 2021!
     },
     "GRASS": {
         # % saying "Legal"
@@ -99,9 +104,13 @@ HISTORICAL_TRAJECTORIES = {
         1980: 25,
         1990: 16,
         2000: 31,
-        2010: 44,
-        2018: 61,
-        2021: 68,
+        2010: 48,  # Updated from microdata
+        2012: 48,
+        2014: 55,
+        2016: 61,
+        2018: 65,
+        2022: 70,
+        2024: 69,  # Slight decline from peak
     },
     "FEPOL": {
         # % saying "Disagree" (women are suited)
