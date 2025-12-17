@@ -28,6 +28,16 @@ The SubPOP project fine-tuned LLMs on GSS data, achieving 69% accuracy on opinio
 
 Our work extends this line by testing whether LLMs can predict opinion *trajectories*—not just what people think now, but how that will change over years and decades.
 
+## AI Forecasting and Calibration
+
+A growing literature evaluates LLMs as forecasters against human prediction benchmarks. @halawi2024approaching developed a retrieval-augmented LLM system that approaches human forecaster accuracy on competitive platforms like Metaculus and Good Judgment Open. Their system achieves RMS calibration error of 0.042 compared to 0.038 for the human crowd aggregate—near parity. Critically, this required both fine-tuning and ensemble aggregation; base models under zero-shot prompting were poorly calibrated.
+
+Forecasting platforms like Metaculus provide benchmarks for evaluating AI predictions using proper scoring rules. The Brier score—where lower is better and 0.25 represents random guessing—has become standard. Early GPT-4 models achieved ~0.25 (random baseline), while GPT-3-level models performed worse than random due to overconfidence [@metaculus2024]. Recent models like o1 and o3 show significant improvements.
+
+The FOReCAst benchmark [@forecast2024] explicitly evaluates both forecasting accuracy and confidence calibration, built entirely from Metaculus questions with clear resolution criteria. Key findings: aggregating forecasts from multiple sources substantially improves performance, with median predictions achieving Brier scores (~0.12) comparable to the best individual AI systems.
+
+For uncertainty quantification, the literature suggests temperature sampling alone does not yield calibrated probabilities. More principled approaches include: (1) ensemble aggregation across models or prompts, (2) fine-tuning on proper scoring rules, and (3) post-hoc calibration using held-out data. We adopt model ensembling as the most practical approach for expressing uncertainty over long-term value forecasts.
+
 ## Backlash and Counter-Mobilization
 
 Political scientists have documented that social progress often triggers backlash. @luker1984abortion showed how abortion rights mobilized counter-movements. @fetner2008us documented how LGBTQ+ visibility provoked organized opposition.
