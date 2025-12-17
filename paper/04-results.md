@@ -2,24 +2,34 @@
 title: Results
 ---
 
-## Historical Validation: LLMs Outperform Baselines
+## Multi-Variable Validation: 14-Year Forecasting Horizon
 
-We first tested whether LLMs can predict historical value changes better than time series baselines. Using cutoffs of 1990 and 2000, we predicted values for subsequent years.
+We tested value forecasting across 17 GSS variables using gpt-3.5-turbo-instruct (September 2021 training cutoff) to predict 2024 values from a 2010 baseline—a 14-year forecasting horizon.
 
-:::{table} Model Performance on Historical Forecasting
-:label: tbl:historical
+:::{table} Multi-Variable Forecasting Results (2010→2024)
+:label: tbl:multivar
 
-| Model | MAE | Coverage (90% CI) | Bias |
-|-------|-----|-------------------|------|
-| Naive | 31.4% | 7.1% | -31.4% |
-| Linear | 30.2% | 35.7% | -30.2% |
-| ARIMA | 31.4% | 50.0% | -31.4% |
-| ETS (Holt) | 28.1% | 28.6% | -7.1% |
-| **Claude (LLM)** | **12.5%** | 42.9% | -12.4% |
+| Variable | 2010 | 2024 Actual | Predicted | Error | Direction |
+|----------|------|-------------|-----------|-------|-----------|
+| PRAYER | 44% | 46% | 46% | 0 | ✓ |
+| FEPOL | 79% | 82% | 81% | -1 | ✓ |
+| NATEDUC | 72% | 76% | 75% | -1 | ✓ |
+| GUNLAW | 74% | 70% | 72% | +2 | ✓ |
+| TRUST | 33% | 25% | 31% | +6 | ✓ |
+| GRASS | 48% | 68% | 60% | -8 | ✓ |
+| PREMARSX | 53% | 65% | 56% | -9 | ✓ |
+| ABANY | 44% | 60% | 46% | -14 | ✓ |
+| NATRACE | 34% | 51% | 37% | -14 | ✓ |
 
 :::
 
-The LLM outperformed the best baseline (ETS) by 2.2× on MAE. All models showed negative bias, underestimating the pace of liberalization. All models were overconfident, with coverage well below the target 90%.
+**Key findings across 16 variables:**
+- **MAE: 6.4 percentage points** vs 9.2 for naive baseline
+- **Improvement: 1.44×** over simply predicting the last observed value
+- **Direction correct: 94%** (15/16 variables)
+- **Bias: -4.4 points**—slight under-prediction of change magnitude
+
+The model correctly captured the direction of change in nearly all cases, including the decline in social trust (TRUST: 33%→25%) and stability in gun permit support (GUNLAW: 74%→70%). The largest errors occurred on variables with rapid change (NATRACE, ABANY) where the model under-predicted the magnitude.
 
 ## Clean Test: GPT-4o Predicting GSS 2024
 
