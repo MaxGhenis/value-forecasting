@@ -58,20 +58,56 @@ Value forecasting offers a principled approach to one of alignment's hardest que
 3. Prefer actions robust across plausible value futures
 4. Update as new survey data arrives
 
-**Governance implications**: Value forecasting is a technology that requires democratic oversight. Who specifies the conditioning scenarios? How are forecasts validated and updated? What role do diverse stakeholders play? These questions require institutional design, not just technical solutions.
-
 **Complementing, not replacing, RLHF**: Value forecasting doesn't replace human feedback—it contextualizes it. Near-term RLHF handles current preferences; long-term forecasts provide aspirational targets. The combination is more robust than either alone.
+
+## Governance and Democratic Legitimacy
+
+Value forecasting raises important governance questions that require institutional design, not just technical solutions.
+
+**The legitimacy challenge**: Aligning AI to "projected post-reflection values" rather than current preferences involves choices about what counts as "reflection," what material conditions to assume, and how to weight different demographic groups. These are inherently political choices that encode power. A forecast conditioned on "post-scarcity with democratic deliberation" yields different values than one conditioned on "persistent inequality with polarized media."
+
+**Who decides?** Key governance questions include:
+- Who specifies conditioning scenarios (abundance vs. scarcity, deliberation vs. manipulation)?
+- How are forecasts validated and updated as new data arrives?
+- What role do diverse stakeholders—not just AI developers—play in setting forecast parameters?
+- Under what conditions should forecasts influence deployed AI systems vs. remaining research outputs?
+
+**Transparency requirements**: Any use of value forecasting in alignment should be transparent about:
+1. The model and training cutoff used
+2. The conditioning scenarios assumed
+3. The demographic weighting applied
+4. The uncertainty bounds and calibration track record
+5. How forecasts integrate with other alignment approaches (RLHF, constitutional AI)
+
+**Democratic oversight mechanisms**: We recommend:
+- Public disclosure of forecasting methodology before deployment
+- Regular validation against new survey data with public reporting
+- Multi-stakeholder input on conditioning scenario specification
+- Appeals processes when forecasts are contested
+- Prohibition on using forecasts to justify overriding explicit contemporary preferences without democratic mandate
+
+**The distinction between prediction and prescription**: Value forecasting provides *empirical information* about likely value trajectories; it does not provide *normative authority* for those values. Even if we predict post-reflection values would endorse X, this doesn't automatically justify aligning AI to X. The forecast informs democratic deliberation—it doesn't substitute for it [@gabriel2020artificial].
+
+We treat forecasts as inputs to governance processes, not outputs that determine alignment targets. The methodology is descriptive; the application is normative and requires democratic legitimation.
 
 The core insight remains: alignment that treats values as static will systematically misalign with the values of future humans who live under different conditions [@gabriel2020artificial; @danaher2021axiological].
 
 ## Limitations
 
-**Sample size**: We tested on six GSS variables and two clean forecast points. More extensive testing across variables, countries, and time periods is needed.
+**Exploratory nature**: This study was not pre-registered. All analyses should be considered exploratory. The framing evolved during analysis—we did not predict the 2024 HOMOSEX reversal, but rather discovered and explained it post-hoc. Future work should use formal pre-registration.
 
-**Model selection**: We tested only OpenAI and Anthropic models. Open-source models (Llama, Mistral) with documented training cutoffs could provide additional clean tests.
+**Variable coverage**: We tested 16 GSS variables, all showing some historical change. Variables with stable trends or random-walk patterns were not systematically tested. Selection may inflate apparent LLM performance.
 
-**Causality**: The income-values correlation doesn't establish causation. Rising incomes could shift values, or other factors could drive both.
+**Short forecast horizon**: Our cleanest test (GPT-4o predicting 2024) covers only 1-3 years. Claims about long-term forecasting (decades to centuries) are speculative extrapolation, not empirically validated. The 2024 reversal shows even short-term forecasts fail when structural conditions shift.
 
-**Survey effects**: GSS methodology changed post-COVID (web surveys, different sampling). Some observed changes may reflect measurement rather than true attitude shifts.
+**Uncertainty calibration**: Both LLMs and baselines achieved only ~40-50% coverage for 90% confidence intervals. Our uncertainty estimates are not reliable. The separate-prompt approach to CI elicitation may contribute to poor calibration.
 
-**U.S. focus**: The GSS covers only American attitudes. Value trajectories in other countries may differ substantially.
+**Mode effects confound**: GSS shifted to web-based surveys post-COVID. Some observed 2021-2024 changes may reflect measurement differences rather than true attitude shifts. We cannot separate these effects.
+
+**U.S. focus**: The GSS covers only American attitudes. Value trajectories vary across countries and cultures. Generalization to non-U.S. contexts is untested.
+
+**Potential training data contamination**: While GPT-4o predicting GSS 2024 is a clean test, the gpt-3.5-turbo-instruct results (2010→2024) may be contaminated if the model encountered GSS trends during training. Testing with older base models would strengthen causal claims.
+
+**Missing reward specification**: Even if forecasts were accurate, translating value distributions into alignment targets requires aggregation rules (vote? average? Pareto?) that we do not specify. Forecasting and specification are distinct problems.
+
+**Income-values causality**: The correlation between income and liberal values doesn't establish that rising incomes cause value shifts. Education, urbanization, and other factors may confound this relationship.

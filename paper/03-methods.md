@@ -6,23 +6,48 @@ title: Methods
 
 We use the General Social Survey (GSS), conducted by NORC at the University of Chicago since 1972. The GSS is one of the most widely used data sources in social science, with over 75,000 respondents across 35 survey waves through 2024.
 
-We focus on six variables with long time series and significant historical change:
+We test 16 variables spanning social values, economic attitudes, and social trust:
 
-:::{table} GSS Variables Analyzed
+:::{table} GSS Variables Analyzed (16 total)
 :label: tbl:variables
 
-| Variable | Question | Response (Liberal) | Years |
-|----------|----------|-------------------|-------|
-| HOMOSEX | Sexual relations between two adults of the same sex | "Not wrong at all" | 1973-2024 |
-| GRASS | Should marijuana be made legal | "Legal" | 1973-2024 |
-| ABANY | Should abortion be legal for any reason | "Yes" | 1977-2024 |
-| PREMARSX | Is premarital sex wrong | "Not wrong at all" | 1972-2024 |
-| CAPPUN | Favor death penalty for murder | "Oppose" | 1972-2024 |
-| GUNLAW | Require police permit for guns | "Favor" | 1972-2024 |
+| Variable | Topic | Liberal Response |
+|----------|-------|------------------|
+| HOMOSEX | Same-sex relations | "Not wrong at all" |
+| GRASS | Marijuana legalization | "Legal" |
+| PREMARSX | Premarital sex | "Not wrong at all" |
+| ABANY | Abortion for any reason | "Yes" |
+| FEPOL | Women in politics | "Disagree" (women unsuited) |
+| CAPPUN | Death penalty | "Oppose" |
+| GUNLAW | Gun permits | "Favor" |
+| NATRACE | Spending on race issues | "Too little" |
+| NATEDUC | Spending on education | "Too little" |
+| NATENVIR | Spending on environment | "Too little" |
+| NATHEAL | Spending on health | "Too little" |
+| EQWLTH | Government reduce inequality | Top 3 of 7-point scale |
+| HELPPOOR | Government help poor | Top 2 of 5-point scale |
+| TRUST | Social trust | "Can trust" |
+| FAIR | Fairness of others | "Try to be fair" |
+| POLVIEWS | Self-identified liberal | Liberal side (1-3 of 7) |
+| PRAYER | School prayer ban | "Approve" |
 
 :::
 
-We downloaded the cumulative GSS data file (gss7224_r2.dta) containing all respondents from 1972-2024. For each variable, we calculated the percentage giving the "liberal" or "progressive" response among those with valid responses (excluding "don't know" and refusals).
+Full variable definitions, response codings, and preprocessing details in Appendix B.
+
+We downloaded the cumulative GSS data file (gss7224_r2.dta) containing all respondents from 1972-2024. For each variable, we calculated the percentage giving the "liberal" or "progressive" response among those with valid responses (excluding "don't know" and refusals). Years with fewer than 50 valid responses were excluded.
+
+### Mode Effects and Survey Methodology
+
+The GSS has undergone significant methodological changes:
+
+| Period | Mode | Notes |
+|--------|------|-------|
+| 1972-2020 | Face-to-face | Standard in-person interviews |
+| 2021 | Mixed | COVID-era combination of web/phone/in-person |
+| 2022-2024 | Web-push | Primarily web with push-to-web methodology |
+
+**Implications**: Web surveys may reduce social desirability bias, yielding more candid responses on sensitive topics [@kreuter2008social]. Some portion of observed changes between 2021 and 2024 may reflect measurement differences rather than true attitude shifts. We do not attempt statistical adjustment for mode effects, as NORC has not released official crosswalk estimates. We note this as a limitation throughout.
 
 ## Models
 
@@ -37,10 +62,26 @@ We tested three language models with different training cutoffs:
 3. **Claude Sonnet** (Anthropic): Training cutoff early 2024. Used for initial experiments but potentially contaminated with recent GSS data.
 
 For each forecast, we prompted the model with:
-- The survey question
-- Historical data up to a specified cutoff year
-- Instructions to predict values for target years with 90% confidence intervals
-- A system prompt establishing the temporal context ("You are a social scientist in {cutoff_year}")
+- Historical data formatted as year-percentage pairs
+- The variable description
+- Instructions to predict a single number
+- Temperature set to 0 (deterministic)
+- A system prompt establishing temporal context
+
+**Example prompt (GPT-4o)**:
+```
+System: You are a social scientist in 2021. You predict survey trends based on historical data.
+
+User: Based on historical General Social Survey data, predict the percentage of Americans
+who will say "Same-sex relations not wrong" in 2024.
+
+Historical data (% giving this response):
+  1973: 11%  1990: 13%  2000: 29%  2010: 42%  2018: 57%  2021: 62%
+
+Predict only a single number between 0 and 100.
+```
+
+Confidence intervals were elicited in a separate prompt. Full prompt templates and parameters in Appendix A.
 
 ### Baseline Models
 

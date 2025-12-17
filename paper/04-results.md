@@ -6,18 +6,25 @@ title: Results
 
 We tested value forecasting across 17 GSS variables using gpt-3.5-turbo-instruct (September 2021 training cutoff) to predict 2024 values from a 2010 baseline—a 14-year forecasting horizon.
 
-:::{table} Multi-Variable Forecasting Results (2010→2024)
+:::{table} Multi-Variable Forecasting Results (2010→2024, all 16 variables tested)
 :label: tbl:multivar
 
-| Variable | 2010 | 2024 Actual | Predicted | Error | Direction |
-|----------|------|-------------|-----------|-------|-----------|
+| Variable | 2010 | 2024 Actual | Predicted | Error | Dir |
+|----------|------|-------------|-----------|-------|-----|
 | PRAYER | 44% | 46% | 46% | 0 | ✓ |
 | FEPOL | 79% | 82% | 81% | -1 | ✓ |
 | NATEDUC | 72% | 76% | 75% | -1 | ✓ |
 | GUNLAW | 74% | 70% | 72% | +2 | ✓ |
+| POLVIEWS | 29% | 29% | 31% | +2 | ✗ |
+| NATENVIR | 57% | 66% | 60% | -6 | ✓ |
+| NATHEAL | 60% | 74% | 80% | +6 | ✓ |
 | TRUST | 33% | 25% | 31% | +6 | ✓ |
+| FAIR | 38% | 46% | 40% | -6 | ✓ |
 | GRASS | 48% | 68% | 60% | -8 | ✓ |
 | PREMARSX | 53% | 65% | 56% | -9 | ✓ |
+| EQWLTH | 42% | 54% | 45% | -9 | ✓ |
+| HELPPOOR | 28% | 39% | 30% | -9 | ✓ |
+| CAPPUN | 32% | 40% | 30% | -10 | ✗ |
 | ABANY | 44% | 60% | 46% | -14 | ✓ |
 | NATRACE | 34% | 51% | 37% | -14 | ✓ |
 
