@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts'
+import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Area, ComposedChart } from 'recharts'
 import './App.css'
 
+// Historical actuals + LLM predictions through 2100
 const homosexData = [
   { year: 1973, actual: 11 },
   { year: 1980, actual: 14 },
@@ -11,7 +12,10 @@ const homosexData = [
   { year: 2018, actual: 57 },
   { year: 2021, actual: 62 },
   { year: 2022, actual: 61 },
-  { year: 2024, actual: 55, predicted: 69 },
+  { year: 2024, actual: 55, predicted: 69, predLow: 62, predHigh: 76 },
+  { year: 2030, predicted: 74, predLow: 65, predHigh: 83 },
+  { year: 2050, predicted: 82, predLow: 68, predHigh: 92 },
+  { year: 2100, predicted: 89, predLow: 72, predHigh: 97 },
 ]
 
 const grassData = [
@@ -22,8 +26,25 @@ const grassData = [
   { year: 2010, actual: 48 },
   { year: 2018, actual: 65 },
   { year: 2022, actual: 70 },
-  { year: 2024, actual: 69, predicted: 73 },
+  { year: 2024, actual: 69, predicted: 73, predLow: 66, predHigh: 80 },
+  { year: 2030, predicted: 78, predLow: 70, predHigh: 86 },
+  { year: 2050, predicted: 85, predLow: 74, predHigh: 93 },
+  { year: 2100, predicted: 91, predLow: 78, predHigh: 98 },
 ]
+
+// Response distribution heterogeneity (GSS 2024)
+const homosexDistribution = [
+  { response: 'Always wrong', pct2021: 27, pct2024: 33 },
+  { response: 'Almost always wrong', pct2021: 4, pct2024: 5 },
+  { response: 'Sometimes wrong', pct2021: 7, pct2024: 7 },
+  { response: 'Not wrong at all', pct2021: 62, pct2024: 55 },
+]
+
+// grassDistribution kept for potential future use
+// const grassDistribution = [
+//   { response: 'Should be legal', pct2021: 68, pct2024: 69 },
+//   { response: 'Should not be legal', pct2021: 32, pct2024: 31 },
+// ]
 
 const multiVarData = [
   { variable: 'HOMOSEX', v2021: 62, v2024: 55, change: -7 },
@@ -75,7 +96,7 @@ function App() {
 
         <section className="section">
           <div className="section-header">
-            <h2>Value Trajectories</h2>
+            <h2>Value Trajectories & LLM Forecasts</h2>
             <div className="var-toggle">
               <button
                 className={selectedVar === 'homosex' ? 'active' : ''}
@@ -92,16 +113,41 @@ function App() {
             </div>
           </div>
           <div className="chart-container">
-            <ResponsiveContainer width="100%" height={350}>
-              <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+            <ResponsiveContainer width="100%" height={400}>
+              <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                <defs>
+                  <linearGradient id="uncertaintyGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#dc2626" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#dc2626" stopOpacity={0.05}/>
+                  </linearGradient>
+                </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="year" stroke="#6b7280" fontSize={12} />
                 <YAxis domain={[0, 100]} stroke="#6b7280" fontSize={12} tickFormatter={(v) => `${v}%`} />
                 <Tooltip
-                  formatter={(value: number) => [`${value}%`]}
+                  formatter={(value, name) => {
+                    if (value === undefined || name === 'predLow' || name === 'predHigh') return null
+                    return [`${value}%`, name === 'actual' ? 'Actual' : 'GPT-4o Prediction']
+                  }}
                   contentStyle={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                 />
                 <Legend wrapperStyle={{ paddingTop: '20px' }} />
+                <Area
+                  type="monotone"
+                  dataKey="predHigh"
+                  stroke="none"
+                  fill="url(#uncertaintyGradient)"
+                  name="90% CI (Upper)"
+                  legendType="none"
+                />
+                <Area
+                  type="monotone"
+                  dataKey="predLow"
+                  stroke="none"
+                  fill="#f8fafc"
+                  name="90% CI (Lower)"
+                  legendType="none"
+                />
                 <Line
                   type="monotone"
                   dataKey="actual"
@@ -110,6 +156,7 @@ function App() {
                   name={`Actual: % "${varLabel}"`}
                   dot={{ fill: '#2563eb', r: 4 }}
                   activeDot={{ r: 6 }}
+                  connectNulls={false}
                 />
                 <Line
                   type="monotone"
@@ -119,11 +166,12 @@ function App() {
                   strokeDasharray="6 4"
                   name="GPT-4o Prediction"
                   dot={{ fill: '#dc2626', r: 5 }}
+                  connectNulls
                 />
-              </LineChart>
+              </ComposedChart>
             </ResponsiveContainer>
           </div>
-          <p className="caption">Source: General Social Survey. GSS 2024 data collected Apr-Dec 2024.</p>
+          <p className="caption">Source: General Social Survey (1972-2024). Shaded area shows 90% confidence interval for LLM predictions.</p>
         </section>
 
         <section className="section">
@@ -135,7 +183,7 @@ function App() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis type="number" domain={[0, 35]} tickFormatter={(v) => `${v}%`} fontSize={12} />
                 <YAxis type="category" dataKey="model" fontSize={12} />
-                <Tooltip formatter={(value: number) => [`${value}%`, 'MAE']} />
+                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`, 'MAE'] : null} />
                 <Bar dataKey="mae" fill="#2563eb" radius={[0, 4, 4, 0]} name="Mean Absolute Error" />
               </BarChart>
             </ResponsiveContainer>
@@ -151,7 +199,7 @@ function App() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="variable" fontSize={11} />
                 <YAxis domain={[0, 80]} tickFormatter={(v) => `${v}%`} fontSize={12} />
-                <Tooltip formatter={(value: number) => [`${value}%`]} />
+                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`] : null} />
                 <Legend wrapperStyle={{ paddingTop: '10px' }} />
                 <Bar dataKey="v2021" fill="#93c5fd" name="2021" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="v2024" fill="#2563eb" name="2024" radius={[4, 4, 0, 0]} />
@@ -169,12 +217,38 @@ function App() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="party" fontSize={12} />
                 <YAxis domain={[0, 100]} tickFormatter={(v) => `${v}%`} fontSize={12} />
-                <Tooltip formatter={(value: number) => [`${value}%`]} />
+                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`] : null} />
                 <Legend wrapperStyle={{ paddingTop: '10px' }} />
                 <Bar dataKey="v2021" fill="#93c5fd" name="2021" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="v2024" fill="#2563eb" name="2024" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
+          </div>
+        </section>
+
+        <section className="section">
+          <h2>Response Distribution Heterogeneity</h2>
+          <p className="section-desc">HOMOSEX: Not just mean shift—"Always wrong" responses grew from 27% to 33%</p>
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height={320}>
+              <BarChart data={homosexDistribution} layout="vertical" margin={{ left: 100, right: 30 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `${v}%`} fontSize={12} />
+                <YAxis type="category" dataKey="response" fontSize={11} width={95} />
+                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`] : null} />
+                <Legend wrapperStyle={{ paddingTop: '10px' }} />
+                <Bar dataKey="pct2021" fill="#93c5fd" name="2021" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="pct2024" fill="#2563eb" name="2024" radius={[0, 4, 4, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="heterogeneity-insight">
+            <p>
+              <strong>Why distributions matter:</strong> A model predicting 55% acceptance
+              could mean very different societies—one where views cluster near 50/50, or
+              one that's polarized between extremes. For AI alignment, the shape of the
+              distribution matters as much as the mean.
+            </p>
           </div>
         </section>
 

@@ -154,6 +154,25 @@ body {
   margin-top: 0.5rem;
 }
 
+.heterogeneity-insight {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  border-left: 3px solid #2563eb;
+}
+
+.heterogeneity-insight p {
+  font-size: 0.9rem;
+  color: #1e40af;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.heterogeneity-insight strong {
+  color: #1e3a8a;
+}
+
 .implications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
