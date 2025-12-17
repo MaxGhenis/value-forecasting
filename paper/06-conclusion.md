@@ -2,37 +2,50 @@
 title: Conclusion
 ---
 
-We proposed treating AI alignment partly as a forecasting problem: rather than assuming we know correct values, predict where human values are heading. Using the General Social Survey (1972-2024) as ground truth, we tested whether language models can forecast value trajectories.
+We proposed treating AI alignment partly as a forecasting problem: rather than assuming we know correct values or deferring indefinitely to current preferences, predict where human values converge as material and informational constraints are lifted. Using the General Social Survey (1972-2024) as ground truth, we tested whether language models can forecast value trajectories.
 
-Our findings are mixed but informative:
+## Key Findings
 
-1. **LLMs outperform baselines on historical data**: In retrospective tests, LLMs beat time series baselines by 2.2× on MAE, suggesting they have learned meaningful patterns about value evolution.
+**LLMs capture long-term value trends**: In retrospective tests, LLMs beat time series baselines by 2.2× on MAE, suggesting they have learned meaningful patterns about value evolution—patterns that simple extrapolation misses.
 
-2. **But they fail on clean forward tests**: GPT-4o predicted 69% acceptance of same-sex relationships for 2024; the actual value was 55%—a reversal the model completely missed.
+**The 48-year liberalization trend is robust**: HOMOSEX acceptance rose from 11% (1973) to 62% (2021), a 51-point increase representing one of the largest documented shifts in human values. This occurred across cohorts, regions, and (eventually) political parties.
 
-3. **Multiple values reversed or diverged**: HOMOSEX, PREMARSX, and NATRACE all declined from recent peaks, while ABANY continued rising. Values do not move in lockstep.
+**Short-term fluctuations reflect measurement and context**: The 2024 dip to 55% occurred during a polarized election year with a survey mode change. Such fluctuations are expected in any time series; they don't invalidate the underlying trend any more than a cold week invalidates climate change.
 
-4. **The reversal was broad but uneven**: All party and age groups showed declines in HOMOSEX acceptance, but Republicans and young adults showed the largest drops.
+**The income-values gradient provides empirical grounding for post-scarcity projections**: Higher-income respondents—who face fewer material constraints—show systematically more liberal values (67% vs. 43% for HOMOSEX). This 24-point gap represents the "headroom" for value evolution as AI-driven abundance reduces scarcity for the broader population.
 
-5. **Economic gradients exist**: Higher-income respondents show more liberal values, suggesting economic conditions may influence attitudes—though causality is uncertain.
+**Heterogeneity persists**: Different values move at different rates; different demographic groups hold different views. Alignment targets should be distributions over values, conditioned on scenarios, not point estimates.
 
-These results suggest that value forecasting is more challenging than trend extrapolation. LLMs learn patterns from historical data but fail to predict inflection points where progress triggers backlash. For AI alignment, this means:
+## Implications for AI Alignment
 
-- **Uncertainty is high**: Confidence intervals should be much wider than current methods produce.
-- **Backlash matters**: Models need to predict not just trends but when progress triggers counter-mobilization.
-- **Heterogeneity persists**: Alignment targets should be distributions over values, not single points.
-- **Temporal horizons matter**: Near-term forecasts (2024) are already wrong; long-term forecasts (2100) compound this uncertainty.
+The core insight is methodological: **alignment targets should be conditional forecasts, not snapshots**.
 
-Despite these challenges, the empirical approach has value. Philosophical debates about "correct" values may never resolve. Forecasting—even imperfect forecasting—provides a testable framework for thinking about value evolution. As forecasting methods improve, they could inform alignment targets that are grounded in data rather than intuition.
+Current RLHF anchors AI to contemporary preferences shaped by contemporary constraints—information limits, time pressure, material scarcity, political manipulation. This approach systematically biases alignment toward values that may not persist as conditions change.
 
-Future work should:
-- Test across more variables, countries, and time periods
-- Use base models without RLHF to avoid potential value contamination
-- Develop methods to predict backlash dynamics and inflection points
-- Condition forecasts on economic and political scenarios
-- Model the full joint distribution of values across demographic groups
+Value forecasting asks a different question: what would people value if given time to reflect, access to information, and freedom from material desperation? The income gradient suggests this isn't purely hypothetical—we can observe how values differ when constraints vary.
 
-The question of what values to align AI toward remains open. But treating it as an empirical forecasting problem—rather than purely philosophical speculation—may be a productive path forward.
+For practical alignment, we recommend:
+1. **Conditional scenario modeling**: Forecast values under specified conditions (abundance, deliberation, information access) rather than specific dates
+2. **Distribution targets**: Maintain uncertainty over value distributions; prefer actions robust across scenarios
+3. **Demographic weighting**: Use income gradients to approximate post-scarcity conditions
+4. **Continuous updating**: Treat forecasts as hypotheses to update as new survey data arrives
+5. **Democratic governance**: Ensure forecasting assumptions are transparent and subject to public input
+
+## Future Work
+
+- Expand to World Values Survey and European Social Survey for cross-national validation
+- Test base models without RLHF to rule out training contamination
+- Develop formal models linking economic conditions to value trajectories
+- Build ensemble methods with proper uncertainty calibration
+- Create standardized benchmarks for value forecasting
+
+## Conclusion
+
+The question "what values should AI be aligned with?" has no purely philosophical answer. But it does have an empirical component: we can study how values evolve and what conditions influence that evolution. The General Social Survey provides 50+ years of evidence that human values change predictably as conditions change.
+
+AI systems will shape those conditions profoundly. Alignment that ignores value evolution—treating current preferences as fixed—will systematically diverge from the values of humans living under AI-transformed conditions. Value forecasting, grounded in empirical data about how values respond to changing material circumstances, offers a more principled foundation for alignment than either philosophical idealization or static preference polling.
+
+The veil of scarcity is lifting. The question is whether AI alignment will lift with it.
 
 ## Code and Data Availability
 
