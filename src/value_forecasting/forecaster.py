@@ -5,8 +5,21 @@ import re
 from dataclasses import dataclass
 
 from anthropic import Anthropic
+from openai import OpenAI
 
 from .gss_variables import GSS_VARIABLES, get_historical_context
+
+
+# Model cutoff dates for reference
+MODEL_CUTOFFS = {
+    "davinci-002": "Oct 2019",  # Original GPT-3
+    "text-davinci-002": "June 2021",
+    "text-davinci-003": "June 2021",
+    "gpt-3.5-turbo-0301": "Sep 2021",
+    "gpt-3.5-turbo": "Sep 2021",
+    "gpt-4-0314": "Sep 2021",
+    "claude-sonnet-4-20250514": "Early 2024",  # Contaminated for GSS 2021
+}
 
 
 @dataclass
@@ -118,6 +131,74 @@ Base your predictions solely on historical patterns visible in the data provided
         )
 
     return forecasts
+
+
+def run_forecast_openai(
+    variable: str,
+    cutoff_year: int,
+    target_years: list[int],
+    model: str = "gpt-3.5-turbo",
+) -> list[Forecast]:
+    """
+    Run a forecast using OpenAI models.
+
+    For proper temporal holdout, use models with training cutoffs BEFORE target years:
+    - davinci-002 (Oct 2019): Can predict 2021, 2022
+    - gpt-3.5-turbo (Sep 2021): Can predict 2022
+    """
+    client = OpenAI()
+
+    prompt = create_forecast_prompt(variable, cutoff_year, target_years)
+    system = f"""You are a social scientist conducting research in {cutoff_year}.
+You have access only to information available up to {cutoff_year}.
+You do not know what happened after {cutoff_year}.
+Base your predictions solely on historical patterns visible in the data provided."""
+
+    try:
+        if model.startswith("davinci") or model.startswith("text-davinci"):
+            # Completion API for older models
+            full_prompt = f"{system}\n\n{prompt}"
+            response = client.completions.create(
+                model=model,
+                prompt=full_prompt,
+                max_tokens=1024,
+                temperature=0.7,
+            )
+            raw_response = response.choices[0].text
+        else:
+            # Chat API for newer models
+            response = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": prompt},
+                ],
+                max_tokens=1024,
+            )
+            raw_response = response.choices[0].message.content
+
+        parsed = extract_predictions(raw_response)
+
+        forecasts = []
+        for pred in parsed.get("predictions", []):
+            forecasts.append(
+                Forecast(
+                    variable=variable,
+                    cutoff_year=cutoff_year,
+                    target_year=pred["year"],
+                    point_estimate=pred["estimate"],
+                    lower_bound=pred["lower"],
+                    upper_bound=pred["upper"],
+                    model=model,
+                    raw_response=raw_response,
+                )
+            )
+
+        return forecasts
+
+    except Exception as e:
+        print(f"OpenAI forecast failed: {e}")
+        return []
 
 
 def run_baseline_forecast(
