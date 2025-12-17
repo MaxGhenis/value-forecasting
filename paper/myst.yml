@@ -1,0 +1,47 @@
+version: 1
+project:
+  title: Can Language Models Forecast Human Value Evolution?
+  subtitle: Evidence from the General Social Survey
+  authors:
+    - name: Max Ghenis
+      affiliations:
+        - PolicyEngine
+      email: max@policyengine.org
+      orcid: 0000-0002-5731-9170
+  date: 2024-12-16
+  keywords:
+    - AI alignment
+    - value forecasting
+    - language models
+    - General Social Survey
+    - moral change
+  abstract: |
+    AI alignment requires understanding human values, but values evolve over time.
+    We propose treating alignment partly as a forecasting problem: can language models
+    predict how human values will change? Using the General Social Survey (1972-2024)
+    as ground truth, we test whether LLMs can forecast value trajectories. In historical
+    validation, LLMs outperform time series baselines by 2.2× on mean absolute error.
+    However, a methodologically clean test—using GPT-4o (October 2023 cutoff) to predict
+    GSS 2024 data—reveals a critical limitation: the model predicted continued liberalization
+    (69% acceptance of same-sex relationships) while the actual value reversed to 55%,
+    a 7-point drop from 2021. We find this reversal occurred across demographic groups
+    but was strongest among Republicans and young adults. These results suggest that
+    while LLMs capture historical trends, they fail to predict backlash dynamics—when
+    social progress triggers counter-mobilization. We discuss implications for using
+    value forecasting as an alignment target.
+  exports:
+    - format: pdf
+      template: arxiv_two_column
+    - format: tex
+  bibliography:
+    - references.bib
+  toc:
+    - file: 01-introduction.md
+    - file: 02-related-work.md
+    - file: 03-methods.md
+    - file: 04-results.md
+    - file: 05-discussion.md
+    - file: 06-conclusion.md
+
+site:
+  template: book-theme
