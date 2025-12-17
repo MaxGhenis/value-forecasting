@@ -1,0 +1,17 @@
+version: 1
+project:
+  title: Value Forecasting
+  description: Testing whether LLMs can forecast human value evolution
+  keywords:
+    - AI alignment
+    - value forecasting
+    - LLMs
+    - GSS
+  github: https://github.com/maxghenis/value-forecasting
+  toc:
+    - file: docs/index.md
+    - file: docs/methodology.md
+    - file: docs/results.md
+
+site:
+  template: book-theme
