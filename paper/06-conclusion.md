@@ -33,11 +33,15 @@ For practical alignment, we recommend:
 
 ## Future Work
 
+**Longer forecast horizons with older models**: The strongest test of value forecasting uses models with older training cutoffs to predict further into the future. GPT-3.5-turbo-instruct (September 2021 cutoff) could forecast GSS 2022 and 2024—a 3-year horizon. Even older models (davinci-002, GPT-2) could test 5-10 year forecasts. If LLMs can predict multi-year value trajectories from a 2019 starting point, the case for long-term conditional forecasting strengthens considerably.
+
+**Additional directions**:
 - Expand to World Values Survey and European Social Survey for cross-national validation
 - Test base models without RLHF to rule out training contamination
 - Develop formal models linking economic conditions to value trajectories
 - Build ensemble methods with proper uncertainty calibration
 - Create standardized benchmarks for value forecasting
+- Explicitly condition forecasts on economic scenarios and compare predictions
 
 ## Conclusion
 
