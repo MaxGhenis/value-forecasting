@@ -1,0 +1,52 @@
+version: 1
+project:
+  title: Can Language Models Forecast Human Value Evolution?
+  subtitle: Evidence from the General Social Survey
+  authors:
+    - name: Max Ghenis
+      affiliations:
+        - PolicyEngine
+      email: max@policyengine.org
+      orcid: 0000-0002-5731-9170
+  date: 2025-12-16
+  keywords:
+    - AI alignment
+    - value forecasting
+    - language models
+    - General Social Survey
+    - moral change
+  abstract: |
+    AI alignment requires understanding human values, but values evolve as material
+    conditions change. We propose treating alignment partly as a forecasting problem:
+    what values would humanity hold as the veil of scarcity lifts? Using the General
+    Social Survey (1972-2024) as ground truth, we test whether LLMs can forecast value
+    trajectories. In historical validation, LLMs outperform time series baselines by
+    2.2× on mean absolute error, capturing the 51-point liberalization in attitudes
+    toward same-sex relationships (11% to 62%) that occurred from 1973-2021. While
+    short-term fluctuations occur (the 2024 reading dipped to 55% amid a polarized
+    election year and survey mode changes), the long-term trajectory remains robust.
+    Crucially, we find a strong income-values gradient: high-income respondents show
+    24 points more acceptance than low-income respondents, suggesting material conditions
+    causally influence values. This gradient provides empirical grounding for post-scarcity
+    projections—higher-income individuals today approximate the conditions of average
+    individuals under AI-driven abundance. We propose conditional value forecasting as
+    an alignment methodology: rather than anchoring to current preferences shaped by
+    current constraints, align to forecasted values under specified post-scarcity scenarios.
+    This approach treats heterogeneity as a feature, uncertainty as quantifiable, and
+    alignment targets as distributions rather than point estimates.
+  exports:
+    - format: pdf
+      template: arxiv_two_column
+    - format: tex
+  bibliography:
+    - references.bib
+  toc:
+    - file: 01-introduction.md
+    - file: 02-related-work.md
+    - file: 03-methods.md
+    - file: 04-results.md
+    - file: 05-discussion.md
+    - file: 06-conclusion.md
+
+site:
+  template: book-theme
