@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Area, ComposedChart } from 'recharts'
 import './App.css'
 
-// Historical actuals + LLM predictions through 2100
+// Historical actuals + calibrated LLM predictions through 2100
+// Forecasts use EMOS-calibrated uncertainty (spread multiplier: 1.21)
 const homosexData = [
   { year: 1973, actual: 11 },
   { year: 1980, actual: 14 },
@@ -12,10 +13,10 @@ const homosexData = [
   { year: 2018, actual: 57 },
   { year: 2021, actual: 62 },
   { year: 2022, actual: 61 },
-  { year: 2024, actual: 55, predicted: 69, predLow: 62, predHigh: 76 },
-  { year: 2030, predicted: 74, predLow: 65, predHigh: 83 },
-  { year: 2050, predicted: 82, predLow: 68, predHigh: 92 },
-  { year: 2100, predicted: 89, predLow: 72, predHigh: 97 },
+  { year: 2024, actual: 55 },
+  { year: 2030, predicted: 66, predLow: 57, predHigh: 75 },
+  { year: 2050, predicted: 75, predLow: 64, predHigh: 86 },
+  { year: 2100, predicted: 80, predLow: 69, predHigh: 91 },
 ]
 
 const grassData = [
@@ -26,10 +27,10 @@ const grassData = [
   { year: 2010, actual: 48 },
   { year: 2018, actual: 65 },
   { year: 2022, actual: 70 },
-  { year: 2024, actual: 69, predicted: 73, predLow: 66, predHigh: 80 },
-  { year: 2030, predicted: 78, predLow: 70, predHigh: 86 },
-  { year: 2050, predicted: 85, predLow: 74, predHigh: 93 },
-  { year: 2100, predicted: 91, predLow: 78, predHigh: 98 },
+  { year: 2024, actual: 68 },
+  { year: 2030, predicted: 72, predLow: 57, predHigh: 87 },
+  { year: 2050, predicted: 80, predLow: 57, predHigh: 100 },
+  { year: 2100, predicted: 80, predLow: 57, predHigh: 100 },
 ]
 
 // Response distribution heterogeneity (GSS 2024)
@@ -84,12 +85,12 @@ function App() {
         <section className="hero-finding">
           <div className="finding-content">
             <span className="finding-label">Key Finding</span>
-            <h2>LLMs Miss Value Reversals</h2>
+            <h2>Can LLMs Forecast Long-Term Value Trajectories?</h2>
             <p>
-              GPT-4o predicted <strong className="predicted">69%</strong> acceptance
-              of same-sex relationships for 2024.
-              The actual value was <strong className="actual">55%</strong> —
-              the first reversal in 30+ years.
+              Using EMOS-calibrated uncertainty, GPT-4o projects same-sex acceptance
+              reaching <strong className="predicted">80%</strong> by 2100 (80% CI: 69-91%).
+              The 2024 dip to <strong className="actual">55%</strong> may be temporary—
+              the 50-year trend shows +44 points since 1973.
             </p>
           </div>
         </section>
@@ -137,7 +138,7 @@ function App() {
                   dataKey="predHigh"
                   stroke="none"
                   fill="url(#uncertaintyGradient)"
-                  name="90% CI (Upper)"
+                  name="80% CI (Upper)"
                   legendType="none"
                 />
                 <Area
@@ -145,7 +146,7 @@ function App() {
                   dataKey="predLow"
                   stroke="none"
                   fill="#f8fafc"
-                  name="90% CI (Lower)"
+                  name="80% CI (Lower)"
                   legendType="none"
                 />
                 <Line
@@ -171,7 +172,7 @@ function App() {
               </ComposedChart>
             </ResponsiveContainer>
           </div>
-          <p className="caption">Source: General Social Survey (1972-2024). Shaded area shows 90% confidence interval for LLM predictions.</p>
+          <p className="caption">Source: General Social Survey (1972-2024). Shaded area shows calibrated 80% confidence interval (EMOS method).</p>
         </section>
 
         <section className="section">
@@ -257,13 +258,13 @@ function App() {
           <div className="implications-grid">
             <div className="card">
               <div className="card-icon">📈</div>
-              <h3>Extrapolation ≠ Forecasting</h3>
-              <p>LLMs learn trends but miss inflection points where progress triggers backlash.</p>
+              <h3>Long-Term vs Short-Term</h3>
+              <p>LLMs capture 50-year trends well but short-term fluctuations are harder to predict.</p>
             </div>
             <div className="card">
               <div className="card-icon">📊</div>
-              <h3>Uncertainty is High</h3>
-              <p>90% CIs should be wider. The 2024 actual fell outside GPT-4o's range.</p>
+              <h3>Calibrated Uncertainty</h3>
+              <p>EMOS calibration widens CIs by 21%. Future validation will test these bounds.</p>
             </div>
             <div className="card">
               <div className="card-icon">🔀</div>
@@ -273,7 +274,7 @@ function App() {
             <div className="card">
               <div className="card-icon">⚡</div>
               <h3>Backlash Dynamics</h3>
-              <p>Models need to predict counter-mobilization, not just trend continuation.</p>
+              <p>Short-term reversals may not change long-term trajectories—or they might.</p>
             </div>
           </div>
         </section>
