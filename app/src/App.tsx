@@ -311,7 +311,7 @@ const forecastModels = [
   // Time Series
   { id: 'naive', name: 'Naive', color: '#64748b', type: 'ts' },
   { id: 'linear', name: 'Linear', color: '#475569', type: 'ts' },
-  { id: 'arima', name: 'ARIMA', color: '#0ea5e9', type: 'ts' },
+  { id: 'arima', name: 'AR(1)', color: '#0ea5e9', type: 'ts' },
   { id: 'ets', name: 'ETS', color: '#94a3b8', type: 'ts' },
 ]
 
@@ -571,7 +571,7 @@ function App() {
                       predicted: 'GPT-4o',
                       naive: 'Naive',
                       linear: 'Linear',
-                      arima: 'ARIMA',
+                      arima: 'AR(1)',
                       ets: 'ETS'
                     }
                     return [`${value}%`, labels[name as string] || name]
@@ -631,7 +631,7 @@ function App() {
                   <Line type="monotone" dataKey="linear" stroke="#475569" strokeWidth={2} name="Linear" dot={{ fill: '#475569', r: 4 }} />
                 )}
                 {selectedModels.includes('arima') && (
-                  <Line type="monotone" dataKey="arima" stroke="#0ea5e9" strokeWidth={2} name="ARIMA" dot={{ fill: '#0ea5e9', r: 4 }} />
+                  <Line type="monotone" dataKey="arima" stroke="#0ea5e9" strokeWidth={2} name="AR(1)" dot={{ fill: '#0ea5e9', r: 4 }} />
                 )}
                 {selectedModels.includes('ets') && (
                   <Line type="monotone" dataKey="ets" stroke="#94a3b8" strokeWidth={2} name="ETS" dot={{ fill: '#94a3b8', r: 4 }} />

@@ -194,13 +194,14 @@ def run_arima_forecast(
     variable: str,
     cutoff_year: int,
     target_years: list[int],
-    order: tuple[int, int, int] = (1, 1, 0),
+    order: tuple[int, int, int] = (1, 0, 0),
 ) -> list[Forecast]:
     """
-    ARIMA baseline forecast with logit transformation.
+    AR(1) baseline forecast with logit transformation.
 
-    Fits ARIMA in logit space to ensure bounded predictions.
-    Default order (1,1,0) = AR(1) with differencing.
+    Fits AR(1) in logit space to ensure bounded predictions.
+    Default order (1,0,0) = AR(1) without differencing (stationary).
+    This gives bounded uncertainty even at long horizons.
     """
     try:
         from statsmodels.tsa.arima.model import ARIMA
@@ -256,8 +257,8 @@ def run_arima_forecast(
                     point_estimate=point,
                     lower_bound=lower,
                     upper_bound=upper,
-                    model="arima_logit",
-                    raw_response=f"ARIMA{order} logit: {logit_point:.3f} -> {point:.1f}%",
+                    model="ar1_logit",
+                    raw_response=f"AR{order} logit: {logit_point:.3f} -> {point:.1f}%",
                 )
             )
 
