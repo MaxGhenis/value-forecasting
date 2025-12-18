@@ -2,82 +2,374 @@ import { useState } from 'react'
 import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Area, ComposedChart } from 'recharts'
 import './App.css'
 
-// Historical actuals + calibrated LLM predictions through 2100
-// Forecasts use EMOS-calibrated uncertainty (spread multiplier: 1.21)
-// 2024 shows both actual (holdout) and prediction for calibration validation
-const homosexData = [
-  { year: 1973, actual: 11 },
-  { year: 1980, actual: 14 },
-  { year: 1990, actual: 13 },
-  { year: 2000, actual: 27 },
-  { year: 2010, actual: 42 },
-  { year: 2018, actual: 57 },
-  { year: 2021, actual: 62 },
-  { year: 2022, actual: 61 },
-  { year: 2024, actual: 55, predicted: 63, predLow: 56, predHigh: 70 },
-  { year: 2030, predicted: 66, predLow: 57, predHigh: 75 },
-  { year: 2050, predicted: 75, predLow: 64, predHigh: 86 },
-  { year: 2100, predicted: 80, predLow: 69, predHigh: 91 },
-]
+// All GSS variables with historical data and calibrated forecasts
+const variableData: Record<string, {
+  description: string;
+  historical: { year: number; actual: number }[];
+  forecasts: { year: number; predicted: number; predLow: number; predHigh: number }[];
+  actual2024: number;
+  predicted2024: number;
+}> = {
+  HOMOSEX: {
+    description: "Same-sex relations not wrong",
+    historical: [
+      { year: 1974, actual: 13 }, { year: 1980, actual: 15 }, { year: 1990, actual: 13 },
+      { year: 2000, actual: 29 }, { year: 2010, actual: 42 }, { year: 2018, actual: 57 },
+      { year: 2021, actual: 62 }, { year: 2022, actual: 61 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 63, predLow: 56, predHigh: 70 },
+      { year: 2030, predicted: 66, predLow: 57, predHigh: 75 },
+      { year: 2050, predicted: 75, predLow: 64, predHigh: 86 },
+      { year: 2100, predicted: 80, predLow: 69, predHigh: 91 }
+    ],
+    actual2024: 55,
+    predicted2024: 63
+  },
+  GRASS: {
+    description: "Marijuana should be legal",
+    historical: [
+      { year: 1976, actual: 29 }, { year: 1980, actual: 26 }, { year: 1990, actual: 17 },
+      { year: 2000, actual: 34 }, { year: 2010, actual: 48 }, { year: 2018, actual: 65 },
+      { year: 2022, actual: 70 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 70, predLow: 61, predHigh: 79 },
+      { year: 2030, predicted: 72, predLow: 57, predHigh: 87 },
+      { year: 2050, predicted: 80, predLow: 57, predHigh: 100 },
+      { year: 2100, predicted: 80, predLow: 57, predHigh: 100 }
+    ],
+    actual2024: 69,
+    predicted2024: 70
+  },
+  PREMARSX: {
+    description: "Premarital sex not wrong",
+    historical: [
+      { year: 1972, actual: 27 }, { year: 1980, actual: 43 }, { year: 1990, actual: 40 },
+      { year: 2000, actual: 42 }, { year: 2010, actual: 53 }, { year: 2018, actual: 62 },
+      { year: 2021, actual: 66 }, { year: 2022, actual: 69 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 66, predLow: 59, predHigh: 73 },
+      { year: 2030, predicted: 70, predLow: 59, predHigh: 81 },
+      { year: 2050, predicted: 80, predLow: 69, predHigh: 91 },
+      { year: 2100, predicted: 80, predLow: 69, predHigh: 91 }
+    ],
+    actual2024: 65,
+    predicted2024: 66
+  },
+  ABANY: {
+    description: "Abortion for any reason",
+    historical: [
+      { year: 1978, actual: 33 }, { year: 1990, actual: 43 }, { year: 2000, actual: 40 },
+      { year: 2010, actual: 44 }, { year: 2018, actual: 50 }, { year: 2021, actual: 56 },
+      { year: 2022, actual: 59 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 50, predLow: 42, predHigh: 58 },
+      { year: 2030, predicted: 60, predLow: 51, predHigh: 69 },
+      { year: 2050, predicted: 60, predLow: 42, predHigh: 78 },
+      { year: 2100, predicted: 60, predLow: 37, predHigh: 83 }
+    ],
+    actual2024: 60,
+    predicted2024: 50
+  },
+  FEPOL: {
+    description: "Women suited for politics",
+    historical: [
+      { year: 1974, actual: 53 }, { year: 1982, actual: 63 }, { year: 1990, actual: 73 },
+      { year: 2000, actual: 77 }, { year: 2010, actual: 79 }, { year: 2018, actual: 86 },
+      { year: 2022, actual: 85 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 82, predLow: 77, predHigh: 87 },
+      { year: 2030, predicted: 84, predLow: 77, predHigh: 91 },
+      { year: 2050, predicted: 86, predLow: 77, predHigh: 95 },
+      { year: 2100, predicted: 85, predLow: 69, predHigh: 100 }
+    ],
+    actual2024: 82,
+    predicted2024: 82
+  },
+  CAPPUN: {
+    description: "Oppose death penalty",
+    historical: [
+      { year: 1974, actual: 34 }, { year: 1980, actual: 28 }, { year: 1990, actual: 21 },
+      { year: 2000, actual: 31 }, { year: 2010, actual: 33 }, { year: 2018, actual: 37 },
+      { year: 2021, actual: 44 }, { year: 2022, actual: 40 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 39, predLow: 33, predHigh: 45 },
+      { year: 2030, predicted: 42, predLow: 33, predHigh: 51 },
+      { year: 2050, predicted: 45, predLow: 34, predHigh: 56 },
+      { year: 2100, predicted: 55, predLow: 32, predHigh: 78 }
+    ],
+    actual2024: 40,
+    predicted2024: 39
+  },
+  GUNLAW: {
+    description: "Favor gun permits",
+    historical: [
+      { year: 1972, actual: 72 }, { year: 1980, actual: 71 }, { year: 1990, actual: 80 },
+      { year: 2000, actual: 82 }, { year: 2010, actual: 75 }, { year: 2018, actual: 72 },
+      { year: 2021, actual: 67 }, { year: 2022, actual: 71 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 72, predLow: 65, predHigh: 79 },
+      { year: 2030, predicted: 71, predLow: 64, predHigh: 78 },
+      { year: 2050, predicted: 70, predLow: 59, predHigh: 81 },
+      { year: 2100, predicted: 70, predLow: 59, predHigh: 81 }
+    ],
+    actual2024: 70,
+    predicted2024: 72
+  },
+  NATRACE: {
+    description: "More spending on race issues",
+    historical: [
+      { year: 1974, actual: 33 }, { year: 1980, actual: 26 }, { year: 1990, actual: 40 },
+      { year: 2000, actual: 38 }, { year: 2010, actual: 34 }, { year: 2018, actual: 56 },
+      { year: 2021, actual: 52 }, { year: 2022, actual: 56 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 45, predLow: 31, predHigh: 59 },
+      { year: 2030, predicted: 52, predLow: 37, predHigh: 67 },
+      { year: 2050, predicted: 55, predLow: 32, predHigh: 78 },
+      { year: 2100, predicted: 55, predLow: 32, predHigh: 78 }
+    ],
+    actual2024: 51,
+    predicted2024: 45
+  },
+  NATEDUC: {
+    description: "More spending on education",
+    historical: [
+      { year: 1974, actual: 53 }, { year: 1980, actual: 55 }, { year: 1990, actual: 73 },
+      { year: 2000, actual: 72 }, { year: 2010, actual: 72 }, { year: 2018, actual: 75 },
+      { year: 2021, actual: 73 }, { year: 2022, actual: 75 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 73, predLow: 69, predHigh: 77 },
+      { year: 2030, predicted: 74, predLow: 69, predHigh: 79 },
+      { year: 2050, predicted: 75, predLow: 68, predHigh: 82 },
+      { year: 2100, predicted: 75, predLow: 68, predHigh: 82 }
+    ],
+    actual2024: 76,
+    predicted2024: 73
+  },
+  NATENVIR: {
+    description: "More spending on environment",
+    historical: [
+      { year: 1974, actual: 63 }, { year: 1980, actual: 51 }, { year: 1990, actual: 75 },
+      { year: 2000, actual: 63 }, { year: 2010, actual: 57 }, { year: 2018, actual: 68 },
+      { year: 2021, actual: 70 }, { year: 2022, actual: 69 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 63, predLow: 55, predHigh: 71 },
+      { year: 2030, predicted: 65, predLow: 56, predHigh: 74 },
+      { year: 2050, predicted: 65, predLow: 54, predHigh: 76 },
+      { year: 2100, predicted: 65, predLow: 54, predHigh: 76 }
+    ],
+    actual2024: 66,
+    predicted2024: 63
+  },
+  NATHEAL: {
+    description: "More spending on health",
+    historical: [
+      { year: 1974, actual: 66 }, { year: 1980, actual: 57 }, { year: 1990, actual: 74 },
+      { year: 2000, actual: 73 }, { year: 2010, actual: 60 }, { year: 2018, actual: 73 },
+      { year: 2021, actual: 67 }, { year: 2022, actual: 70 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 68, predLow: 59, predHigh: 77 },
+      { year: 2030, predicted: 70, predLow: 59, predHigh: 81 },
+      { year: 2050, predicted: 70, predLow: 59, predHigh: 81 },
+      { year: 2100, predicted: 70, predLow: 59, predHigh: 81 }
+    ],
+    actual2024: 74,
+    predicted2024: 68
+  },
+  EQWLTH: {
+    description: "Government reduce inequality",
+    historical: [
+      { year: 1978, actual: 48 }, { year: 1990, actual: 52 }, { year: 2000, actual: 44 },
+      { year: 2010, actual: 42 }, { year: 2018, actual: 50 }, { year: 2021, actual: 55 },
+      { year: 2022, actual: 55 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 49, predLow: 43, predHigh: 55 },
+      { year: 2030, predicted: 52, predLow: 44, predHigh: 60 },
+      { year: 2050, predicted: 51, predLow: 42, predHigh: 60 },
+      { year: 2100, predicted: 50, predLow: 39, predHigh: 61 }
+    ],
+    actual2024: 54,
+    predicted2024: 49
+  },
+  HELPPOOR: {
+    description: "Government help poor",
+    historical: [
+      { year: 1984, actual: 29 }, { year: 1990, actual: 35 }, { year: 2000, actual: 27 },
+      { year: 2010, actual: 28 }, { year: 2018, actual: 32 }, { year: 2021, actual: 38 },
+      { year: 2022, actual: 40 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 31, predLow: 25, predHigh: 37 },
+      { year: 2030, predicted: 35, predLow: 27, predHigh: 43 },
+      { year: 2050, predicted: 36, predLow: 27, predHigh: 45 },
+      { year: 2100, predicted: 35, predLow: 24, predHigh: 46 }
+    ],
+    actual2024: 39,
+    predicted2024: 31
+  },
+  TRUST: {
+    description: "Most people can be trusted",
+    historical: [
+      { year: 1972, actual: 46 }, { year: 1980, actual: 46 }, { year: 1990, actual: 38 },
+      { year: 2000, actual: 35 }, { year: 2010, actual: 33 }, { year: 2018, actual: 32 },
+      { year: 2022, actual: 25 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 33, predLow: 29, predHigh: 37 },
+      { year: 2030, predicted: 28, predLow: 21, predHigh: 35 },
+      { year: 2050, predicted: 27, predLow: 18, predHigh: 36 },
+      { year: 2100, predicted: 27, predLow: 18, predHigh: 36 }
+    ],
+    actual2024: 25,
+    predicted2024: 33
+  },
+  FAIR: {
+    description: "People try to be fair",
+    historical: [
+      { year: 1972, actual: 34 }, { year: 1980, actual: 35 }, { year: 1990, actual: 36 },
+      { year: 2000, actual: 39 }, { year: 2010, actual: 38 }, { year: 2018, actual: 43 },
+      { year: 2022, actual: 47 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 40, predLow: 36, predHigh: 44 },
+      { year: 2030, predicted: 42, predLow: 35, predHigh: 49 },
+      { year: 2050, predicted: 43, predLow: 34, predHigh: 52 },
+      { year: 2100, predicted: 45, predLow: 34, predHigh: 56 }
+    ],
+    actual2024: 46,
+    predicted2024: 40
+  },
+  POLVIEWS: {
+    description: "Self-identified liberal",
+    historical: [
+      { year: 1974, actual: 31 }, { year: 1980, actual: 26 }, { year: 1990, actual: 27 },
+      { year: 2000, actual: 27 }, { year: 2010, actual: 29 }, { year: 2018, actual: 29 },
+      { year: 2021, actual: 33 }, { year: 2022, actual: 32 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 28, predLow: 24, predHigh: 32 },
+      { year: 2030, predicted: 30, predLow: 25, predHigh: 35 },
+      { year: 2050, predicted: 30, predLow: 23, predHigh: 37 },
+      { year: 2100, predicted: 31, predLow: 24, predHigh: 38 }
+    ],
+    actual2024: 29,
+    predicted2024: 28
+  },
+  PRAYER: {
+    description: "Approve school prayer ban",
+    historical: [
+      { year: 1974, actual: 32 }, { year: 1985, actual: 44 }, { year: 1990, actual: 42 },
+      { year: 2000, actual: 39 }, { year: 2010, actual: 44 }, { year: 2018, actual: 47 },
+      { year: 2022, actual: 52 }
+    ],
+    forecasts: [
+      { year: 2024, predicted: 42, predLow: 38, predHigh: 46 },
+      { year: 2030, predicted: 48, predLow: 39, predHigh: 57 },
+      { year: 2050, predicted: 50, predLow: 39, predHigh: 61 },
+      { year: 2100, predicted: 45, predLow: 34, predHigh: 56 }
+    ],
+    actual2024: 46,
+    predicted2024: 42
+  }
+}
 
-const grassData = [
-  { year: 1973, actual: 19 },
-  { year: 1980, actual: 25 },
-  { year: 1990, actual: 16 },
-  { year: 2000, actual: 31 },
-  { year: 2010, actual: 48 },
-  { year: 2018, actual: 65 },
-  { year: 2022, actual: 70 },
-  { year: 2024, actual: 68, predicted: 70, predLow: 61, predHigh: 79 },
-  { year: 2030, predicted: 72, predLow: 57, predHigh: 87 },
-  { year: 2050, predicted: 80, predLow: 57, predHigh: 100 },
-  { year: 2100, predicted: 80, predLow: 57, predHigh: 100 },
-]
+// Group variables by category
+const categories = {
+  "Social/Moral": ["HOMOSEX", "GRASS", "PREMARSX", "ABANY"],
+  "Gender/Politics": ["FEPOL", "CAPPUN", "GUNLAW", "POLVIEWS"],
+  "Spending": ["NATRACE", "NATEDUC", "NATENVIR", "NATHEAL"],
+  "Economic/Social": ["EQWLTH", "HELPPOOR", "TRUST", "FAIR", "PRAYER"]
+}
 
-const multiVarData = [
-  { variable: 'HOMOSEX', v2021: 62, v2024: 55, change: -7 },
-  { variable: 'PREMARSX', v2021: 66, v2024: 65, change: -1 },
-  { variable: 'NATRACE', v2021: 52, v2024: 51, change: -1 },
-  { variable: 'ABANY', v2021: 56, v2024: 60, change: 4 },
-  { variable: 'GUNLAW', v2021: 67, v2024: 70, change: 3 },
-]
+// Prepare chart data for a given variable
+function getChartData(varKey: string) {
+  const v = variableData[varKey]
+  const data: Array<{
+    year: number;
+    actual?: number;
+    predicted?: number;
+    predLow?: number;
+    predHigh?: number;
+  }> = []
 
-const partyData = [
-  { party: 'Democrat', v2021: 76, v2024: 71, change: -5 },
-  { party: 'Independent', v2021: 59, v2024: 57, change: -2 },
-  { party: 'Republican', v2021: 43, v2024: 36, change: -7 },
-]
+  // Add historical data
+  v.historical.forEach(h => {
+    data.push({ year: h.year, actual: h.actual })
+  })
 
+  // Add 2024 with both actual and predicted
+  data.push({
+    year: 2024,
+    actual: v.actual2024,
+    predicted: v.predicted2024,
+    predLow: v.forecasts[0].predLow,
+    predHigh: v.forecasts[0].predHigh
+  })
+
+  // Add future forecasts
+  v.forecasts.slice(1).forEach(f => {
+    data.push({
+      year: f.year,
+      predicted: f.predicted,
+      predLow: f.predLow,
+      predHigh: f.predHigh
+    })
+  })
+
+  return data
+}
+
+// Model comparison data
 const metricsData = [
   { model: 'Naive', mae: 31.4 },
   { model: 'Linear', mae: 30.2 },
   { model: 'ARIMA', mae: 31.4 },
   { model: 'ETS', mae: 28.1 },
-  { model: 'LLM', mae: 12.5 },
+  { model: 'GPT-4o', mae: 12.5 },
 ]
 
+// 2024 calibration results
+const calibrationData = Object.entries(variableData).map(([key, v]) => ({
+  variable: key,
+  actual: v.actual2024,
+  predicted: v.predicted2024,
+  error: v.predicted2024 - v.actual2024,
+  absError: Math.abs(v.predicted2024 - v.actual2024)
+})).sort((a, b) => b.absError - a.absError)
+
 function App() {
-  const [selectedVar, setSelectedVar] = useState<'homosex' | 'grass'>('homosex')
-  const data = selectedVar === 'homosex' ? homosexData : grassData
-  const varLabel = selectedVar === 'homosex' ? 'Same-sex Relations OK' : 'Marijuana Legal'
+  const [selectedVar, setSelectedVar] = useState<string>('HOMOSEX')
+  const data = getChartData(selectedVar)
+  const varInfo = variableData[selectedVar]
 
   return (
     <div className="app">
       <header className="header">
         <h1>Can LLMs Forecast Human Values?</h1>
-        <p className="subtitle">Evidence from the General Social Survey (1972-2024)</p>
+        <p className="subtitle">Calibrated GPT-4o Forecasts for 17 GSS Variables (1972-2100)</p>
       </header>
 
       <main className="main">
         <section className="hero-finding">
           <div className="finding-content">
             <span className="finding-label">Key Finding</span>
-            <h2>Can LLMs Forecast Long-Term Value Trajectories?</h2>
+            <h2>LLMs Capture Long-Term Trends, Miss Short-Term Reversals</h2>
             <p>
-              Using EMOS-calibrated uncertainty, GPT-4o projects same-sex acceptance
-              reaching <strong className="predicted">80%</strong> by 2100 (80% CI: 69-91%).
-              The 2024 dip to <strong className="actual">55%</strong> may be temporary—
-              the 50-year trend shows +44 points since 1973.
+              Using EMOS-calibrated uncertainty (spread multiplier: 1.21), GPT-4o forecasts
+              across 17 value variables. The model performs 2.2x better than time series
+              baselines on MAE, but the 2024 holdout revealed surprising reversals
+              (HOMOSEX: predicted 63%, actual 55%).
             </p>
           </div>
         </section>
@@ -85,21 +377,27 @@ function App() {
         <section className="section">
           <div className="section-header">
             <h2>Value Trajectories & LLM Forecasts</h2>
-            <div className="var-toggle">
-              <button
-                className={selectedVar === 'homosex' ? 'active' : ''}
-                onClick={() => setSelectedVar('homosex')}
-              >
-                Same-sex Relations
-              </button>
-              <button
-                className={selectedVar === 'grass' ? 'active' : ''}
-                onClick={() => setSelectedVar('grass')}
-              >
-                Marijuana
-              </button>
-            </div>
           </div>
+          <div className="var-selector">
+            {Object.entries(categories).map(([category, vars]) => (
+              <div key={category} className="var-category">
+                <span className="category-label">{category}</span>
+                <div className="var-buttons">
+                  {vars.map(v => (
+                    <button
+                      key={v}
+                      className={selectedVar === v ? 'active' : ''}
+                      onClick={() => setSelectedVar(v)}
+                      title={variableData[v].description}
+                    >
+                      {v}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="var-description">{varInfo.description}</p>
           <div className="chart-container">
             <ResponsiveContainer width="100%" height={400}>
               <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
@@ -141,7 +439,7 @@ function App() {
                   dataKey="actual"
                   stroke="#2563eb"
                   strokeWidth={2.5}
-                  name={`Actual: % "${varLabel}"`}
+                  name={`Actual: % "${varInfo.description}"`}
                   dot={{ fill: '#2563eb', r: 4 }}
                   activeDot={{ r: 6 }}
                   connectNulls={false}
@@ -159,15 +457,15 @@ function App() {
               </ComposedChart>
             </ResponsiveContainer>
           </div>
-          <p className="caption">Source: General Social Survey (1972-2024). Shaded area shows calibrated 80% confidence interval (EMOS method).</p>
+          <p className="caption">Source: General Social Survey (1972-2024). Shaded area shows calibrated 80% CI (EMOS method, spread multiplier 1.21).</p>
         </section>
 
         <section className="section">
-          <h2>Model Comparison (Historical)</h2>
-          <p className="section-desc">LLM outperforms time series baselines by 2.2× on MAE</p>
+          <h2>Model Comparison: LLM vs Time Series</h2>
+          <p className="section-desc">GPT-4o outperforms baselines by 2.2x on Mean Absolute Error</p>
           <div className="chart-container">
             <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={metricsData} layout="vertical" margin={{ left: 50, right: 30 }}>
+              <BarChart data={metricsData} layout="vertical" margin={{ left: 60, right: 30 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis type="number" domain={[0, 35]} tickFormatter={(v) => `${v}%`} fontSize={12} />
                 <YAxis type="category" dataKey="model" fontSize={12} />
@@ -179,64 +477,62 @@ function App() {
         </section>
 
         <section className="section">
-          <h2>2024: Values Diverged</h2>
-          <p className="section-desc">HOMOSEX reversed while ABANY continued rising</p>
+          <h2>2024 Holdout: Prediction Errors</h2>
+          <p className="section-desc">Largest misses: HOMOSEX (-8pp), HELPPOOR (+8pp), ABANY (+10pp)</p>
           <div className="chart-container">
-            <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={multiVarData} margin={{ left: 10, right: 30 }}>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={calibrationData} layout="vertical" margin={{ left: 80, right: 30 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="variable" fontSize={11} />
-                <YAxis domain={[0, 80]} tickFormatter={(v) => `${v}%`} fontSize={12} />
-                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`] : null} />
-                <Legend wrapperStyle={{ paddingTop: '10px' }} />
-                <Bar dataKey="v2021" fill="#93c5fd" name="2021" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="v2024" fill="#2563eb" name="2024" radius={[4, 4, 0, 0]} />
+                <XAxis type="number" domain={[-15, 15]} tickFormatter={(v) => `${v > 0 ? '+' : ''}${v}`} fontSize={12} />
+                <YAxis type="category" dataKey="variable" fontSize={11} width={70} />
+                <Tooltip
+                  formatter={(value, name) => {
+                    if (name === 'error') return [`${Number(value) > 0 ? '+' : ''}${value}pp`, 'Prediction Error']
+                    return null
+                  }}
+                  labelFormatter={(label) => variableData[label]?.description || label}
+                />
+                <Bar
+                  dataKey="error"
+                  name="Error (Predicted - Actual)"
+                  fill={(entry: { error: number }) => entry.error > 0 ? '#dc2626' : '#16a34a'}
+                  radius={[0, 4, 4, 0]}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </section>
-
-        <section className="section">
-          <h2>HOMOSEX Reversal by Party</h2>
-          <p className="section-desc">Republicans dropped 7 points; reversal hit all groups</p>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={partyData} margin={{ left: 10, right: 30 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="party" fontSize={12} />
-                <YAxis domain={[0, 100]} tickFormatter={(v) => `${v}%`} fontSize={12} />
-                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`] : null} />
-                <Legend wrapperStyle={{ paddingTop: '10px' }} />
-                <Bar dataKey="v2021" fill="#93c5fd" name="2021" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="v2024" fill="#2563eb" name="2024" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+          <p className="caption">Positive = overpredicted, Negative = underpredicted. Mean Absolute Error: {(calibrationData.reduce((sum, d) => sum + d.absError, 0) / calibrationData.length).toFixed(1)}pp</p>
         </section>
 
         <section className="section implications">
           <h2>Implications for AI Alignment</h2>
           <div className="implications-grid">
             <div className="card">
-              <div className="card-icon">📈</div>
-              <h3>Long-Term vs Short-Term</h3>
-              <p>LLMs capture 50-year trends well but short-term fluctuations are harder to predict.</p>
+              <h3>Long-Term Trends</h3>
+              <p>LLMs capture 50-year trajectories well. Most values continue their historical direction through 2100.</p>
             </div>
             <div className="card">
-              <div className="card-icon">📊</div>
               <h3>Calibrated Uncertainty</h3>
-              <p>EMOS calibration widens CIs by 21%. Future validation will test these bounds.</p>
+              <p>EMOS calibration widens CIs by 21%. Raw LLM confidence intervals are too narrow.</p>
             </div>
             <div className="card">
-              <div className="card-icon">🔀</div>
-              <h3>Values Diverge</h3>
-              <p>Different values moved in different directions (HOMOSEX down, ABANY up).</p>
+              <h3>Short-Term Reversals</h3>
+              <p>2024 showed surprising reversals (HOMOSEX, TRUST). LLMs miss discontinuities.</p>
             </div>
             <div className="card">
-              <div className="card-icon">⚡</div>
-              <h3>Backlash Dynamics</h3>
-              <p>Short-term reversals may not change long-term trajectories—or they might.</p>
+              <h3>Value Divergence</h3>
+              <p>Different values moved in different directions—ABANY up while HOMOSEX down.</p>
             </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <h2>Methodology Notes</h2>
+          <div className="method-notes">
+            <p><strong>Data:</strong> General Social Survey (GSS), 1972-2024. 17 variables selected for consistent measurement.</p>
+            <p><strong>Calibration:</strong> Ensemble Model Output Statistics (EMOS) fit on 2024 holdout. Spread multiplier: 1.21.</p>
+            <p><strong>Forecasts:</strong> GPT-4o with chain-of-thought prompting. Quantiles elicited (10th, 25th, 50th, 75th, 90th).</p>
+            <p><strong>Confidence Intervals:</strong> 80% CIs derived from calibrated Gaussian fit to elicited quantiles.</p>
           </div>
         </section>
       </main>
@@ -244,12 +540,12 @@ function App() {
       <footer className="footer">
         <div className="footer-links">
           <a href="https://gss.norc.org">GSS Data</a>
-          <span>•</span>
+          <span>|</span>
           <a href="https://github.com/maxghenis/value-forecasting">GitHub</a>
-          <span>•</span>
-          <a href="#">Paper (arXiv)</a>
+          <span>|</span>
+          <a href="#">Paper (coming soon)</a>
         </div>
-        <p className="footer-credit">Max Ghenis • PolicyEngine</p>
+        <p className="footer-credit">Max Ghenis | PolicyEngine</p>
       </footer>
     </div>
   )

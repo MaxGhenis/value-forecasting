@@ -39,8 +39,6 @@ body {
 
 .main {
   flex: 1;
-  max-width: 1100px;
-  margin: 0 auto;
   padding: 2rem;
   width: 100%;
 }
@@ -116,31 +114,73 @@ body {
   margin-bottom: 1rem;
 }
 
-.var-toggle {
+.var-selector {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.var-category {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
-.var-toggle button {
-  padding: 0.5rem 1rem;
+.category-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.var-buttons {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.var-buttons button {
+  padding: 0.4rem 0.6rem;
   border: 1px solid #e2e8f0;
   background: white;
-  border-radius: 8px;
-  font-size: 0.875rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: monospace;
   cursor: pointer;
   transition: all 0.2s;
   color: #64748b;
 }
 
-.var-toggle button:hover {
+.var-buttons button:hover {
   border-color: #2563eb;
   color: #2563eb;
 }
 
-.var-toggle button.active {
+.var-buttons button.active {
   background: #2563eb;
   border-color: #2563eb;
   color: white;
+}
+
+.var-description {
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.method-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.method-notes p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
 }
 
 .chart-container {
