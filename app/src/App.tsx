@@ -559,7 +559,7 @@ function App() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="year" stroke="#6b7280" fontSize={12} />
+                <XAxis dataKey="year" type="number" domain={['dataMin', 'dataMax']} stroke="#6b7280" fontSize={12} tickCount={8} />
                 <YAxis domain={[0, 100]} stroke="#6b7280" fontSize={12} tickFormatter={(v) => `${v}%`} />
                 <ReferenceLine x={2022} stroke="#94a3b8" strokeDasharray="4 4" label={{ value: 'Forecast →', position: 'top', fill: '#94a3b8', fontSize: 11 }} />
                 <Tooltip
