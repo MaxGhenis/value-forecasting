@@ -331,12 +331,12 @@ function getChartData(varKey: string) {
 }
 
 // Model comparison data (2021→2024 holdout, 17 variables)
+// CRPS = Continuous Ranked Probability Score (proper scoring rule for probabilistic forecasts)
 const metricsData = [
-  { model: 'Linear', mae: 3.7, type: 'baseline' },
-  { model: 'Naive', mae: 3.8, type: 'baseline' },
-  { model: 'GPT-4o', mae: 4.4, type: 'llm' },
-  { model: 'ARIMA', mae: 5.4, type: 'baseline' },
-  { model: 'ETS', mae: 13.1, type: 'baseline' },
+  { model: 'Naive', crps: 2.84, mae: 3.8, coverage80: 59, type: 'baseline' },
+  { model: 'Linear', crps: 2.85, mae: 3.7, coverage80: 62, type: 'baseline' },
+  { model: 'GPT-4o', crps: 3.15, mae: 4.4, coverage80: 59, type: 'llm' },
+  { model: 'ETS', crps: 11.21, mae: 13.1, coverage80: 41, type: 'baseline' },
 ]
 
 // Per-variable baseline predictions (2021→2024)
@@ -393,12 +393,12 @@ function App() {
         <section className="hero-finding">
           <div className="finding-content">
             <span className="finding-label">Key Finding</span>
-            <h2>LLMs Match Time Series Baselines on 3-Year Forecasts</h2>
+            <h2>LLMs Slightly Underperform Baselines on 3-Year Probabilistic Forecasts</h2>
             <p>
-              On the 2021→2024 holdout, GPT-4o (MAE: 4.4pp) performs comparably to linear regression (3.7pp)
-              and naive forecasts (3.8pp). All models missed the 2024 HOMOSEX reversal
-              (predicted ~63%, actual 55%). Long-term LLM forecasts remain untested—
-              we'll know more when GSS 2030+ data arrives.
+              On the 2021→2024 holdout using CRPS (a proper scoring rule), GPT-4o (3.15) slightly
+              underperforms naive (2.84) and linear (2.85) baselines. All models show ~60% coverage
+              on 80% CIs—everyone is overconfident. The 2024 HOMOSEX reversal (predicted ~63%, actual 55%)
+              surprised all models. Long-term forecasts remain untested.
             </p>
           </div>
         </section>
@@ -491,15 +491,24 @@ function App() {
 
         <section className="section">
           <h2>Model Comparison: 2021→2024 Holdout</h2>
-          <p className="section-desc">LLMs competitive with time series on short horizons (lower MAE = better)</p>
+          <p className="section-desc">CRPS (Continuous Ranked Probability Score) evaluates full predictive distribution. Lower = better.</p>
           <div className="chart-container">
-            <ResponsiveContainer width="100%" height={250}>
+            <ResponsiveContainer width="100%" height={220}>
               <BarChart data={metricsData} layout="vertical" margin={{ left: 60, right: 30 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis type="number" domain={[0, 15]} tickFormatter={(v) => `${v}pp`} fontSize={12} />
+                <XAxis type="number" domain={[0, 12]} fontSize={12} />
                 <YAxis type="category" dataKey="model" fontSize={12} />
-                <Tooltip formatter={(value) => value !== undefined ? [`${value} pp`, 'MAE'] : null} />
-                <Bar dataKey="mae" radius={[0, 4, 4, 0]} name="Mean Absolute Error">
+                <Tooltip
+                  formatter={(value, name) => {
+                    if (name === 'crps') return [value, 'CRPS']
+                    return null
+                  }}
+                  labelFormatter={(label) => {
+                    const m = metricsData.find(d => d.model === label)
+                    return m ? `${label} (80% CI coverage: ${m.coverage80}%)` : label
+                  }}
+                />
+                <Bar dataKey="crps" radius={[0, 4, 4, 0]} name="CRPS">
                   {metricsData.map((entry, index) => (
                     <Cell key={index} fill={entry.type === 'llm' ? '#10b981' : '#64748b'} />
                   ))}
@@ -509,7 +518,8 @@ function App() {
           </div>
           <div className="legend-custom">
             <span className="legend-item"><span className="dot" style={{background: '#10b981'}}></span> LLM</span>
-            <span className="legend-item"><span className="dot" style={{background: '#64748b'}}></span> Time Series Baseline</span>
+            <span className="legend-item"><span className="dot" style={{background: '#64748b'}}></span> Time Series</span>
+            <span className="legend-item" style={{marginLeft: '1rem', color: '#94a3b8'}}>80% CI coverage: all models ~60% (should be 80%)</span>
           </div>
         </section>
 
