@@ -14,23 +14,23 @@
         "forecasts": {
           "2024": {
             "point": 61,
-            "lower": 53.7,
-            "upper": 67.8
+            "lower": 58.4,
+            "upper": 63.6
           },
           "2030": {
             "point": 61,
-            "lower": 46.3,
-            "upper": 73.9
+            "lower": 55.7,
+            "upper": 66.1
           },
           "2050": {
             "point": 61,
-            "lower": 33.9,
-            "upper": 82.7
+            "lower": 50.9,
+            "upper": 70.2
           },
           "2100": {
             "point": 61,
-            "lower": 19.6,
-            "upper": 91.0
+            "lower": 44.1,
+            "upper": 75.6
           }
         }
       },
@@ -39,23 +39,23 @@
         "forecasts": {
           "2024": {
             "point": 70,
-            "lower": 61.6,
-            "upper": 77.3
+            "lower": 67.1,
+            "upper": 72.7
           },
           "2030": {
             "point": 70,
-            "lower": 52.4,
-            "upper": 83.2
+            "lower": 64.2,
+            "upper": 75.3
           },
           "2050": {
             "point": 70,
-            "lower": 36.4,
-            "upper": 90.5
+            "lower": 58.7,
+            "upper": 79.3
           },
           "2100": {
             "point": 70,
-            "lower": 18.2,
-            "upper": 96.1
+            "lower": 50.5,
+            "upper": 84.2
           }
         }
       },
@@ -64,23 +64,23 @@
         "forecasts": {
           "2024": {
             "point": 69,
-            "lower": 66.1,
-            "upper": 71.8
+            "lower": 67.3,
+            "upper": 70.7
           },
           "2030": {
             "point": 69,
-            "lower": 63.0,
-            "upper": 74.4
+            "lower": 65.5,
+            "upper": 72.3
           },
           "2050": {
             "point": 69,
-            "lower": 57.4,
-            "upper": 78.6
+            "lower": 62.4,
+            "upper": 74.9
           },
           "2100": {
             "point": 69,
-            "lower": 49.1,
-            "upper": 83.7
+            "lower": 57.6,
+            "upper": 78.5
           }
         }
       },
@@ -89,23 +89,23 @@
         "forecasts": {
           "2024": {
             "point": 59,
-            "lower": 56.8,
-            "upper": 61.2
+            "lower": 56.6,
+            "upper": 61.4
           },
           "2030": {
             "point": 59,
-            "lower": 54.5,
-            "upper": 63.3
+            "lower": 54.1,
+            "upper": 63.7
           },
           "2050": {
             "point": 59,
-            "lower": 50.6,
-            "upper": 66.9
+            "lower": 49.8,
+            "upper": 67.6
           },
           "2100": {
             "point": 59,
-            "lower": 44.9,
-            "upper": 71.8
+            "lower": 43.6,
+            "upper": 72.8
           }
         }
       },
@@ -114,23 +114,23 @@
         "forecasts": {
           "2024": {
             "point": 85,
-            "lower": 83.0,
-            "upper": 86.8
+            "lower": 83.5,
+            "upper": 86.4
           },
           "2030": {
             "point": 85,
-            "lower": 80.7,
-            "upper": 88.5
+            "lower": 81.8,
+            "upper": 87.7
           },
           "2050": {
             "point": 85,
-            "lower": 76.3,
-            "upper": 90.9
+            "lower": 78.7,
+            "upper": 89.7
           },
           "2100": {
             "point": 85,
-            "lower": 68.8,
-            "upper": 93.6
+            "lower": 73.4,
+            "upper": 92.1
           }
         }
       },
@@ -139,23 +139,23 @@
         "forecasts": {
           "2024": {
             "point": 56,
-            "lower": 48.4,
-            "upper": 63.4
+            "lower": 51.4,
+            "upper": 60.5
           },
           "2030": {
             "point": 56,
-            "lower": 40.8,
-            "upper": 70.1
+            "lower": 46.8,
+            "upper": 64.8
           },
           "2050": {
             "point": 56,
-            "lower": 28.8,
-            "upper": 80.0
+            "lower": 39.0,
+            "upper": 71.7
           },
           "2100": {
             "point": 56,
-            "lower": 15.8,
-            "upper": 89.6
+            "lower": 28.7,
+            "upper": 80.1
           }
         }
       },
@@ -164,23 +164,23 @@
         "forecasts": {
           "2024": {
             "point": 75,
-            "lower": 70.6,
-            "upper": 78.9
+            "lower": 73.4,
+            "upper": 76.6
           },
           "2030": {
             "point": 75,
-            "lower": 65.8,
-            "upper": 82.4
+            "lower": 71.7,
+            "upper": 78.1
           },
           "2050": {
             "point": 75,
-            "lower": 56.7,
-            "upper": 87.3
+            "lower": 68.5,
+            "upper": 80.5
           },
           "2100": {
             "point": 75,
-            "lower": 42.9,
-            "upper": 92.3
+            "lower": 63.7,
+            "upper": 83.7
           }
         }
       },
@@ -189,23 +189,23 @@
         "forecasts": {
           "2024": {
             "point": 69,
-            "lower": 60.2,
-            "upper": 76.6
+            "lower": 65.9,
+            "upper": 72.0
           },
           "2030": {
             "point": 69,
-            "lower": 50.8,
-            "upper": 82.8
+            "lower": 62.6,
+            "upper": 74.7
           },
           "2050": {
             "point": 69,
-            "lower": 34.5,
-            "upper": 90.4
+            "lower": 56.6,
+            "upper": 79.1
           },
           "2100": {
             "point": 69,
-            "lower": 16.8,
-            "upper": 96.1
+            "lower": 47.7,
+            "upper": 84.4
           }
         }
       },
@@ -214,23 +214,23 @@
         "forecasts": {
           "2024": {
             "point": 70,
-            "lower": 62.3,
-            "upper": 76.7
+            "lower": 66.2,
+            "upper": 73.5
           },
           "2030": {
             "point": 70,
-            "lower": 53.9,
-            "upper": 82.3
+            "lower": 62.3,
+            "upper": 76.7
           },
           "2050": {
             "point": 70,
-            "lower": 39.0,
-            "upper": 89.5
+            "lower": 55.0,
+            "upper": 81.7
           },
           "2100": {
             "point": 70,
-            "lower": 21.2,
-            "upper": 95.3
+            "lower": 44.2,
+            "upper": 87.3
           }
         }
       },
@@ -239,23 +239,23 @@
         "forecasts": {
           "2024": {
             "point": 55,
-            "lower": 50.8,
-            "upper": 59.1
+            "lower": 53.5,
+            "upper": 56.5
           },
           "2030": {
             "point": 55,
-            "lower": 46.6,
-            "upper": 63.1
+            "lower": 51.9,
+            "upper": 58.1
           },
           "2050": {
             "point": 55,
-            "lower": 39.5,
-            "upper": 69.6
+            "lower": 49.2,
+            "upper": 60.7
           },
           "2100": {
             "point": 55,
-            "lower": 30.0,
-            "upper": 77.7
+            "lower": 45.3,
+            "upper": 64.3
           }
         }
       },
@@ -264,23 +264,23 @@
         "forecasts": {
           "2024": {
             "point": 40,
-            "lower": 36.4,
-            "upper": 43.7
+            "lower": 37.3,
+            "upper": 42.7
           },
           "2030": {
             "point": 40,
-            "lower": 33.0,
-            "upper": 47.4
+            "lower": 34.7,
+            "upper": 45.5
           },
           "2050": {
             "point": 40,
-            "lower": 27.4,
-            "upper": 54.0
+            "lower": 30.4,
+            "upper": 50.4
           },
           "2100": {
             "point": 40,
-            "lower": 20.6,
-            "upper": 63.2
+            "lower": 24.8,
+            "upper": 57.4
           }
         }
       },
@@ -289,23 +289,23 @@
         "forecasts": {
           "2024": {
             "point": 40,
-            "lower": 34.9,
-            "upper": 45.4
+            "lower": 37.1,
+            "upper": 43.0
           },
           "2030": {
             "point": 40,
-            "lower": 30.1,
-            "upper": 50.8
+            "lower": 34.2,
+            "upper": 46.1
           },
           "2050": {
             "point": 40,
-            "lower": 22.7,
-            "upper": 60.3
+            "lower": 29.5,
+            "upper": 51.5
           },
           "2100": {
             "point": 40,
-            "lower": 14.5,
-            "upper": 72.4
+            "lower": 23.5,
+            "upper": 59.2
           }
         }
       },
@@ -314,23 +314,23 @@
         "forecasts": {
           "2024": {
             "point": 71,
-            "lower": 66.4,
-            "upper": 75.2
+            "lower": 69.1,
+            "upper": 72.8
           },
           "2030": {
             "point": 71,
-            "lower": 61.6,
-            "upper": 78.9
+            "lower": 67.1,
+            "upper": 74.6
           },
           "2050": {
             "point": 71,
-            "lower": 52.5,
-            "upper": 84.4
+            "lower": 63.5,
+            "upper": 77.5
           },
           "2100": {
             "point": 71,
-            "lower": 39.4,
-            "upper": 90.2
+            "lower": 58.1,
+            "upper": 81.2
           }
         }
       },
@@ -338,24 +338,24 @@
         "description": "Self-identified liberal",
         "forecasts": {
           "2024": {
-            "point": 32,
-            "lower": 30.5,
-            "upper": 33.5
+            "point": 31,
+            "lower": 29.2,
+            "upper": 32.9
           },
           "2030": {
-            "point": 32,
-            "lower": 29.1,
-            "upper": 35.0
+            "point": 31,
+            "lower": 27.4,
+            "upper": 34.9
           },
           "2050": {
-            "point": 32,
-            "lower": 26.8,
-            "upper": 37.7
+            "point": 31,
+            "lower": 24.4,
+            "upper": 38.4
           },
           "2100": {
-            "point": 32,
-            "lower": 23.6,
-            "upper": 41.8
+            "point": 31,
+            "lower": 20.6,
+            "upper": 43.8
           }
         }
       },
@@ -363,24 +363,24 @@
         "description": "Approve of school prayer ban",
         "forecasts": {
           "2024": {
-            "point": 48,
-            "lower": 45.5,
-            "upper": 50.5
+            "point": 52,
+            "lower": 49.4,
+            "upper": 54.6
           },
           "2030": {
-            "point": 48,
-            "lower": 43.1,
-            "upper": 52.9
+            "point": 52,
+            "lower": 46.9,
+            "upper": 57.1
           },
           "2050": {
-            "point": 48,
-            "lower": 38.9,
-            "upper": 57.2
+            "point": 52,
+            "lower": 42.4,
+            "upper": 61.4
           },
           "2100": {
-            "point": 48,
-            "lower": 33.2,
-            "upper": 63.1
+            "point": 52,
+            "lower": 36.3,
+            "upper": 67.3
           }
         }
       },
@@ -389,23 +389,23 @@
         "forecasts": {
           "2024": {
             "point": 25,
-            "lower": 23.2,
-            "upper": 26.9
+            "lower": 22.6,
+            "upper": 27.6
           },
           "2030": {
             "point": 25,
-            "lower": 21.5,
-            "upper": 28.9
+            "lower": 20.3,
+            "upper": 30.4
           },
           "2050": {
             "point": 25,
-            "lower": 18.7,
-            "upper": 32.5
+            "lower": 16.7,
+            "upper": 35.6
           },
           "2100": {
             "point": 25,
-            "lower": 15.3,
-            "upper": 38.1
+            "lower": 12.5,
+            "upper": 43.7
           }
         }
       },
@@ -413,24 +413,24 @@
         "description": "Believe people try to be fair",
         "forecasts": {
           "2024": {
-            "point": 47,
-            "lower": 45.7,
-            "upper": 48.3
+            "point": 44,
+            "lower": 41.5,
+            "upper": 46.5
           },
           "2030": {
-            "point": 47,
-            "lower": 44.4,
-            "upper": 49.7
+            "point": 44,
+            "lower": 39.1,
+            "upper": 49.0
           },
           "2050": {
-            "point": 47,
-            "lower": 42.1,
-            "upper": 52.0
+            "point": 44,
+            "lower": 35.0,
+            "upper": 53.4
           },
           "2100": {
-            "point": 47,
-            "lower": 38.9,
-            "upper": 55.3
+            "point": 44,
+            "lower": 29.4,
+            "upper": 59.7
           }
         }
       }
@@ -440,24 +440,24 @@
         "description": "Attitudes toward homosexual relations",
         "forecasts": {
           "2024": {
-            "point": 64.0,
-            "lower": 49.6,
-            "upper": 76.2
+            "point": 60.1,
+            "lower": 49.3,
+            "upper": 70.1
           },
           "2030": {
-            "point": 71.8,
-            "lower": 57.8,
-            "upper": 82.6
+            "point": 67.5,
+            "lower": 56.9,
+            "upper": 76.5
           },
           "2050": {
-            "point": 89.5,
-            "lower": 79.6,
-            "upper": 94.9
+            "point": 85.7,
+            "lower": 78.4,
+            "upper": 90.8
           },
           "2100": {
-            "point": 99.4,
-            "lower": 97.9,
-            "upper": 99.8
+            "point": 98.8,
+            "lower": 97.7,
+            "upper": 99.4
           }
         }
       },
@@ -465,24 +465,24 @@
         "description": "Marijuana legalization support",
         "forecasts": {
           "2024": {
-            "point": 68.8,
-            "lower": 43.3,
-            "upper": 86.5
+            "point": 60.4,
+            "lower": 43.0,
+            "upper": 75.5
           },
           "2030": {
-            "point": 75.3,
-            "lower": 49.5,
-            "upper": 90.5
+            "point": 66.3,
+            "lower": 48.8,
+            "upper": 80.2
           },
           "2050": {
-            "point": 89.9,
-            "lower": 67.5,
-            "upper": 97.5
+            "point": 82.2,
+            "lower": 67.1,
+            "upper": 91.3
           },
           "2100": {
-            "point": 99.2,
-            "lower": 91.6,
-            "upper": 99.9
+            "point": 97.5,
+            "lower": 92.6,
+            "upper": 99.2
           }
         }
       },
@@ -490,24 +490,24 @@
         "description": "Premarital sex attitudes",
         "forecasts": {
           "2024": {
-            "point": 67.2,
-            "lower": 59.9,
-            "upper": 73.7
+            "point": 63.6,
+            "lower": 57.2,
+            "upper": 69.6
           },
           "2030": {
-            "point": 71.6,
-            "lower": 64.4,
-            "upper": 77.8
+            "point": 67.2,
+            "lower": 60.9,
+            "upper": 73.0
           },
           "2050": {
-            "point": 83.4,
-            "lower": 77.1,
-            "upper": 88.3
+            "point": 77.6,
+            "lower": 71.8,
+            "upper": 82.5
           },
           "2100": {
-            "point": 96.6,
-            "lower": 93.7,
-            "upper": 98.2
+            "point": 92.8,
+            "lower": 89.5,
+            "upper": 95.1
           }
         }
       },
@@ -515,24 +515,24 @@
         "description": "Abortion for any reason support",
         "forecasts": {
           "2024": {
-            "point": 54.5,
-            "lower": 43.6,
-            "upper": 65.0
+            "point": 51.2,
+            "lower": 44.5,
+            "upper": 57.9
           },
           "2030": {
-            "point": 56.8,
-            "lower": 45.3,
-            "upper": 67.6
+            "point": 53.2,
+            "lower": 46.2,
+            "upper": 60.1
           },
           "2050": {
-            "point": 64.1,
-            "lower": 50.1,
-            "upper": 76.2
+            "point": 59.8,
+            "lower": 52.0,
+            "upper": 67.1
           },
           "2100": {
-            "point": 79.4,
-            "lower": 59.3,
-            "upper": 91.1
+            "point": 74.4,
+            "lower": 65.1,
+            "upper": 81.8
           }
         }
       },
@@ -540,24 +540,24 @@
         "description": "Women suited for politics",
         "forecasts": {
           "2024": {
-            "point": 86.1,
-            "lower": 81.2,
-            "upper": 89.8
+            "point": 86.9,
+            "lower": 81.6,
+            "upper": 90.8
           },
           "2030": {
-            "point": 87.8,
-            "lower": 83.0,
-            "upper": 91.4
+            "point": 89.0,
+            "lower": 84.2,
+            "upper": 92.4
           },
           "2050": {
-            "point": 92.3,
-            "lower": 87.4,
-            "upper": 95.4
+            "point": 94.0,
+            "lower": 90.7,
+            "upper": 96.1
           },
           "2100": {
-            "point": 97.7,
-            "lower": 93.8,
-            "upper": 99.2
+            "point": 98.8,
+            "lower": 97.7,
+            "upper": 99.4
           }
         }
       },
@@ -565,24 +565,24 @@
         "description": "Support for more spending on race issues",
         "forecasts": {
           "2024": {
-            "point": 54.4,
-            "lower": 38.4,
-            "upper": 69.6
+            "point": 48.5,
+            "lower": 38.0,
+            "upper": 59.2
           },
           "2030": {
-            "point": 58.2,
-            "lower": 41.2,
-            "upper": 73.5
+            "point": 50.8,
+            "lower": 40.0,
+            "upper": 61.6
           },
           "2050": {
-            "point": 70.1,
-            "lower": 49.7,
-            "upper": 84.7
+            "point": 58.5,
+            "lower": 46.5,
+            "upper": 69.6
           },
           "2100": {
-            "point": 89.5,
-            "lower": 66.7,
-            "upper": 97.3
+            "point": 75.4,
+            "lower": 61.6,
+            "upper": 85.4
           }
         }
       },
@@ -590,24 +590,24 @@
         "description": "Support for more spending on education",
         "forecasts": {
           "2024": {
-            "point": 76.2,
-            "lower": 65.6,
-            "upper": 84.3
+            "point": 78.8,
+            "lower": 72.7,
+            "upper": 83.8
           },
           "2030": {
-            "point": 77.7,
-            "lower": 66.9,
-            "upper": 85.8
+            "point": 80.8,
+            "lower": 75.0,
+            "upper": 85.6
           },
           "2050": {
-            "point": 82.4,
-            "lower": 70.2,
-            "upper": 90.3
+            "point": 86.6,
+            "lower": 81.6,
+            "upper": 90.4
           },
           "2100": {
-            "point": 90.7,
-            "lower": 75.5,
-            "upper": 96.8
+            "point": 94.9,
+            "lower": 91.8,
+            "upper": 96.9
           }
         }
       },
@@ -615,24 +615,24 @@
         "description": "Support for more spending on environment",
         "forecasts": {
           "2024": {
-            "point": 68.7,
-            "lower": 48.4,
-            "upper": 83.7
+            "point": 66.9,
+            "lower": 55.9,
+            "upper": 76.3
           },
           "2030": {
-            "point": 69.8,
-            "lower": 48.6,
-            "upper": 85.0
+            "point": 67.7,
+            "lower": 56.5,
+            "upper": 77.1
           },
           "2050": {
-            "point": 73.5,
-            "lower": 47.4,
-            "upper": 89.5
+            "point": 70.2,
+            "lower": 58.2,
+            "upper": 80.0
           },
           "2100": {
-            "point": 81.3,
-            "lower": 39.7,
-            "upper": 96.6
+            "point": 76.2,
+            "lower": 61.3,
+            "upper": 86.6
           }
         }
       },
@@ -640,24 +640,24 @@
         "description": "Support for more spending on health",
         "forecasts": {
           "2024": {
-            "point": 70.0,
-            "lower": 52.5,
-            "upper": 83.2
+            "point": 71.7,
+            "lower": 60.7,
+            "upper": 80.6
           },
           "2030": {
-            "point": 70.7,
-            "lower": 52.2,
-            "upper": 84.2
+            "point": 72.6,
+            "lower": 61.5,
+            "upper": 81.4
           },
           "2050": {
-            "point": 72.8,
-            "lower": 49.9,
-            "upper": 87.8
+            "point": 75.4,
+            "lower": 63.8,
+            "upper": 84.2
           },
           "2100": {
-            "point": 77.7,
-            "lower": 39.8,
-            "upper": 94.8
+            "point": 81.6,
+            "lower": 67.9,
+            "upper": 90.3
           }
         }
       },
@@ -665,24 +665,24 @@
         "description": "Support for government reducing inequality",
         "forecasts": {
           "2024": {
-            "point": 51.7,
-            "lower": 40.1,
-            "upper": 63.2
+            "point": 48.5,
+            "lower": 42.6,
+            "upper": 54.4
           },
           "2030": {
-            "point": 52.7,
-            "lower": 40.4,
-            "upper": 64.7
+            "point": 48.5,
+            "lower": 42.5,
+            "upper": 54.5
           },
           "2050": {
-            "point": 56.0,
-            "lower": 40.6,
-            "upper": 70.4
+            "point": 48.5,
+            "lower": 41.6,
+            "upper": 55.4
           },
           "2100": {
-            "point": 64.0,
-            "lower": 38.4,
-            "upper": 83.5
+            "point": 48.4,
+            "lower": 38.7,
+            "upper": 58.3
           }
         }
       },
@@ -690,24 +690,24 @@
         "description": "Support for government helping poor",
         "forecasts": {
           "2024": {
-            "point": 35.9,
-            "lower": 23.9,
-            "upper": 49.9
+            "point": 31.0,
+            "lower": 23.8,
+            "upper": 39.3
           },
           "2030": {
-            "point": 37.2,
-            "lower": 24.0,
-            "upper": 52.5
+            "point": 31.0,
+            "lower": 23.6,
+            "upper": 39.6
           },
           "2050": {
-            "point": 41.5,
-            "lower": 23.1,
-            "upper": 62.7
+            "point": 31.1,
+            "lower": 22.6,
+            "upper": 41.0
           },
           "2100": {
-            "point": 53.0,
-            "lower": 18.3,
-            "upper": 85.0
+            "point": 31.1,
+            "lower": 19.5,
+            "upper": 45.8
           }
         }
       },
@@ -715,24 +715,24 @@
         "description": "Death penalty support",
         "forecasts": {
           "2024": {
-            "point": 40.8,
-            "lower": 29.8,
-            "upper": 52.8
+            "point": 36.9,
+            "lower": 27.0,
+            "upper": 48.0
           },
           "2030": {
-            "point": 43.6,
-            "lower": 31.6,
-            "upper": 56.3
+            "point": 38.5,
+            "lower": 28.2,
+            "upper": 50.1
           },
           "2050": {
-            "point": 52.9,
-            "lower": 37.2,
-            "upper": 68.1
+            "point": 44.3,
+            "lower": 32.1,
+            "upper": 57.2
           },
           "2100": {
-            "point": 74.3,
-            "lower": 49.6,
-            "upper": 89.5
+            "point": 59.0,
+            "lower": 41.7,
+            "upper": 74.4
           }
         }
       },
@@ -740,24 +740,24 @@
         "description": "Gun permit requirement support",
         "forecasts": {
           "2024": {
-            "point": 72.3,
-            "lower": 58.1,
-            "upper": 83.1
+            "point": 75.9,
+            "lower": 66.8,
+            "upper": 83.2
           },
           "2030": {
-            "point": 71.8,
-            "lower": 56.9,
-            "upper": 83.1
+            "point": 75.9,
+            "lower": 66.5,
+            "upper": 83.3
           },
           "2050": {
-            "point": 70.3,
-            "lower": 52.0,
+            "point": 75.7,
+            "lower": 65.2,
             "upper": 83.8
           },
           "2100": {
-            "point": 66.3,
-            "lower": 37.0,
-            "upper": 86.8
+            "point": 75.1,
+            "lower": 60.6,
+            "upper": 85.6
           }
         }
       },
@@ -765,24 +765,24 @@
         "description": "Self-identified liberal",
         "forecasts": {
           "2024": {
-            "point": 31.5,
-            "lower": 27.9,
-            "upper": 35.4
+            "point": 28.5,
+            "lower": 24.5,
+            "upper": 32.7
           },
           "2030": {
-            "point": 32.4,
-            "lower": 28.5,
-            "upper": 36.6
+            "point": 28.6,
+            "lower": 24.6,
+            "upper": 33.1
           },
           "2050": {
-            "point": 35.6,
-            "lower": 30.5,
-            "upper": 41.1
+            "point": 29.3,
+            "lower": 24.8,
+            "upper": 34.2
           },
           "2100": {
-            "point": 44.2,
-            "lower": 34.9,
-            "upper": 53.8
+            "point": 30.9,
+            "lower": 24.7,
+            "upper": 37.8
           }
         }
       },
@@ -790,24 +790,24 @@
         "description": "Approve of school prayer ban",
         "forecasts": {
           "2024": {
-            "point": 50.1,
-            "lower": 40.8,
-            "upper": 59.4
+            "point": 46.3,
+            "lower": 40.4,
+            "upper": 52.3
           },
           "2030": {
-            "point": 48.2,
-            "lower": 38.1,
-            "upper": 58.5
+            "point": 47.6,
+            "lower": 41.5,
+            "upper": 53.8
           },
           "2050": {
-            "point": 41.9,
-            "lower": 28.7,
-            "upper": 56.3
+            "point": 51.9,
+            "lower": 44.9,
+            "upper": 58.8
           },
           "2100": {
-            "point": 27.5,
-            "lower": 11.2,
-            "upper": 53.4
+            "point": 62.4,
+            "lower": 52.7,
+            "upper": 71.2
           }
         }
       },
@@ -815,24 +815,24 @@
         "description": "Social trust - most people can be trusted",
         "forecasts": {
           "2024": {
-            "point": 27.0,
-            "lower": 22.3,
-            "upper": 32.4
+            "point": 27.9,
+            "lower": 24.0,
+            "upper": 32.2
           },
           "2030": {
-            "point": 25.1,
-            "lower": 20.3,
+            "point": 26.2,
+            "lower": 22.4,
             "upper": 30.5
           },
           "2050": {
-            "point": 19.3,
-            "lower": 14.7,
-            "upper": 24.9
+            "point": 21.2,
+            "lower": 17.5,
+            "upper": 25.3
           },
           "2100": {
-            "point": 9.3,
-            "lower": 5.8,
-            "upper": 14.7
+            "point": 11.7,
+            "lower": 8.8,
+            "upper": 15.4
           }
         }
       },
@@ -840,24 +840,24 @@
         "description": "Believe people try to be fair",
         "forecasts": {
           "2024": {
-            "point": 44.3,
-            "lower": 39.2,
-            "upper": 49.6
+            "point": 46.6,
+            "lower": 41.4,
+            "upper": 51.9
           },
           "2030": {
-            "point": 45.7,
-            "lower": 40.3,
-            "upper": 51.3
+            "point": 44.8,
+            "lower": 39.5,
+            "upper": 50.2
           },
           "2050": {
-            "point": 50.4,
-            "lower": 43.7,
-            "upper": 57.1
+            "point": 38.8,
+            "lower": 33.2,
+            "upper": 44.8
           },
           "2100": {
-            "point": 61.8,
-            "lower": 51.4,
-            "upper": 71.3
+            "point": 25.6,
+            "lower": 19.8,
+            "upper": 32.5
           }
         }
       }
@@ -867,24 +867,24 @@
         "description": "Attitudes toward homosexual relations",
         "forecasts": {
           "2024": {
-            "point": 54.0,
-            "lower": 27.3,
-            "upper": 78.6
+            "point": 60.3,
+            "lower": 50.4,
+            "upper": 69.5
           },
           "2030": {
-            "point": 42.4,
-            "lower": 13.0,
-            "upper": 78.4
+            "point": 58.3,
+            "lower": 39.1,
+            "upper": 75.3
           },
           "2050": {
-            "point": 35.8,
-            "lower": 9.6,
-            "upper": 74.6
+            "point": 52.5,
+            "lower": 22.9,
+            "upper": 80.5
           },
           "2100": {
-            "point": 35.5,
-            "lower": 9.5,
-            "upper": 74.3
+            "point": 42.4,
+            "lower": 11.3,
+            "upper": 81.0
           }
         }
       },
@@ -892,24 +892,24 @@
         "description": "Marijuana legalization support",
         "forecasts": {
           "2024": {
-            "point": 59.4,
-            "lower": 30.0,
-            "upper": 83.3
+            "point": 69.0,
+            "lower": 58.5,
+            "upper": 77.9
           },
           "2030": {
-            "point": 47.3,
-            "lower": 17.1,
-            "upper": 79.7
+            "point": 66.3,
+            "lower": 45.2,
+            "upper": 82.4
           },
           "2050": {
-            "point": 44.8,
-            "lower": 15.6,
-            "upper": 78.1
+            "point": 58.5,
+            "lower": 26.2,
+            "upper": 84.8
           },
           "2100": {
-            "point": 44.8,
-            "lower": 15.6,
-            "upper": 78.1
+            "point": 47.3,
+            "lower": 14.5,
+            "upper": 82.7
           }
         }
       },
@@ -917,24 +917,24 @@
         "description": "Premarital sex attitudes",
         "forecasts": {
           "2024": {
-            "point": 65.3,
-            "lower": 46.7,
-            "upper": 80.2
+            "point": 68.5,
+            "lower": 62.0,
+            "upper": 74.4
           },
           "2030": {
-            "point": 57.5,
-            "lower": 29.6,
-            "upper": 81.3
+            "point": 67.1,
+            "lower": 53.9,
+            "upper": 78.1
           },
           "2050": {
-            "point": 49.6,
-            "lower": 21.5,
-            "upper": 78.0
+            "point": 63.0,
+            "lower": 40.2,
+            "upper": 81.2
           },
           "2100": {
-            "point": 48.6,
-            "lower": 20.8,
-            "upper": 77.4
+            "point": 55.9,
+            "lower": 27.3,
+            "upper": 81.0
           }
         }
       },
@@ -942,24 +942,24 @@
         "description": "Abortion for any reason support",
         "forecasts": {
           "2024": {
-            "point": 56.3,
-            "lower": 47.2,
-            "upper": 65.0
+            "point": 56.2,
+            "lower": 48.7,
+            "upper": 63.4
           },
           "2030": {
-            "point": 51.9,
+            "point": 50.5,
             "lower": 39.3,
-            "upper": 64.3
+            "upper": 61.8
           },
           "2050": {
-            "point": 49.2,
-            "lower": 36.2,
-            "upper": 62.3
+            "point": 45.3,
+            "lower": 33.4,
+            "upper": 57.7
           },
           "2100": {
-            "point": 49.1,
-            "lower": 36.1,
-            "upper": 62.2
+            "point": 44.7,
+            "lower": 32.8,
+            "upper": 57.1
           }
         }
       },
@@ -967,24 +967,24 @@
         "description": "Women suited for politics",
         "forecasts": {
           "2024": {
-            "point": 82.2,
-            "lower": 73.7,
-            "upper": 88.3
+            "point": 84.4,
+            "lower": 78.6,
+            "upper": 88.8
           },
           "2030": {
-            "point": 80.3,
-            "lower": 70.4,
-            "upper": 87.4
+            "point": 82.6,
+            "lower": 70.2,
+            "upper": 90.6
           },
           "2050": {
-            "point": 80.1,
-            "lower": 70.2,
-            "upper": 87.3
+            "point": 78.1,
+            "lower": 56.3,
+            "upper": 90.8
           },
           "2100": {
-            "point": 80.1,
-            "lower": 70.2,
-            "upper": 87.3
+            "point": 73.3,
+            "lower": 47.3,
+            "upper": 89.3
           }
         }
       },
@@ -992,24 +992,24 @@
         "description": "Support for more spending on race issues",
         "forecasts": {
           "2024": {
-            "point": 45.1,
-            "lower": 27.7,
-            "upper": 63.8
+            "point": 47.4,
+            "lower": 35.8,
+            "upper": 59.2
           },
           "2030": {
-            "point": 42.3,
-            "lower": 25.1,
-            "upper": 61.5
+            "point": 39.5,
+            "lower": 27.2,
+            "upper": 53.3
           },
           "2050": {
-            "point": 42.2,
-            "lower": 25.1,
-            "upper": 61.5
+            "point": 38.3,
+            "lower": 26.2,
+            "upper": 52.1
           },
           "2100": {
-            "point": 42.2,
-            "lower": 25.1,
-            "upper": 61.5
+            "point": 38.3,
+            "lower": 26.2,
+            "upper": 52.1
           }
         }
       },
@@ -1017,24 +1017,24 @@
         "description": "Support for more spending on education",
         "forecasts": {
           "2024": {
-            "point": 71.2,
-            "lower": 60.5,
-            "upper": 80.0
+            "point": 74.3,
+            "lower": 68.7,
+            "upper": 79.2
           },
           "2030": {
-            "point": 71.2,
-            "lower": 60.5,
-            "upper": 79.9
+            "point": 72.5,
+            "lower": 61.7,
+            "upper": 81.2
           },
           "2050": {
-            "point": 71.2,
-            "lower": 60.5,
-            "upper": 79.9
+            "point": 68.6,
+            "lower": 52.4,
+            "upper": 81.2
           },
           "2100": {
-            "point": 71.2,
-            "lower": 60.5,
-            "upper": 79.9
+            "point": 65.4,
+            "lower": 47.7,
+            "upper": 79.7
           }
         }
       },
@@ -1042,24 +1042,24 @@
         "description": "Support for more spending on environment",
         "forecasts": {
           "2024": {
-            "point": 66.5,
-            "lower": 53.3,
-            "upper": 77.5
+            "point": 66.4,
+            "lower": 57.8,
+            "upper": 74.0
           },
           "2030": {
-            "point": 65.6,
-            "lower": 51.8,
-            "upper": 77.1
+            "point": 63.8,
+            "lower": 53.5,
+            "upper": 73.0
           },
           "2050": {
-            "point": 65.6,
-            "lower": 51.8,
-            "upper": 77.1
+            "point": 63.4,
+            "lower": 53.0,
+            "upper": 72.6
           },
           "2100": {
-            "point": 65.6,
-            "lower": 51.8,
-            "upper": 77.1
+            "point": 63.4,
+            "lower": 53.0,
+            "upper": 72.6
           }
         }
       },
@@ -1067,24 +1067,24 @@
         "description": "Support for more spending on health",
         "forecasts": {
           "2024": {
-            "point": 69.1,
-            "lower": 59.0,
-            "upper": 77.7
+            "point": 68.3,
+            "lower": 58.7,
+            "upper": 76.5
           },
           "2030": {
-            "point": 68.6,
-            "lower": 57.3,
-            "upper": 78.0
+            "point": 67.1,
+            "lower": 56.3,
+            "upper": 76.3
           },
           "2050": {
-            "point": 68.5,
-            "lower": 57.2,
-            "upper": 78.0
+            "point": 67.0,
+            "lower": 56.2,
+            "upper": 76.3
           },
           "2100": {
-            "point": 68.5,
-            "lower": 57.2,
-            "upper": 78.0
+            "point": 67.0,
+            "lower": 56.2,
+            "upper": 76.3
           }
         }
       },
@@ -1092,24 +1092,24 @@
         "description": "Support for government reducing inequality",
         "forecasts": {
           "2024": {
-            "point": 49.1,
-            "lower": 41.1,
-            "upper": 57.2
+            "point": 52.7,
+            "lower": 48.5,
+            "upper": 56.9
           },
           "2030": {
-            "point": 48.8,
-            "lower": 40.7,
-            "upper": 56.9
+            "point": 50.0,
+            "lower": 44.7,
+            "upper": 55.2
           },
           "2050": {
-            "point": 48.8,
-            "lower": 40.7,
-            "upper": 56.9
+            "point": 49.1,
+            "lower": 43.8,
+            "upper": 54.5
           },
           "2100": {
-            "point": 48.8,
-            "lower": 40.7,
-            "upper": 56.9
+            "point": 49.1,
+            "lower": 43.8,
+            "upper": 54.5
           }
         }
       },
@@ -1117,24 +1117,24 @@
         "description": "Support for government helping poor",
         "forecasts": {
           "2024": {
-            "point": 35.8,
-            "lower": 28.4,
-            "upper": 44.0
+            "point": 36.6,
+            "lower": 30.0,
+            "upper": 43.7
           },
           "2030": {
-            "point": 34.1,
-            "lower": 26.6,
-            "upper": 42.6
+            "point": 33.2,
+            "lower": 25.9,
+            "upper": 41.4
           },
           "2050": {
-            "point": 34.1,
-            "lower": 26.6,
-            "upper": 42.5
+            "point": 32.6,
+            "lower": 25.3,
+            "upper": 40.8
           },
           "2100": {
-            "point": 34.1,
-            "lower": 26.6,
-            "upper": 42.5
+            "point": 32.6,
+            "lower": 25.3,
+            "upper": 40.8
           }
         }
       },
@@ -1142,24 +1142,24 @@
         "description": "Death penalty support",
         "forecasts": {
           "2024": {
-            "point": 35.2,
-            "lower": 24.6,
-            "upper": 47.6
+            "point": 37.4,
+            "lower": 29.6,
+            "upper": 45.9
           },
           "2030": {
-            "point": 33.2,
-            "lower": 22.4,
-            "upper": 46.0
+            "point": 33.4,
+            "lower": 23.6,
+            "upper": 45.0
           },
           "2050": {
-            "point": 33.1,
-            "lower": 22.4,
-            "upper": 45.9
+            "point": 31.2,
+            "lower": 21.5,
+            "upper": 43.0
           },
           "2100": {
-            "point": 33.1,
-            "lower": 22.4,
-            "upper": 45.9
+            "point": 31.2,
+            "lower": 21.5,
+            "upper": 42.9
           }
         }
       },
@@ -1167,24 +1167,24 @@
         "description": "Gun permit requirement support",
         "forecasts": {
           "2024": {
-            "point": 73.2,
-            "lower": 64.5,
-            "upper": 80.4
+            "point": 72.0,
+            "lower": 66.5,
+            "upper": 76.9
           },
           "2030": {
-            "point": 73.6,
-            "lower": 64.9,
-            "upper": 80.8
+            "point": 73.7,
+            "lower": 65.9,
+            "upper": 80.3
           },
           "2050": {
-            "point": 73.6,
-            "lower": 64.9,
-            "upper": 80.8
+            "point": 74.9,
+            "lower": 66.8,
+            "upper": 81.5
           },
           "2100": {
-            "point": 73.6,
-            "lower": 64.9,
-            "upper": 80.8
+            "point": 74.9,
+            "lower": 66.9,
+            "upper": 81.6
           }
         }
       },
@@ -1192,24 +1192,24 @@
         "description": "Self-identified liberal",
         "forecasts": {
           "2024": {
-            "point": 30.2,
-            "lower": 26.4,
-            "upper": 34.4
+            "point": 28.2,
+            "lower": 24.7,
+            "upper": 31.9
           },
           "2030": {
-            "point": 29.0,
-            "lower": 24.8,
-            "upper": 33.5
+            "point": 27.7,
+            "lower": 24.2,
+            "upper": 31.4
           },
           "2050": {
-            "point": 28.8,
-            "lower": 24.7,
-            "upper": 33.4
+            "point": 27.7,
+            "lower": 24.2,
+            "upper": 31.4
           },
           "2100": {
-            "point": 28.8,
-            "lower": 24.7,
-            "upper": 33.4
+            "point": 27.7,
+            "lower": 24.2,
+            "upper": 31.4
           }
         }
       },
@@ -1217,24 +1217,24 @@
         "description": "Approve of school prayer ban",
         "forecasts": {
           "2024": {
-            "point": 52.3,
-            "lower": 45.0,
-            "upper": 59.4
+            "point": 46.5,
+            "lower": 39.6,
+            "upper": 53.5
           },
           "2030": {
-            "point": 54.4,
-            "lower": 46.7,
-            "upper": 61.9
+            "point": 41.5,
+            "lower": 33.8,
+            "upper": 49.6
           },
           "2050": {
-            "point": 54.4,
-            "lower": 46.7,
-            "upper": 61.9
+            "point": 40.7,
+            "lower": 33.1,
+            "upper": 48.8
           },
           "2100": {
-            "point": 54.4,
-            "lower": 46.7,
-            "upper": 61.9
+            "point": 40.7,
+            "lower": 33.1,
+            "upper": 48.8
           }
         }
       },
@@ -1242,24 +1242,24 @@
         "description": "Social trust - most people can be trusted",
         "forecasts": {
           "2024": {
-            "point": 27.6,
-            "lower": 19.7,
-            "upper": 37.1
+            "point": 30.5,
+            "lower": 23.5,
+            "upper": 38.6
           },
           "2030": {
-            "point": 32.2,
-            "lower": 20.4,
-            "upper": 46.7
+            "point": 35.9,
+            "lower": 27.0,
+            "upper": 45.8
           },
           "2050": {
-            "point": 35.1,
-            "lower": 22.2,
-            "upper": 50.7
+            "point": 36.6,
+            "lower": 27.7,
+            "upper": 46.6
           },
           "2100": {
-            "point": 35.3,
-            "lower": 22.3,
-            "upper": 50.8
+            "point": 36.6,
+            "lower": 27.7,
+            "upper": 46.6
           }
         }
       },
@@ -1267,24 +1267,24 @@
         "description": "Believe people try to be fair",
         "forecasts": {
           "2024": {
-            "point": 45.2,
-            "lower": 39.2,
-            "upper": 51.4
+            "point": 47.8,
+            "lower": 40.8,
+            "upper": 54.8
           },
           "2030": {
-            "point": 42.1,
-            "lower": 33.7,
-            "upper": 51.0
+            "point": 52.8,
+            "lower": 43.7,
+            "upper": 61.8
           },
           "2050": {
-            "point": 39.9,
-            "lower": 31.2,
-            "upper": 49.3
+            "point": 54.7,
+            "lower": 45.4,
+            "upper": 63.7
           },
           "2100": {
-            "point": 39.7,
-            "lower": 31.1,
-            "upper": 49.1
+            "point": 54.8,
+            "lower": 45.4,
+            "upper": 63.8
           }
         }
       }
@@ -1294,24 +1294,24 @@
         "description": "Attitudes toward homosexual relations",
         "forecasts": {
           "2024": {
-            "point": 75.1,
-            "lower": 62.1,
-            "upper": 84.7
+            "point": 65.4,
+            "lower": 57.1,
+            "upper": 72.8
           },
           "2030": {
-            "point": 86.3,
-            "lower": 65.0,
-            "upper": 95.5
+            "point": 70.2,
+            "lower": 53.9,
+            "upper": 82.5
           },
           "2050": {
-            "point": 90.6,
-            "lower": 49.7,
-            "upper": 99.0
+            "point": 72.8,
+            "lower": 42.0,
+            "upper": 90.8
           },
           "2100": {
-            "point": 90.8,
-            "lower": 17.9,
-            "upper": 99.8
+            "point": 72.9,
+            "lower": 23.3,
+            "upper": 96.0
           }
         }
       },
@@ -1319,24 +1319,24 @@
         "description": "Marijuana legalization support",
         "forecasts": {
           "2024": {
-            "point": 77.3,
-            "lower": 59.2,
-            "upper": 88.8
+            "point": 75.9,
+            "lower": 67.9,
+            "upper": 82.5
           },
           "2030": {
-            "point": 88.6,
-            "lower": 58.6,
-            "upper": 97.7
+            "point": 84.1,
+            "lower": 70.4,
+            "upper": 92.2
           },
           "2050": {
-            "point": 92.7,
-            "lower": 34.3,
-            "upper": 99.7
+            "point": 87.8,
+            "lower": 61.7,
+            "upper": 97.0
           },
           "2100": {
-            "point": 92.8,
-            "lower": 5.9,
-            "upper": 100.0
+            "point": 87.9,
+            "lower": 37.4,
+            "upper": 98.9
           }
         }
       },
@@ -1344,24 +1344,24 @@
         "description": "Premarital sex attitudes",
         "forecasts": {
           "2024": {
-            "point": 75.6,
-            "lower": 71.8,
-            "upper": 79.1
+            "point": 72.2,
+            "lower": 67.6,
+            "upper": 76.4
           },
           "2030": {
-            "point": 83.5,
-            "lower": 77.4,
-            "upper": 88.2
+            "point": 78.2,
+            "lower": 69.9,
+            "upper": 84.7
           },
           "2050": {
-            "point": 87.1,
-            "lower": 76.4,
-            "upper": 93.4
+            "point": 81.2,
+            "lower": 65.7,
+            "upper": 90.7
           },
           "2100": {
-            "point": 87.2,
-            "lower": 66.6,
-            "upper": 95.9
+            "point": 81.3,
+            "lower": 52.8,
+            "upper": 94.4
           }
         }
       },
@@ -1369,24 +1369,24 @@
         "description": "Abortion for any reason support",
         "forecasts": {
           "2024": {
-            "point": 64.3,
-            "lower": 57.4,
-            "upper": 70.6
+            "point": 63.1,
+            "lower": 56.0,
+            "upper": 69.7
           },
           "2030": {
-            "point": 72.1,
-            "lower": 59.3,
-            "upper": 82.1
+            "point": 71.3,
+            "lower": 57.9,
+            "upper": 81.8
           },
           "2050": {
-            "point": 76.1,
-            "lower": 52.1,
+            "point": 75.5,
+            "lower": 50.5,
             "upper": 90.3
           },
           "2100": {
-            "point": 76.3,
-            "lower": 34.9,
-            "upper": 95.1
+            "point": 75.7,
+            "lower": 32.9,
+            "upper": 95.2
           }
         }
       },
@@ -1394,24 +1394,24 @@
         "description": "Women suited for politics",
         "forecasts": {
           "2024": {
-            "point": 88.6,
-            "lower": 86.0,
-            "upper": 90.8
+            "point": 85.5,
+            "lower": 80.6,
+            "upper": 89.4
           },
           "2030": {
-            "point": 92.2,
-            "lower": 88.0,
-            "upper": 95.0
+            "point": 86.3,
+            "lower": 75.7,
+            "upper": 92.7
           },
           "2050": {
-            "point": 93.7,
-            "lower": 86.0,
-            "upper": 97.3
+            "point": 86.7,
+            "lower": 63.6,
+            "upper": 96.1
           },
           "2100": {
-            "point": 93.8,
-            "lower": 77.4,
-            "upper": 98.5
+            "point": 86.8,
+            "lower": 41.9,
+            "upper": 98.3
           }
         }
       },
@@ -1419,24 +1419,24 @@
         "description": "Support for more spending on race issues",
         "forecasts": {
           "2024": {
-            "point": 60.5,
-            "lower": 47.4,
-            "upper": 72.2
+            "point": 55.1,
+            "lower": 42.0,
+            "upper": 67.5
           },
           "2030": {
-            "point": 67.9,
-            "lower": 42.4,
-            "upper": 85.9
+            "point": 56.0,
+            "lower": 30.8,
+            "upper": 78.5
           },
           "2050": {
-            "point": 71.9,
-            "lower": 26.2,
-            "upper": 94.8
+            "point": 56.5,
+            "lower": 15.4,
+            "upper": 90.3
           },
           "2100": {
-            "point": 72.0,
-            "lower": 8.7,
-            "upper": 98.6
+            "point": 56.6,
+            "lower": 4.6,
+            "upper": 97.2
           }
         }
       },
@@ -1444,24 +1444,24 @@
         "description": "Support for more spending on education",
         "forecasts": {
           "2024": {
-            "point": 78.5,
-            "lower": 70.3,
-            "upper": 85.0
+            "point": 74.6,
+            "lower": 69.6,
+            "upper": 79.1
           },
           "2030": {
-            "point": 81.4,
-            "lower": 64.8,
-            "upper": 91.3
+            "point": 74.8,
+            "lower": 64.3,
+            "upper": 83.1
           },
           "2050": {
-            "point": 83.0,
-            "lower": 49.0,
-            "upper": 96.1
+            "point": 75.0,
+            "lower": 53.9,
+            "upper": 88.5
           },
           "2100": {
-            "point": 83.0,
-            "lower": 24.6,
-            "upper": 98.7
+            "point": 75.0,
+            "lower": 38.5,
+            "upper": 93.5
           }
         }
       },
@@ -1469,24 +1469,24 @@
         "description": "Support for more spending on environment",
         "forecasts": {
           "2024": {
-            "point": 70.8,
-            "lower": 54.6,
-            "upper": 83.1
+            "point": 69.0,
+            "lower": 58.9,
+            "upper": 77.5
           },
           "2030": {
-            "point": 73.3,
-            "lower": 40.2,
-            "upper": 91.8
+            "point": 69.0,
+            "lower": 48.0,
+            "upper": 84.2
           },
           "2050": {
-            "point": 74.6,
-            "lower": 17.5,
-            "upper": 97.6
+            "point": 68.9,
+            "lower": 30.1,
+            "upper": 92.0
           },
           "2100": {
-            "point": 74.7,
-            "lower": 3.6,
-            "upper": 99.6
+            "point": 68.9,
+            "lower": 12.6,
+            "upper": 97.2
           }
         }
       },
@@ -1494,24 +1494,24 @@
         "description": "Support for more spending on health",
         "forecasts": {
           "2024": {
-            "point": 71.2,
-            "lower": 57.0,
-            "upper": 82.2
+            "point": 69.5,
+            "lower": 57.5,
+            "upper": 79.3
           },
           "2030": {
-            "point": 72.6,
-            "lower": 43.2,
-            "upper": 90.3
+            "point": 69.5,
+            "lower": 44.5,
+            "upper": 86.6
           },
           "2050": {
-            "point": 73.4,
-            "lower": 21.0,
-            "upper": 96.6
+            "point": 69.5,
+            "lower": 24.4,
+            "upper": 94.1
           },
           "2100": {
-            "point": 73.5,
-            "lower": 5.3,
-            "upper": 99.3
+            "point": 69.5,
+            "lower": 8.0,
+            "upper": 98.3
           }
         }
       },
@@ -1519,24 +1519,24 @@
         "description": "Support for government reducing inequality",
         "forecasts": {
           "2024": {
-            "point": 53.7,
-            "lower": 44.3,
-            "upper": 62.9
+            "point": 58.8,
+            "lower": 54.3,
+            "upper": 63.2
           },
           "2030": {
-            "point": 56.0,
-            "lower": 37.4,
-            "upper": 73.1
+            "point": 64.3,
+            "lower": 55.4,
+            "upper": 72.3
           },
           "2050": {
-            "point": 57.3,
-            "lower": 24.5,
-            "upper": 84.7
+            "point": 67.4,
+            "lower": 50.7,
+            "upper": 80.5
           },
           "2100": {
-            "point": 57.4,
-            "lower": 11.2,
-            "upper": 93.5
+            "point": 67.5,
+            "lower": 39.4,
+            "upper": 86.9
           }
         }
       },
@@ -1544,24 +1544,24 @@
         "description": "Support for government helping poor",
         "forecasts": {
           "2024": {
-            "point": 43.2,
-            "lower": 35.1,
-            "upper": 51.7
+            "point": 39.9,
+            "lower": 32.3,
+            "upper": 48.0
           },
           "2030": {
-            "point": 48.5,
-            "lower": 32.2,
-            "upper": 65.1
+            "point": 39.7,
+            "lower": 25.5,
+            "upper": 56.0
           },
           "2050": {
-            "point": 51.6,
-            "lower": 22.9,
-            "upper": 79.3
+            "point": 39.7,
+            "lower": 16.1,
+            "upper": 69.2
           },
           "2100": {
-            "point": 51.8,
-            "lower": 11.3,
-            "upper": 90.1
+            "point": 39.6,
+            "lower": 7.8,
+            "upper": 83.7
           }
         }
       },
@@ -1569,24 +1569,24 @@
         "description": "Death penalty support",
         "forecasts": {
           "2024": {
-            "point": 44.9,
-            "lower": 35.0,
-            "upper": 55.3
+            "point": 41.9,
+            "lower": 33.6,
+            "upper": 50.7
           },
           "2030": {
-            "point": 50.7,
-            "lower": 30.9,
-            "upper": 70.3
+            "point": 43.5,
+            "lower": 27.4,
+            "upper": 61.1
           },
           "2050": {
-            "point": 54.1,
-            "lower": 19.9,
-            "upper": 84.8
+            "point": 44.4,
+            "lower": 17.4,
+            "upper": 75.2
           },
           "2100": {
-            "point": 54.2,
-            "lower": 8.1,
-            "upper": 94.1
+            "point": 44.4,
+            "lower": 8.0,
+            "upper": 88.1
           }
         }
       },
@@ -1594,24 +1594,24 @@
         "description": "Gun permit requirement support",
         "forecasts": {
           "2024": {
-            "point": 71.3,
-            "lower": 57.1,
-            "upper": 82.3
+            "point": 71.0,
+            "lower": 64.9,
+            "upper": 76.4
           },
           "2030": {
-            "point": 71.8,
-            "lower": 42.2,
-            "upper": 89.9
+            "point": 71.0,
+            "lower": 58.3,
+            "upper": 81.1
           },
           "2050": {
-            "point": 72.1,
-            "lower": 20.0,
-            "upper": 96.4
+            "point": 71.0,
+            "lower": 46.2,
+            "upper": 87.5
           },
           "2100": {
-            "point": 72.2,
-            "lower": 5.0,
-            "upper": 99.2
+            "point": 71.0,
+            "lower": 29.8,
+            "upper": 93.4
           }
         }
       },
@@ -1619,24 +1619,24 @@
         "description": "Self-identified liberal",
         "forecasts": {
           "2024": {
-            "point": 33.0,
-            "lower": 30.1,
-            "upper": 36.1
+            "point": 30.5,
+            "lower": 25.9,
+            "upper": 35.6
           },
           "2030": {
-            "point": 35.1,
-            "lower": 29.2,
-            "upper": 41.5
+            "point": 30.5,
+            "lower": 21.8,
+            "upper": 40.9
           },
           "2050": {
-            "point": 36.3,
-            "lower": 25.5,
-            "upper": 48.6
+            "point": 30.5,
+            "lower": 15.7,
+            "upper": 50.7
           },
           "2100": {
-            "point": 36.3,
-            "lower": 19.6,
-            "upper": 57.1
+            "point": 30.5,
+            "lower": 9.5,
+            "upper": 64.6
           }
         }
       },
@@ -1644,24 +1644,24 @@
         "description": "Approve of school prayer ban",
         "forecasts": {
           "2024": {
-            "point": 41.7,
-            "lower": 35.3,
-            "upper": 48.4
+            "point": 47.0,
+            "lower": 39.6,
+            "upper": 54.4
           },
           "2030": {
-            "point": 31.2,
-            "lower": 20.8,
-            "upper": 43.9
+            "point": 47.0,
+            "lower": 32.8,
+            "upper": 61.8
           },
           "2050": {
-            "point": 25.8,
-            "lower": 11.2,
-            "upper": 49.2
+            "point": 47.1,
+            "lower": 22.4,
+            "upper": 73.3
           },
           "2100": {
-            "point": 25.6,
-            "lower": 5.9,
-            "upper": 65.5
+            "point": 47.1,
+            "lower": 12.0,
+            "upper": 85.3
           }
         }
       },
@@ -1669,24 +1669,24 @@
         "description": "Social trust - most people can be trusted",
         "forecasts": {
           "2024": {
-            "point": 24.9,
-            "lower": 21.1,
-            "upper": 29.0
+            "point": 29.2,
+            "lower": 23.6,
+            "upper": 35.5
           },
           "2030": {
-            "point": 20.6,
-            "lower": 14.5,
-            "upper": 28.3
+            "point": 27.9,
+            "lower": 17.8,
+            "upper": 40.8
           },
           "2050": {
-            "point": 18.4,
-            "lower": 9.3,
-            "upper": 33.2
+            "point": 27.1,
+            "lower": 11.2,
+            "upper": 52.3
           },
           "2100": {
-            "point": 18.3,
+            "point": 27.1,
             "lower": 5.7,
-            "upper": 45.5
+            "upper": 69.3
           }
         }
       },
@@ -1694,24 +1694,24 @@
         "description": "Believe people try to be fair",
         "forecasts": {
           "2024": {
-            "point": 53.4,
-            "lower": 49.5,
-            "upper": 57.4
+            "point": 47.2,
+            "lower": 40.7,
+            "upper": 53.9
           },
           "2030": {
-            "point": 63.9,
-            "lower": 56.3,
-            "upper": 70.9
+            "point": 45.3,
+            "lower": 32.6,
+            "upper": 58.6
           },
           "2050": {
-            "point": 69.6,
-            "lower": 55.7,
-            "upper": 80.6
+            "point": 44.2,
+            "lower": 22.5,
+            "upper": 68.3
           },
           "2100": {
-            "point": 69.8,
-            "lower": 46.0,
-            "upper": 86.2
+            "point": 44.1,
+            "lower": 12.9,
+            "upper": 80.8
           }
         }
       }
