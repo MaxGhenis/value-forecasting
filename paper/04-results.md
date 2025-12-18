@@ -109,21 +109,40 @@ By age group:
 
 The largest drops were among the youngest (18-29) and middle-aged (45-64) groups. This contradicts simple generational replacement models where younger cohorts drive liberalization.
 
-## Long-Term Forecasts
+## Long-Term Forecasts with Calibrated Uncertainty
 
-We also generated long-term forecasts to test the core proposal of forecasting to "post-reflection" values:
+We generated long-term forecasts using quantile elicitation and EMOS-style calibration [@gneiting2005calibrated]. For each variable, we elicited five quantiles (10th, 25th, 50th, 75th, 90th percentiles) and calibrated the uncertainty by optimizing CRPS on the 2024 holdout data.
 
-:::{table} GPT-4o Long-Term Forecasts
+**Calibration Results (17 variables, 2021→2024):**
+- Optimal spread multiplier: **1.21** (CIs need 21% widening)
+- Raw 50% interval coverage: 47% (target: 50%)
+- Raw 80% interval coverage: 59% (target: 80%)
+- Mean CRPS: 3.15 points
+
+:::{table} Calibrated Long-Term Forecasts (GPT-4o)
 :label: tbl:longterm
 
-| Variable | 2030 | 2050 | 2075 | 2100 |
-|----------|------|------|------|------|
-| HOMOSEX | 68% [60,76] | 75% [65,85] | 80% [68,92] | 85% [70,100] |
-| GRASS | 75% [70,80] | 85% [78,92] | 90% [82,98] | 92% [84,100] |
+| Variable | 2024 Actual | 2030 | 2050 | 2100 |
+|----------|-------------|------|------|------|
+| HOMOSEX | 55% | 66% [57,75] | 75% [64,86] | 80% [69,91] |
+| GRASS | 68% | 72% [57,87] | 80% [57,103] | 80% [57,103] |
+| PREMARSX | 65% | 70% [59,81] | 80% [69,91] | 80% [69,91] |
+| ABANY | 60% | 60% [51,69] | 60% [42,78] | 60% [37,83] |
+| CAPPUN | 40% | 42% [33,51] | 45% [34,56] | 55% [32,78] |
+| TRUST | 25% | 28% [21,35] | 27% [18,36] | 27% [18,36] |
+| POLVIEWS | 29% | 30% [25,35] | 30% [23,37] | 31% [24,38] |
 
 :::
 
-The model predicts continued liberalization with widening uncertainty. However, given that the 2024 actual (55%) already falls below the 2030 prediction (68%), these long-term forecasts are questionable.
+Brackets show calibrated 80% confidence intervals.
+
+**Key observations:**
+- **HOMOSEX**: Model predicts recovery to 66% by 2030, 80% by 2100. But 2024 actual (55%) is already below the 2030 lower bound (57%), suggesting the model underestimates reversal risk.
+- **ABANY**: Predicted stable at ~60%, unlike the continued rise the model predicted pre-2024.
+- **TRUST**: Continued decline predicted (28%→27%), reflecting the long-term erosion of social trust.
+- **Uncertainty widens with horizon**: 2100 intervals are appropriately wider than 2030.
+
+These forecasts should be treated as registered predictions subject to future validation, not reliable projections. The 2024 calibration shows models are overconfident; longer horizons likely involve even greater uncertainty than shown.
 
 ## Income-Values Relationship
 
