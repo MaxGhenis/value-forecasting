@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Area, ComposedChart, Cell } from 'recharts'
+import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Area, ComposedChart, Cell, ReferenceLine } from 'recharts'
 import './App.css'
 import baselineForecasts from './data/baseline_forecasts.json'
 
@@ -561,6 +561,7 @@ function App() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="year" stroke="#6b7280" fontSize={12} />
                 <YAxis domain={[0, 100]} stroke="#6b7280" fontSize={12} tickFormatter={(v) => `${v}%`} />
+                <ReferenceLine x={2022} stroke="#94a3b8" strokeDasharray="4 4" label={{ value: 'Forecast →', position: 'top', fill: '#94a3b8', fontSize: 11 }} />
                 <Tooltip
                   formatter={(value, name) => {
                     // Filter out interval bounds
