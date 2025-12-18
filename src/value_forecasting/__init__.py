@@ -1,8 +1,11 @@
 """Value Forecasting - Testing LLM ability to predict moral change."""
 
 from value_forecasting.baselines import (
+    inverse_logit,
+    logit,
     run_arima_forecast,
     run_ets_forecast,
+    run_linear_forecast,
     run_naive_forecast,
 )
 from value_forecasting.calibration import (
@@ -83,9 +86,12 @@ __all__ = [
     "forecast_distribution",
     "forecast_distribution_llm",
     "get_historical_context",
+    "inverse_logit",
+    "logit",
     "run_arima_forecast",
     "run_baseline_forecast",
     "run_ets_forecast",
     "run_forecast",
+    "run_linear_forecast",
     "run_naive_forecast",
 ]

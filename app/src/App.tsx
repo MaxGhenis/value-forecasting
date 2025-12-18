@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Area, ComposedChart, Cell } from 'recharts'
 import './App.css'
+import baselineForecasts from './data/baseline_forecasts.json'
 
 // All GSS variables with historical data and calibrated forecasts
 const variableData: Record<string, {
@@ -292,44 +293,6 @@ const categories = {
   "Economic/Social": ["EQWLTH", "HELPPOOR", "TRUST", "FAIR", "PRAYER"]
 }
 
-// Prepare chart data for a given variable
-function getChartData(varKey: string) {
-  const v = variableData[varKey]
-  const data: Array<{
-    year: number;
-    actual?: number;
-    predicted?: number;
-    predLow?: number;
-    predHigh?: number;
-  }> = []
-
-  // Add historical data
-  v.historical.forEach(h => {
-    data.push({ year: h.year, actual: h.actual })
-  })
-
-  // Add 2024 with both actual and predicted
-  data.push({
-    year: 2024,
-    actual: v.actual2024,
-    predicted: v.predicted2024,
-    predLow: v.forecasts[0].predLow,
-    predHigh: v.forecasts[0].predHigh
-  })
-
-  // Add future forecasts
-  v.forecasts.slice(1).forEach(f => {
-    data.push({
-      year: f.year,
-      predicted: f.predicted,
-      predLow: f.predLow,
-      predHigh: f.predHigh
-    })
-  })
-
-  return data
-}
-
 // Model comparison data (2021→2024 holdout, 17 variables)
 // CRPS = Continuous Ranked Probability Score (proper scoring rule for probabilistic forecasts)
 const metricsData = [
@@ -339,34 +302,43 @@ const metricsData = [
   { model: 'ETS', crps: 11.21, mae: 13.1, coverage80: 41, type: 'baseline' },
 ]
 
-// Per-variable baseline predictions (2021→2024)
-const baselinePredictions: Record<string, { naive: number; linear: number; ets: number }> = {
-  HOMOSEX: { naive: 61, linear: 64, ets: 68 },
-  GRASS: { naive: 70, linear: 73, ets: 85 },
-  PREMARSX: { naive: 69, linear: 71, ets: 77 },
-  ABANY: { naive: 59, linear: 61, ets: 68 },
-  FEPOL: { naive: 85, linear: 86, ets: 91 },
-  CAPPUN: { naive: 40, linear: 45, ets: 51 },
-  GUNLAW: { naive: 71, linear: 68, ets: 62 },
-  NATRACE: { naive: 56, linear: 56, ets: 60 },
-  NATEDUC: { naive: 75, linear: 75, ets: 76 },
-  NATENVIR: { naive: 69, linear: 69, ets: 71 },
-  NATHEAL: { naive: 70, linear: 69, ets: 68 },
-  EQWLTH: { naive: 55, linear: 57, ets: 61 },
-  HELPPOOR: { naive: 40, linear: 41, ets: 46 },
-  TRUST: { naive: 25, linear: 22, ets: 16 },
-  FAIR: { naive: 47, linear: 48, ets: 53 },
-  POLVIEWS: { naive: 32, linear: 34, ets: 38 },
-  PRAYER: { naive: 52, linear: 53, ets: 59 },
-}
-
-// LLM models available for comparison
-const llmModels = [
-  { id: 'gpt-4o', name: 'GPT-4o', color: '#10b981' },
-  { id: 'gpt-4.5', name: 'GPT-4.5 (Preview)', color: '#8b5cf6', comingSoon: true },
-  { id: 'claude-opus', name: 'Claude Opus 4', color: '#f59e0b', comingSoon: true },
-  { id: 'claude-sonnet', name: 'Claude Sonnet 4', color: '#ec4899', comingSoon: true },
+// Available forecast models
+const forecastModels = [
+  // LLMs
+  { id: 'gpt-4o', name: 'GPT-4o', color: '#10b981', type: 'llm' },
+  { id: 'gpt-4.5', name: 'GPT-4.5', color: '#8b5cf6', type: 'llm', comingSoon: true },
+  { id: 'claude-opus', name: 'Claude Opus 4', color: '#f59e0b', type: 'llm', comingSoon: true },
+  // Time Series
+  { id: 'naive', name: 'Naive', color: '#64748b', type: 'ts' },
+  { id: 'linear', name: 'Linear', color: '#475569', type: 'ts' },
+  { id: 'arima', name: 'ARIMA', color: '#0ea5e9', type: 'ts' },
+  { id: 'ets', name: 'ETS', color: '#94a3b8', type: 'ts' },
 ]
+
+// Transform baseline forecasts JSON into lookup structure
+// Structure: { variable: { year: { model: { point, lower, upper } } } }
+type TSForecast = { point: number; lower: number; upper: number }
+const tsPredictions: Record<string, Record<number, Record<string, TSForecast>>> = {}
+
+// Build tsPredictions from imported JSON
+const tsModels = ['naive', 'linear', 'arima', 'ets'] as const
+for (const variable of Object.keys(baselineForecasts.models.naive)) {
+  tsPredictions[variable] = {}
+  for (const year of baselineForecasts.target_years) {
+    tsPredictions[variable][year] = {}
+    for (const model of tsModels) {
+      const modelData = (baselineForecasts.models as Record<string, Record<string, { forecasts: Record<string, { point: number; lower: number; upper: number }> }>>)[model]
+      const forecast = modelData[variable]?.forecasts[year.toString()]
+      if (forecast) {
+        tsPredictions[variable][year][model] = {
+          point: forecast.point,
+          lower: forecast.lower,
+          upper: forecast.upper
+        }
+      }
+    }
+  }
+}
 
 // 2024 calibration results
 const calibrationData = Object.entries(variableData).map(([key, v]) => ({
@@ -379,8 +351,104 @@ const calibrationData = Object.entries(variableData).map(([key, v]) => ({
 
 function App() {
   const [selectedVar, setSelectedVar] = useState<string>('HOMOSEX')
-  const data = getChartData(selectedVar)
+  const [selectedModels, setSelectedModels] = useState<string[]>(['gpt-4o'])
   const varInfo = variableData[selectedVar]
+
+  // Get chart data with selected model predictions
+  const getChartDataWithModels = () => {
+    const v = variableData[selectedVar]
+    const ts = tsPredictions[selectedVar] || {}
+    const data: Array<{
+      year: number;
+      actual?: number;
+      predicted?: number;
+      predLow?: number;
+      predHigh?: number;
+      naive?: number;
+      naiveLow?: number;
+      naiveHigh?: number;
+      linear?: number;
+      linearLow?: number;
+      linearHigh?: number;
+      arima?: number;
+      arimaLow?: number;
+      arimaHigh?: number;
+      ets?: number;
+      etsLow?: number;
+      etsHigh?: number;
+    }> = []
+
+    // Add historical data
+    v.historical.forEach(h => {
+      data.push({ year: h.year, actual: h.actual })
+    })
+
+    // Forecast years
+    const forecastYears = [2024, 2030, 2050, 2100]
+
+    forecastYears.forEach((year, idx) => {
+      const tsYear = ts[year] || {
+        naive: { point: 0, lower: 0, upper: 0 },
+        linear: { point: 0, lower: 0, upper: 0 },
+        arima: { point: 0, lower: 0, upper: 0 },
+        ets: { point: 0, lower: 0, upper: 0 }
+      }
+      const llmForecast = v.forecasts[idx]
+
+      const point: typeof data[0] = { year }
+
+      // Add 2024 actual
+      if (year === 2024) {
+        point.actual = v.actual2024
+      }
+
+      // Add GPT-4o predictions with intervals
+      if (selectedModels.includes('gpt-4o') && llmForecast) {
+        point.predicted = llmForecast.predicted
+        point.predLow = llmForecast.predLow
+        point.predHigh = llmForecast.predHigh
+      }
+
+      // Add time series predictions with intervals
+      if (selectedModels.includes('naive') && tsYear.naive) {
+        point.naive = tsYear.naive.point
+        point.naiveLow = tsYear.naive.lower
+        point.naiveHigh = tsYear.naive.upper
+      }
+      if (selectedModels.includes('linear') && tsYear.linear) {
+        point.linear = tsYear.linear.point
+        point.linearLow = tsYear.linear.lower
+        point.linearHigh = tsYear.linear.upper
+      }
+      if (selectedModels.includes('arima') && tsYear.arima) {
+        point.arima = tsYear.arima.point
+        point.arimaLow = tsYear.arima.lower
+        point.arimaHigh = tsYear.arima.upper
+      }
+      if (selectedModels.includes('ets') && tsYear.ets) {
+        point.ets = tsYear.ets.point
+        point.etsLow = tsYear.ets.lower
+        point.etsHigh = tsYear.ets.upper
+      }
+
+      data.push(point)
+    })
+
+    return data
+  }
+
+  const data = getChartDataWithModels()
+
+  const toggleModel = (modelId: string) => {
+    const model = forecastModels.find(m => m.id === modelId)
+    if (model?.comingSoon) return
+
+    setSelectedModels(prev =>
+      prev.includes(modelId)
+        ? prev.filter(m => m !== modelId)
+        : [...prev, modelId]
+    )
+  }
 
   return (
     <div className="app">
@@ -427,13 +495,67 @@ function App() {
             ))}
           </div>
           <p className="var-description">{varInfo.description}</p>
+
+          <div className="model-selector">
+            <div className="model-group">
+              <span className="model-group-label">LLMs</span>
+              <div className="model-buttons">
+                {forecastModels.filter(m => m.type === 'llm').map(model => (
+                  <button
+                    key={model.id}
+                    className={`model-btn ${selectedModels.includes(model.id) ? 'active' : ''} ${model.comingSoon ? 'coming-soon' : ''}`}
+                    onClick={() => toggleModel(model.id)}
+                    style={{ borderColor: selectedModels.includes(model.id) ? model.color : undefined }}
+                    disabled={model.comingSoon}
+                  >
+                    <span className="model-dot" style={{ background: model.color }}></span>
+                    {model.name}
+                    {model.comingSoon && <span className="soon-badge">Soon</span>}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="model-group">
+              <span className="model-group-label">Time Series</span>
+              <div className="model-buttons">
+                {forecastModels.filter(m => m.type === 'ts').map(model => (
+                  <button
+                    key={model.id}
+                    className={`model-btn ${selectedModels.includes(model.id) ? 'active' : ''}`}
+                    onClick={() => toggleModel(model.id)}
+                    style={{ borderColor: selectedModels.includes(model.id) ? model.color : undefined }}
+                  >
+                    <span className="model-dot" style={{ background: model.color }}></span>
+                    {model.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="chart-container">
             <ResponsiveContainer width="100%" height={400}>
               <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                 <defs>
-                  <linearGradient id="uncertaintyGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#dc2626" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#dc2626" stopOpacity={0.05}/>
+                  <linearGradient id="gpt4oGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#10b981" stopOpacity={0.05}/>
+                  </linearGradient>
+                  <linearGradient id="naiveGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#64748b" stopOpacity={0.25}/>
+                    <stop offset="95%" stopColor="#64748b" stopOpacity={0.05}/>
+                  </linearGradient>
+                  <linearGradient id="linearGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#475569" stopOpacity={0.25}/>
+                    <stop offset="95%" stopColor="#475569" stopOpacity={0.05}/>
+                  </linearGradient>
+                  <linearGradient id="arimaGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.25}/>
+                    <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0.05}/>
+                  </linearGradient>
+                  <linearGradient id="etsGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#94a3b8" stopOpacity={0.25}/>
+                    <stop offset="95%" stopColor="#94a3b8" stopOpacity={0.05}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -441,48 +563,79 @@ function App() {
                 <YAxis domain={[0, 100]} stroke="#6b7280" fontSize={12} tickFormatter={(v) => `${v}%`} />
                 <Tooltip
                   formatter={(value, name) => {
-                    if (value === undefined || name === 'predLow' || name === 'predHigh') return null
-                    return [`${value}%`, name === 'actual' ? 'Actual' : 'GPT-4o Prediction']
+                    // Filter out interval bounds
+                    const hiddenKeys = ['predLow', 'predHigh', 'naiveLow', 'naiveHigh', 'linearLow', 'linearHigh', 'arimaLow', 'arimaHigh', 'etsLow', 'etsHigh']
+                    if (value === undefined || hiddenKeys.includes(name as string)) return null
+                    const labels: Record<string, string> = {
+                      actual: 'Actual',
+                      predicted: 'GPT-4o',
+                      naive: 'Naive',
+                      linear: 'Linear',
+                      arima: 'ARIMA',
+                      ets: 'ETS'
+                    }
+                    return [`${value}%`, labels[name as string] || name]
                   }}
                   contentStyle={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                 />
                 <Legend wrapperStyle={{ paddingTop: '20px' }} />
-                <Area
-                  type="monotone"
-                  dataKey="predHigh"
-                  stroke="none"
-                  fill="url(#uncertaintyGradient)"
-                  name="80% CI (Upper)"
-                  legendType="none"
-                />
-                <Area
-                  type="monotone"
-                  dataKey="predLow"
-                  stroke="none"
-                  fill="#f8fafc"
-                  name="80% CI (Lower)"
-                  legendType="none"
-                />
+                {/* Prediction interval areas - render first so lines appear on top */}
+                {selectedModels.includes('gpt-4o') && (
+                  <>
+                    <Area type="monotone" dataKey="predHigh" stroke="none" fill="url(#gpt4oGradient)" legendType="none" />
+                    <Area type="monotone" dataKey="predLow" stroke="none" fill="#f8fafc" legendType="none" />
+                  </>
+                )}
+                {selectedModels.includes('naive') && (
+                  <>
+                    <Area type="monotone" dataKey="naiveHigh" stroke="none" fill="url(#naiveGradient)" legendType="none" />
+                    <Area type="monotone" dataKey="naiveLow" stroke="none" fill="#f8fafc" legendType="none" />
+                  </>
+                )}
+                {selectedModels.includes('linear') && (
+                  <>
+                    <Area type="monotone" dataKey="linearHigh" stroke="none" fill="url(#linearGradient)" legendType="none" />
+                    <Area type="monotone" dataKey="linearLow" stroke="none" fill="#f8fafc" legendType="none" />
+                  </>
+                )}
+                {selectedModels.includes('arima') && (
+                  <>
+                    <Area type="monotone" dataKey="arimaHigh" stroke="none" fill="url(#arimaGradient)" legendType="none" />
+                    <Area type="monotone" dataKey="arimaLow" stroke="none" fill="#f8fafc" legendType="none" />
+                  </>
+                )}
+                {selectedModels.includes('ets') && (
+                  <>
+                    <Area type="monotone" dataKey="etsHigh" stroke="none" fill="url(#etsGradient)" legendType="none" />
+                    <Area type="monotone" dataKey="etsLow" stroke="none" fill="#f8fafc" legendType="none" />
+                  </>
+                )}
+                {/* Lines - render on top of areas */}
                 <Line
                   type="monotone"
                   dataKey="actual"
                   stroke="#2563eb"
                   strokeWidth={2.5}
-                  name={`Actual: % "${varInfo.description}"`}
+                  name="Actual"
                   dot={{ fill: '#2563eb', r: 4 }}
                   activeDot={{ r: 6 }}
                   connectNulls={false}
                 />
-                <Line
-                  type="monotone"
-                  dataKey="predicted"
-                  stroke="#dc2626"
-                  strokeWidth={2}
-                  strokeDasharray="6 4"
-                  name="GPT-4o Prediction"
-                  dot={{ fill: '#dc2626', r: 5 }}
-                  connectNulls
-                />
+                {selectedModels.includes('gpt-4o') && (
+                  <Line type="monotone" dataKey="predicted" stroke="#10b981" strokeWidth={2} strokeDasharray="6 4" name="GPT-4o" dot={{ fill: '#10b981', r: 5 }} connectNulls />
+                )}
+                {selectedModels.includes('naive') && (
+                  <Line type="monotone" dataKey="naive" stroke="#64748b" strokeWidth={2} name="Naive" dot={{ fill: '#64748b', r: 4 }} />
+                )}
+                {selectedModels.includes('linear') && (
+                  <Line type="monotone" dataKey="linear" stroke="#475569" strokeWidth={2} name="Linear" dot={{ fill: '#475569', r: 4 }} />
+                )}
+                {selectedModels.includes('arima') && (
+                  <Line type="monotone" dataKey="arima" stroke="#0ea5e9" strokeWidth={2} name="ARIMA" dot={{ fill: '#0ea5e9', r: 4 }} />
+                )}
+                {selectedModels.includes('ets') && (
+                  <Line type="monotone" dataKey="ets" stroke="#94a3b8" strokeWidth={2} name="ETS" dot={{ fill: '#94a3b8', r: 4 }} />
+                )}
               </ComposedChart>
             </ResponsiveContainer>
           </div>
@@ -539,12 +692,11 @@ function App() {
                   }}
                   labelFormatter={(label) => variableData[label]?.description || label}
                 />
-                <Bar
-                  dataKey="error"
-                  name="Error (Predicted - Actual)"
-                  fill={(entry: { error: number }) => entry.error > 0 ? '#dc2626' : '#16a34a'}
-                  radius={[0, 4, 4, 0]}
-                />
+                <Bar dataKey="error" name="Error (Predicted - Actual)" radius={[0, 4, 4, 0]}>
+                  {calibrationData.map((entry, index) => (
+                    <Cell key={index} fill={entry.error > 0 ? '#dc2626' : '#16a34a'} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
