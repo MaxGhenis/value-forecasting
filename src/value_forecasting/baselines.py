@@ -277,7 +277,8 @@ def run_ets_forecast(
     """
     Exponential Smoothing (ETS) baseline forecast with logit transformation.
 
-    Fits Holt's linear trend method in logit space to ensure bounded predictions.
+    Fits Holt's damped trend method in logit space to ensure bounded predictions.
+    Damped trend prevents extrapolation to extremes at long horizons.
     """
     try:
         from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -300,13 +301,15 @@ def run_ets_forecast(
     try:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            # Holt's linear trend in logit space
+            # Holt's damped trend in logit space - trend diminishes over time
             model = ExponentialSmoothing(
                 logit_values,
                 trend="add",
+                damped_trend=True,
                 seasonal=None,
             )
-            fit = model.fit()
+            # Use stronger damping (phi=0.85) for long-term stability
+            fit = model.fit(damping_trend=0.85)
 
         forecasts = []
         max_steps = max(target_years) - years[-1]
