@@ -393,12 +393,12 @@ function App() {
         <section className="hero-finding">
           <div className="finding-content">
             <span className="finding-label">Key Finding</span>
-            <h2>LLMs Match Time Series on Short-Term, Excel on Long-Term Context</h2>
+            <h2>LLMs Match Time Series Baselines on 3-Year Forecasts</h2>
             <p>
-              On the 2021→2024 holdout, GPT-4o (MAE: 4.4) performs comparably to linear regression (3.7)
-              and naive forecasts (3.8). But LLMs can incorporate contextual knowledge that time series
-              cannot—social movements, legal changes, generational shifts. The 2024 HOMOSEX reversal
-              (predicted 63%, actual 55%) surprised all models equally.
+              On the 2021→2024 holdout, GPT-4o (MAE: 4.4pp) performs comparably to linear regression (3.7pp)
+              and naive forecasts (3.8pp). All models missed the 2024 HOMOSEX reversal
+              (predicted ~63%, actual 55%). Long-term LLM forecasts remain untested—
+              we'll know more when GSS 2030+ data arrives.
             </p>
           </div>
         </section>
