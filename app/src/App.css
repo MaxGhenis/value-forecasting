@@ -183,6 +183,27 @@ body {
   margin: 0;
 }
 
+.legend-custom {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-item .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
 .chart-container {
   margin: 1rem 0;
 }
