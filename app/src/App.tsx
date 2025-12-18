@@ -4,6 +4,7 @@ import './App.css'
 
 // Historical actuals + calibrated LLM predictions through 2100
 // Forecasts use EMOS-calibrated uncertainty (spread multiplier: 1.21)
+// 2024 shows both actual (holdout) and prediction for calibration validation
 const homosexData = [
   { year: 1973, actual: 11 },
   { year: 1980, actual: 14 },
@@ -13,7 +14,7 @@ const homosexData = [
   { year: 2018, actual: 57 },
   { year: 2021, actual: 62 },
   { year: 2022, actual: 61 },
-  { year: 2024, actual: 55 },
+  { year: 2024, actual: 55, predicted: 63, predLow: 56, predHigh: 70 },
   { year: 2030, predicted: 66, predLow: 57, predHigh: 75 },
   { year: 2050, predicted: 75, predLow: 64, predHigh: 86 },
   { year: 2100, predicted: 80, predLow: 69, predHigh: 91 },
@@ -27,25 +28,11 @@ const grassData = [
   { year: 2010, actual: 48 },
   { year: 2018, actual: 65 },
   { year: 2022, actual: 70 },
-  { year: 2024, actual: 68 },
+  { year: 2024, actual: 68, predicted: 70, predLow: 61, predHigh: 79 },
   { year: 2030, predicted: 72, predLow: 57, predHigh: 87 },
   { year: 2050, predicted: 80, predLow: 57, predHigh: 100 },
   { year: 2100, predicted: 80, predLow: 57, predHigh: 100 },
 ]
-
-// Response distribution heterogeneity (GSS 2024)
-const homosexDistribution = [
-  { response: 'Always wrong', pct2021: 27, pct2024: 33 },
-  { response: 'Almost always wrong', pct2021: 4, pct2024: 5 },
-  { response: 'Sometimes wrong', pct2021: 7, pct2024: 7 },
-  { response: 'Not wrong at all', pct2021: 62, pct2024: 55 },
-]
-
-// grassDistribution kept for potential future use
-// const grassDistribution = [
-//   { response: 'Should be legal', pct2021: 68, pct2024: 69 },
-//   { response: 'Should not be legal', pct2021: 32, pct2024: 31 },
-// ]
 
 const multiVarData = [
   { variable: 'HOMOSEX', v2021: 62, v2024: 55, change: -7 },
@@ -227,32 +214,6 @@ function App() {
           </div>
         </section>
 
-        <section className="section">
-          <h2>Response Distribution Heterogeneity</h2>
-          <p className="section-desc">HOMOSEX: Not just mean shift—"Always wrong" responses grew from 27% to 33%</p>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height={320}>
-              <BarChart data={homosexDistribution} layout="vertical" margin={{ left: 100, right: 30 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `${v}%`} fontSize={12} />
-                <YAxis type="category" dataKey="response" fontSize={11} width={95} />
-                <Tooltip formatter={(value) => value !== undefined ? [`${value}%`] : null} />
-                <Legend wrapperStyle={{ paddingTop: '10px' }} />
-                <Bar dataKey="pct2021" fill="#93c5fd" name="2021" radius={[0, 4, 4, 0]} />
-                <Bar dataKey="pct2024" fill="#2563eb" name="2024" radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="heterogeneity-insight">
-            <p>
-              <strong>Why distributions matter:</strong> A model predicting 55% acceptance
-              could mean very different societies—one where views cluster near 50/50, or
-              one that's polarized between extremes. For AI alignment, the shape of the
-              distribution matters as much as the mean.
-            </p>
-          </div>
-        </section>
-
         <section className="section implications">
           <h2>Implications for AI Alignment</h2>
           <div className="implications-grid">
@@ -268,8 +229,8 @@ function App() {
             </div>
             <div className="card">
               <div className="card-icon">🔀</div>
-              <h3>Heterogeneity Matters</h3>
-              <p>Values moved in different directions. Alignment targets should be distributions.</p>
+              <h3>Values Diverge</h3>
+              <p>Different values moved in different directions (HOMOSEX down, ABANY up).</p>
             </div>
             <div className="card">
               <div className="card-icon">⚡</div>
