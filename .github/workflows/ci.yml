@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -39,6 +48,13 @@ jobs:
 
   docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -50,8 +66,45 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: uv pip install -e ".[docs]" --system
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-      - name: Build docs
-        run: myst build --html
+      - name: Install dependencies
+        run: |
+          uv pip install -e ".[docs]" --system
+          npm install -g mystmd
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra latexmk texlive-xetex
+
+      - name: Build paper
+        run: |
+          cd paper
+          export BASE_URL="/value-forecasting"
+          myst build --html
+          touch _build/html/.nojekyll
+
+      - name: Build PDF
+        run: |
+          cd paper
+          myst build --pdf
+          cp _build/exports/*.pdf _build/html/ 2>/dev/null || true
+
+      - name: Setup Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: paper/_build/html
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        id: deployment
+        uses: actions/deploy-pages@v4
