@@ -1,0 +1,266 @@
+{
+  "model": "gpt-4o",
+  "cutoff_year": 2021,
+  "target_year": 2024,
+  "results": [
+    {
+      "variable": "HOMOSEX",
+      "description": "Same-sex relations not wrong",
+      "actual": 54.7,
+      "quantiles": {
+        "q10": 58.0,
+        "q25": 60.0,
+        "q50": 63.0,
+        "q75": 66.0,
+        "q90": 68.0
+      },
+      "gaussian_mu": 63.0,
+      "gaussian_sig": 4.444444444444444,
+      "raw_crps": 5.899361974769108
+    },
+    {
+      "variable": "GRASS",
+      "description": "Marijuana should be legal",
+      "actual": 68.5,
+      "quantiles": {
+        "q10": 62.0,
+        "q25": 66.0,
+        "q50": 70.0,
+        "q75": 74.0,
+        "q90": 78.0
+      },
+      "gaussian_mu": 70.0,
+      "gaussian_sig": 5.925925925925926,
+      "raw_crps": 1.5355289037305073
+    },
+    {
+      "variable": "PREMARSX",
+      "description": "Premarital sex not wrong",
+      "actual": 65.2,
+      "quantiles": {
+        "q10": 60.0,
+        "q25": 63.0,
+        "q50": 66.0,
+        "q75": 69.0,
+        "q90": 72.0
+      },
+      "gaussian_mu": 66.0,
+      "gaussian_sig": 4.444444444444444,
+      "raw_crps": 1.0959374240774478
+    },
+    {
+      "variable": "ABANY",
+      "description": "Abortion for any reason",
+      "actual": 59.9,
+      "quantiles": {
+        "q10": 42.0,
+        "q25": 46.0,
+        "q50": 50.0,
+        "q75": 54.0,
+        "q90": 58.0
+      },
+      "gaussian_mu": 50.0,
+      "gaussian_sig": 5.925925925925926,
+      "raw_crps": 6.789402872474744
+    },
+    {
+      "variable": "FEPOL",
+      "description": "Women suited for politics",
+      "actual": 81.6,
+      "quantiles": {
+        "q10": 78.0,
+        "q25": 80.0,
+        "q50": 82.0,
+        "q75": 84.0,
+        "q90": 86.0
+      },
+      "gaussian_mu": 82.0,
+      "gaussian_sig": 2.962962962962963,
+      "raw_crps": 0.7139397866573919
+    },
+    {
+      "variable": "CAPPUN",
+      "description": "Oppose death penalty",
+      "actual": 39.9,
+      "quantiles": {
+        "q10": 33.0,
+        "q25": 36.0,
+        "q50": 39.0,
+        "q75": 42.0,
+        "q90": 45.0
+      },
+      "gaussian_mu": 39.0,
+      "gaussian_sig": 4.444444444444444,
+      "raw_crps": 1.1111041348189856
+    },
+    {
+      "variable": "GUNLAW",
+      "description": "Favor gun permits",
+      "actual": 69.5,
+      "quantiles": {
+        "q10": 65.0,
+        "q25": 68.0,
+        "q50": 72.0,
+        "q75": 75.0,
+        "q90": 78.0
+      },
+      "gaussian_mu": 72.0,
+      "gaussian_sig": 5.185185185185185,
+      "raw_crps": 1.6835165086481185
+    },
+    {
+      "variable": "NATRACE",
+      "description": "More spending on race issues",
+      "actual": 50.7,
+      "quantiles": {
+        "q10": 34.0,
+        "q25": 38.0,
+        "q50": 45.0,
+        "q75": 52.0,
+        "q90": 56.0
+      },
+      "gaussian_mu": 45.0,
+      "gaussian_sig": 10.37037037037037,
+      "raw_crps": 3.6428346693639613
+    },
+    {
+      "variable": "NATEDUC",
+      "description": "More spending on education",
+      "actual": 76.4,
+      "quantiles": {
+        "q10": 68.0,
+        "q25": 71.0,
+        "q50": 73.0,
+        "q75": 75.0,
+        "q90": 77.0
+      },
+      "gaussian_mu": 73.0,
+      "gaussian_sig": 2.962962962962963,
+      "raw_crps": 2.098204888712007
+    },
+    {
+      "variable": "NATENVIR",
+      "description": "More spending on environment",
+      "actual": 66.0,
+      "quantiles": {
+        "q10": 57.0,
+        "q25": 60.0,
+        "q50": 63.0,
+        "q75": 68.0,
+        "q90": 70.0
+      },
+      "gaussian_mu": 63.0,
+      "gaussian_sig": 5.925925925925926,
+      "raw_crps": 1.9781365938579811
+    },
+    {
+      "variable": "NATHEAL",
+      "description": "More spending on health",
+      "actual": 74.4,
+      "quantiles": {
+        "q10": 60.0,
+        "q25": 64.0,
+        "q50": 68.0,
+        "q75": 72.0,
+        "q90": 75.0
+      },
+      "gaussian_mu": 68.0,
+      "gaussian_sig": 5.925925925925926,
+      "raw_crps": 3.9026006480831144
+    },
+    {
+      "variable": "EQWLTH",
+      "description": "Government reduce inequality",
+      "actual": 54.3,
+      "quantiles": {
+        "q10": 42.0,
+        "q25": 46.0,
+        "q50": 49.0,
+        "q75": 52.0,
+        "q90": 54.0
+      },
+      "gaussian_mu": 49.0,
+      "gaussian_sig": 4.444444444444444,
+      "raw_crps": 3.298899194207862
+    },
+    {
+      "variable": "HELPPOOR",
+      "description": "Government help poor",
+      "actual": 38.7,
+      "quantiles": {
+        "q10": 26.0,
+        "q25": 28.0,
+        "q50": 31.0,
+        "q75": 34.0,
+        "q90": 36.0
+      },
+      "gaussian_mu": 31.0,
+      "gaussian_sig": 4.444444444444444,
+      "raw_crps": 5.34260786276
+    },
+    {
+      "variable": "TRUST",
+      "description": "Most people can be trusted",
+      "actual": 24.9,
+      "quantiles": {
+        "q10": 30.0,
+        "q25": 31.0,
+        "q50": 33.0,
+        "q75": 35.0,
+        "q90": 37.0
+      },
+      "gaussian_mu": 33.0,
+      "gaussian_sig": 2.962962962962963,
+      "raw_crps": 6.43394999512427
+    },
+    {
+      "variable": "FAIR",
+      "description": "People try to be fair",
+      "actual": 45.9,
+      "quantiles": {
+        "q10": 35.0,
+        "q25": 38.0,
+        "q50": 40.0,
+        "q75": 42.0,
+        "q90": 43.0
+      },
+      "gaussian_mu": 40.0,
+      "gaussian_sig": 2.962962962962963,
+      "raw_crps": 4.279834390728105
+    },
+    {
+      "variable": "POLVIEWS",
+      "description": "Self-identified liberal",
+      "actual": 29.4,
+      "quantiles": {
+        "q10": 24.0,
+        "q25": 26.0,
+        "q50": 28.0,
+        "q75": 30.0,
+        "q90": 32.0
+      },
+      "gaussian_mu": 28.0,
+      "gaussian_sig": 2.962962962962963,
+      "raw_crps": 0.9515275641103692
+    },
+    {
+      "variable": "PRAYER",
+      "description": "Approve school prayer ban",
+      "actual": 46.3,
+      "quantiles": {
+        "q10": 38.0,
+        "q25": 40.0,
+        "q50": 42.0,
+        "q75": 44.0,
+        "q90": 46.0
+      },
+      "gaussian_mu": 42.0,
+      "gaussian_sig": 2.962962962962963,
+      "raw_crps": 2.822231380902597
+    }
+  ],
+  "spread_multiplier": 1.2071740227418288,
+  "raw_mean_crps": 3.1517422819427394,
+  "calibrated_mean_crps": 3.1261525321720285,
+  "n_variables": 17
+}
