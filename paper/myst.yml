@@ -37,6 +37,7 @@ project:
   exports:
     - format: pdf
       template: arxiv_two_column
+      output: exports/value-forecasting.pdf
     - format: tex
   bibliography:
     - references.bib
