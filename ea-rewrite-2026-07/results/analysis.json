@@ -1,0 +1,496 @@
+{
+  "n_vars": 20,
+  "actual_2024": {
+    "HOMOSEX": 55.94,
+    "GRASS": 66.53,
+    "PREMARSX": 65.59,
+    "FEFAM": 68.21,
+    "FEPOL": 81.95,
+    "SPKATH": 78.9,
+    "ABANY": 58.29,
+    "CAPPUN": 37.85,
+    "POLVIEWS": 27.47,
+    "EQWLTH": 52.82,
+    "HELPPOOR": 38.33,
+    "GUNLAW": 68.71,
+    "NATRACE": 46.5,
+    "NATENVIR": 65.5,
+    "NATFARE": 33.23,
+    "NATHEAL": 73.77,
+    "NATEDUC": 75.85,
+    "TRUST": 24.34,
+    "FAIR": 41.57,
+    "PRAYER": 45.74
+  },
+  "strata": {
+    "HOMOSEX": {
+      "pre_year": 2022,
+      "pre": 62.72,
+      "change24": -6.78,
+      "recent_slope": 1.75,
+      "class": "reversal"
+    },
+    "GRASS": {
+      "pre_year": 2022,
+      "pre": 72.22,
+      "change24": -5.69,
+      "recent_slope": 2.486,
+      "class": "reversal"
+    },
+    "PREMARSX": {
+      "pre_year": 2022,
+      "pre": 68.84,
+      "change24": -3.25,
+      "recent_slope": 1.3,
+      "class": "reversal"
+    },
+    "FEFAM": {
+      "pre_year": 2022,
+      "pre": 74.66,
+      "change24": -6.45,
+      "recent_slope": 0.795,
+      "class": "reversal"
+    },
+    "FEPOL": {
+      "pre_year": 2022,
+      "pre": 84.77,
+      "change24": -2.82,
+      "recent_slope": 0.597,
+      "class": "reversal"
+    },
+    "SPKATH": {
+      "pre_year": 2022,
+      "pre": 78.65,
+      "change24": 0.25,
+      "recent_slope": -0.143,
+      "class": "stable"
+    },
+    "ABANY": {
+      "pre_year": 2022,
+      "pre": 57.06,
+      "change24": 1.23,
+      "recent_slope": 1.534,
+      "class": "stable"
+    },
+    "CAPPUN": {
+      "pre_year": 2022,
+      "pre": 38.42,
+      "change24": -0.57,
+      "recent_slope": 0.599,
+      "class": "stable"
+    },
+    "POLVIEWS": {
+      "pre_year": 2022,
+      "pre": 29.51,
+      "change24": -2.04,
+      "recent_slope": 0.469,
+      "class": "reversal"
+    },
+    "EQWLTH": {
+      "pre_year": 2022,
+      "pre": 53.02,
+      "change24": -0.2,
+      "recent_slope": 0.877,
+      "class": "stable"
+    },
+    "HELPPOOR": {
+      "pre_year": 2022,
+      "pre": 37.1,
+      "change24": 1.23,
+      "recent_slope": 1.245,
+      "class": "stable"
+    },
+    "GUNLAW": {
+      "pre_year": 2022,
+      "pre": 69.63,
+      "change24": -0.92,
+      "recent_slope": -0.587,
+      "class": "stable"
+    },
+    "NATRACE": {
+      "pre_year": 2022,
+      "pre": 53.18,
+      "change24": -6.68,
+      "recent_slope": 1.817,
+      "class": "reversal"
+    },
+    "NATENVIR": {
+      "pre_year": 2022,
+      "pre": 66.83,
+      "change24": -1.33,
+      "recent_slope": 1.144,
+      "class": "stable"
+    },
+    "NATFARE": {
+      "pre_year": 2022,
+      "pre": 30.57,
+      "change24": 2.66,
+      "recent_slope": 1.453,
+      "class": "continuation"
+    },
+    "NATHEAL": {
+      "pre_year": 2022,
+      "pre": 68.32,
+      "change24": 5.45,
+      "recent_slope": 1.027,
+      "class": "continuation"
+    },
+    "NATEDUC": {
+      "pre_year": 2022,
+      "pre": 74.25,
+      "change24": 1.6,
+      "recent_slope": 0.283,
+      "class": "stable"
+    },
+    "TRUST": {
+      "pre_year": 2022,
+      "pre": 26.24,
+      "change24": -1.9,
+      "recent_slope": -0.49,
+      "class": "stable"
+    },
+    "FAIR": {
+      "pre_year": 2022,
+      "pre": 45.15,
+      "change24": -3.58,
+      "recent_slope": -0.523,
+      "class": "continuation"
+    },
+    "PRAYER": {
+      "pre_year": 2022,
+      "pre": 54.09,
+      "change24": -8.35,
+      "recent_slope": 1.402,
+      "class": "reversal"
+    }
+  },
+  "class_counts": {
+    "reversal": 8,
+    "continuation": 3,
+    "stable": 9
+  },
+  "metrics": {
+    "2022": {
+      "naive": {
+        "n": 20,
+        "mae": 3.15,
+        "bias": 1.91,
+        "medae": 2.35,
+        "cov90": 0.9,
+        "width90": 12.01,
+        "mae_by_class": {
+          "reversal": 5.26,
+          "continuation": 3.9,
+          "stable": 1.03
+        }
+      },
+      "linear": {
+        "n": 20,
+        "mae": 4.07,
+        "bias": 0.03,
+        "medae": 3.34,
+        "cov90": 0.9,
+        "width90": 15.05,
+        "mae_by_class": {
+          "reversal": 3.41,
+          "continuation": 5.36,
+          "stable": 4.23
+        }
+      },
+      "arima": {
+        "n": 20,
+        "mae": 3.58,
+        "bias": 2.22,
+        "medae": 2.69,
+        "cov90": 0.8,
+        "width90": 11.61,
+        "mae_by_class": {
+          "reversal": 5.28,
+          "continuation": 4.82,
+          "stable": 1.65
+        }
+      },
+      "ets": {
+        "n": 20,
+        "mae": 3.15,
+        "bias": 1.91,
+        "medae": 2.35,
+        "cov90": 0.9,
+        "width90": 12.01,
+        "mae_by_class": {
+          "reversal": 5.26,
+          "continuation": 3.9,
+          "stable": 1.03
+        }
+      },
+      "gpt-5-mini": {
+        "n": 20,
+        "mae": 4.07,
+        "bias": 2.2,
+        "medae": 3.85,
+        "cov90": 0.55,
+        "width90": 8.63,
+        "mae_by_class": {
+          "reversal": 6.3,
+          "continuation": 5.14,
+          "stable": 1.73
+        }
+      },
+      "gpt-4o": {
+        "n": 20,
+        "mae": 3.92,
+        "bias": 2.5,
+        "medae": 3.6,
+        "cov90": 0.5,
+        "width90": 7.55,
+        "mae_by_class": {
+          "reversal": 6.11,
+          "continuation": 5.14,
+          "stable": 1.56
+        }
+      },
+      "claude-opus-4-8": {
+        "n": 20,
+        "mae": 3.58,
+        "bias": 1.81,
+        "medae": 2.87,
+        "cov90": 0.8,
+        "width90": 11.03,
+        "mae_by_class": {
+          "reversal": 5.42,
+          "continuation": 5.48,
+          "stable": 1.31
+        }
+      }
+    },
+    "2010": {
+      "naive": {
+        "n": 20,
+        "mae": 8.55,
+        "bias": -6.03,
+        "medae": 8.9,
+        "cov90": 0.95,
+        "width90": 31.34,
+        "mae_by_class": {
+          "reversal": 8.46,
+          "continuation": 11.55,
+          "stable": 7.63
+        }
+      },
+      "linear": {
+        "n": 20,
+        "mae": 7.68,
+        "bias": -2.09,
+        "medae": 6.87,
+        "cov90": 0.55,
+        "width90": 14.78,
+        "mae_by_class": {
+          "reversal": 7.08,
+          "continuation": 5.67,
+          "stable": 8.88
+        }
+      },
+      "arima": {
+        "n": 20,
+        "mae": 7.66,
+        "bias": -5.33,
+        "medae": 8.08,
+        "cov90": 0.8,
+        "width90": 26.78,
+        "mae_by_class": {
+          "reversal": 7.3,
+          "continuation": 9.32,
+          "stable": 7.42
+        }
+      },
+      "ets": {
+        "n": 20,
+        "mae": 8.55,
+        "bias": -6.03,
+        "medae": 8.9,
+        "cov90": 0.95,
+        "width90": 31.34,
+        "mae_by_class": {
+          "reversal": 8.46,
+          "continuation": 11.55,
+          "stable": 7.63
+        }
+      },
+      "gpt-5-mini": {
+        "n": 20,
+        "mae": 7.25,
+        "bias": -1.58,
+        "medae": 6.06,
+        "cov90": 0.5,
+        "width90": 10.97,
+        "mae_by_class": {
+          "reversal": 7.39,
+          "continuation": 8.81,
+          "stable": 6.61
+        }
+      },
+      "gpt-4o": {
+        "n": 20,
+        "mae": 5.83,
+        "bias": -2.52,
+        "medae": 4.43,
+        "cov90": 0.55,
+        "width90": 8.92,
+        "mae_by_class": {
+          "reversal": 4.22,
+          "continuation": 7.64,
+          "stable": 6.67
+        }
+      },
+      "claude-opus-4-8": {
+        "n": 20,
+        "mae": 4.18,
+        "bias": -1.38,
+        "medae": 4.2,
+        "cov90": 0.9,
+        "width90": 16.15,
+        "mae_by_class": {
+          "reversal": 2.89,
+          "continuation": 5.98,
+          "stable": 4.72
+        }
+      }
+    }
+  },
+  "anon_probe": {
+    "2022": {
+      "gpt5mini_identified_mae": 4.07,
+      "gpt5mini_anon_mae": 4.62,
+      "naive_mae": 3.15,
+      "n": 20,
+      "edge_over_naive_identified": -0.92,
+      "edge_over_naive_anon": -1.47
+    },
+    "2010": {
+      "gpt5mini_identified_mae": 7.25,
+      "gpt5mini_anon_mae": 7.73,
+      "naive_mae": 8.55,
+      "n": 20,
+      "edge_over_naive_identified": 1.3,
+      "edge_over_naive_anon": 0.82
+    }
+  },
+  "distribution": {
+    "HOMOSEX": {
+      "actual_2024": {
+        "always wrong": 33.4,
+        "almost always wrong": 3.77,
+        "sometimes wrong": 6.88,
+        "not wrong at all": 55.94
+      },
+      "arms": {
+        "gpt-5-mini": {
+          "pred": {
+            "always wrong": 27.0,
+            "almost always wrong": 3.0,
+            "sometimes wrong": 6.0,
+            "not wrong at all": 64.0
+          },
+          "tv_distance": 0.0805,
+          "topcat_err": 8.06
+        },
+        "claude-opus-4-8": {
+          "pred": {
+            "always wrong": 28.0,
+            "almost always wrong": 3.0,
+            "sometimes wrong": 5.0,
+            "not wrong at all": 64.0
+          },
+          "tv_distance": 0.0805,
+          "topcat_err": 8.06
+        }
+      }
+    },
+    "PREMARSX": {
+      "actual_2024": {
+        "always wrong": 16.94,
+        "almost always wrong": 5.4,
+        "sometimes wrong": 12.07,
+        "not wrong at all": 65.59
+      },
+      "arms": {
+        "gpt-5-mini": {
+          "pred": {
+            "always wrong": 12.0,
+            "almost always wrong": 5.0,
+            "sometimes wrong": 12.0,
+            "not wrong at all": 71.0
+          },
+          "tv_distance": 0.0541,
+          "topcat_err": 5.41
+        },
+        "claude-opus-4-8": {
+          "pred": {
+            "always wrong": 13.0,
+            "almost always wrong": 5.0,
+            "sometimes wrong": 13.0,
+            "not wrong at all": 69.0
+          },
+          "tv_distance": 0.0434,
+          "topcat_err": 3.41
+        }
+      }
+    },
+    "POLVIEWS": {
+      "actual_2024": {
+        "extremely liberal": 3.64,
+        "liberal": 12.81,
+        "slightly liberal": 11.02,
+        "moderate": 37.09,
+        "slightly conservative": 11.85,
+        "conservative": 17.02,
+        "extremely conservative": 6.57
+      },
+      "arms": {
+        "gpt-5-mini": {
+          "pred": {
+            "extremely liberal": 4.0,
+            "liberal": 13.0,
+            "slightly liberal": 11.0,
+            "moderate": 36.0,
+            "slightly conservative": 13.0,
+            "conservative": 16.0,
+            "extremely conservative": 7.0
+          },
+          "tv_distance": 0.0213,
+          "topcat_err": 0.43
+        },
+        "claude-opus-4-8": {
+          "pred": {
+            "extremely liberal": 5.0,
+            "liberal": 13.0,
+            "slightly liberal": 12.0,
+            "moderate": 37.0,
+            "slightly conservative": 12.0,
+            "conservative": 16.0,
+            "extremely conservative": 5.0
+          },
+          "tv_distance": 0.0268,
+          "topcat_err": -1.57
+        }
+      }
+    }
+  },
+  "headline_checks": {
+    "homosex_2024_actual": 55.94,
+    "homosex_pred_2022cut": {
+      "naive": 62.72,
+      "linear": 60.22,
+      "arima": 63.08,
+      "ets": 62.72,
+      "gpt-5-mini": 66.5,
+      "gpt-4o": 64.5,
+      "claude-opus-4-8": 64.0
+    },
+    "clean_gpt5mini_mae_2022": 4.07,
+    "best_simple_baseline_2022": "naive",
+    "best_simple_baseline_mae_2022": 3.15,
+    "ratio_gpt5mini_over_bestsimple": 1.29,
+    "all_cov90_below_0.9_at_2022": false
+  }
+}
