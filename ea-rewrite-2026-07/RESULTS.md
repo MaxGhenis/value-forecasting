@@ -188,9 +188,40 @@ Budget cap was $25 with an abort guard; actual spend $0.19.
 ## Limitations
 
 - One draw per forecast (seeds set where supported); LLM nondeterminism unquantified.
-- gpt-5-mini ran at `reasoning_effort=minimal`; higher effort untested.
+- gpt-5-mini ran at `reasoning_effort=minimal` in the pre-registered arm; see the
+  post-registration robustness section below for medium/high effort.
 - ETS fell back to naive for all items (statsmodels 0.14.6 PI-extraction bug above).
 - Single holdout wave; the reversal/continuation/stable strata are ex-post
   descriptive labels, not forecast inputs.
 - GSS moved to mixed web/phone/in-person modes after 2018; NORC documents mode
   effects, which may contribute to level shifts across waves.
+
+## Post-registration robustness arms (added after registration; separate files)
+
+Run after the pre-registered record was committed, to answer three anticipated
+objections. Results in `robustness_forecasts.json` / `robustness_analysis.json` /
+`robustness_costs.json`; the pre-registered files are untouched. Same protocol,
+prompts, items, and metrics; aligned horizon (history ≤ 2022 → 2024, n = 20).
+
+| Arm | Stated cutoff (vendor URL in results meta) | Label | MAE | 90% cov | Reversal MAE | HOMOSEX (actual 55.9) |
+|---|---|---|---|---|---|---|
+| o3 (default effort) | 2024-06-01 | clean | 3.93 | 0.75 | 6.26 | 65.0 [59.0, 71.0] — miss |
+| gpt-5-mini, medium effort | 2024-05-31 | clean | 4.16 | 0.75 | 7.11 | 65.2 [60.0, 70.4] — miss |
+| gpt-5-mini, high effort | 2024-05-31 | clean | 4.38 | 0.60 | 7.03 | 66.3 [62.1, 70.5] — miss |
+
+Reference points from the pre-registered arms: naive 3.15 MAE / 0.90 coverage;
+gpt-5-mini-minimal 4.07 / 0.55.
+
+Findings: (1) the strongest clean-eligible reasoning model improves calibration
+(0.75 vs 0.50–0.55) but still trails persistence and misses the reversal;
+(2) raising gpt-5-mini's reasoning effort makes accuracy slightly *worse*
+(4.07 → 4.16 → 4.38) — more deliberation toward the same wrong prior;
+(3) **no clean Anthropic arm is possible**: every Claude snapshot with a cutoff
+≤ Dec 2024 has been retired from the API (claude-3-5-sonnet-20241022 → 404,
+retired 2025-10-28 per Anthropic's model lifecycle) — the clean-evaluation window
+closes as vendors deprecate snapshots; (4) a DeepSeek open-weights arm was skipped
+because the vendor documents no training cutoff, so it cannot be labeled clean.
+
+Cost: $0.85 measured (gpt-5-mini-high segment); the o3 and medium-effort segments'
+cost logging was lost to a session crash mid-run (~$1 estimated total); all raw
+calls are preserved in `robustness_forecasts.json`.

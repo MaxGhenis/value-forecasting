@@ -79,6 +79,16 @@ Three reads:
 
 The whole experiment cost $0.19 in API calls (166 of them); every prompt and raw completion is in the repo.
 
+### Post-registration robustness arms
+
+Three objections were checkable cheaply, so I ran them after registration as labeled robustness arms — separate results files, the pre-registered record untouched:
+
+- **"Use a reasoning model."** o3, the strongest clean-eligible reasoning model (OpenAI's stated cutoff: June 1, 2024), posted MAE 3.93 vs. naive's 3.15, 90% intervals covering 75% (better than the smaller clean arms' 50–55%, still not 90%), reversal-item error 6.26, and HOMOSEX at 65.0 [59.0, 71.0] — a miss. Better calibrated, still overconfident, still behind persistence, still following the trend that broke.
+- **"You ran the LLM at minimal effort."** gpt-5-mini at medium reasoning effort: MAE 4.16. At high effort: 4.38 — *worse* than minimal's 4.07, with coverage falling to 60%. More reasoning budget bought longer deliberation toward the same wrong prior.
+- **"Add a clean Anthropic arm."** Impossible, and the reason matters: every Claude snapshot with a training cutoff before GSS 2024 fieldwork ended has been retired from the API (claude-3-5-sonnet-20241022 now returns 404; retired October 2025). The population of models that can ever be cleanly tested on a given wave shrinks as vendors deprecate old snapshots — retrospective clean evaluation has a closing window. That is one more argument for the two protocols this post ends on: forward pre-registration, and open-weights arms, which never retire. (A DeepSeek arm was skipped for the mirror-image reason: no vendor-documented training cutoff, so it could not be labeled clean at all.)
+
+The robustness arms cost roughly another dollar; cost logging for the o3 and medium-effort segments was lost to a session crash mid-run, but every call's raw output is preserved in the results file.
+
 ## The result a naive design produces
 
 Before building the controls, I ran this task the way much of the LLM-simulation literature runs it: item names shown, forecast targets inside the model's training window, no survey weights, two variables. That pilot produced an LLM beating the best time-series baseline by 2.2x on mean absolute error — a publication-ready number, structurally identical to results that *are* being published. Here is what happened to each of the pilot's findings under the controlled design:
