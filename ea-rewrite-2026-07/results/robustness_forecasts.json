@@ -1,0 +1,651 @@
+{
+  "meta": {
+    "unavailable": {
+      "claude-3-5-sonnet-20241022": {
+        "status": "unavailable",
+        "requested_label": "clean (candidate Anthropic arm; vendor-stated cutoff ~Apr 2024)",
+        "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CctyQyUZhVWMXKaJJCCaw'}",
+        "note": "Retired 2025-10-28 per Anthropic model lifecycle; 404 not_found_error. All Claude snapshots with a training cutoff <= Dec 2024 are now retired, so no CLEAN Anthropic arm is runnable via the API. The pre-registered claude-opus-4-8 remains the contaminated Anthropic ceiling."
+      }
+    },
+    "cutoffs": {
+      "o3": {
+        "provider": "openai",
+        "vendor_cutoff": "2024-06-01",
+        "url": "https://developers.openai.com/api/docs/models/o3",
+        "stated": "Jun 01, 2024 knowledge cutoff",
+        "clean_rule": "stated cutoff <= 2024-12 (end of GSS 2024 fieldwork)",
+        "label": "clean"
+      },
+      "gpt-5-mini-medium": {
+        "provider": "openai",
+        "vendor_cutoff": "2024-05-31",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "stated": "May 31, 2024 knowledge cutoff",
+        "clean_rule": "stated cutoff <= 2024-12",
+        "label": "clean"
+      },
+      "gpt-5-mini-high": {
+        "provider": "openai",
+        "vendor_cutoff": "2024-05-31",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "stated": "May 31, 2024 knowledge cutoff",
+        "clean_rule": "stated cutoff <= 2024-12",
+        "label": "clean"
+      },
+      "deepseek-v4-flash": {
+        "provider": "deepseek",
+        "vendor_cutoff": "not documented",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "stated": "deepseek-chat = non-thinking mode of deepseek-v4-flash (per DeepSeek docs); no vendor-stated training cutoff published; V4 line is a 2025+ model",
+        "clean_rule": "stated cutoff <= 2024-12 (UNVERIFIABLE)",
+        "label": "contaminated/unverified"
+      }
+    },
+    "in_progress": true,
+    "gpt5mini_high_12kcap_orphans": {
+      "note": "cells produced under the 12k completion cap before the high arm was rescoped to aligned-2022-only at a 24k cap; kept here as a footnote, excluded from analysis",
+      "cells": {
+        "HOMOSEX": {
+          "2022": {
+            "error": "'NoneType' object is not subscriptable"
+          },
+          "2010": {
+            "point": 53.42,
+            "lo90": 46.54,
+            "hi90": 60.3
+          }
+        },
+        "GRASS": {
+          "2022": {
+            "error": "'NoneType' object is not subscriptable"
+          },
+          "2010": {
+            "error": "'NoneType' object is not subscriptable"
+          }
+        },
+        "PREMARSX": {
+          "2022": {
+            "error": "'NoneType' object is not subscriptable"
+          },
+          "2010": {
+            "error": "'NoneType' object is not subscriptable"
+          }
+        },
+        "FEFAM": {
+          "2022": {
+            "point": 75.8,
+            "lo90": 71.9,
+            "hi90": 79.8
+          },
+          "2010": {
+            "point": 72.9,
+            "lo90": 62.5,
+            "hi90": 83.3
+          }
+        }
+      }
+    }
+  },
+  "point": {
+    "o3": {
+      "HOMOSEX": {
+        "2022": {
+          "point": 65.0,
+          "lo90": 59.0,
+          "hi90": 71.0
+        },
+        "2010": {
+          "point": 58.0,
+          "lo90": 49.0,
+          "hi90": 67.0
+        }
+      },
+      "GRASS": {
+        "2022": {
+          "point": 75.0,
+          "lo90": 70.0,
+          "hi90": 80.0
+        },
+        "2010": {
+          "point": 70.0,
+          "lo90": 60.0,
+          "hi90": 80.0
+        }
+      },
+      "PREMARSX": {
+        "2022": {
+          "point": 71.0,
+          "lo90": 66.0,
+          "hi90": 76.0
+        },
+        "2010": {
+          "point": 64.0,
+          "lo90": 54.0,
+          "hi90": 74.0
+        }
+      },
+      "FEFAM": {
+        "2022": {
+          "point": 76.3,
+          "lo90": 71.0,
+          "hi90": 81.5
+        },
+        "2010": {
+          "point": 70.0,
+          "lo90": 62.0,
+          "hi90": 78.0
+        }
+      },
+      "FEPOL": {
+        "2022": {
+          "point": 85.6,
+          "lo90": 81.5,
+          "hi90": 89.5
+        },
+        "2010": {
+          "point": 81.0,
+          "lo90": 75.0,
+          "hi90": 87.0
+        }
+      },
+      "SPKATH": {
+        "2022": {
+          "point": 80.0,
+          "lo90": 77.8,
+          "hi90": 82.1
+        },
+        "2010": {
+          "point": 79.0,
+          "lo90": 74.0,
+          "hi90": 84.0
+        }
+      },
+      "ABANY": {
+        "2022": {
+          "point": 58.0,
+          "lo90": 52.0,
+          "hi90": 64.0
+        },
+        "2010": {
+          "error": "'NoneType' object is not subscriptable"
+        }
+      },
+      "CAPPUN": {
+        "2022": {
+          "point": 39.5,
+          "lo90": 33.0,
+          "hi90": 46.0
+        },
+        "2010": {
+          "point": 34.0,
+          "lo90": 26.0,
+          "hi90": 43.0
+        }
+      },
+      "POLVIEWS": {
+        "2022": {
+          "point": 29.8,
+          "lo90": 26.5,
+          "hi90": 33.0
+        },
+        "2010": {
+          "point": 27.0,
+          "lo90": 23.0,
+          "hi90": 31.0
+        }
+      },
+      "EQWLTH": {
+        "2022": {
+          "point": 54.0,
+          "lo90": 48.0,
+          "hi90": 60.0
+        },
+        "2010": {
+          "error": "'NoneType' object is not subscriptable"
+        }
+      },
+      "HELPPOOR": {
+        "2022": {
+          "point": 35.0,
+          "lo90": 28.0,
+          "hi90": 42.0
+        },
+        "2010": {
+          "point": 28.0,
+          "lo90": 20.0,
+          "hi90": 36.0
+        }
+      },
+      "GUNLAW": {
+        "2022": {
+          "point": 66.2,
+          "lo90": 62.5,
+          "hi90": 70.0
+        },
+        "2010": {
+          "point": 78.0,
+          "lo90": 70.0,
+          "hi90": 86.0
+        }
+      },
+      "NATRACE": {
+        "2022": {
+          "point": 53.0,
+          "lo90": 44.0,
+          "hi90": 62.0
+        },
+        "2010": {
+          "point": 35.0,
+          "lo90": 27.0,
+          "hi90": 43.0
+        }
+      },
+      "NATENVIR": {
+        "2022": {
+          "point": 67.5,
+          "lo90": 61.0,
+          "hi90": 74.0
+        },
+        "2010": {
+          "point": 65.0,
+          "lo90": 54.0,
+          "hi90": 76.0
+        }
+      },
+      "NATFARE": {
+        "2022": {
+          "point": 29.0,
+          "lo90": 23.0,
+          "hi90": 35.0
+        },
+        "2010": {
+          "point": 24.0,
+          "lo90": 17.0,
+          "hi90": 31.0
+        }
+      },
+      "NATHEAL": {
+        "2022": {
+          "point": 71.0,
+          "lo90": 62.0,
+          "hi90": 80.0
+        },
+        "2010": {
+          "point": 65.0,
+          "lo90": 55.0,
+          "hi90": 75.0
+        }
+      },
+      "NATEDUC": {
+        "2022": {
+          "point": 75.0,
+          "lo90": 69.0,
+          "hi90": 81.0
+        },
+        "2010": {
+          "point": 72.0,
+          "lo90": 66.0,
+          "hi90": 78.0
+        }
+      },
+      "TRUST": {
+        "2022": {
+          "point": 27.5,
+          "lo90": 22.0,
+          "hi90": 33.0
+        },
+        "2010": {
+          "point": 30.5,
+          "lo90": 24.0,
+          "hi90": 37.0
+        }
+      },
+      "FAIR": {
+        "2022": {
+          "point": 47.0,
+          "lo90": 40.0,
+          "hi90": 54.0
+        },
+        "2010": {
+          "point": 50.0,
+          "lo90": 43.0,
+          "hi90": 57.0
+        }
+      },
+      "PRAYER": {
+        "2022": {
+          "point": 52.3,
+          "lo90": 46.0,
+          "hi90": 60.0
+        },
+        "2010": {
+          "error": "'NoneType' object is not subscriptable"
+        }
+      }
+    },
+    "gpt-5-mini-medium": {
+      "HOMOSEX": {
+        "2022": {
+          "point": 65.2,
+          "lo90": 60.0,
+          "hi90": 70.4
+        },
+        "2010": {
+          "point": 62.0,
+          "lo90": 50.0,
+          "hi90": 74.0
+        }
+      },
+      "GRASS": {
+        "2022": {
+          "point": 77.8,
+          "lo90": 70.2,
+          "hi90": 85.3
+        },
+        "2010": {
+          "point": 70.8,
+          "lo90": 61.6,
+          "hi90": 80.0
+        }
+      },
+      "PREMARSX": {
+        "2022": {
+          "point": 71.4,
+          "lo90": 68.0,
+          "hi90": 74.8
+        },
+        "2010": {
+          "point": 62.5,
+          "lo90": 52.0,
+          "hi90": 73.0
+        }
+      },
+      "FEFAM": {
+        "2022": {
+          "point": 76.5,
+          "lo90": 71.5,
+          "hi90": 81.5
+        },
+        "2010": {
+          "point": 64.0,
+          "lo90": 60.4,
+          "hi90": 67.6
+        }
+      },
+      "FEPOL": {
+        "2022": {
+          "point": 85.0,
+          "lo90": 80.5,
+          "hi90": 89.5
+        },
+        "2010": {
+          "point": 81.6,
+          "lo90": 78.5,
+          "hi90": 84.7
+        }
+      },
+      "SPKATH": {
+        "2022": {
+          "point": 79.7,
+          "lo90": 76.1,
+          "hi90": 83.2
+        },
+        "2010": {
+          "point": 78.0,
+          "lo90": 74.0,
+          "hi90": 82.0
+        }
+      },
+      "ABANY": {
+        "2022": {
+          "point": 60.4,
+          "lo90": 55.0,
+          "hi90": 65.8
+        },
+        "2010": {
+          "error": "'NoneType' object is not subscriptable"
+        }
+      },
+      "CAPPUN": {
+        "2022": {
+          "point": 39.4,
+          "lo90": 33.6,
+          "hi90": 45.2
+        },
+        "2010": {
+          "point": 35.0,
+          "lo90": 29.0,
+          "hi90": 41.0
+        }
+      },
+      "POLVIEWS": {
+        "2022": {
+          "point": 29.6,
+          "lo90": 26.9,
+          "hi90": 32.3
+        },
+        "2010": {
+          "error": "'NoneType' object is not subscriptable"
+        }
+      },
+      "EQWLTH": {
+        "2022": {
+          "point": 52.5,
+          "lo90": 45.6,
+          "hi90": 59.4
+        },
+        "2010": {
+          "point": 40.1,
+          "lo90": 20.5,
+          "hi90": 59.7
+        }
+      },
+      "HELPPOOR": {
+        "2022": {
+          "point": 34.0,
+          "lo90": 25.0,
+          "hi90": 43.0
+        },
+        "2010": {
+          "point": 30.3,
+          "lo90": 23.7,
+          "hi90": 37.0
+        }
+      },
+      "GUNLAW": {
+        "2022": {
+          "point": 68.6,
+          "lo90": 62.0,
+          "hi90": 75.2
+        },
+        "2010": {
+          "point": 75.0,
+          "lo90": 67.0,
+          "hi90": 83.0
+        }
+      },
+      "NATRACE": {
+        "2022": {
+          "point": 53.3,
+          "lo90": 45.1,
+          "hi90": 61.5
+        },
+        "2010": {
+          "point": 35.3,
+          "lo90": 27.1,
+          "hi90": 43.4
+        }
+      },
+      "NATENVIR": {
+        "2022": {
+          "point": 67.0,
+          "lo90": 56.2,
+          "hi90": 77.7
+        },
+        "2010": {
+          "point": 62.6,
+          "lo90": 52.3,
+          "hi90": 73.0
+        }
+      },
+      "NATFARE": {
+        "2022": {
+          "point": 28.0,
+          "lo90": 22.5,
+          "hi90": 34.0
+        },
+        "2010": {
+          "point": 22.0,
+          "lo90": 14.3,
+          "hi90": 29.7
+        }
+      },
+      "NATHEAL": {
+        "2022": {
+          "point": 68.3,
+          "lo90": 59.8,
+          "hi90": 76.8
+        },
+        "2010": {
+          "point": 67.0,
+          "lo90": 56.3,
+          "hi90": 77.6
+        }
+      },
+      "NATEDUC": {
+        "2022": {
+          "point": 74.0,
+          "lo90": 70.5,
+          "hi90": 77.5
+        },
+        "2010": {
+          "point": 72.6,
+          "lo90": 67.6,
+          "hi90": 77.6
+        }
+      },
+      "TRUST": {
+        "2022": {
+          "point": 25.0,
+          "lo90": 17.6,
+          "hi90": 32.4
+        },
+        "2010": {
+          "point": 29.0,
+          "lo90": 22.0,
+          "hi90": 36.0
+        }
+      },
+      "FAIR": {
+        "2022": {
+          "point": 44.0,
+          "lo90": 38.5,
+          "hi90": 49.5
+        },
+        "2010": {
+          "point": 56.29,
+          "lo90": 48.35,
+          "hi90": 64.23
+        }
+      },
+      "PRAYER": {
+        "2022": {
+          "point": 56.0,
+          "lo90": 50.0,
+          "hi90": 62.0
+        },
+        "2010": {
+          "point": 39.9,
+          "lo90": 34.0,
+          "hi90": 46.0
+        }
+      }
+    },
+    "gpt-5-mini-high": {
+      "HOMOSEX": {
+        "2022": {
+          "point": 66.3,
+          "lo90": 62.1,
+          "hi90": 70.5
+        }
+      },
+      "GRASS": {
+        "2022": {
+          "point": 74.7,
+          "lo90": 66.6,
+          "hi90": 82.8
+        }
+      },
+      "PREMARSX": {
+        "2022": {
+          "error": "'NoneType' object is not subscriptable"
+        }
+      },
+      "FEFAM": {
+        "2022": {
+          "point": 77.5,
+          "lo90": 68.9,
+          "hi90": 86.2
+        }
+      },
+      "FEPOL": {
+        "2022": {
+          "point": 86.1,
+          "lo90": 80.8,
+          "hi90": 91.4
+        }
+      },
+      "SPKATH": {
+        "2022": {
+          "point": 79.0,
+          "lo90": 75.7,
+          "hi90": 82.3
+        }
+      },
+      "ABANY": {
+        "2022": {
+          "point": 58.4,
+          "lo90": 54.0,
+          "hi90": 62.9
+        }
+      },
+      "CAPPUN": {
+        "2022": {
+          "point": 41.1,
+          "lo90": 37.3,
+          "hi90": 44.9
+        }
+      },
+      "POLVIEWS": {
+        "2022": {
+          "point": 30.65,
+          "lo90": 27.66,
+          "hi90": 33.64
+        }
+      },
+      "EQWLTH": {
+        "2022": {
+          "point": 52.5,
+          "lo90": 46.7,
+          "hi90": 58.3
+        }
+      },
+      "HELPPOOR": {
+        "2022": {
+          "point": 33.5,
+          "lo90": 27.1,
+          "hi90": 39.9
+        }
+      },
+      "GUNLAW": {
+        "2022": {
+          "point": 66.2,
+          "lo90": 62.5,
+          "hi90": 69.9
+        }
+      }
+    }
+  },
+  "anon": {}
+}

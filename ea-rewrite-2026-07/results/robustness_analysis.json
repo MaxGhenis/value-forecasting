@@ -1,0 +1,484 @@
+{
+  "kind": "post-registration robustness analysis (paired with pre-registered analysis.json)",
+  "cutoffs": {
+    "o3": {
+      "provider": "openai",
+      "vendor_cutoff": "2024-06-01",
+      "url": "https://developers.openai.com/api/docs/models/o3",
+      "stated": "Jun 01, 2024 knowledge cutoff",
+      "clean_rule": "stated cutoff <= 2024-12 (end of GSS 2024 fieldwork)",
+      "label": "clean"
+    },
+    "gpt-5-mini-medium": {
+      "provider": "openai",
+      "vendor_cutoff": "2024-05-31",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+      "stated": "May 31, 2024 knowledge cutoff",
+      "clean_rule": "stated cutoff <= 2024-12",
+      "label": "clean"
+    },
+    "gpt-5-mini-high": {
+      "provider": "openai",
+      "vendor_cutoff": "2024-05-31",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-mini",
+      "stated": "May 31, 2024 knowledge cutoff",
+      "clean_rule": "stated cutoff <= 2024-12",
+      "label": "clean"
+    },
+    "deepseek-v4-flash": {
+      "provider": "deepseek",
+      "vendor_cutoff": "not documented",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "stated": "deepseek-chat = non-thinking mode of deepseek-v4-flash (per DeepSeek docs); no vendor-stated training cutoff published; V4 line is a 2025+ model",
+      "clean_rule": "stated cutoff <= 2024-12 (UNVERIFIABLE)",
+      "label": "contaminated/unverified"
+    }
+  },
+  "unavailable": {
+    "claude-3-5-sonnet-20241022": {
+      "status": "unavailable",
+      "requested_label": "clean (candidate Anthropic arm; vendor-stated cutoff ~Apr 2024)",
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CctyQyUZhVWMXKaJJCCaw'}",
+      "note": "Retired 2025-10-28 per Anthropic model lifecycle; 404 not_found_error. All Claude snapshots with a training cutoff <= Dec 2024 are now retired, so no CLEAN Anthropic arm is runnable via the API. The pre-registered claude-opus-4-8 remains the contaminated Anthropic ceiling."
+    }
+  },
+  "actual_2024_HOMOSEX": 55.94,
+  "committed_naive_mae_2022": 3.15,
+  "metrics": {
+    "2022": {
+      "naive": {
+        "n": 20,
+        "mae": 3.15,
+        "bias": 1.91,
+        "medae": 2.35,
+        "cov90": 0.9,
+        "width90": 12.01,
+        "mae_by_class": {
+          "reversal": 5.26,
+          "continuation": 3.9,
+          "stable": 1.03
+        }
+      },
+      "linear": {
+        "n": 20,
+        "mae": 4.07,
+        "bias": 0.03,
+        "medae": 3.34,
+        "cov90": 0.9,
+        "width90": 15.05,
+        "mae_by_class": {
+          "reversal": 3.41,
+          "continuation": 5.36,
+          "stable": 4.23
+        }
+      },
+      "arima": {
+        "n": 20,
+        "mae": 3.58,
+        "bias": 2.22,
+        "medae": 2.69,
+        "cov90": 0.8,
+        "width90": 11.61,
+        "mae_by_class": {
+          "reversal": 5.28,
+          "continuation": 4.82,
+          "stable": 1.65
+        }
+      },
+      "ets": {
+        "n": 20,
+        "mae": 3.15,
+        "bias": 1.91,
+        "medae": 2.35,
+        "cov90": 0.9,
+        "width90": 12.01,
+        "mae_by_class": {
+          "reversal": 5.26,
+          "continuation": 3.9,
+          "stable": 1.03
+        }
+      },
+      "gpt-5-mini": {
+        "n": 20,
+        "mae": 4.07,
+        "bias": 2.2,
+        "medae": 3.85,
+        "cov90": 0.55,
+        "width90": 8.63,
+        "mae_by_class": {
+          "reversal": 6.3,
+          "continuation": 5.14,
+          "stable": 1.73
+        }
+      },
+      "gpt-4o": {
+        "n": 20,
+        "mae": 3.92,
+        "bias": 2.5,
+        "medae": 3.6,
+        "cov90": 0.5,
+        "width90": 7.55,
+        "mae_by_class": {
+          "reversal": 6.11,
+          "continuation": 5.14,
+          "stable": 1.56
+        }
+      },
+      "claude-opus-4-8": {
+        "n": 20,
+        "mae": 3.58,
+        "bias": 1.81,
+        "medae": 2.87,
+        "cov90": 0.8,
+        "width90": 11.03,
+        "mae_by_class": {
+          "reversal": 5.42,
+          "continuation": 5.48,
+          "stable": 1.31
+        }
+      },
+      "o3": {
+        "n": 20,
+        "mae": 3.93,
+        "bias": 2.53,
+        "medae": 3.24,
+        "cov90": 0.75,
+        "width90": 11.59,
+        "mae_by_class": {
+          "reversal": 6.26,
+          "continuation": 4.14,
+          "stable": 1.79
+        }
+      },
+      "gpt-5-mini-medium": {
+        "n": 20,
+        "mae": 4.16,
+        "bias": 2.43,
+        "medae": 2.74,
+        "cov90": 0.75,
+        "width90": 12.12,
+        "mae_by_class": {
+          "reversal": 7.11,
+          "continuation": 4.38,
+          "stable": 1.47
+        }
+      },
+      "gpt-5-mini-high": {
+        "n": 10,
+        "mae": 4.38,
+        "bias": 3.35,
+        "medae": 3.7,
+        "cov90": 0.6,
+        "width90": 10.6,
+        "mae_by_class": {
+          "reversal": 7.03,
+          "continuation": null,
+          "stable": 1.72
+        }
+      }
+    },
+    "2010": {
+      "naive": {
+        "n": 20,
+        "mae": 8.55,
+        "bias": -6.03,
+        "medae": 8.9,
+        "cov90": 0.95,
+        "width90": 31.34,
+        "mae_by_class": {
+          "reversal": 8.46,
+          "continuation": 11.55,
+          "stable": 7.63
+        }
+      },
+      "linear": {
+        "n": 20,
+        "mae": 7.68,
+        "bias": -2.09,
+        "medae": 6.87,
+        "cov90": 0.55,
+        "width90": 14.78,
+        "mae_by_class": {
+          "reversal": 7.08,
+          "continuation": 5.67,
+          "stable": 8.88
+        }
+      },
+      "arima": {
+        "n": 20,
+        "mae": 7.66,
+        "bias": -5.33,
+        "medae": 8.08,
+        "cov90": 0.8,
+        "width90": 26.78,
+        "mae_by_class": {
+          "reversal": 7.3,
+          "continuation": 9.32,
+          "stable": 7.42
+        }
+      },
+      "ets": {
+        "n": 20,
+        "mae": 8.55,
+        "bias": -6.03,
+        "medae": 8.9,
+        "cov90": 0.95,
+        "width90": 31.34,
+        "mae_by_class": {
+          "reversal": 8.46,
+          "continuation": 11.55,
+          "stable": 7.63
+        }
+      },
+      "gpt-5-mini": {
+        "n": 20,
+        "mae": 7.25,
+        "bias": -1.58,
+        "medae": 6.06,
+        "cov90": 0.5,
+        "width90": 10.97,
+        "mae_by_class": {
+          "reversal": 7.39,
+          "continuation": 8.81,
+          "stable": 6.61
+        }
+      },
+      "gpt-4o": {
+        "n": 20,
+        "mae": 5.83,
+        "bias": -2.52,
+        "medae": 4.43,
+        "cov90": 0.55,
+        "width90": 8.92,
+        "mae_by_class": {
+          "reversal": 4.22,
+          "continuation": 7.64,
+          "stable": 6.67
+        }
+      },
+      "claude-opus-4-8": {
+        "n": 20,
+        "mae": 4.18,
+        "bias": -1.38,
+        "medae": 4.2,
+        "cov90": 0.9,
+        "width90": 16.15,
+        "mae_by_class": {
+          "reversal": 2.89,
+          "continuation": 5.98,
+          "stable": 4.72
+        }
+      },
+      "o3": {
+        "n": 17,
+        "mae": 4.84,
+        "bias": -1.16,
+        "medae": 3.85,
+        "cov90": 0.706,
+        "width90": 15.53,
+        "mae_by_class": {
+          "reversal": 3.12,
+          "continuation": 8.81,
+          "stable": 4.87
+        }
+      },
+      "gpt-5-mini-medium": {
+        "n": 18,
+        "mae": 6.07,
+        "bias": -2.07,
+        "medae": 5.25,
+        "cov90": 0.722,
+        "width90": 16.16,
+        "mae_by_class": {
+          "reversal": 5.0,
+          "continuation": 10.91,
+          "stable": 5.2
+        }
+      },
+      "gpt-5-mini-high": {
+        "n": 0,
+        "mae": null,
+        "bias": null,
+        "medae": null,
+        "cov90": null,
+        "width90": null,
+        "mae_by_class": {
+          "reversal": null,
+          "continuation": null,
+          "stable": null
+        }
+      }
+    }
+  },
+  "anon_probe": {
+    "2022": {
+      "o3": {
+        "identified_mae": 3.93,
+        "anon_mae": null,
+        "n": 0,
+        "edge_over_naive_identified": -0.78,
+        "edge_over_naive_anon": null
+      },
+      "gpt-5-mini-medium": {
+        "identified_mae": 4.16,
+        "anon_mae": null,
+        "n": 0,
+        "edge_over_naive_identified": -1.01,
+        "edge_over_naive_anon": null
+      },
+      "gpt-5-mini-high": {
+        "identified_mae": 4.38,
+        "anon_mae": null,
+        "n": 0,
+        "edge_over_naive_identified": -1.23,
+        "edge_over_naive_anon": null
+      },
+      "gpt-5-mini(minimal, pre-registered)": {
+        "gpt5mini_identified_mae": 4.07,
+        "gpt5mini_anon_mae": 4.62,
+        "naive_mae": 3.15,
+        "n": 20,
+        "edge_over_naive_identified": -0.92,
+        "edge_over_naive_anon": -1.47
+      }
+    },
+    "2010": {
+      "o3": {
+        "identified_mae": 4.84,
+        "anon_mae": null,
+        "n": 0,
+        "edge_over_naive_identified": -1.69,
+        "edge_over_naive_anon": null
+      },
+      "gpt-5-mini-medium": {
+        "identified_mae": 6.07,
+        "anon_mae": null,
+        "n": 0,
+        "edge_over_naive_identified": -2.92,
+        "edge_over_naive_anon": null
+      },
+      "gpt-5-mini-high": {
+        "identified_mae": null,
+        "anon_mae": null,
+        "n": 0,
+        "edge_over_naive_identified": null,
+        "edge_over_naive_anon": null
+      },
+      "gpt-5-mini(minimal, pre-registered)": {
+        "gpt5mini_identified_mae": 7.25,
+        "gpt5mini_anon_mae": 7.73,
+        "naive_mae": 8.55,
+        "n": 20,
+        "edge_over_naive_identified": 1.3,
+        "edge_over_naive_anon": 0.82
+      }
+    }
+  },
+  "homosex": {
+    "2022": {
+      "o3": {
+        "point": 65.0,
+        "lo90": 59.0,
+        "hi90": 71.0,
+        "abs_err": 9.06,
+        "interval_covers_5594": false
+      },
+      "gpt-5-mini-medium": {
+        "point": 65.2,
+        "lo90": 60.0,
+        "hi90": 70.4,
+        "abs_err": 9.26,
+        "interval_covers_5594": false
+      },
+      "gpt-5-mini-high": {
+        "point": 66.3,
+        "lo90": 62.1,
+        "hi90": 70.5,
+        "abs_err": 10.36,
+        "interval_covers_5594": false
+      },
+      "_pre_registered_points": {
+        "naive": 62.72,
+        "linear": 60.22,
+        "arima": 63.08,
+        "ets": 62.72,
+        "gpt-5-mini": 66.5,
+        "gpt-4o": 64.5,
+        "claude-opus-4-8": 64.0
+      }
+    },
+    "2010": {
+      "o3": {
+        "point": 58.0,
+        "lo90": 49.0,
+        "hi90": 67.0,
+        "abs_err": 2.06,
+        "interval_covers_5594": true
+      },
+      "gpt-5-mini-medium": {
+        "point": 62.0,
+        "lo90": 50.0,
+        "hi90": 74.0,
+        "abs_err": 6.06,
+        "interval_covers_5594": true
+      },
+      "gpt-5-mini-high": null,
+      "_pre_registered_points": "see analysis.json"
+    }
+  },
+  "headline_checks": {
+    "o3": {
+      "mae_2022": 3.93,
+      "beats_naive_3.15": false,
+      "cov90_2022": 0.75,
+      "honest_coverage_>=0.90": false,
+      "reversal_subset_mae_2022": 6.26,
+      "homosex_point_2022": 65.0,
+      "homosex_interval_covers_5594_2022": false
+    },
+    "gpt-5-mini-medium": {
+      "mae_2022": 4.16,
+      "beats_naive_3.15": false,
+      "cov90_2022": 0.75,
+      "honest_coverage_>=0.90": false,
+      "reversal_subset_mae_2022": 7.11,
+      "homosex_point_2022": 65.2,
+      "homosex_interval_covers_5594_2022": false
+    },
+    "gpt-5-mini-high": {
+      "mae_2022": 4.38,
+      "beats_naive_3.15": false,
+      "cov90_2022": 0.6,
+      "honest_coverage_>=0.90": false,
+      "reversal_subset_mae_2022": 7.03,
+      "homosex_point_2022": 66.3,
+      "homosex_interval_covers_5594_2022": false
+    }
+  },
+  "costs": {
+    "o3": {
+      "in": 0,
+      "out": 0,
+      "usd": 0.0,
+      "calls": 0
+    },
+    "gpt-5-mini-medium": {
+      "in": 0,
+      "out": 0,
+      "usd": 0.0,
+      "calls": 0
+    },
+    "gpt-5-mini-high": {
+      "in": 11291,
+      "out": 421576,
+      "usd": 0.84597475,
+      "calls": 29
+    },
+    "deepseek-v4-flash": {
+      "in": 0,
+      "out": 0,
+      "usd": 0.0,
+      "calls": 0
+    }
+  }
+}
