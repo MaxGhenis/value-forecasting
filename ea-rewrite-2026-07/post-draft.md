@@ -1,6 +1,6 @@
-# Value forecasting for AI alignment: Pre-registered tests, a missed reversal, and a correction
+# Value forecasting for AI alignment: Pre-registered tests and a missed reversal
 
-*Epistemic status: pre-registered empirical results plus a research proposal I hold more loosely. The experiments are small — 20 survey items, one holdout wave, one draw per forecast, $0.19 of API spend — but the [analysis plan](https://github.com/maxghenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/PREANALYSIS_PLAN.md) was committed before any forecasting call, and all code, prompts, and raw results are [public](https://github.com/maxghenis/value-forecasting/tree/ea-post-rewrite-2026-07/ea-rewrite-2026-07). This supersedes an earlier draft in which I claimed LLMs beat time-series baselines on value forecasting by 2.2x; that claim came from two variables and a design I now consider leaky, and it did not survive better controls.*
+*Epistemic status: pre-registered empirical results plus a research proposal I hold more loosely. The experiments are small — 20 survey items, one holdout wave, one draw per forecast, $0.19 of API spend — but the [analysis plan](https://github.com/maxghenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/PREANALYSIS_PLAN.md) was committed before any forecasting call, and all code, prompts, and raw results are [public](https://github.com/maxghenis/value-forecasting/tree/ea-post-rewrite-2026-07/ea-rewrite-2026-07). Before this, I drafted — but never published — a version claiming LLMs beat time-series baselines on value forecasting by 2.2x; that number came from two variables and a leaky design, and it did not survive the controls here. This is the version with the controls, and the near-miss is part of the argument.*
 
 **Summary:**
 
@@ -79,11 +79,11 @@ Three reads:
 
 The whole experiment cost $0.19 in API calls (166 of them); every prompt and raw completion is in the repo.
 
-## What I claimed before, and what survived
+## The claim I almost published
 
-An earlier draft of this post reported that an LLM beat the best time-series baseline by 2.2x on mean absolute error. Here is what happened to that and my other claims once I tightened the design:
+An earlier draft of this post — written before these controls, never published — reported that an LLM beat the best time-series baseline by 2.2x on mean absolute error. I'm including its claims here because the way they fell apart is the most useful thing in this post: every one of them looked publication-ready, and at least one of them is structurally identical to results that *are* being published in the LLM-simulation literature. Here is what happened to each once I tightened the design:
 
-| Earlier claim | Test that produced it | What the pre-registered replication found |
+| Draft claim | Test that produced it | What the pre-registered version found |
 |---|---|---|
 | "LLM beats best baseline 2.2x" (MAE 12.5 vs. 28.1) | n = 2 items (HOMOSEX, GRASS), item names shown, forecast targets 2000–2021 — all *inside* the model's training window | Does not replicate. On a clean, aligned design: clean LLM MAE 4.07 vs. naive 3.15 (ratio 1.29, LLM worse), n = 20 |
 | "Everyone is overconfident — LLM CIs covered 43%, baselines 36%" | Same leaky design; degenerate baseline intervals | Half survives. LLMs covered 50–55% at 90% nominal (n = 20); properly computed classical intervals covered 90% |
@@ -94,7 +94,7 @@ An earlier draft of this post reported that an LLM beat the best time-series bas
 
 The old experiment asked a model to "forecast" years it had already read about, on items it could name, and I interpreted its recall as skill. I flagged contamination as a concern in that draft and ran what I thought was a control — a clean 2024 holdout — but kept the headline number from the contaminated design. The right response to noticing that was to rebuild the experiment, so that is what this is.
 
-I also owe a correction in the other direction: the one prediction the old draft got right — reversals happen and trend-extrapolators miss them — turned out to be the *most* important feature of the new data, and I pre-registered it this time ("all arms miss the HOMOSEX reversal; point ≥ 60 vs. actual ≈ 55"). It confirmed exactly.
+Credit in the other direction: the one thing the old draft got right — reversals happen and trend-extrapolators miss them — turned out to be the *most* important feature of the new data, and I pre-registered it this time ("all arms miss the HOMOSEX reversal; point ≥ 60 vs. actual ≈ 55"). It confirmed exactly.
 
 ## Where the apparent LLM skill came from
 
@@ -174,7 +174,7 @@ Three commitments, in increasing order of infrastructure required:
 
 1. **Forward pre-registration against GSS 2026 and 2028.** Point forecasts and 90% intervals for all 20 items (plus full response distributions for the ordinal ones), from me, from baseline models, and from any LLM anyone cares to submit — committed publicly before the data exist. No contamination argument is possible about data that hasn't been collected. If you work on LLM forecasting and want to add an arm, the repo issue tracker is open.
 2. **Sensor-mode evaluation of the summer Talkie checkpoint.** First test: can log-probability elicitation recover known 1930s-era attitude signals where chat elicitation fails, the way it does for arithmetic? If yes: forecast the polling era, 1936 onward, and grade.
-3. **Anonymization as default protocol.** Any retrospective "LLM predicts public opinion" result I produce — and, I'd argue, anyone else's — should report the anonymized-series number next to the identified one. The gap between them is a direct measurement of how much of the claimed skill is recall. In my case that gap was the difference between a publishable 2.2x and a correction post.
+3. **Anonymization as default protocol.** Any retrospective "LLM predicts public opinion" result I produce — and, I'd argue, anyone else's — should report the anonymized-series number next to the identified one. The gap between them is a direct measurement of how much of the claimed skill is recall. In my case that gap was the difference between publishing a 2.2x claim and publishing this post instead.
 
 Code, data extracts, prompts, raw model outputs, and the pre-analysis plan: [github.com/maxghenis/value-forecasting](https://github.com/maxghenis/value-forecasting), branch `ea-post-rewrite-2026-07`, directory `ea-rewrite-2026-07/`.
 
