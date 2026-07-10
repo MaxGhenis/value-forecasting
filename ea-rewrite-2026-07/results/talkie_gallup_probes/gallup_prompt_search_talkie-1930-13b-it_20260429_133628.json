@@ -1,0 +1,3396 @@
+{
+  "model_name": "talkie-1930-13b-it",
+  "style": "it",
+  "device": "cuda",
+  "cuda_name": "NVIDIA A100-SXM4-80GB",
+  "load_seconds": 102.57049039,
+  "temperature": 0.18,
+  "top_k": 20,
+  "samples_per_generation": 8,
+  "questions": [
+    {
+      "name": "labor_unions_1936",
+      "target_year": 1936,
+      "survey_question": "Do you approve or disapprove of labor unions?",
+      "positive_answer": "approve",
+      "negative_answer": "disapprove",
+      "actual_positive_share": 72,
+      "actual": {
+        "approve": 72,
+        "disapprove": 20,
+        "no_opinion": 8
+      },
+      "source_url": "https://news.gallup.com/file/poll/175565/140828Unions.pdf",
+      "positive_variants": [
+        " approve",
+        " Approve",
+        "APPROVE",
+        " approve."
+      ],
+      "negative_variants": [
+        " disapprove",
+        " Disapprove",
+        "DISAPPROVE",
+        " disapprove."
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1936. The adult is asked: \"Do you approve or disapprove of labor unions?\"\n\nAnswer only \"approve\" or \"disapprove\". The adult answers:",
+          "positive_answer": "approve",
+          "negative_answer": "disapprove",
+          "positive_probability": 0.9910110323172711,
+          "negative_probability": 0.008988967682728654,
+          "positive_percent": 99.10110323172711,
+          "negative_percent": 0.8988967682728654,
+          "positive_logprob": -8.75069192317868,
+          "negative_logprob": -13.453419577573825,
+          "best_positive_variant": " approve",
+          "best_negative_variant": " disapprove",
+          "name": "random_adult_direct",
+          "actual_positive_share": 72,
+          "error": 27.10110323172711
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1936. The adult is asked: \"Do you approve or disapprove of labor unions?\"\n\nAnswer only \"approve\" or \"disapprove\". The adult answers:",
+          "positive_answer": "approve",
+          "negative_answer": "disapprove",
+          "positive_probability": 0.9713886202553323,
+          "negative_probability": 0.02861137974466732,
+          "positive_percent": 97.13886202553323,
+          "negative_percent": 2.861137974466732,
+          "positive_logprob": -9.334253202870686,
+          "negative_logprob": -12.859175286068622,
+          "best_positive_variant": " approve",
+          "best_negative_variant": "DISAPPROVE",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 72,
+          "error": 25.13886202553323
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1936 asks: \"Do you approve or disapprove of labor unions?\"\n\nThe share answering \"approve\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 6,
+            "unparsed_count": 2,
+            "range_count": 0,
+            "share_counts": {
+              "3": 4,
+              "4": 1,
+              "6": 1
+            },
+            "mean": 3.6666666666666665,
+            "median": 3.0,
+            "min": 3,
+            "max": 6,
+            "mean_seconds": 0.4286731754999984,
+            "mean_error": -68.33333333333333,
+            "median_error": -69.0,
+            "mean_absolute_error": 68.33333333333333
+          },
+          "generations": [
+            {
+              "text": "three-fifths, and the share answering \"disapprove\" about two-fifths.",
+              "token_count": 15,
+              "seconds": 0.6983922430000007,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I approve, 4,000,000.",
+              "token_count": 6,
+              "seconds": 0.350874263999998,
+              "flags": {
+                "parsed_share": 4,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths, according to the estimate of the National Bureau of Economic Research. The",
+              "token_count": 15,
+              "seconds": 0.5065603959999976,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I approve, 6,500,000.",
+              "token_count": 6,
+              "seconds": 0.3512617800000015,
+              "flags": {
+                "parsed_share": 6,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths, and the share answering \"disapprove\" about one-fourth.",
+              "token_count": 16,
+              "seconds": 0.5098312479999976,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve of labour unions,",
+              "token_count": 5,
+              "seconds": 0.2542073479999942,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths, and the share answering \"disapprove\" about one-fourth.",
+              "token_count": 16,
+              "seconds": 0.5067672639999898,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve of labour unions,",
+              "token_count": 5,
+              "seconds": 0.2514908610000077,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1936 asks: \"Do you approve or disapprove of labor unions?\"\n\nPercentage answering \"approve\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "52": 1,
+              "61": 2,
+              "63": 4,
+              "72": 1
+            },
+            "mean": 62.25,
+            "median": 63.0,
+            "min": 52,
+            "max": 72,
+            "mean_seconds": 0.4725577834999992,
+            "mean_error": -9.75,
+            "median_error": -9.0,
+            "mean_absolute_error": 9.75
+          },
+          "generations": [
+            {
+              "text": "Men, 63.1; women, 66.3.",
+              "token_count": 8,
+              "seconds": 0.47304029900000444,
+              "flags": {
+                "parsed_share": 63,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 63.1; women, 66.3.",
+              "token_count": 8,
+              "seconds": 0.47222209500000645,
+              "flags": {
+                "parsed_share": 63,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 52.3; women, 53.3.",
+              "token_count": 8,
+              "seconds": 0.4726021669999909,
+              "flags": {
+                "parsed_share": 52,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 63.9; women, 64.1.",
+              "token_count": 8,
+              "seconds": 0.47284085500000117,
+              "flags": {
+                "parsed_share": 63,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 61.3; women, 66.3.",
+              "token_count": 8,
+              "seconds": 0.4724197019999963,
+              "flags": {
+                "parsed_share": 61,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 61.9; women, 67.1.",
+              "token_count": 8,
+              "seconds": 0.47239133600000116,
+              "flags": {
+                "parsed_share": 61,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 63.3; women, 59.9.",
+              "token_count": 8,
+              "seconds": 0.4727132839999939,
+              "flags": {
+                "parsed_share": 63,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 72.3; women, 75.3.",
+              "token_count": 8,
+              "seconds": 0.47223252999999943,
+              "flags": {
+                "parsed_share": 72,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1936.\nQuestion: \"Do you approve or disapprove of labor unions?\"\nAnswer counted: \"approve\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "86": 1,
+              "90": 7
+            },
+            "mean": 89.5,
+            "median": 90.0,
+            "min": 86,
+            "max": 90,
+            "mean_seconds": 0.7755954888749965,
+            "mean_error": 17.5,
+            "median_error": 18.0,
+            "mean_absolute_error": 17.5
+          },
+          "generations": [
+            {
+              "text": "approved, 90; disapproved, 10.\nQuestion: \"Do you favour or oppose compulsory arbitration in industrial disputes?\"\nAnswer counted",
+              "token_count": 24,
+              "seconds": 0.8846505470000068,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 90; disapproved, 10.\nQuestion: \"Do you favour or oppose compulsory arbitration in industrial disputes?\"\nAnswer counted",
+              "token_count": 24,
+              "seconds": 0.8842643400000014,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 90; disapproved, 10.",
+              "token_count": 7,
+              "seconds": 0.3821131919999914,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 90; disapproved, 10.\nQuestion: \"Do you approve or disapprove of strikes?\"\nAnswer counted: \"",
+              "token_count": 24,
+              "seconds": 0.8947743880000019,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 90; disapproved, 10.\nQuestion: \"Do you approve or disapprove of strikes?\"\nAnswer counted: \"",
+              "token_count": 24,
+              "seconds": 0.8879503219999947,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 86.5; disapproved, 13.5.",
+              "token_count": 11,
+              "seconds": 0.5034169319999933,
+              "flags": {
+                "parsed_share": 86,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 90; disapproved, 10.\nQuestion: \"Do you approve or disapprove of strikes?\"\nAnswer counted: \"",
+              "token_count": 24,
+              "seconds": 0.8824992139999921,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 90; disapproved, 10.\nQuestion: \"Do you approve or disapprove of strikes?\"\nAnswer counted: \"",
+              "token_count": 24,
+              "seconds": 0.8850949759999907,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1936 asks: \"Do you approve or disapprove of labor unions?\"\n\nWhat percentage would answer \"approve\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "50": 1,
+              "90": 7
+            },
+            "mean": 85,
+            "median": 90.0,
+            "min": 50,
+            "max": 90,
+            "mean_seconds": 1.1677211303750017,
+            "mean_error": 13,
+            "median_error": 18.0,
+            "mean_absolute_error": 18.5
+          },
+          "generations": [
+            {
+              "text": "Approximately 90 per cent approve, because they believe unions improve the conditions of the workers, and because they think it fair that the workers should have a voice in determining the conditions under which they labour.",
+              "token_count": 41,
+              "seconds": 1.354698899000013,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 50 per cent approve, because they think unions help to maintain a fair wage and working standard, and because they dislike to see any body of men treated unfairly.",
+              "token_count": 33,
+              "seconds": 1.1607057570000023,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 90 per cent approve, because they believe unions protect the interests of the workers, and enable them to bargain collectively with employers.",
+              "token_count": 28,
+              "seconds": 0.931681746999999,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 90 per cent approve, because they believe that unions improve the conditions of labour, and because they think it right that men should be able to bargain collectively.",
+              "token_count": 34,
+              "seconds": 1.1310270459999998,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 90 per cent approve, because they believe that unions improve the conditions of labour, and because they think that in a democratic country like the United States the working classes should have the power to protect themselves.",
+              "token_count": 43,
+              "seconds": 1.4200890639999955,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 90 per cent approve, because they believe that unions improve the conditions of labour, and because they think that, in a democratic country, combination is desirable.",
+              "token_count": 34,
+              "seconds": 1.1240115930000059,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 90 per cent approve, because they believe unions are beneficial to the workers, in raising wages and improving working conditions.",
+              "token_count": 26,
+              "seconds": 0.8636676600000044,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 90 per cent approve, because they believe unions are beneficial to the workers, and because they think it is only fair that the workers should be allowed to combine for the protection of their interests.",
+              "token_count": 41,
+              "seconds": 1.3558872769999937,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "death_penalty_1936",
+      "target_year": 1936,
+      "survey_question": "Are you in favor of the death penalty for a person convicted of murder?",
+      "positive_answer": "favor",
+      "negative_answer": "oppose",
+      "actual_positive_share": 59,
+      "actual": {
+        "favor": 59,
+        "oppose": 38,
+        "no_opinion": 3
+      },
+      "source_url": "https://news.gallup.com/file/poll/196679/161025DeathPenalty.pdf",
+      "positive_variants": [
+        " favor",
+        " Favor",
+        " in favor",
+        " yes",
+        " Yes",
+        "YES"
+      ],
+      "negative_variants": [
+        " oppose",
+        " Oppose",
+        " opposed",
+        " no",
+        " No",
+        "NO"
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1936. The adult is asked: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nAnswer only \"favor\" or \"oppose\". The adult answers:",
+          "positive_answer": "favor",
+          "negative_answer": "oppose",
+          "positive_probability": 0.19045868168696176,
+          "negative_probability": 0.8095413183130384,
+          "positive_percent": 19.045868168696174,
+          "negative_percent": 80.95413183130384,
+          "positive_logprob": -10.879711213739405,
+          "negative_logprob": -9.432678677164173,
+          "best_positive_variant": " yes",
+          "best_negative_variant": " Oppose",
+          "name": "random_adult_direct",
+          "actual_positive_share": 59,
+          "error": -39.954131831303826
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1936. The adult is asked: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nAnswer only \"favor\" or \"oppose\". The adult answers:",
+          "positive_answer": "favor",
+          "negative_answer": "oppose",
+          "positive_probability": 0.07134105962866331,
+          "negative_probability": 0.9286589403713364,
+          "positive_percent": 7.1341059628663315,
+          "negative_percent": 92.86589403713364,
+          "positive_logprob": -10.428360514001792,
+          "negative_logprob": -7.862091001176906,
+          "best_positive_variant": " yes",
+          "best_negative_variant": "NO",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 59,
+          "error": -51.86589403713367
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1936 asks: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nThe share answering \"favor\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "1": 4,
+              "3": 1,
+              "7": 1,
+              "10": 2
+            },
+            "mean": 4.25,
+            "median": 2.0,
+            "min": 1,
+            "max": 10,
+            "mean_seconds": 0.2165852666249961,
+            "mean_error": -54.75,
+            "median_error": -57.0,
+            "mean_absolute_error": 54.75
+          },
+          "generations": [
+            {
+              "text": "Yes, 1.",
+              "token_count": 1,
+              "seconds": 0.18847010999999725,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent, according to the returns so far tabulated.",
+              "token_count": 9,
+              "seconds": 0.4099719259999972,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 1,500,000.",
+              "token_count": 3,
+              "seconds": 0.31541287900000725,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three per cent.",
+              "token_count": 3,
+              "seconds": 0.15753751500000135,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.1573798800000077,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "one in ten.",
+              "token_count": 1,
+              "seconds": 0.15749657799997863,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 1.",
+              "token_count": 1,
+              "seconds": 0.18901704499998573,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.15739619999999377,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1936 asks: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nPercentage answering \"favor\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "10": 2,
+              "11": 1,
+              "13": 1,
+              "14": 1,
+              "31": 1,
+              "34": 1,
+              "40": 1
+            },
+            "mean": 20.375,
+            "median": 13.5,
+            "min": 10,
+            "max": 40,
+            "mean_seconds": 0.24045382762499656,
+            "mean_error": -38.625,
+            "median_error": -45.5,
+            "mean_absolute_error": 38.625
+          },
+          "generations": [
+            {
+              "text": "Yes, 11.9.",
+              "token_count": 1,
+              "seconds": 0.2517559209999831,
+              "flags": {
+                "parsed_share": 11,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 10.9.",
+              "token_count": 1,
+              "seconds": 0.254713871000007,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 10.9",
+              "token_count": 1,
+              "seconds": 0.2210698769999908,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 13.9.",
+              "token_count": 1,
+              "seconds": 0.2516541610000047,
+              "flags": {
+                "parsed_share": 13,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 31.9",
+              "token_count": 1,
+              "seconds": 0.2202373689999888,
+              "flags": {
+                "parsed_share": 31,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 34.9.",
+              "token_count": 1,
+              "seconds": 0.2516389150000009,
+              "flags": {
+                "parsed_share": 34,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 40.3",
+              "token_count": 1,
+              "seconds": 0.22064699800000653,
+              "flags": {
+                "parsed_share": 40,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 14.9.",
+              "token_count": 1,
+              "seconds": 0.25191350899999065,
+              "flags": {
+                "parsed_share": 14,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1936.\nQuestion: \"Are you in favor of the death penalty for a person convicted of murder?\"\nAnswer counted: \"favor\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "6": 1,
+              "53": 1,
+              "60": 2,
+              "65": 1,
+              "70": 2,
+              "88": 1
+            },
+            "mean": 59,
+            "median": 62.5,
+            "min": 6,
+            "max": 88,
+            "mean_seconds": 0.22526973475000034,
+            "mean_error": 0,
+            "median_error": 3.5,
+            "mean_absolute_error": 14.75
+          },
+          "generations": [
+            {
+              "text": "Yes, 60.",
+              "token_count": 1,
+              "seconds": 0.1893668600000069,
+              "flags": {
+                "parsed_share": 60,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 70.",
+              "token_count": 1,
+              "seconds": 0.19093527999999083,
+              "flags": {
+                "parsed_share": 70,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 65.0;",
+              "token_count": 1,
+              "seconds": 0.2526890540000011,
+              "flags": {
+                "parsed_share": 65,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 53.0;",
+              "token_count": 1,
+              "seconds": 0.2614536080000107,
+              "flags": {
+                "parsed_share": 53,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "favour 88.6 per cent.",
+              "token_count": 4,
+              "seconds": 0.33075461399999995,
+              "flags": {
+                "parsed_share": 6,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 60.",
+              "token_count": 1,
+              "seconds": 0.19504868800001418,
+              "flags": {
+                "parsed_share": 60,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 70.",
+              "token_count": 1,
+              "seconds": 0.19123693999998181,
+              "flags": {
+                "parsed_share": 70,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 88.",
+              "token_count": 1,
+              "seconds": 0.19067283399999724,
+              "flags": {
+                "parsed_share": 88,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1936 asks: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nWhat percentage would answer \"favor\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 5,
+            "unparsed_count": 3,
+            "range_count": 3,
+            "share_counts": {
+              "90": 5
+            },
+            "mean": 90,
+            "median": 90,
+            "min": 90,
+            "max": 90,
+            "mean_seconds": 1.0279788809999992,
+            "mean_error": 31,
+            "median_error": 31,
+            "mean_absolute_error": 31
+          },
+          "generations": [
+            {
+              "text": "Probably 90 per cent would answer \"yes.\" The reason is that murder is so terrible a crime that the slayer should be removed from society.",
+              "token_count": 28,
+              "seconds": 1.0103546269999981,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent, because murder is the most heinous of crimes, and society must be protected from it at all costs.",
+              "token_count": 26,
+              "seconds": 1.0106560150000234,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent, because murder is the most heinous of crimes, and society must be protected from it at all costs.",
+              "token_count": 26,
+              "seconds": 1.0098496020000027,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 90 per cent would answer \"yes.\" The reason is that murder is so terrible a crime that the murderer should be removed from society.",
+              "token_count": 27,
+              "seconds": 0.974252038000003,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 90 per cent. Because murder is the most heinous of crimes, and society must be protected from it at all costs.",
+              "token_count": 25,
+              "seconds": 0.9025400629999751,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 90 per cent would answer \"yes.\" The reason is that murder is the most heinous of crimes, and the death penalty is deemed the most fitting punishment for it.",
+              "token_count": 34,
+              "seconds": 1.2041936649999911,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably from 10 to 20 per cent would answer \"favor.\" The reason would be that they think the death penalty a deterrent to murder.",
+              "token_count": 31,
+              "seconds": 1.0406074349999983,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 90 per cent would answer \"yes.\" The reason is that murder is the most heinous of crimes, and the murderer deserves to forfeit his life.",
+              "token_count": 30,
+              "seconds": 1.071377603000002,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "woman_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?",
+      "positive_answer": "yes",
+      "negative_answer": "no",
+      "actual_positive_share": 33,
+      "actual": {
+        "yes": 33,
+        "no": 64,
+        "no_opinion": 3
+      },
+      "source_url": "https://news.gallup.com/file/poll/183731/Voting_for_Candidates_Characteristics_I_150622%20.pdf",
+      "positive_variants": [
+        " yes",
+        " Yes",
+        "YES",
+        " would",
+        " I would"
+      ],
+      "negative_variants": [
+        " no",
+        " No",
+        "NO",
+        " would not",
+        " I would not"
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1937. The adult is asked: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nAnswer only \"yes\" or \"no\". The adult answers:",
+          "positive_answer": "yes",
+          "negative_answer": "no",
+          "positive_probability": 0.703517958763155,
+          "negative_probability": 0.2964820412368447,
+          "positive_percent": 70.3517958763155,
+          "negative_percent": 29.64820412368447,
+          "positive_logprob": -6.147684087854139,
+          "negative_logprob": -7.011790844400947,
+          "best_positive_variant": "YES",
+          "best_negative_variant": "NO",
+          "name": "random_adult_direct",
+          "actual_positive_share": 33,
+          "error": 37.35179587631551
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1937. The adult is asked: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nAnswer only \"yes\" or \"no\". The adult answers:",
+          "positive_answer": "yes",
+          "negative_answer": "no",
+          "positive_probability": 0.23779592645526718,
+          "negative_probability": 0.7622040735447326,
+          "positive_percent": 23.77959264552672,
+          "negative_percent": 76.22040735447327,
+          "positive_logprob": -7.077310309838653,
+          "negative_logprob": -5.912508830937411,
+          "best_positive_variant": "YES",
+          "best_negative_variant": "NO",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 33,
+          "error": -9.22040735447328
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nThe share answering \"yes\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "3": 1,
+              "6": 1,
+              "7": 6
+            },
+            "mean": 6.375,
+            "median": 7.0,
+            "min": 3,
+            "max": 7,
+            "mean_seconds": 0.14713666887500665,
+            "mean_error": -26.625,
+            "median_error": -26.0,
+            "mean_absolute_error": 26.625
+          },
+          "generations": [
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.16056384500001286,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.158984318000023,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.15895917000000281,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.15880840799999874,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "six.",
+              "token_count": 1,
+              "seconds": 0.09525852299998405,
+              "flags": {
+                "parsed_share": 6,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.1589194260000113,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths.",
+              "token_count": 3,
+              "seconds": 0.12697837300001424,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.1586212880000062,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nPercentage answering \"yes\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "1": 1,
+              "6": 1,
+              "10": 1,
+              "15": 1,
+              "18": 1,
+              "22": 1,
+              "34": 1,
+              "38": 1
+            },
+            "mean": 18,
+            "median": 16.5,
+            "min": 1,
+            "max": 38,
+            "mean_seconds": 0.4671523711249925,
+            "mean_error": -15,
+            "median_error": -16.5,
+            "mean_absolute_error": 16.5
+          },
+          "generations": [
+            {
+              "text": "Men, 18.6; women, 46.1.",
+              "token_count": 8,
+              "seconds": 0.4760140530000001,
+              "flags": {
+                "parsed_share": 18,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 22.3; women, 30.9.",
+              "token_count": 8,
+              "seconds": 0.47600588699998525,
+              "flags": {
+                "parsed_share": 22,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 1.3; women, 0.9.",
+              "token_count": 8,
+              "seconds": 0.47932487299999593,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 15.3; women, 17.8.",
+              "token_count": 8,
+              "seconds": 0.4771977510000056,
+              "flags": {
+                "parsed_share": 15,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 10.3; women, 14.9.",
+              "token_count": 8,
+              "seconds": 0.47353360099998554,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 34.3; women, 41.3.",
+              "token_count": 8,
+              "seconds": 0.4724859389999949,
+              "flags": {
+                "parsed_share": 34,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 38.9; women, 46.",
+              "token_count": 6,
+              "seconds": 0.40978866799997604,
+              "flags": {
+                "parsed_share": 38,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 6.9; women, 9.3.",
+              "token_count": 8,
+              "seconds": 0.4728681969999968,
+              "flags": {
+                "parsed_share": 6,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1937.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\nAnswer counted: \"yes\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "70": 1,
+              "84": 1,
+              "90": 3,
+              "100": 3
+            },
+            "mean": 90.5,
+            "median": 90.0,
+            "min": 70,
+            "max": 100,
+            "mean_seconds": 0.6518111088749983,
+            "mean_error": 57.5,
+            "median_error": 57.0,
+            "mean_absolute_error": 57.5
+          },
+          "generations": [
+            {
+              "text": "Yes, 100 per cent.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a negro",
+              "token_count": 24,
+              "seconds": 0.9016225320000046,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 70 per cent.",
+              "token_count": 3,
+              "seconds": 0.2549853250000069,
+              "flags": {
+                "parsed_share": 70,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 90.",
+              "token_count": 1,
+              "seconds": 0.19133308799999327,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100 per cent.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a negro",
+              "token_count": 24,
+              "seconds": 0.9055307389999996,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 84.0.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a negro",
+              "token_count": 22,
+              "seconds": 0.9037217009999949,
+              "flags": {
+                "parsed_share": 84,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a negro, would",
+              "token_count": 24,
+              "seconds": 0.9042578840000033,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 90 per cent.",
+              "token_count": 3,
+              "seconds": 0.2531369889999837,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 90.\nEstimated total vote: 18,000,000.\nQuestion: \"If your party nominated a generally well-qualified",
+              "token_count": 24,
+              "seconds": 0.8999006129999998,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nWhat percentage would answer \"yes\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 4,
+            "unparsed_count": 4,
+            "range_count": 4,
+            "share_counts": {
+              "50": 2,
+              "90": 2
+            },
+            "mean": 70,
+            "median": 70.0,
+            "min": 50,
+            "max": 90,
+            "mean_seconds": 1.083940766125,
+            "mean_error": 37,
+            "median_error": 37.0,
+            "mean_absolute_error": 37
+          },
+          "generations": [
+            {
+              "text": "From 50 to 75 per cent would vote for a woman presidential candidate, because women are human beings and have the same interests as men.",
+              "token_count": 25,
+              "seconds": 0.9790160109999988,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 50 per cent would vote for a woman candidate for president, because women are citizens, and because women have proved themselves capable of filling public office creditably.",
+              "token_count": 31,
+              "seconds": 1.110819509999999,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would probably vote for a woman candidate for president, because women are entitled to political recognition, and because they believe in female suffrage.",
+              "token_count": 30,
+              "seconds": 1.1438692240000137,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 90 per cent would vote for a woman candidate for president, because women are citizens, and because women have proved themselves capable of filling high public office.",
+              "token_count": 30,
+              "seconds": 1.077502968999994,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 50 per cent, because women have proved themselves capable of filling high public office, and because a woman president would be an interesting experiment.",
+              "token_count": 26,
+              "seconds": 1.0125285330000224,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 90 per cent would answer \"yes,\" because women are as good as men, and because women have as much right to the presidency as men.",
+              "token_count": 30,
+              "seconds": 1.143153204999976,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 90 per cent would vote for a woman candidate for president, because women are citizens, and because they feel that the presidency should not be denied to them.",
+              "token_count": 31,
+              "seconds": 1.1188958650000131,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 90 per cent would answer \"yes,\" because women are entitled to the presidency, and because a woman president would be an interesting experiment.",
+              "token_count": 28,
+              "seconds": 1.0857408119999832,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catholic_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?",
+      "positive_answer": "yes",
+      "negative_answer": "no",
+      "actual_positive_share": 60,
+      "actual": {
+        "yes": 60,
+        "no": 30,
+        "no_opinion": 10
+      },
+      "source_url": "https://news.gallup.com/file/poll/183731/Voting_for_Candidates_Characteristics_I_150622%20.pdf",
+      "positive_variants": [
+        " yes",
+        " Yes",
+        "YES",
+        " would",
+        " I would"
+      ],
+      "negative_variants": [
+        " no",
+        " No",
+        "NO",
+        " would not",
+        " I would not"
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1937. The adult is asked: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nAnswer only \"yes\" or \"no\". The adult answers:",
+          "positive_answer": "yes",
+          "negative_answer": "no",
+          "positive_probability": 0.3402181512412906,
+          "negative_probability": 0.6597818487587093,
+          "positive_percent": 34.02181512412906,
+          "negative_percent": 65.97818487587092,
+          "positive_logprob": -6.840384221533186,
+          "negative_logprob": -6.178062006491471,
+          "best_positive_variant": " Yes",
+          "best_negative_variant": "NO",
+          "name": "random_adult_direct",
+          "actual_positive_share": 60,
+          "error": -25.978184875870937
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1937. The adult is asked: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nAnswer only \"yes\" or \"no\". The adult answers:",
+          "positive_answer": "yes",
+          "negative_answer": "no",
+          "positive_probability": 0.0971778347129649,
+          "negative_probability": 0.9028221652870347,
+          "positive_percent": 9.71778347129649,
+          "negative_percent": 90.28221652870347,
+          "positive_logprob": -7.8712899731251555,
+          "negative_logprob": -5.642307024298898,
+          "best_positive_variant": " Yes",
+          "best_negative_variant": "NO",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 60,
+          "error": -50.28221652870351
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nThe share answering \"yes\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "3": 6,
+              "7": 1,
+              "9": 1
+            },
+            "mean": 4.25,
+            "median": 3.0,
+            "min": 3,
+            "max": 9,
+            "mean_seconds": 0.1345821548749946,
+            "mean_error": -55.75,
+            "median_error": -57.0,
+            "mean_absolute_error": 55.75
+          },
+          "generations": [
+            {
+              "text": "nine per cent.",
+              "token_count": 3,
+              "seconds": 0.15861041499999828,
+              "flags": {
+                "parsed_share": 9,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths.",
+              "token_count": 3,
+              "seconds": 0.12677861399998847,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths.",
+              "token_count": 3,
+              "seconds": 0.1265065439999944,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.12676554999998757,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths.",
+              "token_count": 3,
+              "seconds": 0.12638846400000148,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.1265604749999909,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths.",
+              "token_count": 3,
+              "seconds": 0.12687252899999635,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.15817464799999925,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nPercentage answering \"yes\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "3": 1,
+              "10": 1,
+              "11": 1,
+              "12": 1,
+              "16": 1,
+              "30": 1,
+              "34": 1,
+              "41": 1
+            },
+            "mean": 19.625,
+            "median": 14.0,
+            "min": 3,
+            "max": 41,
+            "mean_seconds": 0.4779306991250003,
+            "mean_error": -40.375,
+            "median_error": -46.0,
+            "mean_absolute_error": 40.375
+          },
+          "generations": [
+            {
+              "text": "Men, 41.1; women, 49.1.",
+              "token_count": 8,
+              "seconds": 0.4802530649999994,
+              "flags": {
+                "parsed_share": 41,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 3.6; women, 11.6.",
+              "token_count": 8,
+              "seconds": 0.48501351499999146,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 11.9; women, 12.3.",
+              "token_count": 8,
+              "seconds": 0.47732734999999593,
+              "flags": {
+                "parsed_share": 11,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 30.9; women, 40.9.",
+              "token_count": 8,
+              "seconds": 0.4771765349999839,
+              "flags": {
+                "parsed_share": 30,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 34.1; women, 41.3.",
+              "token_count": 8,
+              "seconds": 0.4728706020000004,
+              "flags": {
+                "parsed_share": 34,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 12.3; women, 17.8.",
+              "token_count": 8,
+              "seconds": 0.4728435700000091,
+              "flags": {
+                "parsed_share": 12,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 10.6; women, 11.3.",
+              "token_count": 8,
+              "seconds": 0.4774436040000012,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 16.8; women, 23.3.",
+              "token_count": 8,
+              "seconds": 0.480517352000021,
+              "flags": {
+                "parsed_share": 16,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1937.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\nAnswer counted: \"yes\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "50": 1,
+              "80": 2,
+              "90": 3,
+              "100": 2
+            },
+            "mean": 85,
+            "median": 90.0,
+            "min": 50,
+            "max": 100,
+            "mean_seconds": 0.4026530982500063,
+            "mean_error": 25,
+            "median_error": 30.0,
+            "mean_absolute_error": 27.5
+          },
+          "generations": [
+            {
+              "text": "Yes, 100 per cent.",
+              "token_count": 3,
+              "seconds": 0.25648632499999735,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100 per cent.",
+              "token_count": 3,
+              "seconds": 0.25420175700000414,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 50.",
+              "token_count": 1,
+              "seconds": 0.19132280500002707,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 90 per cent.",
+              "token_count": 3,
+              "seconds": 0.2529989839999871,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 90 per cent.",
+              "token_count": 3,
+              "seconds": 0.25492317800001274,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 80.",
+              "token_count": 1,
+              "seconds": 0.19105707800000005,
+              "flags": {
+                "parsed_share": 80,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 90 per cent.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a Jew",
+              "token_count": 24,
+              "seconds": 0.9100367750000089,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 80.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be a Jew, would",
+              "token_count": 24,
+              "seconds": 0.9101978840000129,
+              "flags": {
+                "parsed_share": 80,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nWhat percentage would answer \"yes\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 2,
+            "unparsed_count": 6,
+            "range_count": 6,
+            "share_counts": {
+              "50": 2
+            },
+            "mean": 50,
+            "median": 50.0,
+            "min": 50,
+            "max": 50,
+            "mean_seconds": 1.164485365625005,
+            "mean_error": -10,
+            "median_error": -10.0,
+            "mean_absolute_error": 10
+          },
+          "generations": [
+            {
+              "text": "From 50 to 75 percent would answer \"yes,\" because they would feel that a Catholic president would not interfere with their religious freedom.",
+              "token_count": 24,
+              "seconds": 0.958895885000004,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would answer \"yes,\" because they would feel that the Catholic nominee was a better man than his Protestant opponent.",
+              "token_count": 26,
+              "seconds": 1.025896853000006,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 50 per cent would vote for a Catholic candidate for president, because they believe in religious toleration, and think that a Catholic would be as good a president as a Protestant.",
+              "token_count": 34,
+              "seconds": 1.2314403609999829,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would answer \"yes,\" because they would feel that religious belief should not be allowed to influence political action.",
+              "token_count": 25,
+              "seconds": 0.9915654860000132,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 90 per cent would answer \"yes,\" because religious prejudice has almost disappeared from American politics.",
+              "token_count": 19,
+              "seconds": 0.792678919000025,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote for a Catholic candidate for president, because Catholics are good citizens, and because religious prejudice has no place in politics.",
+              "token_count": 29,
+              "seconds": 1.1099761469999976,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote for a Catholic candidate, because they think that a Catholic president would be more likely to respect the religious convictions of the people than a Protestant president.",
+              "token_count": 35,
+              "seconds": 1.3111770890000116,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Probably 50 per cent would vote for a Catholic candidate for president, because they would think that a Catholic would be likely to understand the problems of the country better than a Protestant, and because they would wish to see the experiment tried of having a Catholic at the head of the nation.",
+              "token_count": 55,
+              "seconds": 1.8942521849999991,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jewish_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?",
+      "positive_answer": "yes",
+      "negative_answer": "no",
+      "actual_positive_share": 46,
+      "actual": {
+        "yes": 46,
+        "no": 47,
+        "no_opinion": 8
+      },
+      "source_url": "https://news.gallup.com/file/poll/183731/Voting_for_Candidates_Characteristics_I_150622%20.pdf",
+      "positive_variants": [
+        " yes",
+        " Yes",
+        "YES",
+        " would",
+        " I would"
+      ],
+      "negative_variants": [
+        " no",
+        " No",
+        "NO",
+        " would not",
+        " I would not"
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1937. The adult is asked: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nAnswer only \"yes\" or \"no\". The adult answers:",
+          "positive_answer": "yes",
+          "negative_answer": "no",
+          "positive_probability": 0.3432048415798101,
+          "negative_probability": 0.65679515842019,
+          "positive_percent": 34.320484157981014,
+          "negative_percent": 65.679515842019,
+          "positive_logprob": -6.786849953568984,
+          "negative_logprob": -6.137805241606949,
+          "best_positive_variant": " Yes",
+          "best_negative_variant": "NO",
+          "name": "random_adult_direct",
+          "actual_positive_share": 46,
+          "error": -11.679515842018986
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1937. The adult is asked: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nAnswer only \"yes\" or \"no\". The adult answers:",
+          "positive_answer": "yes",
+          "negative_answer": "no",
+          "positive_probability": 0.07711114607470733,
+          "negative_probability": 0.9228888539252929,
+          "positive_percent": 7.711114607470733,
+          "negative_percent": 92.28888539252928,
+          "positive_logprob": -8.187268633086608,
+          "negative_logprob": -5.705007660705953,
+          "best_positive_variant": "YES",
+          "best_negative_variant": "NO",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 46,
+          "error": -38.28888539252927
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nThe share answering \"yes\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "7": 2,
+              "10": 6
+            },
+            "mean": 9.25,
+            "median": 10.0,
+            "min": 7,
+            "max": 10,
+            "mean_seconds": 0.15806052174999863,
+            "mean_error": -36.75,
+            "median_error": -36.0,
+            "mean_absolute_error": 36.75
+          },
+          "generations": [
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.1586416239999835,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.15925132599997482,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.15807615500000338,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.16029539100000534,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.15725900500001444,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.1566953900000101,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "seven per cent.",
+              "token_count": 3,
+              "seconds": 0.15694153900000174,
+              "flags": {
+                "parsed_share": 7,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "10 per cent.",
+              "token_count": 1,
+              "seconds": 0.1573237439999957,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nPercentage answering \"yes\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "0": 1,
+              "1": 4,
+              "9": 1,
+              "10": 1,
+              "18": 1
+            },
+            "mean": 5.125,
+            "median": 1.0,
+            "min": 0,
+            "max": 18,
+            "mean_seconds": 0.47356274312500446,
+            "mean_error": -40.875,
+            "median_error": -45.0,
+            "mean_absolute_error": 40.875
+          },
+          "generations": [
+            {
+              "text": "Men, 1.9; women, 0.0.",
+              "token_count": 8,
+              "seconds": 0.47367821599999616,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 0.0; women, 0.0.",
+              "token_count": 8,
+              "seconds": 0.47379336000000194,
+              "flags": {
+                "parsed_share": 0,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 1.3; women, 0.9.",
+              "token_count": 8,
+              "seconds": 0.4740871660000039,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 10.9; women, 10.9.",
+              "token_count": 8,
+              "seconds": 0.47503276400001937,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 9.1; women, 12.3.",
+              "token_count": 8,
+              "seconds": 0.47457653699999014,
+              "flags": {
+                "parsed_share": 9,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 18.3; women, 20.3.",
+              "token_count": 8,
+              "seconds": 0.4723945039999933,
+              "flags": {
+                "parsed_share": 18,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 1.3; women, 0.9.",
+              "token_count": 8,
+              "seconds": 0.47186189500001774,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 1.1; women, 0.0.",
+              "token_count": 8,
+              "seconds": 0.47307750300001317,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1937.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\nAnswer counted: \"yes\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "10": 1,
+              "100": 7
+            },
+            "mean": 88.75,
+            "median": 100.0,
+            "min": 10,
+            "max": 100,
+            "mean_seconds": 0.7388244571250056,
+            "mean_error": 42.75,
+            "median_error": 54.0,
+            "mean_absolute_error": 51.75
+          },
+          "generations": [
+            {
+              "text": "Yes, 100.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you",
+              "token_count": 24,
+              "seconds": 0.8986150119999934,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100 per cent.",
+              "token_count": 3,
+              "seconds": 0.2521995620000155,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you",
+              "token_count": 24,
+              "seconds": 0.8988518639999938,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100 per cent.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic,",
+              "token_count": 24,
+              "seconds": 0.9004947130000005,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you",
+              "token_count": 24,
+              "seconds": 0.9006617660000131,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100 per cent.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic,",
+              "token_count": 24,
+              "seconds": 0.9035259009999947,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 10.0.\nQuestion: \"If your party nominated a generally well-qualified person for president who happened to be Catholic,",
+              "token_count": 22,
+              "seconds": 0.9034887810000214,
+              "flags": {
+                "parsed_share": 10,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 100 per cent.",
+              "token_count": 3,
+              "seconds": 0.25275805800001194,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nWhat percentage would answer \"yes\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 0,
+            "unparsed_count": 8,
+            "range_count": 8,
+            "share_counts": {},
+            "mean": null,
+            "median": null,
+            "min": null,
+            "max": null,
+            "mean_seconds": 1.0981993574999969
+          },
+          "generations": [
+            {
+              "text": "From 10 to 20 per cent would vote for a Jewish candidate, because they would regard him as a good man, and because racial prejudice would not enter into the matter.",
+              "token_count": 32,
+              "seconds": 1.2152111409999975,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would probably vote for a Jewish candidate, because Jews are good citizens, and because anti-Semitism is dying out.",
+              "token_count": 28,
+              "seconds": 1.0822688430000085,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would probably vote for a Jewish candidate, because Jews are good citizens, and because anti-Semitism is dying out.",
+              "token_count": 28,
+              "seconds": 1.081241829999982,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would vote for a Jewish candidate, because Jews are good citizens, and because anti-Semitism is dying out.",
+              "token_count": 27,
+              "seconds": 1.0482792149999796,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would vote for a Jewish candidate, because they would regard him as a good man, and would not be influenced by racial prejudice.",
+              "token_count": 30,
+              "seconds": 1.1450026930000092,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would vote for a Jewish candidate, because they would think it right to do so.",
+              "token_count": 21,
+              "seconds": 0.8501797849999946,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent would vote for a Jewish candidate, because Jews are good citizens, and because anti-Semitism is dying out.",
+              "token_count": 27,
+              "seconds": 1.0494439990000046,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would answer \"yes,\" because they would feel that a Jew was as good as anybody else, and because they would not wish to be thought bigoted.",
+              "token_count": 35,
+              "seconds": 1.313967353999999,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "interracial_marriage_1958",
+      "target_year": 1958,
+      "survey_question": "Do you approve or disapprove of marriages between Black people and White people?",
+      "positive_answer": "approve",
+      "negative_answer": "disapprove",
+      "actual_positive_share": 4,
+      "actual": {
+        "approve": 4
+      },
+      "source_url": "https://news.gallup.com/poll/354638/approval-interracial-marriage-new-high.aspx",
+      "positive_variants": [
+        " approve",
+        " Approve",
+        "APPROVE",
+        " yes",
+        " Yes"
+      ],
+      "negative_variants": [
+        " disapprove",
+        " Disapprove",
+        "DISAPPROVE",
+        " no",
+        " No"
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1958. The adult is asked: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nAnswer only \"approve\" or \"disapprove\". The adult answers:",
+          "positive_answer": "approve",
+          "negative_answer": "disapprove",
+          "positive_probability": 0.9560751566036363,
+          "negative_probability": 0.04392484339636445,
+          "positive_percent": 95.60751566036363,
+          "negative_percent": 4.392484339636446,
+          "positive_logprob": -8.919201922882296,
+          "negative_logprob": -11.999558379721687,
+          "best_positive_variant": " approve",
+          "best_negative_variant": "DISAPPROVE",
+          "name": "random_adult_direct",
+          "actual_positive_share": 4,
+          "error": 91.60751566036363
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1958. The adult is asked: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nAnswer only \"approve\" or \"disapprove\". The adult answers:",
+          "positive_answer": "approve",
+          "negative_answer": "disapprove",
+          "positive_probability": 0.6979551579739921,
+          "negative_probability": 0.3020448420260084,
+          "positive_percent": 69.7955157973992,
+          "negative_percent": 30.204484202600838,
+          "positive_logprob": -7.186180899999519,
+          "negative_logprob": -8.023760267225803,
+          "best_positive_variant": " approve",
+          "best_negative_variant": "DISAPPROVE",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 4,
+          "error": 65.7955157973992
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1958 asks: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nThe share answering \"approve\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 1,
+            "unparsed_count": 7,
+            "range_count": 0,
+            "share_counts": {
+              "1": 1
+            },
+            "mean": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "mean_seconds": 0.17403444912500632,
+            "mean_error": -3,
+            "median_error": -3,
+            "mean_absolute_error": 3
+          },
+          "generations": [
+            {
+              "text": "I do approve.",
+              "token_count": 2,
+              "seconds": 0.15809894099999156,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve.",
+              "token_count": 2,
+              "seconds": 0.1580339700000195,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve,",
+              "token_count": 2,
+              "seconds": 0.15789723299999991,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 1,500,000.",
+              "token_count": 3,
+              "seconds": 0.31827511200000913,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve,",
+              "token_count": 2,
+              "seconds": 0.15758699299999535,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve,",
+              "token_count": 2,
+              "seconds": 0.15884607099999926,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do.",
+              "token_count": 1,
+              "seconds": 0.12606807100002015,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "I do approve,",
+              "token_count": 2,
+              "seconds": 0.15746920200001568,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1958 asks: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nPercentage answering \"approve\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "0": 1,
+              "1": 2,
+              "3": 1,
+              "13": 1,
+              "17": 1,
+              "18": 1,
+              "50": 1
+            },
+            "mean": 12.875,
+            "median": 8.0,
+            "min": 0,
+            "max": 50,
+            "mean_seconds": 0.39412993212500425,
+            "mean_error": 8.875,
+            "median_error": 4.0,
+            "mean_absolute_error": 11.625
+          },
+          "generations": [
+            {
+              "text": "Men, 0.0; women, 0.0.",
+              "token_count": 8,
+              "seconds": 0.4718957979999914,
+              "flags": {
+                "parsed_share": 0,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Yes, 1.1",
+              "token_count": 1,
+              "seconds": 0.2202252259999966,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 1.5; women, 3.",
+              "token_count": 6,
+              "seconds": 0.40903741500000024,
+              "flags": {
+                "parsed_share": 1,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 18.5; women, 25.3.",
+              "token_count": 8,
+              "seconds": 0.4716298330000086,
+              "flags": {
+                "parsed_share": 18,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "United States 50",
+              "token_count": 4,
+              "seconds": 0.1573362720000091,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 17.1; women, 12.9.",
+              "token_count": 8,
+              "seconds": 0.47631730599999855,
+              "flags": {
+                "parsed_share": 17,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 13.3; women, 17.1.",
+              "token_count": 8,
+              "seconds": 0.47548866300002146,
+              "flags": {
+                "parsed_share": 13,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 3.1; women, 5.1.",
+              "token_count": 8,
+              "seconds": 0.471108944000008,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1958.\nQuestion: \"Do you approve or disapprove of marriages between Black people and White people?\"\nAnswer counted: \"approve\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "95": 6,
+              "100": 2
+            },
+            "mean": 96.25,
+            "median": 95.0,
+            "min": 95,
+            "max": 100,
+            "mean_seconds": 0.2760123652500006,
+            "mean_error": 92.25,
+            "median_error": 91.0,
+            "mean_absolute_error": 92.25
+          },
+          "generations": [
+            {
+              "text": "approved, 95; disapproved, 5.",
+              "token_count": 7,
+              "seconds": 0.38019433400000935,
+              "flags": {
+                "parsed_share": 95,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 95.",
+              "token_count": 2,
+              "seconds": 0.22151120499998456,
+              "flags": {
+                "parsed_share": 95,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 95.",
+              "token_count": 2,
+              "seconds": 0.21960623800001144,
+              "flags": {
+                "parsed_share": 95,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 95.",
+              "token_count": 2,
+              "seconds": 0.2195502129999909,
+              "flags": {
+                "parsed_share": 95,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 100.\nQuestion:",
+              "token_count": 5,
+              "seconds": 0.2833123419999879,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 95; disapproved, 5.",
+              "token_count": 7,
+              "seconds": 0.377505235000001,
+              "flags": {
+                "parsed_share": 95,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 100.\nQuestion:",
+              "token_count": 5,
+              "seconds": 0.28536891300001344,
+              "flags": {
+                "parsed_share": 100,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "approved, 95.",
+              "token_count": 2,
+              "seconds": 0.22105044200000634,
+              "flags": {
+                "parsed_share": 95,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1958 asks: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nWhat percentage would answer \"approve\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 7,
+            "unparsed_count": 1,
+            "range_count": 1,
+            "share_counts": {
+              "50": 7
+            },
+            "mean": 50,
+            "median": 50,
+            "min": 50,
+            "max": 50,
+            "mean_seconds": 0.7788619736249984,
+            "mean_error": 46,
+            "median_error": 46,
+            "mean_absolute_error": 46
+          },
+          "generations": [
+            {
+              "text": "Approximately 50 percent approve, because they think such marriages tend to improve the racial stock.",
+              "token_count": 19,
+              "seconds": 0.6403264520000107,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 50 per cent approve, because they believe that racial intermixture will produce a more vigorous stock, physically, mentally, and morally.",
+              "token_count": 29,
+              "seconds": 0.9665690899999788,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 50 percent approve, because they think such marriages tend to improve the racial stock.",
+              "token_count": 19,
+              "seconds": 0.6393212629999994,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 50 percent approve, because they think such marriages tend to improve the racial stock.",
+              "token_count": 19,
+              "seconds": 0.6392416820000051,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 50 per cent approve, because they think such marriages should be allowed in the public interest, since they tend to promote good feeling between the races.",
+              "token_count": 32,
+              "seconds": 1.0659282819999873,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 50 per cent approve, because they think such marriages would improve the stock physically, mentally, and morally.",
+              "token_count": 24,
+              "seconds": 0.8056803860000059,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Approximately 50 per cent approve, because they think such marriages tend to raise the status of the Negro race.",
+              "token_count": 23,
+              "seconds": 0.7696161240000094,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent approve, because they think such marriages would improve the racial stock.",
+              "token_count": 17,
+              "seconds": 0.7042125099999907,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "restore_prohibition_1936",
+      "target_year": 1936,
+      "survey_question": "If you had an opportunity to vote on making the country dry again, would you vote dry or wet?",
+      "positive_answer": "dry",
+      "negative_answer": "wet",
+      "actual_positive_share": 33,
+      "actual": {
+        "dry_approx": 33,
+        "wet_approx": 67
+      },
+      "source_url": "https://news.gallup.com/vault/267830/gallup-vault-little-thirst-restoring-prohibition-1935.aspx",
+      "positive_variants": [
+        " dry",
+        " Dry",
+        "DRY"
+      ],
+      "negative_variants": [
+        " wet",
+        " Wet",
+        "WET"
+      ],
+      "forced_choice_conditions": [
+        {
+          "prompt": "Imagine one randomly selected American adult in 1936. The adult is asked: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nAnswer only \"dry\" or \"wet\". The adult answers:",
+          "positive_answer": "dry",
+          "negative_answer": "wet",
+          "positive_probability": 0.988685469817293,
+          "negative_probability": 0.011314530182707477,
+          "positive_percent": 98.8685469817293,
+          "negative_percent": 1.1314530182707476,
+          "positive_logprob": -4.076900897103942,
+          "negative_logprob": -8.547189393059586,
+          "best_positive_variant": "DRY",
+          "best_negative_variant": " Wet",
+          "name": "random_adult_direct",
+          "actual_positive_share": 33,
+          "error": 65.8685469817293
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, imagine one randomly selected American adult in 1936. The adult is asked: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nAnswer only \"dry\" or \"wet\". The adult answers:",
+          "positive_answer": "dry",
+          "negative_answer": "wet",
+          "positive_probability": 0.6036489482104076,
+          "negative_probability": 0.39635105178959246,
+          "positive_percent": 60.36489482104076,
+          "negative_percent": 39.63510517895924,
+          "positive_logprob": -4.496440458142445,
+          "negative_logprob": -4.9171329625676305,
+          "best_positive_variant": "DRY",
+          "best_negative_variant": "WET",
+          "name": "random_adult_1930_vantage",
+          "actual_positive_share": 33,
+          "error": 27.364894821040757
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "continuation_about",
+          "prompt": "A national survey of American adults in 1936 asks: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nThe share answering \"dry\" would be about",
+          "max_tokens": 16,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "3": 7,
+              "60": 1
+            },
+            "mean": 10.125,
+            "median": 3.0,
+            "min": 3,
+            "max": 60,
+            "mean_seconds": 0.1804998544999954,
+            "mean_error": -22.875,
+            "median_error": -30.0,
+            "mean_absolute_error": 29.625
+          },
+          "generations": [
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.1253991310000231,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.12530755000000227,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.1255273809999835,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.12553934399997502,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "sixty per cent.",
+              "token_count": 3,
+              "seconds": 0.18847188099999812,
+              "flags": {
+                "parsed_share": 60,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths, according to the estimate of the National Bureau of Economic Research.",
+              "token_count": 15,
+              "seconds": 0.5028510589999939,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fifths.",
+              "token_count": 2,
+              "seconds": 0.12537474699999507,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "three-fourths.",
+              "token_count": 3,
+              "seconds": 0.12552774299999214,
+              "flags": {
+                "parsed_share": 3,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "percentage_line",
+          "prompt": "A national survey of American adults in 1936 asks: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nPercentage answering \"dry\":",
+          "max_tokens": 20,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "34": 1,
+              "38": 1,
+              "43": 1,
+              "49": 1,
+              "50": 1,
+              "61": 1,
+              "62": 1,
+              "63": 1
+            },
+            "mean": 50,
+            "median": 49.5,
+            "min": 34,
+            "max": 63,
+            "mean_seconds": 0.43227295350000006,
+            "mean_error": 17,
+            "median_error": 16.5,
+            "mean_absolute_error": 17
+          },
+          "generations": [
+            {
+              "text": "Men, 63.3; women, 63.",
+              "token_count": 6,
+              "seconds": 0.4087945709999872,
+              "flags": {
+                "parsed_share": 63,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 61.1; women, 66.",
+              "token_count": 6,
+              "seconds": 0.4086098610000022,
+              "flags": {
+                "parsed_share": 61,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 38.8; women, 38.",
+              "token_count": 6,
+              "seconds": 0.4081746129999999,
+              "flags": {
+                "parsed_share": 38,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 62.1; women, 67.",
+              "token_count": 6,
+              "seconds": 0.4089466960000152,
+              "flags": {
+                "parsed_share": 62,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 43.8; women, 46.",
+              "token_count": 6,
+              "seconds": 0.40854867100000547,
+              "flags": {
+                "parsed_share": 43,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 50.3; women, 49.8.",
+              "token_count": 8,
+              "seconds": 0.4717633180000007,
+              "flags": {
+                "parsed_share": 50,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 34.3; women, 41.3.",
+              "token_count": 8,
+              "seconds": 0.4714730849999853,
+              "flags": {
+                "parsed_share": 34,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Men, 49.9; women, 56.3.",
+              "token_count": 8,
+              "seconds": 0.4718728130000045,
+              "flags": {
+                "parsed_share": 49,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "pollster_note",
+          "prompt": "Pollster's estimate, American adults, 1936.\nQuestion: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\nAnswer counted: \"dry\".\nEstimated percentage:",
+          "max_tokens": 28,
+          "summary": {
+            "parsed_count": 8,
+            "unparsed_count": 0,
+            "range_count": 0,
+            "share_counts": {
+              "75": 2,
+              "80": 2,
+              "90": 4
+            },
+            "mean": 83.75,
+            "median": 85.0,
+            "min": 75,
+            "max": 90,
+            "mean_seconds": 0.15371167925000506,
+            "mean_error": 50.75,
+            "median_error": 52.0,
+            "mean_absolute_error": 50.75
+          },
+          "generations": [
+            {
+              "text": "90.",
+              "token_count": 1,
+              "seconds": 0.09672154800000499,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "90 per cent dry.\nQuestion:",
+              "token_count": 5,
+              "seconds": 0.25287145600000827,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "90 per cent dry.",
+              "token_count": 3,
+              "seconds": 0.18859694400001104,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "80.",
+              "token_count": 1,
+              "seconds": 0.09420167100000754,
+              "flags": {
+                "parsed_share": 80,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "75.",
+              "token_count": 1,
+              "seconds": 0.09413245100000722,
+              "flags": {
+                "parsed_share": 75,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "80 per cent.",
+              "token_count": 1,
+              "seconds": 0.15728993199999763,
+              "flags": {
+                "parsed_share": 80,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "90 per cent dry.",
+              "token_count": 3,
+              "seconds": 0.18851474999999596,
+              "flags": {
+                "parsed_share": 90,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "75 per cent.",
+              "token_count": 1,
+              "seconds": 0.15736468200000786,
+              "flags": {
+                "parsed_share": 75,
+                "contains_range": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "one_percentage_reason_no_range",
+          "prompt": "A national survey of American adults in 1936 asks: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nWhat percentage would answer \"dry\"? Give one approximate percentage and one short reason. Do not give a range.\n\nAnswer:",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 0,
+            "unparsed_count": 8,
+            "range_count": 8,
+            "share_counts": {},
+            "mean": null,
+            "median": null,
+            "min": null,
+            "max": null,
+            "mean_seconds": 0.8954030290000041
+          },
+          "generations": [
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, increased savings, and promoted social welfare.",
+              "token_count": 22,
+              "seconds": 0.874344715999996,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, improved the health of the people, and increased savings.",
+              "token_count": 25,
+              "seconds": 0.9709912640000198,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 90 per cent would vote dry, because prohibition has diminished crime, increased savings, and promoted general prosperity.",
+              "token_count": 22,
+              "seconds": 0.8718291360000023,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, raised the standard of living, and increased savings.",
+              "token_count": 24,
+              "seconds": 0.9398159240000155,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, increased savings, and promoted social welfare.",
+              "token_count": 22,
+              "seconds": 0.8763096959999928,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, increased savings, and promoted social welfare.",
+              "token_count": 22,
+              "seconds": 0.8774316619999922,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, increased savings, and promoted social welfare.",
+              "token_count": 22,
+              "seconds": 0.8752097100000071,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 50 to 75 per cent would vote dry, because prohibition has diminished crime, increased savings, and promoted social welfare.",
+              "token_count": 22,
+              "seconds": 0.8772921240000073,
+              "flags": {
+                "parsed_share": null,
+                "contains_range": true,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

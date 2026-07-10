@@ -1,0 +1,4305 @@
+{
+  "model_name": "talkie-1930-13b-it",
+  "style": "it",
+  "device": "cuda",
+  "cuda_name": "NVIDIA A100-SXM4-40GB",
+  "load_seconds": 141.63278444,
+  "temperature": 0.18,
+  "top_k": 20,
+  "samples_per_forecast": 12,
+  "samples_per_comprehension": 5,
+  "questions": [
+    {
+      "name": "labor_unions_1936",
+      "target_year": 1936,
+      "survey_question": "Do you approve or disapprove of labor unions?",
+      "positive_answer": "approve",
+      "positive_label": "Approve",
+      "actual_positive_share": 72,
+      "actual": {
+        "approve": 72,
+        "disapprove": 20,
+        "no_opinion": 8
+      },
+      "source": "Gallup labor unions trend, 1936",
+      "source_url": "https://news.gallup.com/file/poll/175565/140828Unions.pdf",
+      "target_terms": [
+        "labor union",
+        "labor unions"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1936: \"Do you approve or disapprove of labor unions?\"\nRequested percentage: share who answer \"approve\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "70": 5
+          },
+          "mean": 70,
+          "median": 70,
+          "min": 70,
+          "max": 70,
+          "mentions_any_target_term_count": 0,
+          "mentions_positive_answer_count": 3,
+          "refusal_count": 0,
+          "mean_seconds": 0.6103136296000116,
+          "mean_error": -2,
+          "median_error": -2,
+          "mean_absolute_error": 2
+        },
+        "generations": [
+          {
+            "text": "Seventy per cent of the persons questioned answer in the affirmative.",
+            "token_count": 11,
+            "seconds": 1.1948644570000226,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned answer in the affirmative.",
+            "token_count": 11,
+            "seconds": 0.46426821800000084,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned approve of labour unions.",
+            "token_count": 11,
+            "seconds": 0.4642668540000159,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned approve of labour unions.",
+            "token_count": 11,
+            "seconds": 0.4640796500000022,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned approve of labour unions.",
+            "token_count": 11,
+            "seconds": 0.4640889690000165,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1936 asked: \"Do you approve or disapprove of labor unions?\"\n\nWhat percentage would answer \"approve\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.2381177491666667,
+            "mean_error": -62,
+            "median_error": -62.0,
+            "mean_absolute_error": 62
+          },
+          "generations": [
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23811077999999952,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.237795914000003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2378143859999966,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23785353799999598,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23781733800001348,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23775179599999774,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23777375599999573,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23774733300001571,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23798739800000135,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23798160800001256,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.24091457899999114,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23786456399997746,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1936 asked: \"Do you approve or disapprove of labor unions?\"\n\nWhat percentage would answer \"approve\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 1.278371957833329,
+            "mean_error": -62,
+            "median_error": -62.0,
+            "mean_absolute_error": 62
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 30 per cent would be noncommittal, and from 30 to 90 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.268075280000005,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 30 per cent would be noncommittal, and from 30 to 100 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.2665114749999873,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be non-committal, and from 20 to 50 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.2660363279999842,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be doubtful, and from 20 to 90 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.198379267000007,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 30 per cent would be non-committal, and from 30 to 90 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.2660795669999914,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.1975082529999952,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be non-committal, from 20 to 40 per cent would disapprove, and from 40 to 100 per cent would condemn unions.",
+              "token_count": 45,
+              "seconds": 1.6808690260000105,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 30 per cent would be non-committal, and from 30 to 90 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.266263484999996,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 30 per cent would be non-committal, and from 30 to 90 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.2659232780000025,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.1981722899999738,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be doubtful, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.19825917,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be noncommittal, and from 20 to 50 per cent would disapprove.",
+              "token_count": 33,
+              "seconds": 1.2683860749999951,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1936 asks: \"Do you approve or disapprove of labor unions?\"\n\nWhat percentage would answer \"approve\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 7,
+              "15": 1,
+              "20": 4
+            },
+            "mean": 13.75,
+            "median": 10.0,
+            "min": 10,
+            "max": 20,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 0.8762746931666664,
+            "mean_error": -58.25,
+            "median_error": -62.0,
+            "mean_absolute_error": 58.25
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent are neutral, and from 30 to 100 per cent disapprove.",
+              "token_count": 28,
+              "seconds": 1.1645105620000038,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent are neutral, and from 30 to 100 per cent disapprove.",
+              "token_count": 28,
+              "seconds": 1.1649971530000016,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent disapprove, and from 30 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1637890400000117,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent approve of labour unions.",
+              "token_count": 9,
+              "seconds": 0.4736519380000175,
+              "flags": {
+                "parsed_share": 20,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent are neutral, and from 30 to 100 per cent disapprove.",
+              "token_count": 28,
+              "seconds": 1.1633917849999875,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent approve of labour unions.",
+              "token_count": 9,
+              "seconds": 0.4736479670000051,
+              "flags": {
+                "parsed_share": 20,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent are neutral, and from 30 to 90 per cent disapprove.",
+              "token_count": 28,
+              "seconds": 1.1637060529999985,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent approve of labour unions.",
+              "token_count": 9,
+              "seconds": 0.473740308999993,
+              "flags": {
+                "parsed_share": 20,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent are neutral, and from 30 to 100 per cent disapprove.",
+              "token_count": 28,
+              "seconds": 1.1636661849999825,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 20 per cent approve of labour unions.",
+              "token_count": 9,
+              "seconds": 0.4734853299999884,
+              "flags": {
+                "parsed_share": 20,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 10 to 15 per cent approve of labour unions.",
+              "token_count": 9,
+              "seconds": 0.4733363859999997,
+              "flags": {
+                "parsed_share": 15,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent are neutral, and from 30 to 100 per cent disapprove.",
+              "token_count": 28,
+              "seconds": 1.1633736100000078,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "death_penalty_1936",
+      "target_year": 1936,
+      "survey_question": "Are you in favor of the death penalty for a person convicted of murder?",
+      "positive_answer": "favor",
+      "positive_label": "Favor",
+      "actual_positive_share": 59,
+      "actual": {
+        "favor": 59,
+        "oppose": 38,
+        "no_opinion": 3
+      },
+      "source": "Gallup death penalty trend, Dec. 2-7, 1936",
+      "source_url": "https://news.gallup.com/file/poll/196679/161025DeathPenalty.pdf",
+      "target_terms": [
+        "death penalty",
+        "murder",
+        "capital punishment"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1936: \"Are you in favor of the death penalty for a person convicted of murder?\"\nRequested percentage: share who answer \"favor\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "70": 5
+          },
+          "mean": 70,
+          "median": 70,
+          "min": 70,
+          "max": 70,
+          "mentions_any_target_term_count": 5,
+          "mentions_positive_answer_count": 0,
+          "refusal_count": 0,
+          "mean_seconds": 0.6392148955999971,
+          "mean_error": 11,
+          "median_error": 11,
+          "mean_absolute_error": 11
+        },
+        "generations": [
+          {
+            "text": "Seventy per cent of the persons questioned are in favour of the death penalty for murder.",
+            "token_count": 16,
+            "seconds": 0.6390640820000044,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned are in favour of the death penalty for murder.",
+            "token_count": 16,
+            "seconds": 0.6395045200000027,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned are in favour of the death penalty for murder.",
+            "token_count": 16,
+            "seconds": 0.6389920180000104,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned are in favour of the death penalty for murder.",
+            "token_count": 16,
+            "seconds": 0.6388877499999808,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned are in favour of the death penalty for murder.",
+            "token_count": 16,
+            "seconds": 0.6396261079999874,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1936 asked: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nWhat percentage would answer \"favor\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "0": 1,
+              "5": 1,
+              "10": 10
+            },
+            "mean": 8.75,
+            "median": 10.0,
+            "min": 0,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.22955621933333484,
+            "mean_error": -50.25,
+            "median_error": -49.0,
+            "mean_absolute_error": 50.25
+          },
+          "generations": [
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2388716770000201,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 per cent.",
+              "token_count": 1,
+              "seconds": 0.14919359600000348,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2388125260000038,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2434660319999864,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23941701799998327,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.24051180000000727,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23935460699999567,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23900317800001858,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2389900569999952,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23897987600000192,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.23900123699999654,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.5 per cent.",
+              "token_count": 2,
+              "seconds": 0.20907302800000593,
+              "flags": {
+                "parsed_share": 5,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1936 asked: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nWhat percentage would answer \"favor\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 2,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 1.9779378259999991,
+            "mean_error": -49,
+            "median_error": -49.0,
+            "mean_absolute_error": 49
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 50 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.4640583820000188,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor\"; from 10 to 20 per cent, \"indifferent\"; from 20 to 30 per cent, \"opposed\"; from 30 to 40 per cent, \"uncertain\"; from 40 to 50 per cent, \"doubtful\"; from 50 to 60 per cent, \"uncertain\"; from 60 to 70 per cent, \"doubtful\"; from 70 to 80 per cent, \"uncertain\"; from 80 to 90 per cent, \"doubtful\"; and from",
+              "token_count": 115,
+              "seconds": 4.314382948999992,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 50 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.4626206249999996,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 100 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.4620249289999947,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 100 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.4620414169999947,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 50 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.462060207999997,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent from 20 to 30 per cent, and so on up to 100 per cent. The reason for this is that, in spite of all humanitarianism, a majority of Americans still believe in capital punishment.",
+              "token_count": 61,
+              "seconds": 2.2676558729999954,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent from 20 to 30 per cent, and so on up to 90 per cent. The remaining 10 per cent would answer \"no.\"",
+              "token_count": 47,
+              "seconds": 1.7760981200000003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 50 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.4622335379999924,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and above 90 per cent.",
+              "token_count": 87,
+              "seconds": 3.2592031050000116,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent would answer \"indifferent,\" and from 20 to 50 per cent would answer \"opposed.\"",
+              "token_count": 38,
+              "seconds": 1.4625970600000073,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"favor,\" from 10 to 20 per cent from 20 to 30 per cent, and so on up to 100 per cent. The great majority of Americans are in favour of capital punishment for murderers.",
+              "token_count": 50,
+              "seconds": 1.880277705999987,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1936 asks: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nWhat percentage would answer \"favor\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 1,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.4680575438333321,
+            "mean_error": -49,
+            "median_error": -49.0,
+            "mean_absolute_error": 49
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent are in favour of the death penalty for murder, from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, and from 70 to 100 per cent.",
+              "token_count": 49,
+              "seconds": 1.937485190999979,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.3403109110000173,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.3403563709999844,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Not more than 10 per cent.",
+              "token_count": 7,
+              "seconds": 0.3061668109999971,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.3404265519999967,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.34032922200000826,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.34208192899998835,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.3403457630000162,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.34027009199999725,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.34044580500000166,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent.",
+              "token_count": 4,
+              "seconds": 0.341364494000004,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Not more than 10 per cent.",
+              "token_count": 7,
+              "seconds": 0.3071073849999948,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "woman_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?",
+      "positive_answer": "yes, would vote for",
+      "positive_label": "Yes, would vote for",
+      "actual_positive_share": 33,
+      "actual": {
+        "yes": 33,
+        "no": 64,
+        "no_opinion": 3
+      },
+      "source": "Gallup presidential candidate backgrounds trend, Jan. 27-Feb. 1, 1937",
+      "source_url": "https://news.gallup.com/file/poll/183731/Voting_for_Candidates_Characteristics_I_150622%20.pdf",
+      "target_terms": [
+        "woman",
+        "female",
+        "president"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1937: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\nRequested percentage: share who answer \"yes, would vote for\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "90": 5
+          },
+          "mean": 90,
+          "median": 90,
+          "min": 90,
+          "max": 90,
+          "mentions_any_target_term_count": 0,
+          "mentions_positive_answer_count": 5,
+          "refusal_count": 0,
+          "mean_seconds": 0.37667911499999607,
+          "mean_error": 57,
+          "median_error": 57,
+          "mean_absolute_error": 57
+        },
+        "generations": [
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.3767938020000088,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.37731805799998597,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.37732561600000736,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.376126352,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.3758317469999781,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1937 asked: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 4,
+              "99": 8
+            },
+            "mean": 69.33333333333333,
+            "median": 99.0,
+            "min": 10,
+            "max": 99,
+            "mentions_any_target_term_count": 3,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.35155087108333544,
+            "mean_error": 36.33333333333333,
+            "median_error": 66.0,
+            "mean_absolute_error": 51.666666666666664
+          },
+          "generations": [
+            {
+              "text": "Ninety-nine per cent would vote for a woman candidate for president.",
+              "token_count": 12,
+              "seconds": 0.49989749200000233,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for.",
+              "token_count": 7,
+              "seconds": 0.3313660050000067,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26662165199999777,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for.",
+              "token_count": 7,
+              "seconds": 0.3315839090000168,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for.",
+              "token_count": 7,
+              "seconds": 0.33149233900002173,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for.",
+              "token_count": 7,
+              "seconds": 0.3322391750000122,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for a woman candidate for president.",
+              "token_count": 12,
+              "seconds": 0.506733386999997,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for a woman presidential candidate.",
+              "token_count": 11,
+              "seconds": 0.47199218599999426,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety-nine per cent would vote for.",
+              "token_count": 7,
+              "seconds": 0.33813389799999527,
+              "flags": {
+                "parsed_share": 99,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2734873969999967,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2675999229999775,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2674630900000068,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1937 asked: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 10,
+              "50": 2
+            },
+            "mean": 16.666666666666668,
+            "median": 10.0,
+            "min": 10,
+            "max": 50,
+            "mentions_any_target_term_count": 1,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 1.7714219963333377,
+            "mean_error": -16.333333333333332,
+            "median_error": -23.0,
+            "mean_absolute_error": 22
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent from 50 to 75 per cent, and from 75 to 100 per cent. The great majority of the voters would be in favour of a woman president.",
+              "token_count": 50,
+              "seconds": 1.9379122150000114,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.593530981000015,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.5881793480000113,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per",
+              "token_count": 15,
+              "seconds": 0.7104872520000072,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.5809064990000081,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and over 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9396377690000008,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.575122835000002,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9267930930000148,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would answer \"yes,\" from 50 to 75 per cent would answer \"doubtfully yes,\" and from 75 to 100 per cent would answer \"emphatically yes.\"",
+              "token_count": 40,
+              "seconds": 1.5753652059999865,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 89,
+              "seconds": 3.4317593389999956,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would answer \"yes,\" from 50 to 75 per cent would answer \"doubtfully,\" and from 75 to 100 per cent would answer \"certainly.\"",
+              "token_count": 37,
+              "seconds": 1.4706761930000027,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and over 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9266932259999976,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 7,
+              "50": 5
+            },
+            "mean": 26.666666666666668,
+            "median": 10.0,
+            "min": 10,
+            "max": 50,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 1.4519368509999968,
+            "mean_error": -6.333333333333332,
+            "median_error": -23.0,
+            "mean_absolute_error": 20.5
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent almost certainly would vote for.",
+              "token_count": 47,
+              "seconds": 1.9181794589999868,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent from probability, from 30 to 50 per cent from sentiment, and from 50 to 100 per cent from enthusiasm.",
+              "token_count": 41,
+              "seconds": 1.6879942430000199,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent almost certainly would vote for.",
+              "token_count": 47,
+              "seconds": 1.9185726849999867,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent probably would vote for, and from 75 to 100 per cent almost certainly would vote for.",
+              "token_count": 35,
+              "seconds": 1.4571091089999868,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6939343640000004,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent from indifference would not vote at all, and from 30 to 100 per cent would vote against.",
+              "token_count": 36,
+              "seconds": 1.4962794900000063,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent almost certainly would vote for.",
+              "token_count": 47,
+              "seconds": 1.9188408349999975,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent might vote for, and from 75 to 100 per cent probably would vote for.",
+              "token_count": 33,
+              "seconds": 1.3807217709999975,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6938814659999935,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent would probably vote for, and from 75 to 100 per cent would certainly vote for.",
+              "token_count": 34,
+              "seconds": 1.4187369400000023,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent would probably vote for, and from 75 to 100 per cent would certainly vote for.",
+              "token_count": 34,
+              "seconds": 1.4189021910000008,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent would probably vote for, and from 75 to 100 per cent would certainly vote for.",
+              "token_count": 34,
+              "seconds": 1.4200896589999843,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catholic_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?",
+      "positive_answer": "yes, would vote for",
+      "positive_label": "Yes, would vote for",
+      "actual_positive_share": 60,
+      "actual": {
+        "yes": 60,
+        "no": 30,
+        "no_opinion": 10
+      },
+      "source": "Gallup presidential candidate backgrounds trend, Feb. 3-8, 1937",
+      "source_url": "https://news.gallup.com/file/poll/183731/Voting_for_Candidates_Characteristics_I_150622%20.pdf",
+      "target_terms": [
+        "catholic",
+        "president"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1937: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\nRequested percentage: share who answer \"yes, would vote for\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "70": 3,
+            "90": 2
+          },
+          "mean": 78,
+          "median": 70,
+          "min": 70,
+          "max": 90,
+          "mentions_any_target_term_count": 3,
+          "mentions_positive_answer_count": 2,
+          "refusal_count": 0,
+          "mean_seconds": 0.7082015708000086,
+          "mean_error": 18,
+          "median_error": 10,
+          "mean_absolute_error": 18
+        },
+        "generations": [
+          {
+            "text": "Seventy per cent of the persons questioned would vote for a generally well-qualified Catholic candidate for president of the United States.",
+            "token_count": 23,
+            "seconds": 0.8948444590000122,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the voters who answered this question in the affirmative would vote for a Catholic candidate for president, if he were generally well qualified.",
+            "token_count": 28,
+            "seconds": 1.0705589109999778,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the respondents would vote for a Catholic nominee for president, if he were generally well qualified.",
+            "token_count": 21,
+            "seconds": 0.8250814710000327,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.375449500000002,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Yes, 90 per cent would vote for.",
+            "token_count": 6,
+            "seconds": 0.375073513000018,
+            "flags": {
+              "parsed_share": 90,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1937 asked: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.2641728132499992,
+            "mean_error": -50,
+            "median_error": -50.0,
+            "mean_absolute_error": 50
+          },
+          "generations": [
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2641863320000084,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2642260719999854,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.264207392000003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2641952220000121,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26409519999998565,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2641385709999895,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.264041179000003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2640155480000317,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26429160300000376,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2642902110000023,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26417005899998003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26421636999998555,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1937 asked: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 9,
+              "50": 3
+            },
+            "mean": 20,
+            "median": 10.0,
+            "min": 10,
+            "max": 50,
+            "mentions_any_target_term_count": 2,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 2.0390494789166618,
+            "mean_error": -40,
+            "median_error": -50.0,
+            "mean_absolute_error": 40
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9264762009999572,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.925976343000002,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.574372507000021,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would answer \"yes,\" from 50 to 75 per cent would answer \"doubtfully yes,\" and from 75 to 100 per cent would answer \"yes\" decidedly.",
+              "token_count": 39,
+              "seconds": 1.5393395429999828,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and over 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9261219690000075,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, and from 70 to 100 per cent. The percentage of voters who would vote for a Catholic presidential candidate varies from 0 to 100, according to their religious beliefs.",
+              "token_count": 70,
+              "seconds": 2.689635436000003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would answer \"yes,\" from 50 to 75 per cent would answer \"yes\" conditionally, and from 75 to 100 per cent would answer \"yes\" absolutely.",
+              "token_count": 40,
+              "seconds": 1.5737591139999836,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 89,
+              "seconds": 3.427141382000002,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, and from 70 to 100 per cent. The great majority of voters would support a Catholic candidate for the presidency, if he were otherwise acceptable.",
+              "token_count": 64,
+              "seconds": 2.458986493999987,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and over 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9265297569999689,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9259664319999956,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would answer \"yes,\" from 50 to 75 per cent would answer \"doubtfully yes,\" and from 75 to 100 per cent would answer \"emphatically yes.\"",
+              "token_count": 40,
+              "seconds": 1.5742885690000321,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 9,
+              "50": 3
+            },
+            "mean": 20,
+            "median": 10.0,
+            "min": 10,
+            "max": 50,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.8738673729166777,
+            "mean_error": -40,
+            "median_error": -50.0,
+            "mean_absolute_error": 40
+          },
+          "generations": [
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent would probably vote for, and from 75 to 100 per cent would certainly vote for.",
+              "token_count": 34,
+              "seconds": 1.4151977530000295,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6932593890000476,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6940935970000055,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6938232360000143,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6931095269999901,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6933439370000087,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6933191499999793,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6939024350000409,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6930753440000217,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent would probably vote for, and from 75 to 100 per cent would certainly vote for.",
+              "token_count": 34,
+              "seconds": 1.414565054000036,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 50 per cent would vote for, from 50 to 75 per cent would probably vote for, and from 75 to 100 per cent would certainly vote for.",
+              "token_count": 34,
+              "seconds": 1.4148485759999971,
+              "flags": {
+                "parsed_share": 50,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6938704769999617,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jewish_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?",
+      "positive_answer": "yes, would vote for",
+      "positive_label": "Yes, would vote for",
+      "actual_positive_share": 46,
+      "actual": {
+        "yes": 46,
+        "no": 47,
+        "no_opinion": 8
+      },
+      "source": "Gallup presidential candidate backgrounds trend, Feb. 10-15, 1937",
+      "source_url": "https://news.gallup.com/file/poll/183731/Voting_for_Candidates_Characteristics_I_150622%20.pdf",
+      "target_terms": [
+        "jewish",
+        "president"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1937: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\nRequested percentage: share who answer \"yes, would vote for\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "70": 5
+          },
+          "mean": 70,
+          "median": 70,
+          "min": 70,
+          "max": 70,
+          "mentions_any_target_term_count": 5,
+          "mentions_positive_answer_count": 0,
+          "refusal_count": 0,
+          "mean_seconds": 1.055305514400004,
+          "mean_error": 24,
+          "median_error": 24,
+          "mean_absolute_error": 24
+        },
+        "generations": [
+          {
+            "text": "Seventy per cent of the voters who answered this question in the affirmative would vote for a Jewish candidate for president, if he were generally well-qualified.",
+            "token_count": 29,
+            "seconds": 1.1043095249999624,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the voters who answered this question in the affirmative would vote for a Jewish candidate for president, if he were generally well qualified.",
+            "token_count": 28,
+            "seconds": 1.0695720350000215,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the voters who answered this question in the affirmative would vote for a Jewish candidate for president, if he were generally well-qualified.",
+            "token_count": 29,
+            "seconds": 1.1040052459999856,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the voters who answered this question in the affirmative would vote for a Jewish candidate for the presidency, if he were generally well qualified.",
+            "token_count": 29,
+            "seconds": 1.103950535000024,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the voters, if a generally well-qualified Jew were nominated for president, would vote for him.",
+            "token_count": 23,
+            "seconds": 0.8946902310000269,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1937 asked: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.26424802716667745,
+            "mean_error": -36,
+            "median_error": -36.0,
+            "mean_absolute_error": 36
+          },
+          "generations": [
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2643156799999815,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26425234900000305,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26427538900003356,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2641551789999994,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2642703010000105,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2642725810000002,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2641958390000241,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26418256200003043,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2642138130000262,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2642196730000137,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.26423074300004146,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2643922169999655,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1937 asked: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 4,
+            "mentions_positive_answer_count": 10,
+            "refusal_count": 0,
+            "mean_seconds": 1.9795519444166558,
+            "mean_error": -36,
+            "median_error": -36.0,
+            "mean_absolute_error": 36
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and over 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.926358152999967,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.925868869999988,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9270050349999792,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9256132369999932,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.5747091139999725,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent certainly would vote for.",
+              "token_count": 46,
+              "seconds": 1.7849877440000341,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 20 per cent might vote for, from 20 to 30 per cent probably would vote for, and from 30 to 100 per cent possibly would vote for, a Jewish candidate for president, if generally well qualified.",
+              "token_count": 57,
+              "seconds": 2.1910374459999957,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 50 per cent would answer \"yes\" doubtfully, and from 50 to 100 per cent would answer \"yes\" confidently.",
+              "token_count": 40,
+              "seconds": 1.5750173819999986,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, from 70 to 90 per cent, and above 90 per cent.",
+              "token_count": 50,
+              "seconds": 1.9263143499999842,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, and from 70 to 100 per cent. The great majority of the voters would support a Jewish candidate for the presidency.",
+              "token_count": 59,
+              "seconds": 2.2676344870000094,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, and from 70 to 100 per cent. The great majority of the voters would support a Jewish candidate for the presidency.",
+              "token_count": 59,
+              "seconds": 2.268125951000002,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would answer \"yes,\" from 10 to 30 per cent from 30 to 50 per cent, from 50 to 70 per cent, and from 70 to 100 per cent. The great majority of voters would support a Jewish candidate for the presidency, if he were otherwise acceptable.",
+              "token_count": 64,
+              "seconds": 2.4619515639999463,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1937 asks: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nWhat percentage would answer \"yes, would vote for\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 1.1400856174166638,
+            "mean_error": -36,
+            "median_error": -36.0,
+            "mean_absolute_error": 36
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6946649079999929,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6938416170000323,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6938367059999564,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent almost certainly would vote for.",
+              "token_count": 47,
+              "seconds": 1.9160421650000217,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent almost certainly would vote for.",
+              "token_count": 47,
+              "seconds": 1.9152057040000159,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.693376518999969,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6935790200000156,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per cent might vote for, from 30 to 50 per cent probably would vote for, and from 50 to 100 per cent almost certainly would vote for.",
+              "token_count": 47,
+              "seconds": 1.91506069899998,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6969867239999985,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6940795579999985,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 30 per",
+              "token_count": 14,
+              "seconds": 0.6938933389999988,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote for, from 10 to 20 per cent might vote for, from 20 to 30 per cent probably would vote for, from 30 to 40 per cent possibly would vote for, and from 40 to 100 per cent certainly would vote for.",
+              "token_count": 59,
+              "seconds": 2.380460449999987,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "interracial_marriage_1958",
+      "target_year": 1958,
+      "survey_question": "Do you approve or disapprove of marriages between Black people and White people?",
+      "positive_answer": "approve",
+      "positive_label": "Approve",
+      "actual_positive_share": 4,
+      "actual": {
+        "approve": 4
+      },
+      "source": "Gallup interracial marriage trend, first asked 1958",
+      "source_url": "https://news.gallup.com/poll/354638/approval-interracial-marriage-new-high.aspx",
+      "target_terms": [
+        "black",
+        "white",
+        "marriage",
+        "interracial"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1958: \"Do you approve or disapprove of marriages between Black people and White people?\"\nRequested percentage: share who answer \"approve\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "70": 5
+          },
+          "mean": 70,
+          "median": 70,
+          "min": 70,
+          "max": 70,
+          "mentions_any_target_term_count": 1,
+          "mentions_positive_answer_count": 1,
+          "refusal_count": 0,
+          "mean_seconds": 0.4694990895999922,
+          "mean_error": 66,
+          "median_error": 66,
+          "mean_absolute_error": 66
+        },
+        "generations": [
+          {
+            "text": "Seventy per cent of the persons questioned approve of such marriages.",
+            "token_count": 11,
+            "seconds": 0.4692019029999983,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned answer in the affirmative.",
+            "token_count": 11,
+            "seconds": 0.4694040449999761,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned answer in the affirmative.",
+            "token_count": 11,
+            "seconds": 0.47037602699998615,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned answer in the affirmative.",
+            "token_count": 11,
+            "seconds": 0.46923964600000545,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of the persons questioned answer in the affirmative.",
+            "token_count": 11,
+            "seconds": 0.469273826999995,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": false,
+              "mentions_positive_answer": false,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1958 asked: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nWhat percentage would answer \"approve\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "0": 2,
+              "90": 10
+            },
+            "mean": 75,
+            "median": 90.0,
+            "min": 0,
+            "max": 90,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.23149530358334877,
+            "mean_error": 71,
+            "median_error": 86.0,
+            "mean_absolute_error": 72.33333333333333
+          },
+          "generations": [
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11944706900004576,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11938093800000615,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11933615600003122,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.1193540270000426,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11936678799997935,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0, 5, 10, 15, 20, 25, 30, 35, 40",
+              "token_count": 16,
+              "seconds": 0.792063230999986,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.119532831000015,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0, 5, 10, 15, 20, 25, 30, 35, 40",
+              "token_count": 16,
+              "seconds": 0.7920523080000521,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11932071500001484,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11937139700000898,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11932690600002616,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "Ninety per",
+              "token_count": 1,
+              "seconds": 0.11939127699997698,
+              "flags": {
+                "parsed_share": 90,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1958 asked: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nWhat percentage would answer \"approve\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 1.068275005416666,
+            "mean_error": 6,
+            "median_error": 6.0,
+            "mean_absolute_error": 6
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2218578840000305,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be doubtful, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2210317540000233,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2207408750000468,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 50 per",
+              "token_count": 13,
+              "seconds": 0.6094250409999518,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 50 per",
+              "token_count": 13,
+              "seconds": 0.609595999000021,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be doubtful, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2208258809999961,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2210517460000005,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 50 per",
+              "token_count": 13,
+              "seconds": 0.6092368490000126,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2209863449999716,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be doubtful, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2206207219999783,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.2228754550000076,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would approve, from 10 to 20 per cent would be indifferent, and from 20 to 50 per cent would disapprove.",
+              "token_count": 31,
+              "seconds": 1.221051513999953,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1958 asks: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nWhat percentage would answer \"approve\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 1.1249195965833394,
+            "mean_error": 6,
+            "median_error": 6.0,
+            "mean_absolute_error": 6
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 80 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.170854664999979,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent disapprove, and from 30 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1715604470000471,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1716737140000077,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1714318680000133,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 30 per cent disapprove, and from 30 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1707275709999863,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are neutral.",
+              "token_count": 28,
+              "seconds": 1.1708620790000168,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1713890520000518,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1708128949999832,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.171023152000032,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.171254772999987,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per cent disapprove, and from 20 to 100 per cent are indifferent.",
+              "token_count": 28,
+              "seconds": 1.1723087020000094,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent approve, from 10 to 20 per",
+              "token_count": 12,
+              "seconds": 0.6151362409999592,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "restore_prohibition_1936",
+      "target_year": 1936,
+      "survey_question": "If you had an opportunity to vote on making the country dry again, would you vote dry or wet?",
+      "positive_answer": "dry",
+      "positive_label": "Dry / restore prohibition",
+      "actual_positive_share": 33,
+      "actual": {
+        "dry_approx": 33,
+        "wet_approx": 67
+      },
+      "source": "Gallup Vault summary of 1936-1942 dry/wet trend; approximate first-year comparator",
+      "source_url": "https://news.gallup.com/vault/267830/gallup-vault-little-thirst-restoring-prohibition-1935.aspx",
+      "target_terms": [
+        "dry",
+        "wet",
+        "prohibition",
+        "alcohol"
+      ],
+      "comprehension": {
+        "prompt": "Read this survey question. In one sentence, say what opinion the respondent is being asked for. In a second sentence, say which answer the requested percentage counts.\n\nSurvey question for 1936: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\nRequested percentage: share who answer \"dry\".",
+        "summary": {
+          "parsed_count": 5,
+          "unparsed_count": 0,
+          "share_counts": {
+            "70": 5
+          },
+          "mean": 70,
+          "median": 70,
+          "min": 70,
+          "max": 70,
+          "mentions_any_target_term_count": 5,
+          "mentions_positive_answer_count": 5,
+          "refusal_count": 0,
+          "mean_seconds": 0.7825379706000035,
+          "mean_error": 37,
+          "median_error": 37,
+          "mean_absolute_error": 37
+        },
+        "generations": [
+          {
+            "text": "Seventy per cent of those who have an opportunity to vote on making the country dry again will vote dry.",
+            "token_count": 20,
+            "seconds": 0.7822862929999701,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of those who have an opportunity to vote on making the country dry again will vote dry.",
+            "token_count": 20,
+            "seconds": 0.7821745210000017,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of those who have an opportunity to vote on making the country dry again will vote dry.",
+            "token_count": 20,
+            "seconds": 0.7832482080000318,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of those who have an opportunity to vote on making the country dry again will vote dry.",
+            "token_count": 20,
+            "seconds": 0.7823741290000044,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          },
+          {
+            "text": "Seventy per cent of those who have an opportunity to vote on making the country dry again will vote dry.",
+            "token_count": 20,
+            "seconds": 0.7826067020000096,
+            "flags": {
+              "parsed_share": 70,
+              "mentions_any_target_term": true,
+              "mentions_positive_answer": true,
+              "mentions_no_opinion": false,
+              "looks_like_refusal": false
+            }
+          }
+        ]
+      },
+      "forecast_conditions": [
+        {
+          "name": "bare_number",
+          "prompt": "Imagine a national survey of American adults in 1936 asked: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nWhat percentage would answer \"dry\"? Reply with only a single number from 0 to 100.",
+          "max_tokens": 25,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "0": 6,
+              "10": 6
+            },
+            "mean": 5,
+            "median": 5.0,
+            "min": 0,
+            "max": 10,
+            "mentions_any_target_term_count": 0,
+            "mentions_positive_answer_count": 0,
+            "refusal_count": 0,
+            "mean_seconds": 0.16771189891667385,
+            "mean_error": -28,
+            "median_error": -28.0,
+            "mean_absolute_error": 28
+          },
+          "generations": [
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.24553366200001392,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.",
+              "token_count": 1,
+              "seconds": 0.08983108700005005,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2455058319999921,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.",
+              "token_count": 1,
+              "seconds": 0.08988544800001819,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.",
+              "token_count": 1,
+              "seconds": 0.08990540899998223,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.24566868900001282,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.",
+              "token_count": 1,
+              "seconds": 0.08982159300001058,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.2455417719999673,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.24556853400002865,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0 to 10 per cent.",
+              "token_count": 3,
+              "seconds": 0.24548611099999107,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.",
+              "token_count": 1,
+              "seconds": 0.08982924299999695,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "0.",
+              "token_count": 1,
+              "seconds": 0.08996540700002242,
+              "flags": {
+                "parsed_share": 0,
+                "mentions_any_target_term": false,
+                "mentions_positive_answer": false,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "single_number_and_reason",
+          "prompt": "Imagine a national survey of American adults in 1936 asked: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nWhat percentage would answer \"dry\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 12,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 3.016502484916662,
+            "mean_error": -23,
+            "median_error": -23.0,
+            "mean_absolute_error": 23
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent and above 90 per cent.",
+              "token_count": 78,
+              "seconds": 2.9523971049999886,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent and above 90 per cent.",
+              "token_count": 78,
+              "seconds": 2.9515796709999904,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.9910291360000087,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.990923296999995,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.9904552539999827,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent and above 90 per cent.",
+              "token_count": 78,
+              "seconds": 2.9520948229999817,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.991181159000007,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.9904799820000108,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.991147115999979,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent and over 90 per cent would vote wet.",
+              "token_count": 81,
+              "seconds": 3.0668146230000275,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent from 30 to 40 per cent from 40 to 50 per cent from 50 to 60 per cent from 60 to 70 per cent from 70 to 80 per cent from 80 to 90 per cent from 90 to 100 per cent",
+              "token_count": 79,
+              "seconds": 2.990905662999978,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.339021989999992,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_reason",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, estimate this future poll. A national survey of American adults in 1936 asks: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nWhat percentage would answer \"dry\"? Give a single number from 0 to 100 and explain your answer in one sentence.",
+          "max_tokens": 120,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "share_counts": {
+              "10": 12
+            },
+            "mean": 10,
+            "median": 10.0,
+            "min": 10,
+            "max": 10,
+            "mentions_any_target_term_count": 12,
+            "mentions_positive_answer_count": 12,
+            "refusal_count": 0,
+            "mean_seconds": 3.4798233117499913,
+            "mean_error": -23,
+            "median_error": -23.0,
+            "mean_absolute_error": 23
+          },
+          "generations": [
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.4789731519999805,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.478835825000033,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.47852513600003,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.479443549999985,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.4801305999999954,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.4798498649999487,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.4806881060000023,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.480247233,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.480154832999972,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.480022802999997,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.4809064479999847,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            },
+            {
+              "text": "From 0 to 10 per cent would vote dry, from 10 to 20 per cent from 20 to 30 per cent, from 30 to 40 per cent, from 40 to 50 per cent, from 50 to 60 per cent, from 60 to 70 per cent, from 70 to 80 per cent, from 80 to 90 per cent, and from 90 to 100 per cent.",
+              "token_count": 88,
+              "seconds": 3.4801021899999682,
+              "flags": {
+                "parsed_share": 10,
+                "mentions_any_target_term": true,
+                "mentions_positive_answer": true,
+                "mentions_no_opinion": false,
+                "looks_like_refusal": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
