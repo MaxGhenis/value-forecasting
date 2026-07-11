@@ -1,7 +1,7 @@
 version: 1
 project:
   title: Value Forecasting
-  description: Testing whether LLMs can forecast human value evolution
+  description: Pre-registered, contamination-controlled evaluation of value forecasting on GSS 2024
   keywords:
     - AI alignment
     - value forecasting
@@ -12,6 +12,7 @@ project:
     - file: docs/index.md
     - file: docs/methodology.md
     - file: docs/results.md
+    - file: paper/main.md
 
 site:
   template: book-theme

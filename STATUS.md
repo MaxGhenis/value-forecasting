@@ -1,71 +1,36 @@
-# Project Status
+# Project status
 
-Last updated: December 17, 2024
+Last updated: 2026-07-11 (branch `ea-post-rewrite-2026-07`)
 
-## Current State: Ready for Submission
+## Current state: pre-registered rewrite complete; paper drafted
 
-The paper draft is complete with all major sections. Five simulated referee reviews recommended "Minor Revision/Accept" after addressing feedback.
+The 2026-07 rewrite replaced the earlier pipeline end to end. The pre-analysis plan was committed before any forecasting call (`0ec5fd3`); results, robustness arms, figures, and a registered-report-style paper (`paper/main.md` → `paper/main.pdf`) are committed. The 2024 paper draft is archived at `archive/paper-2024/` — it rested on a leaky identity-conditioned pilot (n = 2, targets inside the training window) and EMOS long-term projections, and is superseded; do not cite or reuse its numbers.
 
-## Recent Work (December 2024)
+## Key findings (see `ea-rewrite-2026-07/RESULTS.md` for all tables)
 
-### Completed
-1. **EMOS Calibration** (`scripts/calibrated_forecast.py`)
-   - Quantile elicitation from GPT-4o (10th, 25th, 50th, 75th, 90th percentiles)
-   - CRPS-based post-hoc calibration
-   - Spread multiplier: 1.21x (CIs need to be 21% wider)
-   - Raw 50% coverage: 47% → needs calibration
+1. **GSS 2024 reversed 8 of 20 pre-2022 trends**; four were the largest single-wave decline in the item's recorded series. HOMOSEX ("not wrong at all"): 62.7 (2022) → 55.9 (2024).
+2. **Nothing beat naive persistence** at the aligned ≤2022→2024 horizon: naive MAE 3.15 vs. 3.58–4.07 for the pre-registered LLM arms and 3.93 for o3 (n = 20).
+3. **LLMs were confidently wrong**: clean-arm 90% intervals covered 50–55% vs. 90% for naive/linear intervals (ARIMA 80%). Every arm missed the HOMOSEX reversal (points 60.2–66.5).
+4. **Identity-conditioned "skill" is largely recall**: anonymizing the series moved gpt-5-mini's 2010-cutoff HOMOSEX forecast 30.5 points (78.0 → 47.5) and flipped its edge over ARIMA (+0.41 → −0.07).
+5. Raising reasoning effort did not help (gpt-5-mini 4.07 → 4.16 → 4.38 MAE, the last on a partial n = 10 arm); no clean Anthropic arm is possible — all clean-eligible Claude snapshots are retired from the first-party API.
 
-2. **Long-term Forecasts** (`data/longterm_gpt-4o_calibrated.json`)
-   - 17 GSS variables through 2030, 2050, 2075, 2100
-   - Calibrated 80% confidence intervals
-   - Key forecast: HOMOSEX reaches 80% by 2100 [69-91% CI]
+## Open items
 
-3. **React Visualization App** (`app/`)
-   - Shows historical data + calibrated forecasts
-   - 2024 holdout validation (actual vs predicted)
-   - Uncertainty bands through 2100
-   - Toggle between HOMOSEX and GRASS variables
+- Publish the companion essay (`ea-rewrite-2026-07/post-draft.md`) and decide the paper's venue (arXiv cs.CY / workshop).
+- Forward pre-registration for GSS 2026/2028 (paper §8 is marked planned, pending Max's confirmation — it is not yet a registration).
+- Talkie-1930 sensor-mode evaluation when the summer checkpoint ships (paper §6; `results/talkie_gallup_probes/`).
+- Uncommitted working-tree files (`robustness_forecasts.json`, `robustness_costs.json`) contain a resumed robustness run (high-effort arm 20/20, a DeepSeek arm, extra anonymized runs) that postdates the committed analysis — decide whether to commit and re-run `05_robustness_analysis.py`, which would revise the effort-sweep numbers now quoted in the post and paper.
 
-4. **Paper Revisions** (`paper/`)
-   - Added AI forecasting literature (Halawi et al., CRPS)
-   - Expanded methods with all 16 variables
-   - Full prompts in appendix
-   - Governance/normative sections
-
-### Key Files
-- `scripts/calibrated_forecast.py` - Main forecasting with cost tracking (~$0.09/run)
-- `data/calibration_gpt-4o_2021_2024.json` - Holdout validation results
-- `data/longterm_gpt-4o_calibrated.json` - Calibrated long-term forecasts
-- `app/src/App.tsx` - React visualization
-
-## Open Tasks
+## Environment
 
 ```bash
-bd ready  # See available work
-```
-
-- Compare multiple LLM models (Claude, Gemini)
-- Deploy React app to web
-- Submit paper to AI safety venue
-- Set up JupyterBook 2.0 for results
-
-## Key Findings
-
-1. **LLMs outperform baselines** - 2.2x lower MAE than time series methods
-2. **Short-term prediction is hard** - HOMOSEX reversed unexpectedly in 2024
-3. **Long-term trends may be more reliable** - 50-year trajectory shows +44 points
-4. **Calibration is necessary** - Raw LLM CIs are 21% too narrow
-
-## Environment Setup
-
-```bash
-cd /Users/maxghenis/value-forecasting
+cd /Users/maxghenis/value-forecasting   # canonical clone holds data/ and .venv
 source .venv/bin/activate
-export OPENAI_API_KEY="..."  # Required for forecasting
+export OPENAI_API_KEY=...               # only needed to re-run forecast arms
 
-# Run forecast
-python scripts/calibrated_forecast.py
+cd ea-rewrite-2026-07/code
+python 04_analysis.py                   # recompute metrics from committed inputs
+python 06_figures.py                    # regenerate figures
 
-# Run app
-cd app && bun run dev
+myst build --pdf paper/main.md          # build the paper (template vendored in paper/template/)
 ```

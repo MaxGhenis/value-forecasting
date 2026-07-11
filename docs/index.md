@@ -1,61 +1,15 @@
 ---
-title: Value Forecasting
+title: Value forecasting
 ---
 
-# Can LLMs Forecast Human Value Evolution?
+# Value forecasting
 
-This project tests whether language models can predict how human values change over time, using historical survey data as ground truth.
+Can anything — language models included — forecast how measured human values change?
 
-## Motivation
+This project ran a **pre-registered, contamination-controlled evaluation** against the 2024 General Social Survey: 20 attitude items, forecast from survey-weighted history through 2022, with model training cutoffs verified against the holdout's release date and the analysis plan committed before any forecasting call.
 
-Current AI alignment approaches face a fundamental challenge: human values are contested, evolving, and uncertain. What if we could forecast where values are heading?
+**Headlines.** GSS 2024 reversed 8 of 20 pre-2022 trends (four by the largest single-wave decline ever recorded for the item). Nothing beat last-value persistence (naive MAE 3.15 vs. 3.58–4.07 for the LLM arms, n = 20); clean LLM 90% intervals covered 50–55% of actuals while the naive and linear baselines' intervals covered 90%; and an anonymization probe showed that identity-conditioned backtests measure recall blended with extrapolation — naming the item moved one long-horizon forecast by 30.5 points.
 
-This project tests a key premise: **can LLMs predict moral change trajectories?**
-
-## Method
-
-1. **Select GSS variables** with significant historical change
-2. **Prompt LLMs** with context available up to a cutoff year (e.g., 2000)
-3. **Generate predictions** for support levels in future years
-4. **Compare** predictions to actual GSS data
-5. **Calculate** calibration and accuracy metrics
-
-## Key Questions
-
-- Can LLMs predict value trajectories better than simple linear extrapolation?
-- Are LLM predictions well-calibrated (do 90% CIs cover 90% of outcomes)?
-- Which value changes are most predictable?
-
-## Installation
-
-```bash
-uv pip install value-forecasting
-```
-
-Or from source:
-
-```bash
-git clone https://github.com/maxghenis/value-forecasting
-cd value-forecasting
-uv pip install -e ".[dev]"
-```
-
-## Quick Start
-
-```python
-from value_forecasting import (
-    run_forecast,
-    run_baseline_forecast,
-    HISTORICAL_TRAJECTORIES,
-)
-
-# Run LLM forecast
-forecasts = run_forecast("HOMOSEX", cutoff_year=2000, target_years=[2010, 2020])
-
-# Compare to baseline
-baseline = run_baseline_forecast("HOMOSEX", cutoff_year=2000, target_years=[2010, 2020])
-
-# Get actual values
-actual = HISTORICAL_TRAJECTORIES["HOMOSEX"]
-print(f"Actual 2010: {actual[2010]}%, 2018: {actual[2018]}%")
-```
+- **[The paper](../paper/main.md)** — full design, results, and protocol recommendations
+- **[Results summary](https://github.com/MaxGhenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/RESULTS.md)** — every table, tracing to committed JSONs
+- **[Pre-analysis plan](https://github.com/MaxGhenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/PREANALYSIS_PLAN.md)** — committed before any model call

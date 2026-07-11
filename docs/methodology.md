@@ -4,52 +4,11 @@ title: Methodology
 
 # Methodology
 
-## Data Source: General Social Survey
+The current design is pre-registered in [PREANALYSIS_PLAN.md](https://github.com/MaxGhenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/PREANALYSIS_PLAN.md) (committed before any forecasting call) and described in full in [the paper](../paper/main.md). In brief:
 
-The [General Social Survey (GSS)](https://gss.norc.org/) has tracked American opinions since 1972, providing ideal ground truth for value forecasting experiments.
+- **Data:** GSS cumulative 1972–2024 (Release 2), survey-weighted target-response shares for 20 attitude items (≥ 50 valid responses per wave, ≥ 6 waves, present in 2024).
+- **Holdout:** GSS 2024 (microdata first public in 2025). Arms are labeled clean or contaminated by the vendor's stated training cutoff relative to the end of 2024 fieldwork.
+- **Aligned horizon:** models see history through 2022 — matching their training knowledge — and forecast 2024 with a point and a 90% interval, against naive/linear/ARIMA baselines computed on the logit scale.
+- **Probes:** an anonymized-series re-run (item identity stripped) to separate dynamics from recall, and a contaminated-model arm as an internal memorization check.
 
-### Variables Used
-
-| Variable | Question | First Year | Pattern |
-|----------|----------|------------|---------|
-| HOMOSEX | Attitudes toward same-sex relations | 1973 | Strong liberalization |
-| GRASS | Marijuana legalization support | 1973 | Strong liberalization |
-| FEPOL | Women suited for politics | 1974 | Steady increase |
-| PREMARSX | Premarital sex attitudes | 1972 | Moderate liberalization |
-| CAPPUN | Death penalty support | 1972 | Fluctuation then decline |
-
-## Forecasting Approach
-
-### LLM Forecasting
-
-We prompt language models with:
-1. The survey question
-2. Historical data up to a cutoff year
-3. Instructions to predict future values with uncertainty
-
-**Key design choice**: We use base models or carefully prompt to avoid contaminating predictions with post-cutoff moral attitudes.
-
-### Baseline: Linear Extrapolation
-
-Simple linear regression on pre-cutoff data, with uncertainty bands that widen for further predictions.
-
-## Evaluation Metrics
-
-### Mean Absolute Error (MAE)
-Average absolute difference between predicted and actual percentages.
-
-### Coverage (Calibration)
-For 90% confidence intervals, what fraction of actual values fall within the intervals?
-- Well-calibrated: ~90% coverage
-- Overconfident: <90% coverage
-- Underconfident: >90% coverage
-
-## Experimental Design
-
-### Cutoff Years Tested
-- 1990 → predict 2000, 2010, 2018
-- 2000 → predict 2010, 2018
-
-### Models Tested
-- Claude Sonnet
-- Linear extrapolation baseline
+An earlier pipeline (named items, forecast targets inside the training window, n = 2, unweighted) is preserved under `archive/paper-2024/` as a design-contrast exhibit only.

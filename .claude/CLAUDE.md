@@ -1,115 +1,47 @@
-# Value Forecasting Project
+# Value forecasting project
 
 ## Overview
 
-This project investigates whether LLMs can forecast long-term trajectories of human values using General Social Survey (GSS) data. The research has implications for AI alignment - understanding how well AI systems can predict value change helps inform whether we can rely on such predictions for alignment decisions.
+Tests whether anything — LLMs included — can forecast measured human value change, using the General Social Survey as ground truth. Alignment framing: a system aligned to a forecast of where values are heading needs that forecast to be accurate and calibrated; this project measures whether it can be, under pre-registration and contamination controls.
 
-## Key Research Questions
+## Current reality (2026-07)
 
-1. Can LLMs forecast value trajectories better than traditional time series methods?
-2. How should we quantify and calibrate uncertainty in LLM forecasts?
-3. What do LLM forecasts suggest about long-term value trajectories (2030, 2050, 2100)?
+The canonical experiment is the **2026-07 pre-registered rewrite** in `ea-rewrite-2026-07/`:
 
-## Project Structure
+- Pre-analysis plan committed before any forecasting call (commit `0ec5fd3`): 20 GSS items, survey-weighted, aligned horizon (history ≤ 2022 → forecast 2024), clean vs. contaminated arms by vendor-stated cutoffs, anonymization probe, hard $25 budget cap.
+- **Results** (all in `ea-rewrite-2026-07/RESULTS.md` and `results/*.json`): GSS 2024 reversed 8/20 trends (4 largest-ever single-wave declines); naive persistence MAE 3.15 beat every LLM arm (3.58–4.07 pre-registered, o3 3.93); clean LLM 90% CIs covered 50–55% vs. classical 90%; every arm missed the HOMOSEX reversal (60.2–66.5 vs. actual 55.9); anonymization moved the identified 2010-cutoff HOMOSEX forecast 30.5 points and flipped the LLM-vs-ARIMA edge.
+- **Paper**: `paper/main.md` (MyST) → `paper/main.pdf`; build with `myst build --pdf paper/main.md` (LaTeX template vendored in `paper/template/`). Figures from `ea-rewrite-2026-07/code/06_figures.py`.
+- Companion essay draft: `ea-rewrite-2026-07/post-draft.md`.
+
+## Superseded — do not cite or resurrect
+
+`archive/paper-2024/` (old paper), old `scripts/` pipeline, and `data/longterm_*` / `data/calibration_*` JSONs rest on a **leaky pilot design**: named items, forecast targets inside the model's training window, n = 2, unweighted shares, plus EMOS-calibrated long-term projections (e.g., "HOMOSEX 80% by 2100"). The controlled design reverses the pilot's headline ("LLM beats baselines 2.2x" → LLM 4.07 vs. naive 3.15, n = 20). Never quote the pilot's numbers as findings; they appear only as a design-contrast exhibit.
+
+## Numbers discipline
+
+- Every quantitative claim traces to `ea-rewrite-2026-07/results/*.json`; relative-performance claims carry baseline and n inline.
+- HOMOSEX "not wrong at all" 2022 → 2024 is **62.7 → 55.9** (weighted). Never 72% (that's Gallup's differently-worded series); never the unweighted 54.7.
+- The gpt-5-mini **high-effort robustness arm is partial (n = 10 of 20)** — say so whenever quoting its 4.38 MAE.
+- GSS 2024 microdata first became public in 2025 (not late 2024); clean/contaminated labels follow vendor-stated cutoffs recorded in `results/robustness_analysis.json`.
+
+## Structure
 
 ```
 value-forecasting/
-├── app/                    # React visualization app (Vite + Recharts)
-├── data/                   # GSS data and forecast outputs
-│   ├── calibration_*.json  # Holdout validation results
-│   └── longterm_*.json     # Calibrated long-term forecasts
-├── paper/                  # Academic paper (Markdown + MyST)
-│   ├── 01-introduction.md
-│   ├── 02-related-work.md
-│   ├── 03-methods.md
-│   ├── 04-results.md
-│   ├── 05-discussion.md
-│   ├── 06-conclusion.md
-│   └── 07-appendix.md
-├── scripts/                # Python scripts
-│   └── calibrated_forecast.py  # Main forecasting script
-├── src/                    # Python package (if needed)
-└── tests/                  # pytest tests
+├── paper/                  # current paper (main.md, main.pdf, references.bib, template/)
+├── ea-rewrite-2026-07/     # pre-registered experiment: plan, RESULTS.md, code/, results/, figures/
+├── archive/paper-2024/     # superseded draft — do not cite
+├── app/                    # React viz app (predates rewrite)
+├── data/                   # GSS microdata (gitignored) + legacy JSONs
+├── docs/                   # short site pages pointing at paper + RESULTS
+└── scripts/                # legacy pipeline (superseded by ea-rewrite-2026-07/code/)
 ```
 
-## Technical Details
+Data and venv live in the canonical clone `~/value-forecasting` (`data/gss7224_r2.dta`, `.venv`); worktrees read them by absolute path.
 
-### Calibration Method (EMOS)
-- **Ensemble Model Output Statistics** - post-hoc calibration from weather forecasting literature
-- Elicit quantiles (10th, 25th, 50th, 75th, 90th percentiles) from LLM
-- Fit Gaussian to quantiles, then calibrate spread to minimize CRPS on holdout
-- Current spread multiplier: **1.21** (CIs should be 21% wider than raw LLM output)
+## Next steps
 
-### Key Variables (GSS)
-- HOMOSEX: Same-sex relations not wrong (flagship variable)
-- GRASS: Marijuana legalization
-- PREMARSX: Premarital sex
-- ABANY: Abortion for any reason
-- Plus 13 more social/political variables
-
-### Holdout Validation
-- Training cutoff: 2021 GSS
-- Holdout: 2024 GSS
-- HOMOSEX: Predicted 63%, Actual 55% (first reversal in 30+ years)
-- GRASS: Predicted 70%, Actual 68% (within CI)
-
-### Long-term Forecasts (GPT-4o, calibrated 80% CIs)
-| Variable | 2024 Actual | 2030 | 2050 | 2100 |
-|----------|-------------|------|------|------|
-| HOMOSEX | 55% | 66% [57,75] | 75% [64,86] | 80% [69,91] |
-| GRASS | 68% | 72% [57,87] | 80% [57,100] | 80% [57,100] |
-
-## Current State
-
-### Completed
-- Paper draft with all major sections
-- EMOS-calibrated forecasts for 17 variables through 2100
-- React app with uncertainty visualization
-- Holdout validation showing calibration approach works
-
-### In Progress / Next Steps
-- Submit to AI safety venue (potential: NeurIPS workshop, AAAI symposium)
-- Compare multiple LLM models (Claude, Gemini, etc.)
-- Add more variables or time horizons
-- Deploy React app to web
-
-## Commands
-
-### Running the Forecast Script
-```bash
-cd /Users/maxghenis/value-forecasting
-source .venv/bin/activate
-python scripts/calibrated_forecast.py
-```
-
-### Running the React App
-```bash
-cd app
-bun install
-bun run dev
-# Opens at http://localhost:5173 or 5174
-```
-
-### Building the Paper
-```bash
-# Uses MyST for scientific markdown
-myst build
-```
-
-## Key Decisions Made
-
-1. **Dropped heterogeneity** - Response distribution forecasting was complex and not core to the paper
-2. **Focus on long-term** - Short-term (1-year) predictions are noisy; 50-year trends are the story
-3. **EMOS calibration** - Simple, well-established method with 20 years of precedent
-4. **80% CIs** - Standard for probabilistic forecasting; easier to interpret than 90%
-
-## API Keys Required
-- OPENAI_API_KEY for GPT-4o forecasting
-- Cost tracking shows ~$0.09 per full run (17 variables × 4 horizons)
-
-## Referee Feedback Summary
-All 5 reviewers recommended Minor Revision/Accept after addressing:
-- Added full prompts to appendix
-- Clarified normative framework
-- Added AI forecasting literature (Halawi et al., CRPS, calibration)
-- Expanded methods section with all 16 variables
+- Publish the essay; pick the paper venue (arXiv cs.CY + workshop shortlist in session notes).
+- Forward pre-registration for GSS 2026/2028 — paper §8 is marked planned pending Max's explicit confirmation; the binding registration must be its own commit before GSS 2026 fieldwork ends.
+- Talkie-1930 sensor-mode attitude evaluation at the summer checkpoint (log-prob elicitation; chat elicitation already shown to fail in `results/talkie_gallup_probes/`).
+- Working tree holds an uncommitted resumed robustness run (full n = 20 high-effort arm, DeepSeek arm, more anon probes) — committing it requires re-running `05_robustness_analysis.py` and updating the numbers quoted in the post and paper.
