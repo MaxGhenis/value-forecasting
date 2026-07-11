@@ -58,10 +58,10 @@ anchorcolor = black}
 %% Once the PDF is generated, you can check the metadata with
 %% $ pdfinfo template.pdf
 \hypersetup{
-pdftitle={\@title},
+pdftitle={[-doc.title-]},
 pdfsubject={[-doc.description-]},
-pdfauthor={\@author},
-pdfkeywords={[-doc.keywords-]},
+pdfauthor={[# for author in doc.authors #][-author.name-][# endfor #]},
+pdfkeywords={[-doc.keywords|join(", ")-]},
 addtopdfcreator={Written in Curvenote}
 }
 

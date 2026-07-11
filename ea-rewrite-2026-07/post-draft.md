@@ -1,12 +1,12 @@
 # Value forecasting for AI alignment: Pre-registered tests and a missed reversal
 
-*Epistemic status: pre-registered empirical results plus a research proposal I hold more loosely. The experiments are small — 20 survey items, one holdout wave, one draw per forecast, $0.19 of API spend — but the [analysis plan](https://github.com/maxghenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/PREANALYSIS_PLAN.md) was committed before any forecasting call, and all code, prompts, and raw results are [public](https://github.com/maxghenis/value-forecasting/tree/ea-post-rewrite-2026-07/ea-rewrite-2026-07). Part of the argument is a design contrast: a pilot using the evaluation choices common in the LLM-simulation literature (named items, forecast targets inside the training window, n = 2) produced a 2.2x "LLMs beat baselines" result on this same task; the controlled design reverses it.*
+*Epistemic status: pre-registered empirical results plus a research proposal I hold more loosely. The experiments are small — 20 survey items, one holdout wave, one draw per forecast, $0.19 of API spend — but the [analysis plan](https://github.com/maxghenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/PREANALYSIS_PLAN.md) was committed before any forecasting call, and all code, prompts, and raw results are [public](https://github.com/maxghenis/value-forecasting/tree/ea-post-rewrite-2026-07/ea-rewrite-2026-07). Part of the argument is a design contrast: a pilot using the evaluation choices common in the LLM-simulation literature (named items, forecast targets inside the training window, n = 2, one weak baseline) produced a 2.4x "LLM beats the baseline" result on this same task; the controlled design reverses it.*
 
 **Summary:**
 
 - In the 2024 General Social Survey, 8 of the 20 attitude items I track reversed their pre-2022 trend. Four posted the largest single-wave decline in their item's recorded history: approval of the school-prayer ban −8.4 points, acceptance of same-sex relations −6.8, rejection of traditional gender roles −6.5, marijuana legalization −5.7.
 - I pre-registered a forecasting test on that wave: three LLMs against classical time-series baselines, shown history through 2022, forecasting 2024, with training-cutoff contamination controlled. Every arm's point forecast missed the same-sex-relations reversal (predictions 60.2–66.5 vs. actual 55.9), and last-value persistence beat every LLM on overall accuracy (MAE 3.15 vs. 3.58–4.07 points, n = 20).
-- The LLMs' 90% intervals covered the truth 50–55% of the time (clean arms); properly computed classical intervals covered 90%. "Everyone is overconfident" turns out to be half right — the LLMs are.
+- The LLMs' 90% intervals covered the truth 50–55% of the time (clean arms); the properly computed naive and linear intervals covered 90% (ARIMA: 80%). "Everyone is overconfident" turns out to be half right — the LLMs are.
 - An anonymization probe explains where earlier "LLM forecasting skill" came from: with the item named, gpt-5-mini "forecast" the same-sex-relations series from 2010 data at 78; with the identity stripped, 47.5. A 30.5-point swing from the variable name alone. Identity-conditioned backtests inside a model's training window measure recall blended with extrapolation, not forecasting.
 - The alignment proposal survives in a narrower, more testable form: treat the *forecast distribution* of post-reflection human values — with calibrated uncertainty at two levels — as an alignment target, validate the forecasting machinery against history, and use vintage-corpus LLMs (training data ending in 1930) as the contamination-proof instrument. The entire polling era is out-of-sample for them.
 
@@ -45,7 +45,7 @@ Here was the pre-registered test. Show each forecaster the weighted series throu
 | gpt-4o (robustness) | Oct 2023 | Clean |
 | claude-opus-4-8 (ceiling) | Jan 2026 | Deliberately contaminated — a check, see below |
 
-All three models know GSS history through 2022 from training, and that is exactly what they were shown — so the clean arms compete with the baselines on equal information. Baselines: last-value persistence ("naive"), OLS on the logit scale ("linear"), and ARIMA(1,1,0), each with proper 90% intervals. (A fourth baseline, ETS/Holt, silently fell back to naive for all 20 items due to a statsmodels bug I found only afterward; it's reported as a duplicate of naive.)
+All three models know GSS history through 2022 from training, and that is exactly what they were shown — so the clean arms compete with the baselines on equal information. Baselines: last-value persistence ("naive"), OLS on the logit scale ("linear"), and ARIMA(1,1,0), each with proper 90% intervals. (A fourth baseline, ETS/Holt, silently fell back to naive for all 20 items due to an input-type bug in my ETS call — statsmodels wants an indexed series — found only afterward; it's reported as a duplicate of naive, and a corrected re-run is in the repo.)
 
 The item everyone watched:
 
@@ -75,19 +75,19 @@ Three reads:
 
 1. **Nothing beat persistence.** The best clean LLM's MAE was 3.92 (gpt-4o) vs. naive's 3.15, n = 20. The cheapest possible forecast — "2024 equals 2022" — won.
 2. **The LLMs missed reversals by more than persistence did.** On the eight reversal items the clean LLMs erred 6.1–6.3 points against naive's 5.3: they extrapolated the recent trend, and the trend broke. Their edge on the nine stable items (1.6–1.7 vs. naive's 1.0) didn't exist either.
-3. **LLM intervals were confidently wrong.** Clean-arm 90% intervals averaged 7.6–8.6 points wide and covered half the time. The classical intervals averaged 12–15 points wide and covered at their nominal rate. On this task, knowing that you don't know was worth more than any dynamics the models had learned.
+3. **LLM intervals were confidently wrong.** Clean-arm 90% intervals averaged 7.6–8.6 points wide and covered half the time. The naive and linear intervals averaged 12–15 points wide and covered at their nominal rate (ARIMA: 80%). On this task, knowing that you don't know was worth more than any dynamics the models had learned.
 
-The whole experiment cost $0.19 in API calls (166 of them); every prompt and raw completion is in the repo.
+The whole experiment cost $0.19 in API calls (166 of them); the exact prompt code and every parsed output are in the repo.
 
 ### Post-registration robustness arms
 
 Three objections were checkable cheaply, so I ran them after registration as labeled robustness arms — separate results files, the pre-registered record untouched:
 
 - **"Use a reasoning model."** o3, the strongest clean-eligible reasoning model (OpenAI's stated cutoff: June 1, 2024), posted MAE 3.93 vs. naive's 3.15, 90% intervals covering 75% (better than the smaller clean arms' 50–55%, still not 90%), reversal-item error 6.26, and HOMOSEX at 65.0 [59.0, 71.0] — a miss. Better calibrated, still overconfident, still behind persistence, still following the trend that broke.
-- **"You ran the LLM at minimal effort."** gpt-5-mini at medium reasoning effort: MAE 4.16. At high effort: 4.38 — *worse* than minimal's 4.07, with coverage falling to 60%. More reasoning budget bought longer deliberation toward the same wrong prior.
+- **"You ran the LLM at minimal effort."** gpt-5-mini at medium reasoning effort: MAE 4.16. At high effort — on the 11 of 20 items that completed before a session crash — 4.21, with coverage at 64%. No better than minimal's 4.07; more reasoning budget bought longer deliberation toward the same wrong prior.
 - **"Add a clean Anthropic arm."** Impossible, and the reason matters: every Claude snapshot with a training cutoff before GSS 2024 fieldwork ended has been retired from the API (claude-3-5-sonnet-20241022 now returns 404; retired October 2025). The population of models that can ever be cleanly tested on a given wave shrinks as vendors deprecate old snapshots — retrospective clean evaluation has a closing window. That is one more argument for the two protocols this post ends on: forward pre-registration, and open-weights arms, which never retire. (A DeepSeek arm was skipped for the mirror-image reason: no vendor-documented training cutoff, so it could not be labeled clean at all.)
 
-The robustness arms cost roughly another dollar; cost logging for the o3 and medium-effort segments was lost to a session crash mid-run, but every call's raw output is preserved in the results file.
+The robustness arms cost roughly another dollar; cost logging for the o3 and medium-effort segments was lost to a session crash mid-run, but every call's parsed output is preserved in the results file.
 
 ## The result a naive design produces
 
@@ -95,7 +95,7 @@ Before building the controls, I ran this task the way much of the LLM-simulation
 
 | Pilot finding | Design that produced it | What the pre-registered version found |
 |---|---|---|
-| "LLM beats best baseline 2.2x" (MAE 12.5 vs. 28.1) | n = 2 items (HOMOSEX, GRASS), item names shown, forecast targets 2000–2021 — all *inside* the model's training window | Does not replicate. On a clean, aligned design: clean LLM MAE 4.07 vs. naive 3.15 (ratio 1.29, LLM worse), n = 20 |
+| "LLM beats the baseline 2.4x" (MAE 12.5 vs. 30.2, single linear-extrapolation baseline) | n = 2 items (HOMOSEX, GRASS), item names shown, forecast targets 2000–2021 — all *inside* the model's training window | Does not replicate. On a clean, aligned design: clean LLM MAE 4.07 vs. naive 3.15 (ratio 1.29, LLM worse), n = 20 |
 | "Everyone is overconfident — LLM CIs covered 43%, baselines 36%" | Same leaky design; degenerate baseline intervals | Half survives. LLMs covered 50–55% at 90% nominal (n = 20); properly computed classical intervals covered 90% |
 | "LLMs capture non-linear dynamics baselines miss" | The 1990→2021 HOMOSEX run — where the model had read about the liberalization it was "predicting" | See next section: strip the item name and the long-horizon edge over the best classical baseline disappears |
 | "Value trajectories can reverse and trend-followers will miss it" | GPT-4o vs. GSS 2024, run before the 2024 microdata release | Replicates, now with pre-registration: every arm missed the HOMOSEX reversal; 8/20 items reversed |
@@ -184,7 +184,7 @@ Three commitments, in increasing order of infrastructure required:
 
 1. **Forward pre-registration against GSS 2026 and 2028.** Point forecasts and 90% intervals for all 20 items (plus full response distributions for the ordinal ones), from me, from baseline models, and from any LLM anyone cares to submit — committed publicly before the data exist. No contamination argument is possible about data that hasn't been collected. If you work on LLM forecasting and want to add an arm, the repo issue tracker is open.
 2. **Sensor-mode evaluation of the summer Talkie checkpoint.** First test: can log-probability elicitation recover known 1930s-era attitude signals where chat elicitation fails, the way it does for arithmetic? If yes: forecast the polling era, 1936 onward, and grade.
-3. **Anonymization as default protocol.** Any retrospective "LLM predicts public opinion" result I produce — and, I'd argue, anyone else's — should report the anonymized-series number next to the identified one. The gap between them is a direct measurement of how much of the claimed skill is recall. In my case that gap was the difference between the pilot's publishable-looking 2.2x and this post's null.
+3. **Anonymization as default protocol.** Any retrospective "LLM predicts public opinion" result I produce — and, I'd argue, anyone else's — should report the anonymized-series number next to the identified one. The gap between them is a direct measurement of how much of the claimed skill is recall. In my case that gap was the difference between the pilot's publishable-looking 2.4x and this post's null.
 
 Code, data extracts, prompts, raw model outputs, and the pre-analysis plan: [github.com/maxghenis/value-forecasting](https://github.com/maxghenis/value-forecasting), branch `ea-post-rewrite-2026-07`, directory `ea-rewrite-2026-07/`.
 

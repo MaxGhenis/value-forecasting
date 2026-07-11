@@ -1,0 +1,315 @@
+{
+  "kind": "post-registration corrected implementation of the registered ETS/Holt baseline (pandas-Series input; spec otherwise unchanged)",
+  "cutoffs": {
+    "2022": {
+      "per_item": {
+        "HOMOSEX": {
+          "point": 64.86,
+          "lo90": 59.24,
+          "hi90": 70.09,
+          "abs_err": 8.92,
+          "covers": false
+        },
+        "GRASS": {
+          "point": 76.03,
+          "lo90": 70.3,
+          "hi90": 80.95,
+          "abs_err": 9.5,
+          "covers": false
+        },
+        "PREMARSX": {
+          "point": 70.56,
+          "lo90": 66.61,
+          "hi90": 74.23,
+          "abs_err": 4.97,
+          "covers": false
+        },
+        "FEFAM": {
+          "point": 76.89,
+          "lo90": 71.06,
+          "hi90": 81.84,
+          "abs_err": 8.68,
+          "covers": false
+        },
+        "FEPOL": {
+          "point": 85.89,
+          "lo90": 82.85,
+          "hi90": 88.46,
+          "abs_err": 3.94,
+          "covers": false
+        },
+        "SPKATH": {
+          "point": 81.2,
+          "lo90": 78.88,
+          "hi90": 83.32,
+          "abs_err": 2.3,
+          "covers": true
+        },
+        "ABANY": {
+          "point": 49.13,
+          "lo90": 43.3,
+          "hi90": 54.98,
+          "abs_err": 9.16,
+          "covers": false
+        },
+        "CAPPUN": {
+          "point": 41.18,
+          "lo90": 34.93,
+          "hi90": 47.73,
+          "abs_err": 3.33,
+          "covers": true
+        },
+        "POLVIEWS": {
+          "point": 29.5,
+          "lo90": 26.2,
+          "hi90": 33.02,
+          "abs_err": 2.03,
+          "covers": true
+        },
+        "EQWLTH": {
+          "point": 49.12,
+          "lo90": 43.52,
+          "hi90": 54.73,
+          "abs_err": 3.7,
+          "covers": true
+        },
+        "HELPPOOR": {
+          "point": 37.1,
+          "lo90": 30.65,
+          "hi90": 44.05,
+          "abs_err": 1.23,
+          "covers": true
+        },
+        "GUNLAW": {
+          "point": 69.1,
+          "lo90": 64.37,
+          "hi90": 73.47,
+          "abs_err": 0.39,
+          "covers": true
+        },
+        "NATRACE": {
+          "point": 45.44,
+          "lo90": 35.64,
+          "hi90": 55.62,
+          "abs_err": 1.06,
+          "covers": true
+        },
+        "NATENVIR": {
+          "point": 66.23,
+          "lo90": 56.46,
+          "hi90": 74.79,
+          "abs_err": 0.73,
+          "covers": true
+        },
+        "NATFARE": {
+          "point": 24.1,
+          "lo90": 16.58,
+          "hi90": 33.65,
+          "abs_err": 9.13,
+          "covers": true
+        },
+        "NATHEAL": {
+          "point": 68.16,
+          "lo90": 59.27,
+          "hi90": 75.9,
+          "abs_err": 5.61,
+          "covers": true
+        },
+        "NATEDUC": {
+          "point": 74.86,
+          "lo90": 71.28,
+          "hi90": 78.12,
+          "abs_err": 0.99,
+          "covers": true
+        },
+        "TRUST": {
+          "point": 28.91,
+          "lo90": 25.5,
+          "hi90": 32.58,
+          "abs_err": 4.57,
+          "covers": false
+        },
+        "FAIR": {
+          "point": 47.46,
+          "lo90": 43.12,
+          "hi90": 51.84,
+          "abs_err": 5.89,
+          "covers": false
+        },
+        "PRAYER": {
+          "point": 46.18,
+          "lo90": 40.63,
+          "hi90": 51.82,
+          "abs_err": 0.44,
+          "covers": true
+        }
+      },
+      "n": 20,
+      "mae": 4.33,
+      "bias": 1.24,
+      "cov90": 0.6,
+      "n_covered": 12,
+      "width90": 11.04,
+      "mae_by_class": {
+        "reversal": 4.94,
+        "continuation": 6.88,
+        "stable": 2.93
+      }
+    },
+    "2010": {
+      "per_item": {
+        "HOMOSEX": {
+          "point": 56.41,
+          "lo90": 40.24,
+          "hi90": 71.33,
+          "abs_err": 0.47,
+          "covers": true
+        },
+        "GRASS": {
+          "point": 57.5,
+          "lo90": 39.75,
+          "hi90": 73.51,
+          "abs_err": 9.03,
+          "covers": true
+        },
+        "PREMARSX": {
+          "point": 61.42,
+          "lo90": 52.41,
+          "hi90": 69.71,
+          "abs_err": 4.17,
+          "covers": true
+        },
+        "FEFAM": {
+          "point": 75.54,
+          "lo90": 59.13,
+          "hi90": 86.82,
+          "abs_err": 7.33,
+          "covers": true
+        },
+        "FEPOL": {
+          "point": 83.53,
+          "lo90": 75.05,
+          "hi90": 89.52,
+          "abs_err": 1.58,
+          "covers": true
+        },
+        "SPKATH": {
+          "point": 81.96,
+          "lo90": 79.67,
+          "hi90": 84.04,
+          "abs_err": 3.06,
+          "covers": false
+        },
+        "ABANY": {
+          "point": 45.18,
+          "lo90": 40.46,
+          "hi90": 49.99,
+          "abs_err": 13.11,
+          "covers": false
+        },
+        "CAPPUN": {
+          "point": 31.82,
+          "lo90": 19.88,
+          "hi90": 46.74,
+          "abs_err": 6.03,
+          "covers": true
+        },
+        "POLVIEWS": {
+          "point": 25.38,
+          "lo90": 22.4,
+          "hi90": 28.61,
+          "abs_err": 2.09,
+          "covers": true
+        },
+        "EQWLTH": {
+          "point": 44.05,
+          "lo90": 39.27,
+          "hi90": 48.94,
+          "abs_err": 8.77,
+          "covers": false
+        },
+        "HELPPOOR": {
+          "point": 24.36,
+          "lo90": 20.05,
+          "hi90": 29.26,
+          "abs_err": 13.97,
+          "covers": false
+        },
+        "GUNLAW": {
+          "point": 74.83,
+          "lo90": 63.47,
+          "hi90": 83.58,
+          "abs_err": 6.12,
+          "covers": true
+        },
+        "NATRACE": {
+          "point": 39.99,
+          "lo90": 32.45,
+          "hi90": 48.03,
+          "abs_err": 6.51,
+          "covers": true
+        },
+        "NATENVIR": {
+          "point": 68.07,
+          "lo90": 58.21,
+          "hi90": 76.54,
+          "abs_err": 2.57,
+          "covers": true
+        },
+        "NATFARE": {
+          "point": 22.8,
+          "lo90": 15.42,
+          "hi90": 32.35,
+          "abs_err": 10.43,
+          "covers": false
+        },
+        "NATHEAL": {
+          "point": 76.89,
+          "lo90": 69.63,
+          "hi90": 82.85,
+          "abs_err": 3.12,
+          "covers": true
+        },
+        "NATEDUC": {
+          "point": 76.67,
+          "lo90": 69.05,
+          "hi90": 82.87,
+          "abs_err": 0.82,
+          "covers": true
+        },
+        "TRUST": {
+          "point": 29.09,
+          "lo90": 25.56,
+          "hi90": 32.9,
+          "abs_err": 4.75,
+          "covers": false
+        },
+        "FAIR": {
+          "point": 47.49,
+          "lo90": 41.76,
+          "hi90": 53.29,
+          "abs_err": 5.92,
+          "covers": false
+        },
+        "PRAYER": {
+          "point": 45.13,
+          "lo90": 40.16,
+          "hi90": 50.19,
+          "abs_err": 0.61,
+          "covers": true
+        }
+      },
+      "n": 20,
+      "mae": 5.52,
+      "bias": -1.95,
+      "cov90": 0.65,
+      "n_covered": 13,
+      "width90": 15.85,
+      "mae_by_class": {
+        "reversal": 3.97,
+        "continuation": 6.49,
+        "stable": 6.58
+      }
+    }
+  }
+}

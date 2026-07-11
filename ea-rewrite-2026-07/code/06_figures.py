@@ -31,6 +31,7 @@ gss = json.loads((RES / "gss_series.json").read_text())
 ana = json.loads((RES / "analysis.json").read_text())
 llm = json.loads((RES / "llm_forecasts.json").read_text())
 rob = json.loads((RES / "robustness_analysis.json").read_text())
+etsc = json.loads((RES / "ets_corrected.json").read_text())
 
 # ---- sanity gates: the committed record says what the paper says ----
 assert ana["actual_2024"]["HOMOSEX"] == 55.94
@@ -38,7 +39,8 @@ assert ana["strata"]["HOMOSEX"]["pre"] == 62.72
 assert ana["metrics"]["2022"]["naive"]["mae"] == 3.15
 assert ana["metrics"]["2022"]["gpt-5-mini"]["mae"] == 4.07
 assert rob["metrics"]["2022"]["o3"]["mae"] == 3.93
-assert rob["metrics"]["2022"]["gpt-5-mini-high"]["n"] == 10
+assert rob["metrics"]["2022"]["gpt-5-mini-high"]["n"] == 11
+assert etsc["cutoffs"]["2022"]["mae"] == 4.33 and etsc["cutoffs"]["2022"]["n_covered"] == 12
 assert llm["point"]["gpt-5-mini"]["HOMOSEX"]["2010"]["point"] == 78.0
 assert llm["anon"]["gpt-5-mini"]["HOMOSEX"]["2010"]["point"] == 47.5
 
@@ -114,7 +116,8 @@ save(fig, "fig1_reversals")
 # ============ fig 2 — MAE vs 90% coverage, aligned horizon ============
 m22, r22 = ana["metrics"]["2022"], rob["metrics"]["2022"]
 pts = [  # (label, mae, cov, n, family)
-    ("naive / ETS", m22["naive"]["mae"], m22["naive"]["cov90"], 20, "base"),
+    ("naive", m22["naive"]["mae"], m22["naive"]["cov90"], 20, "base"),
+    ("ETS (corrected)", etsc["cutoffs"]["2022"]["mae"], etsc["cutoffs"]["2022"]["cov90"], 20, "base"),
     ("linear", m22["linear"]["mae"], m22["linear"]["cov90"], 20, "base"),
     ("ARIMA(1,1,0)", m22["arima"]["mae"], m22["arima"]["cov90"], 20, "base"),
     ("gpt-5-mini (minimal)", m22["gpt-5-mini"]["mae"], m22["gpt-5-mini"]["cov90"], 20, "clean"),
@@ -137,11 +140,12 @@ for label, mae, cov, n, fam in pts:
                    color=INK2 if fam == "base" else BLUE,
                    edgecolors="white", linewidths=1.2, zorder=4)
 offsets = {  # nudge labels off their markers; leader-free, collision-checked by eye
-    "naive / ETS": (-0.04, 0.022, "right"), "linear": (0.05, 0.022, "left"),
+    "naive": (-0.04, 0.022, "right"), "linear": (0.05, 0.022, "left"),
+    "ETS (corrected)": (0.045, -0.026, "left"),
     "ARIMA(1,1,0)": (-0.09, 0.0, "right"), "claude-opus-4-8": (0.0, -0.042, "center"),
     "gpt-5-mini (minimal)": (0.05, -0.005, "left"), "gpt-4o": (-0.05, -0.008, "right"),
     "o3": (-0.05, 0.005, "right"), "gpt-5-mini (medium)": (0.05, 0.008, "left"),
-    "gpt-5-mini (high)†": (0.0, 0.032, "center"),
+    "gpt-5-mini (high)†": (-0.03, 0.034, "center"),
 }
 for label, mae, cov, n, fam in pts:
     dx, dy, ha = offsets[label]
@@ -215,8 +219,8 @@ save(fig, "fig3_anonymization")
 # ================= fig 4 — reasoning-effort sweep =================
 sweep = [("minimal\nn = 20", m22["gpt-5-mini"]["mae"], 20),
          ("medium\nn = 20", r22["gpt-5-mini-medium"]["mae"], 20),
-         ("high\nn = 10 of 20", r22["gpt-5-mini-high"]["mae"], 10)]
-assert [s[1] for s in sweep] == [4.07, 4.16, 4.38]
+         ("high\nn = 11 of 20", r22["gpt-5-mini-high"]["mae"], 11)]
+assert [s[1] for s in sweep] == [4.07, 4.16, 4.21]
 fig, ax = plt.subplots(figsize=(3.4, 2.9))
 xs = np.arange(3)
 bars = ax.bar(xs, [s[1] for s in sweep], width=0.38, color=BLUE, zorder=3)

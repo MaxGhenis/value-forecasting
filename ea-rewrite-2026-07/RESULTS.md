@@ -207,21 +207,52 @@ prompts, items, and metrics; aligned horizon (history ≤ 2022 → 2024, n = 20)
 |---|---|---|---|---|---|---|
 | o3 (default effort) | 2024-06-01 | clean | 3.93 | 0.75 | 6.26 | 65.0 [59.0, 71.0] — miss |
 | gpt-5-mini, medium effort | 2024-05-31 | clean | 4.16 | 0.75 | 7.11 | 65.2 [60.0, 70.4] — miss |
-| gpt-5-mini, high effort | 2024-05-31 | clean | 4.38 | 0.60 | 7.03 | 66.3 [62.1, 70.5] — miss |
+| gpt-5-mini, high effort | 2024-05-31 | clean | 4.21 (n = 11) | 0.64 (7/11) | 7.03 | 66.3 [62.1, 70.5] — miss |
 
 Reference points from the pre-registered arms: naive 3.15 MAE / 0.90 coverage;
 gpt-5-mini-minimal 4.07 / 0.55.
 
-Findings: (1) the strongest clean-eligible reasoning model improves calibration
-(0.75 vs 0.50–0.55) but still trails persistence and misses the reversal;
-(2) raising gpt-5-mini's reasoning effort makes accuracy slightly *worse*
-(4.07 → 4.16 → 4.38) — more deliberation toward the same wrong prior;
+Findings: (1) the strongest clean-eligible reasoning model posts higher empirical
+coverage (0.75 vs 0.50–0.55) but still trails persistence and misses the reversal;
+(2) raising gpt-5-mini's reasoning effort buys no improvement
+(4.07 → 4.16 → 4.21, the last on the partial n = 11 arm; on the common 11-item
+subset: 3.91 → 3.93 → 4.21 vs naive 2.56) — deliberation toward the same wrong prior;
 (3) **no clean Anthropic arm is possible**: every Claude snapshot with a cutoff
 ≤ Dec 2024 has been retired from the API (claude-3-5-sonnet-20241022 → 404,
 retired 2025-10-28 per Anthropic's model lifecycle) — the clean-evaluation window
 closes as vendors deprecate snapshots; (4) a DeepSeek open-weights arm was skipped
 because the vendor documents no training cutoff, so it cannot be labeled clean.
 
-Cost: $0.85 measured (gpt-5-mini-high segment); the o3 and medium-effort segments'
-cost logging was lost to a session crash mid-run (~$1 estimated total); all raw
-calls are preserved in `robustness_forecasts.json`.
+Cost: $0.88 measured across 30 calls (gpt-5-mini-high segment, per the committed
+`robustness_costs.json`); the o3 and medium-effort segments' cost logging was lost
+to a session crash mid-run (~$1 estimated total); every call's parsed output is
+preserved in `robustness_forecasts.json`. The high-effort arm attempted 12 items,
+with one parse failure, so 11 score; `robustness_analysis.json` is regenerated
+from the committed forecasts (2026-07-11 — an earlier snapshot had scored n = 10
+before the GUNLAW cell landed).
+
+## Post-registration corrections and uncertainty (2026-07-11, referee-prompted)
+
+- **Corrected ETS** (`code/07_ets_corrected.py` → `results/ets_corrected.json`):
+  the registered run passed a bare array where statsmodels' ETSModel prediction
+  interface needs an indexed series — a caller-side input error, not a library
+  bug — so ETS silently duplicated naive. The registered spec with the one-line
+  fix gives, aligned: MAE 4.33, coverage 12/20, width 11.0, HOMOSEX 64.9
+  [59.2, 70.1] (miss); long horizon: MAE 5.52, coverage 13/20 — a classical
+  trend-follower with LLM-grade under-coverage, and at the long horizon better
+  than the identified gpt-5-mini (5.52 vs 7.25). The honest calibration split is
+  flat vs trend-following, not classical vs LLM.
+- **Uncertainty** (`code/08_uncertainty.py` → `results/uncertainty.json`):
+  naive's MAE edge resolves against the clean arms (gpt-5-mini +0.92, boot 95%
+  CI [+0.14, +1.64]; gpt-4o +0.77 [+0.06, +1.40]) but not claude-opus-4-8
+  (+0.43 [−0.06, +0.90]) — say "no arm beat persistence," not "persistence beat
+  every arm." Coverage: 11/20 and 10/20 vs nominal 0.90, binomial p < 1e-4;
+  discordant pairs vs naive 7:0 and 8:0. Reversal-stratum MAE contrast is
+  descriptive (n = 8, p ≈ 0.3). Under SRS SEs (no design effects), 6 of the 8
+  reversal changes clear 95%; FEPOL and POLVIEWS do not.
+- **Linear intervals**: the plan registered t-based; the code used z = 1.645
+  (slightly narrow; coverage unchanged at 18/20). Disclosed, not patched.
+- **Pilot artifact**: the n = 2 pilot's raw forecasts now live at
+  `archive/pilot/forecasts.json`; its aggregates are LLM MAE 12.5 vs baseline
+  30.2 (2.4x, only baseline = linear extrapolation), coverage 6/14 vs 5/14.
+  The "2.2x / 28.1" figures quoted in earlier drafts do not reproduce from it.

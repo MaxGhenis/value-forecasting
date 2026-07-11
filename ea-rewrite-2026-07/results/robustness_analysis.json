@@ -164,16 +164,16 @@
         }
       },
       "gpt-5-mini-high": {
-        "n": 10,
-        "mae": 4.38,
-        "bias": 3.35,
-        "medae": 3.7,
-        "cov90": 0.6,
-        "width90": 10.6,
+        "n": 11,
+        "mae": 4.21,
+        "bias": 2.81,
+        "medae": 3.25,
+        "cov90": 0.636,
+        "width90": 10.31,
         "mae_by_class": {
           "reversal": 7.03,
           "continuation": null,
-          "stable": 1.72
+          "stable": 1.85
         }
       }
     },
@@ -327,10 +327,10 @@
         "edge_over_naive_anon": null
       },
       "gpt-5-mini-high": {
-        "identified_mae": 4.38,
+        "identified_mae": 4.21,
         "anon_mae": null,
         "n": 0,
-        "edge_over_naive_identified": -1.23,
+        "edge_over_naive_identified": -1.06,
         "edge_over_naive_anon": null
       },
       "gpt-5-mini(minimal, pre-registered)": {
@@ -446,9 +446,9 @@
       "homosex_interval_covers_5594_2022": false
     },
     "gpt-5-mini-high": {
-      "mae_2022": 4.38,
+      "mae_2022": 4.21,
       "beats_naive_3.15": false,
-      "cov90_2022": 0.6,
+      "cov90_2022": 0.636,
       "honest_coverage_>=0.90": false,
       "reversal_subset_mae_2022": 7.03,
       "homosex_point_2022": 66.3,
@@ -469,10 +469,10 @@
       "calls": 0
     },
     "gpt-5-mini-high": {
-      "in": 11291,
-      "out": 421576,
-      "usd": 0.84597475,
-      "calls": 29
+      "in": 11727,
+      "out": 440745,
+      "usd": 0.88442175,
+      "calls": 30
     },
     "deepseek-v4-flash": {
       "in": 0,

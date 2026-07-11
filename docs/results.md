@@ -15,6 +15,7 @@ Full tables live in [RESULTS.md](https://github.com/MaxGhenis/value-forecasting/
 | gpt-4o (clean) | 3.92 | 0.50 (10/20) |
 | claude-opus-4-8 (contaminated) | 3.58 | 0.80 (16/20) |
 | o3 (clean, post-registration) | 3.93 | 0.75 (15/20) |
+| ETS, corrected implementation (post-registration) | 4.33 | 0.60 (12/20) |
 
 Eight of twenty items reversed their pre-2022 trend in 2024; every arm's HOMOSEX point forecast landed at 60.2–66.5 against an actual of 55.9. At the 2010 cutoff, anonymizing the series moved gpt-5-mini's HOMOSEX "forecast" from 78.0 to 47.5 — a 30.5-point swing from the item name alone — and its edge over the best classical baseline (ARIMA) flipped from +0.41 to −0.07.
 

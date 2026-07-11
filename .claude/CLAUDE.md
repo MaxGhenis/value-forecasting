@@ -15,13 +15,14 @@ The canonical experiment is the **2026-07 pre-registered rewrite** in `ea-rewrit
 
 ## Superseded — do not cite or resurrect
 
-`archive/paper-2024/` (old paper), old `scripts/` pipeline, and `data/longterm_*` / `data/calibration_*` JSONs rest on a **leaky pilot design**: named items, forecast targets inside the model's training window, n = 2, unweighted shares, plus EMOS-calibrated long-term projections (e.g., "HOMOSEX 80% by 2100"). The controlled design reverses the pilot's headline ("LLM beats baselines 2.2x" → LLM 4.07 vs. naive 3.15, n = 20). Never quote the pilot's numbers as findings; they appear only as a design-contrast exhibit.
+`archive/paper-2024/` (old paper), old `scripts/` pipeline, and `data/longterm_*` / `data/calibration_*` JSONs rest on a **leaky pilot design**: named items, forecast targets inside the model's training window, n = 2, unweighted shares, plus EMOS-calibrated long-term projections (e.g., "HOMOSEX 80% by 2100"). The controlled design reverses the pilot's headline ("LLM beats the baseline 2.4x", 12.5 vs. 30.2 per `archive/pilot/forecasts.json` — the "2.2x/28.1" in old drafts does not reproduce → LLM 4.07 vs. naive 3.15, n = 20). Never quote the pilot's numbers as findings; they appear only as a design-contrast exhibit.
 
 ## Numbers discipline
 
 - Every quantitative claim traces to `ea-rewrite-2026-07/results/*.json`; relative-performance claims carry baseline and n inline.
 - HOMOSEX "not wrong at all" 2022 → 2024 is **62.7 → 55.9** (weighted). Never 72% (that's Gallup's differently-worded series); never the unweighted 54.7.
-- The gpt-5-mini **high-effort robustness arm is partial (n = 10 of 20)** — say so whenever quoting its 4.38 MAE.
+- The gpt-5-mini **high-effort robustness arm is partial (n = 11 of 20; 12 attempted, 1 parse failure)** — say so whenever quoting its 4.21 MAE / 7-of-11 coverage.
+- Post-registration artifacts: `results/ets_corrected.json` (registered ETS with the input fix: aligned 4.33 MAE / 12-of-20 coverage; long 5.52) and `results/uncertainty.json` (paired CIs — claude-vs-naive spans zero, so say "no arm beat persistence," not "persistence beat every arm").
 - GSS 2024 microdata first became public in 2025 (not late 2024); clean/contaminated labels follow vendor-stated cutoffs recorded in `results/robustness_analysis.json`.
 
 ## Structure
@@ -42,6 +43,6 @@ Data and venv live in the canonical clone `~/value-forecasting` (`data/gss7224_r
 ## Next steps
 
 - Publish the essay; pick the paper venue (arXiv cs.CY + workshop shortlist in session notes).
-- Forward pre-registration for GSS 2026/2028 — paper §8 says planned pending Max's explicit confirmation; the binding registration must be its own commit before GSS 2026 fieldwork ends.
+- Forward pre-registration for GSS 2026/2028 — paper §8 says planned pending Max's explicit confirmation; the binding registration must be its own commit before GSS 2026 fieldwork begins.
 - Talkie-1930 sensor-mode attitude evaluation at the summer checkpoint (log-prob elicitation; the probes in `results/talkie_gallup_probes/` already show chat elicitation failing).
 - Working tree holds an uncommitted resumed robustness run (full n = 20 high-effort arm, DeepSeek arm, more anon probes) — committing it requires re-running `05_robustness_analysis.py` and updating the numbers quoted in the post and paper.

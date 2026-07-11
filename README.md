@@ -10,7 +10,7 @@ This repo holds a **pre-registered, contamination-controlled evaluation** of val
 - **Nothing beat last-value persistence**: naive MAE 3.15 vs. 3.58–4.07 for the LLM arms (gpt-5-mini, gpt-4o, claude-opus-4-8) and 3.93 for o3.
 - **LLM 90% intervals covered 50–55%** of actuals (clean arms); the naive and linear baselines' intervals covered 90% (ARIMA 80%).
 - **Every arm missed the HOMOSEX reversal** (points 60.2–66.5 vs. actual 55.9).
-- **An anonymization probe attributes identity-conditioned "LLM forecasting skill" to recall**: naming the item moved a long-horizon forecast by up to 30.5 points, and the LLM's edge over the best classical baseline flipped sign when the item was anonymized.
+- **An anonymization probe traces identity-conditioned "LLM forecasting skill" largely to item identity**: naming the item moved a long-horizon forecast by up to 30.5 points, and the LLM's edge over the strongest classical baseline that ran flipped sign when the item was anonymized.
 
 ## Where things live
 
@@ -37,6 +37,8 @@ python 02_baselines.py        # naive/linear/ARIMA/ETS -> results/baselines.json
 python 03_llm_forecasts.py    # LLM arms (needs API keys; ~$0.19)
 python 04_analysis.py         # metrics -> results/analysis.json
 python 06_figures.py          # figures -> ../figures/
+python 07_ets_corrected.py    # corrected ETS baseline -> results/ets_corrected.json
+python 08_uncertainty.py      # paired uncertainty -> results/uncertainty.json
 ```
 
 Build the paper: `myst build --pdf paper/main.md` (LaTeX required; the template is vendored in `paper/template/`).
