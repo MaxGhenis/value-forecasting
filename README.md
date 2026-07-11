@@ -2,7 +2,7 @@
 
 Can anything — language models included — forecast how measured human values change?
 
-This repo holds a **pre-registered, contamination-controlled evaluation** of value forecasting against the 2024 General Social Survey, plus the paper and analysis code. The analysis plan was committed before any forecasting API call; every number in the paper traces to committed result JSONs.
+This repo holds a **pre-registered, contamination-controlled evaluation** of value forecasting against the 2024 General Social Survey, plus the paper and analysis code. We committed the analysis plan before any forecasting API call; every number in the paper traces to committed result JSONs.
 
 ## Headline results (aligned horizon: history ≤ 2022 → forecast 2024, n = 20 items)
 
@@ -28,7 +28,7 @@ This repo holds a **pre-registered, contamination-controlled evaluation** of val
 
 ## Reproducing
 
-GSS microdata are not committed (NORC redistribution); download the cumulative 1972–2024 file (Release 2) from [gss.norc.org](https://gss.norc.org/) to `data/gss7224_r2.dta`, then:
+The repo does not include the GSS microdata (NORC distributes them); download the cumulative 1972–2024 file (Release 2) from [gss.norc.org](https://gss.norc.org/) to `data/gss7224_r2.dta`, then:
 
 ```bash
 cd ea-rewrite-2026-07/code
