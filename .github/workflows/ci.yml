@@ -81,18 +81,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra latexmk texlive-xetex
 
-      - name: Build paper
+      # The PDF builds first so the site build attaches it to the paper page.
+      - name: Build PDF
+        run: myst build --pdf
+
+      - name: Build site
+        env:
+          BASE_URL: /value-forecasting
         run: |
-          cd paper
-          export BASE_URL="/value-forecasting"
           myst build --html
           touch _build/html/.nojekyll
-
-      - name: Build PDF
-        run: |
-          cd paper
-          myst build --pdf
-          cp exports/*.pdf _build/exports/*.pdf _build/html/ 2>/dev/null || true
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -102,7 +100,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: paper/_build/html
+          path: _build/html
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

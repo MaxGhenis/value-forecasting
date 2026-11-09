@@ -4,12 +4,12 @@ import numpy as np
 import pytest
 
 from value_forecasting.baselines import (
+    inverse_logit,
+    logit,
     run_arima_forecast,
     run_ets_forecast,
-    run_naive_forecast,
     run_linear_forecast,
-    logit,
-    inverse_logit,
+    run_naive_forecast,
 )
 from value_forecasting.forecaster import Forecast
 
@@ -49,10 +49,10 @@ class TestARIMAForecast:
             assert f.lower_bound < f.point_estimate < f.upper_bound
 
     def test_model_labeled_correctly(self):
-        """Should be labeled as ARIMA."""
+        """The default order (1, 0, 0) is an AR(1) fit on the logit scale."""
         forecasts = run_arima_forecast("HOMOSEX", 2000, [2010])
-        if forecasts:
-            assert "arima" in forecasts[0].model.lower()
+        assert forecasts
+        assert forecasts[0].model == "ar1_logit"
 
 
 class TestETSForecast:
@@ -142,12 +142,18 @@ class TestLinearForecast:
             assert f.upper_bound <= 100
 
     def test_uncertainty_grows_with_horizon(self):
-        """Prediction intervals should widen for longer horizons."""
+        """Logit-scale prediction intervals should widen for longer horizons.
+
+        Back-transformed intervals narrow as a forecast nears 0 or 100, so
+        the comparison uses the scale the regression is fit on.
+        """
         forecasts = run_linear_forecast("HOMOSEX", 2010, [2020, 2050])
-        if len(forecasts) == 2:
-            width_2020 = forecasts[0].upper_bound - forecasts[0].lower_bound
-            width_2050 = forecasts[1].upper_bound - forecasts[1].lower_bound
-            assert width_2050 > width_2020
+        assert len(forecasts) == 2
+        widths = [
+            logit(f.upper_bound / 100) - logit(f.lower_bound / 100)
+            for f in forecasts
+        ]
+        assert widths[1] > widths[0]
 
     def test_model_labeled_correctly(self):
         """Should be labeled as linear_logit."""
@@ -168,7 +174,9 @@ class TestBoundedForecasts:
         """All forecasts should be bounded even at 2100."""
         forecasts = forecast_fn("HOMOSEX", 2021, [2100])
         for f in forecasts:
-            assert 0 <= f.point_estimate <= 100, f"{forecast_fn.__name__} point estimate out of bounds"
+            assert 0 <= f.point_estimate <= 100, (
+                f"{forecast_fn.__name__} point estimate out of bounds"
+            )
             assert 0 <= f.lower_bound, f"{forecast_fn.__name__} lower bound below 0"
             assert f.upper_bound <= 100, f"{forecast_fn.__name__} upper bound above 100"
 

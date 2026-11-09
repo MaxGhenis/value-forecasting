@@ -1,7 +1,5 @@
 """Tests for forecasting logic."""
 
-import pytest
-
 from value_forecasting.forecaster import (
     Forecast,
     create_forecast_prompt,
@@ -62,7 +60,7 @@ class TestExtractPredictions:
         response = """
         Here's my prediction:
         {"predictions": [{"year": 2010, "estimate": 40, "lower": 30, "upper": 50}], "reasoning": "test"}
-        """
+        """  # noqa: E501
         result = extract_predictions(response)
         assert len(result["predictions"]) == 1
         assert result["predictions"][0]["estimate"] == 40
@@ -73,7 +71,7 @@ class TestExtractPredictions:
         ```json
         {"predictions": [{"year": 2010, "estimate": 40, "lower": 30, "upper": 50}], "reasoning": "test"}
         ```
-        """
+        """  # noqa: E501
         result = extract_predictions(response)
         assert len(result["predictions"]) == 1
 

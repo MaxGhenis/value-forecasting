@@ -1,5 +1,7 @@
 """Tests for heterogeneity (distribution) forecasting."""
 
+import os
+
 import pytest
 
 from value_forecasting.heterogeneity import (
@@ -7,6 +9,8 @@ from value_forecasting.heterogeneity import (
     forecast_distribution,
     forecast_distribution_llm,
 )
+
+LIVE_API = os.environ.get("VALUE_FORECASTING_LIVE_API_TESTS") == "1"
 
 
 class TestDistributionForecast:
@@ -72,12 +76,15 @@ class TestForecastDistribution:
         assert total == pytest.approx(100.0, abs=1.0)
 
 
+@pytest.mark.skipif(
+    not LIVE_API,
+    reason="calls the Anthropic API; set VALUE_FORECASTING_LIVE_API_TESTS=1 to run",
+)
 class TestForecastDistributionLLM:
     """Tests for LLM-based distribution forecasting."""
 
     def test_returns_distribution_forecast(self):
         """Should return a DistributionForecast."""
-        # This will actually call the API
         result = forecast_distribution_llm("HOMOSEX", 2000, 2010)
         assert isinstance(result, DistributionForecast)
 
