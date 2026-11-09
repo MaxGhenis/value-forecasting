@@ -98,7 +98,7 @@ Before building the controls, I ran this task the way much of the LLM-simulation
 | "LLM beats the baseline 2.4x" (MAE 12.5 vs. 30.2, single linear-extrapolation baseline) | n = 2 items (HOMOSEX, GRASS), item names shown, forecast targets 2000–2021 — all *inside* the model's training window | Does not replicate. On a clean, aligned design: clean LLM MAE 4.07 vs. naive 3.15 (ratio 1.29, LLM worse), n = 20 |
 | "Everyone is overconfident — LLM CIs covered 43%, baselines 36%" | Same leaky design; degenerate baseline intervals | Half survives. LLMs covered 50–55% at 90% nominal (n = 20); properly computed classical intervals covered 90% |
 | "LLMs capture non-linear dynamics baselines miss" | The 1990→2021 HOMOSEX run — where the model had read about the liberalization it was "predicting" | See next section: strip the item name and the long-horizon edge over the best classical baseline disappears |
-| "Value trajectories can reverse and trend-followers will miss it" | GPT-4o vs. GSS 2024, run before the 2024 microdata release | Replicates, now with pre-registration: every arm missed the HOMOSEX reversal; 8/20 items reversed |
+| "Value trajectories can reverse and trend-followers will miss it" | GPT-4o vs. GSS 2024, a wave its October 2023 training cutoff predates | Replicates, now with pre-registration: every arm missed the HOMOSEX reversal; 8/20 items reversed |
 
 (The pilot was also unweighted; everything here uses NORC's recommended weights.) The same pilot included a calibrated GPT-4o run producing long-horizon projections — same-sex-relations acceptance at 66 by 2030 (80% CI [57, 75]), 80 by 2100. GSS 2024's 55.9 already sits below that 2030 interval's floor.
 

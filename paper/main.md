@@ -198,7 +198,7 @@ Before building the controls, we ran this task the way much of the LLM-simulatio
 - **"LLM beats the baseline 2.4×" (MAE 12.5 vs. 30.2).** Two named items with targets 2000–2021, inside the training window, against a single weak baseline, produced it. It does not replicate: clean LLM 4.07 vs. naive 3.15 (ratio 1.29, LLM worse), n = 20.
 - **"Everyone is overconfident" (LLM 43%, baselines 36% coverage).** The same design plus degenerate baseline intervals produced it. Half survives: LLMs cover 50–55% at 90% nominal; proper classical intervals cover 90%.
 - **"LLMs capture non-linear dynamics baselines miss."** The 1990$\rightarrow$2021 HOMOSEX run — dynamics the model had read about — produced it. Anonymization erases the long-horizon edge over the best baseline.
-- **"Trajectories reverse and trend-followers miss it."** GPT-4o vs. GSS 2024, run before the microdata release, produced it. It replicates, now pre-registered: 8/20 reversals; every arm missed HOMOSEX.
+- **"Trajectories reverse and trend-followers miss it."** GPT-4o against GSS 2024, a wave its October 2023 training cutoff predates, produced it. It replicates, now pre-registered: 8/20 reversals; every arm missed HOMOSEX.
 
 The same pilot included a calibrated long-horizon projection placing same-sex-relations acceptance at 66 by 2030 (80% CI [57, 75]); GSS 2024's 55.9 already sits below that interval's floor. A design of this shape asks a model to "forecast" years it has read about, on items it can name, and reports recall as skill. The one thing it got right — trajectories reverse and trend-extrapolators miss it — we pre-registered this time (expectation 1), and it confirmed exactly.
 
