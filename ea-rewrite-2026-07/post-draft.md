@@ -5,7 +5,7 @@
 **Summary:**
 
 - In the 2024 General Social Survey, 8 of the 20 attitude items I track reversed their pre-2022 trend. Four posted the largest single-wave decline in their item's recorded history: approval of the school-prayer ban −8.4 points, acceptance of same-sex relations −6.8, rejection of traditional gender roles −6.5, marijuana legalization −5.7.
-- I pre-registered a forecasting test on that wave: three LLMs against classical time-series baselines, shown history through 2022, forecasting 2024, with training-cutoff contamination controlled. Every arm's point forecast missed the same-sex-relations reversal (predictions 60.2–66.5 vs. actual 55.9), and last-value persistence beat every LLM on overall accuracy (MAE 3.15 vs. 3.58–4.07 points, n = 20).
+- I pre-registered a forecasting test on that wave: three LLMs against classical time-series baselines, shown history through 2022, forecasting 2024, with training-cutoff contamination controlled. Every arm's point forecast missed the same-sex-relations reversal (predictions 60.2–66.5 vs. actual 55.9), and no LLM beat last-value persistence on overall accuracy (MAE 3.15 vs. 3.58–4.07 points, n = 20).
 - The LLMs' 90% intervals covered the truth 50–55% of the time (clean arms); the properly computed naive and linear intervals covered 90% (ARIMA: 80%). "Everyone is overconfident" turns out to be half right — the LLMs are.
 - An anonymization probe explains where earlier "LLM forecasting skill" came from: with the item named, gpt-5-mini "forecast" the same-sex-relations series from 2010 data at 78; with the identity stripped, 47.5. A 30.5-point swing from the variable name alone. Identity-conditioned backtests inside a model's training window measure recall blended with extrapolation, not forecasting.
 - The alignment proposal survives in a narrower, more testable form: treat the *forecast distribution* of post-reflection human values — with calibrated uncertainty at two levels — as an alignment target, validate the forecasting machinery against history, and use vintage-corpus LLMs (training data ending in 1930) as the contamination-proof instrument. The entire polling era is out-of-sample for them.
@@ -91,7 +91,7 @@ The robustness arms cost roughly another dollar; cost logging for the o3 and med
 
 ## The result a naive design produces
 
-Before building the controls, I ran this task the way much of the LLM-simulation literature runs it: item names shown, forecast targets inside the model's training window, no survey weights, two variables. That pilot produced an LLM beating the best time-series baseline by 2.2x on mean absolute error — a publication-ready number, structurally identical to results that *are* being published. Here is what happened to each of the pilot's findings under the controlled design:
+Before building the controls, I ran this task the way much of the LLM-simulation literature runs it: item names shown, forecast targets inside the model's training window, no survey weights, two variables. That pilot produced an LLM beating its single baseline, linear extrapolation, by 2.4x on mean absolute error — a publication-ready number, structurally identical to results that *are* being published. Here is what happened to each of the pilot's findings under the controlled design:
 
 | Pilot finding | Design that produced it | What the pre-registered version found |
 |---|---|---|
@@ -192,6 +192,6 @@ In 2022, acceptance of same-sex relations stood at 62.7%, and every classical me
 
 ---
 
-*This develops the value-forecasting research program from a book I'm writing, [Society in Silico](https://society-in-silico.org). Feedback welcome, especially from people working on forecasting evaluation, survey methodology, and alignment targets — and criticism of the pre-analysis plan before I register the 2026 forecasts.*
+*This develops the value-forecasting research program from a book I'm writing, [Society in Silico](https://societyinsilico.com). Feedback welcome, especially from people working on forecasting evaluation, survey methodology, and alignment targets — and criticism of the pre-analysis plan before I register the 2026 forecasts.*
 
 **References without inline links:** Gneiting, T. & Raftery, A. E. (2007). "Strictly proper scoring rules, prediction, and estimation." *Journal of the American Statistical Association* 102(477): 359–378. · Danaher, J. (2021). "Axiological futurism: The systematic study of the future of values." *Futures*. · MacAskill, W., Bykvist, K. & Ord, T. (2020). *Moral Uncertainty*. Oxford University Press.

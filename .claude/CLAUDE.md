@@ -9,7 +9,7 @@ Tests whether anything — LLMs included — can forecast measured human value c
 The canonical experiment is the **2026-07 pre-registered rewrite** in `ea-rewrite-2026-07/`:
 
 - Pre-analysis plan committed before any forecasting call (commit `0ec5fd3`): 20 GSS items, survey-weighted, aligned horizon (history ≤ 2022 → forecast 2024), clean vs. contaminated arms by vendor-stated cutoffs, anonymization probe, hard $25 budget cap.
-- **Results** (all in `ea-rewrite-2026-07/RESULTS.md` and `results/*.json`): GSS 2024 reversed 8/20 trends (4 largest-ever single-wave declines); naive persistence MAE 3.15 beat every LLM arm (3.58–4.07 pre-registered, o3 3.93); clean LLM 90% CIs covered 50–55% vs. 90% for naive/linear (ARIMA 80%); every arm missed the HOMOSEX reversal (60.2–66.5 vs. actual 55.9); anonymization moved the identified 2010-cutoff HOMOSEX forecast 30.5 points and flipped the LLM-vs-ARIMA edge.
+- **Results** (all in `ea-rewrite-2026-07/RESULTS.md` and `results/*.json`): GSS 2024 reversed 8/20 trends (4 largest-ever single-wave declines); no LLM arm beat naive persistence (MAE 3.15 vs. 3.58–4.07 pre-registered, o3 3.93); clean LLM 90% CIs covered 50–55% vs. 90% for naive/linear (ARIMA 80%); every arm missed the HOMOSEX reversal (60.2–66.5 vs. actual 55.9); anonymization moved the identified 2010-cutoff HOMOSEX forecast 30.5 points and flipped the LLM-vs-ARIMA edge.
 - **Paper**: `paper/main.md` (MyST) → `paper/main.pdf`; build with `myst build --pdf paper/main.md` (LaTeX template vendored in `paper/template/`). Figures from `ea-rewrite-2026-07/code/06_figures.py`.
 - Companion essay draft: `ea-rewrite-2026-07/post-draft.md`.
 
@@ -32,7 +32,7 @@ value-forecasting/
 ├── paper/                  # current paper (main.md, main.pdf, references.bib, template/)
 ├── ea-rewrite-2026-07/     # pre-registered experiment: plan, RESULTS.md, code/, results/, figures/
 ├── archive/paper-2024/     # superseded draft — do not cite
-├── app/                    # React viz app (predates rewrite)
+├── archive/app-2025/       # superseded React viz app (pre-rewrite projections)
 ├── data/                   # GSS microdata (gitignored) + legacy JSONs
 ├── docs/                   # short site pages pointing at paper + RESULTS
 └── scripts/                # legacy pipeline (superseded by ea-rewrite-2026-07/code/)

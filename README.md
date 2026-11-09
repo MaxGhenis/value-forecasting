@@ -24,7 +24,7 @@ This repo holds a **pre-registered, contamination-controlled evaluation** of val
 | `ea-rewrite-2026-07/figures/` | Paper figures (PDF/PNG/SVG) |
 | `ea-rewrite-2026-07/post-draft.md` | Companion essay draft |
 | `archive/paper-2024/` | Superseded 2024 paper draft (leaky pilot design; do not cite) |
-| `app/` | React visualization app (predates the rewrite) |
+| `archive/app-2025/` | Superseded React visualization app (pre-rewrite projections; do not cite) |
 
 ## Reproducing
 
@@ -48,4 +48,4 @@ Build the paper: `myst build --pdf paper/main.md` (LaTeX required; the template 
 - General Social Survey: https://gss.norc.org/
 - Halawi et al. (2024), forward LLM forecasting: https://arxiv.org/abs/2402.18563
 - Argyle et al. (2023), silicon sampling: https://arxiv.org/abs/2209.06899
-- Society in Silico: https://society-in-silico.org/
+- Society in Silico: https://societyinsilico.com/
