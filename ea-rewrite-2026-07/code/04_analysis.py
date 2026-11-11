@@ -97,6 +97,11 @@ for v in ["HOMOSEX", "PREMARSX", "POLVIEWS"]:
     act = gss["distributions"][v]["by_year"]["2024"]
     labels = gss["distributions"][v]["labels"]
     rec = {"actual_2024": act, "arms": {}}
+    # Post-registration reference: the 2022 distribution carried forward unchanged.
+    frz = gss["distributions"][v]["by_year"]["2022"]
+    rec["frozen_2022"] = {
+        "tv_distance": round(0.5 * sum(abs(frz[k] - act[k]) for k in labels) / 100, 4),
+        "topcat_err": round(frz[labels[-1]] - act[labels[-1]], 2)}
     for arm in ["gpt-5-mini", "claude-opus-4-8"]:
         pred = llm["distribution"].get(arm, {}).get(v)
         if not pred or "error" in pred: continue
@@ -138,7 +143,7 @@ for cut, p in out["anon_probe"].items():
           f"  edge(anon)={p['edge_over_naive_anon']}")
 print("\n== Distribution arm (TV distance to actual 2024) ==")
 for v, r in out["distribution"].items():
-    for arm, d in r["arms"].items():
+    for arm, d in [*r["arms"].items(), ("frozen 2022", r["frozen_2022"])]:
         print(f"  {v:9s} {arm:16s} TV={d['tv_distance']}  top-cat err={d['topcat_err']:+}")
 print(f"\nHOMOSEX 2024 actual={actual['HOMOSEX']}, preds={out['headline_checks']['homosex_pred_2022cut']}")
 print(f"clean gpt-5-mini MAE={m22['gpt-5-mini']['mae']} vs best simple ({best_simple}) "
