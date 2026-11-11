@@ -8,6 +8,8 @@ project:
     - LLMs
     - GSS
   github: https://github.com/maxghenis/value-forecasting
+  exclude:
+    - archive/**
   toc:
     - file: docs/index.md
     - file: docs/methodology.md
