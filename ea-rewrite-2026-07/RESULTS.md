@@ -31,8 +31,8 @@ percent giving a pre-specified target response among substantive responses, requ
 | Clean, robustness | gpt-4o | 2023-10 | clean | temperature=0, seed=1930 |
 | Contaminated ceiling | claude-opus-4-8 | 2026-01 | contaminated (cutoff postdates release) | default |
 
-One draw per forecast. Prompt: the weighted series by year plus (in the identified
-condition) the GSS item description; the system prompt instructs the model to reason
+Each forecast takes one draw. The prompt holds the weighted series by year plus (in the
+identified condition) the GSS item description; the system prompt instructs the model to reason
 only from the shown series and return `{point, lo90, hi90}` as JSON.
 
 **Baselines** (on the logit scale, 90% intervals): naive (last value, random-walk
@@ -99,8 +99,8 @@ GRASS (−5.69 vs −4.79, 29 waves since 1973).
 
 The ordering (claude 4.18 < gpt-4o 5.83 < gpt-5-mini 7.25 < baselines) tracks access
 to un-shown history, most visibly in claude's reversal-class MAE of 2.89 — it "knows"
-the 2012–2024 record it was not shown. This horizon exists to be dissected by the
-probe below, not to rank forecasting skill.
+the 2012–2024 record we did not show it. This horizon exists for the probe below to
+dissect, not to rank forecasting skill.
 
 ## The reversal miss
 
@@ -148,7 +148,7 @@ naive 6/8 · linear 7/8 · ARIMA 6/8 · **gpt-5-mini 1/8 · gpt-4o 0/8 · claude
 At the aligned horizon the contaminated arm shows no memorization signature: MAE 3.58
 vs clean gpt-5-mini's 4.07 (a 0.49-pt edge, both behind naive's 3.15), HOMOSEX at
 64.0 [59, 69] (miss), 4/8 reversal coverage. At the long horizon its advantage
-(4.18 vs 7.25, reversal MAE 2.89) is what recall of un-shown history predicts.
+(4.18 vs 7.25, reversal MAE 2.89) matches what recall of un-shown history predicts.
 
 ## Distribution arm (2024 full response distributions)
 
@@ -156,13 +156,22 @@ vs clean gpt-5-mini's 4.07 (a 0.49-pt edge, both behind naive's 3.15), HOMOSEX a
 |---|---|---|---|
 | HOMOSEX (4 cat.) | gpt-5-mini | 0.081 | +8.1 ("not wrong at all" 64 vs 55.9) |
 | HOMOSEX | claude-opus-4-8 | 0.081 | +8.1 (64 vs 55.9) |
+| HOMOSEX | frozen 2022 † | 0.068 | +6.8 (62.7 vs 55.9) |
 | PREMARSX (4 cat.) | gpt-5-mini | 0.054 | +5.4 |
 | PREMARSX | claude-opus-4-8 | 0.043 | +3.4 |
+| PREMARSX | frozen 2022 † | 0.040 | +3.3 |
 | POLVIEWS (7 cat.) | gpt-5-mini | 0.021 | +0.4 |
 | POLVIEWS | claude-opus-4-8 | 0.027 | −1.6 |
+| POLVIEWS | frozen 2022 † | 0.035 | −1.2 |
 
-Category shapes are close (TV 0.02–0.08), but the top-category errors on the two
-morality items reproduce the point arm's trend-continuation miss.
+† Post-registration reference, not a registered arm: the 2022 distribution carried
+forward unchanged (`frozen_2022` in `results/analysis.json`).
+
+Category shapes land close to the truth (TV 0.02–0.08), but the frozen 2022
+distribution does as well or better: mean TV 0.047 against 0.052 (gpt-5-mini) and
+0.050 (claude-opus-4-8), and it beats both models on two of the three items. The
+top-category errors on the two morality items reproduce the point arm's
+trend-continuation miss.
 
 ## Pre-registered expectations: scorecard
 
@@ -198,10 +207,11 @@ Budget cap was $25 with an abort guard; actual spend $0.19.
 
 ## Post-registration robustness arms (added after registration; separate files)
 
-Run after the pre-registered record was committed, to answer three anticipated
-objections. Results in `robustness_forecasts.json` / `robustness_analysis.json` /
-`robustness_costs.json`; the pre-registered files are untouched. Same protocol,
-prompts, items, and metrics; aligned horizon (history ≤ 2022 → 2024, n = 20).
+We ran these after committing the pre-registered record, to answer three anticipated
+objections. Results live in `robustness_forecasts.json` / `robustness_analysis.json` /
+`robustness_costs.json`, and the pre-registered files stay untouched. The arms share
+the protocol, prompts, items and metrics, at the aligned horizon (history ≤ 2022 →
+2024, n = 20).
 
 | Arm | Stated cutoff (vendor URL in results meta) | Label | MAE | 90% cov | Reversal MAE | HOMOSEX (actual 55.9) |
 |---|---|---|---|---|---|---|
@@ -212,24 +222,24 @@ prompts, items, and metrics; aligned horizon (history ≤ 2022 → 2024, n = 20)
 Reference points from the pre-registered arms: naive 3.15 MAE / 0.90 coverage;
 gpt-5-mini-minimal 4.07 / 0.55.
 
-Findings: (1) the strongest clean-eligible reasoning model posts higher empirical
-coverage (0.75 vs 0.50–0.55) but still trails persistence and misses the reversal;
-(2) raising gpt-5-mini's reasoning effort buys no improvement
+The arms support four findings. (1) o3, a clean reasoning model, posts higher
+empirical coverage (0.75 vs 0.50–0.55) but still trails persistence and misses the
+reversal. (2) Raising gpt-5-mini's reasoning effort buys no improvement
 (4.07 → 4.16 → 4.21, the last on the partial n = 11 arm; on the common 11-item
-subset: 3.91 → 3.93 → 4.21 vs naive 2.56) — deliberation toward the same wrong prior;
-(3) **no clean Anthropic arm is possible**: every Claude snapshot with a cutoff
-≤ Dec 2024 has been retired from the API (claude-3-5-sonnet-20241022 → 404,
-retired 2025-10-28 per Anthropic's model lifecycle) — the clean-evaluation window
-closes as vendors deprecate snapshots; (4) a DeepSeek open-weights arm was skipped
-because the vendor documents no training cutoff, so it cannot be labeled clean.
+subset, 3.91 → 3.93 → 4.21 vs naive 2.56): more deliberation reaches the same wrong
+prior. (3) **No clean Anthropic arm can run**: Anthropic has retired from its API
+every Claude snapshot with a cutoff ≤ Dec 2024 (claude-3-5-sonnet-20241022 → 404,
+retired 2025-10-28 per Anthropic's model lifecycle), so the clean-evaluation window
+closes as vendors deprecate snapshots. (4) We skipped a DeepSeek open-weights arm
+because the vendor documents no training cutoff, so we cannot label it clean.
 
-Cost: $0.88 measured across 30 calls (gpt-5-mini-high segment, per the committed
-`robustness_costs.json`); the o3 and medium-effort segments' cost logging was lost
-to a session crash mid-run (~$1 estimated total); every call's parsed output is
-preserved in `robustness_forecasts.json`. The high-effort arm attempted 12 items,
-with one parse failure, so 11 score; `robustness_analysis.json` is regenerated
-from the committed forecasts (2026-07-11 — an earlier snapshot had scored n = 10
-before the GUNLAW cell landed).
+The committed `robustness_costs.json` records $0.88 across 30 calls for the
+gpt-5-mini-high segment. A session crash mid-run lost the o3 and medium-effort
+segments' cost logs (~$1 estimated total), but `robustness_forecasts.json` keeps
+every call's parsed output. The high-effort arm attempted 12 items, with one parse
+failure, so 11 score. We regenerated `robustness_analysis.json` from the committed
+forecasts on 2026-07-11; an earlier snapshot had scored n = 10 before the GUNLAW
+cell landed.
 
 ## Post-registration corrections and uncertainty (2026-07-11, referee-prompted)
 
@@ -252,7 +262,7 @@ before the GUNLAW cell landed).
   reversal changes clear 95%; FEPOL and POLVIEWS do not.
 - **Linear intervals**: the plan registered t-based; the code used z = 1.645
   (slightly narrow; coverage unchanged at 18/20). Disclosed, not patched.
-- **Pilot artifact**: the n = 2 pilot's raw forecasts now live at
+- **Pilot artifact**: the n = 2 pilot's forecasts live at
   `archive/pilot/forecasts.json`; its aggregates are LLM MAE 12.5 vs baseline
   30.2 (2.4x, only baseline = linear extrapolation), coverage 6/14 vs 5/14.
-  The "2.2x / 28.1" figures quoted in earlier drafts do not reproduce from it.
+  Earlier drafts quoted "2.2x / 28.1"; neither figure reproduces from it.

@@ -4,7 +4,7 @@ title: Results
 
 # Results
 
-Full tables live in [RESULTS.md](https://github.com/MaxGhenis/value-forecasting/blob/ea-post-rewrite-2026-07/ea-rewrite-2026-07/RESULTS.md); every number traces to the committed JSONs in `ea-rewrite-2026-07/results/`. Aligned horizon (history ≤ 2022 → 2024, n = 20):
+Full tables live in [RESULTS.md](https://github.com/MaxGhenis/value-forecasting/blob/main/ea-rewrite-2026-07/RESULTS.md); every number traces to the committed JSONs in `ea-rewrite-2026-07/results/`. Aligned horizon (history ≤ 2022 → 2024, n = 20):
 
 | Arm | MAE | 90% coverage |
 |---|---|---|
