@@ -3,10 +3,10 @@
 import pytest
 
 from value_forecasting.evaluation import (
-    calculate_calibration,
-    calculate_mae,
-    calculate_coverage,
     ForecastResult,
+    calculate_calibration,
+    calculate_coverage,
+    calculate_mae,
 )
 
 
@@ -42,9 +42,10 @@ class TestCalculateMAE:
 
     def test_known_mae(self):
         """MAE should match hand calculation."""
+        # Each forecast misses its actual by 10 points.
         results = [
-            ForecastResult("X", 2000, 2010, 50.0, 40.0, 30.0, 70.0, "test"),  # error = 10
-            ForecastResult("X", 2000, 2020, 60.0, 70.0, 50.0, 70.0, "test"),  # error = 10
+            ForecastResult("X", 2000, 2010, 50.0, 40.0, 30.0, 70.0, "test"),
+            ForecastResult("X", 2000, 2020, 60.0, 70.0, 50.0, 70.0, "test"),
         ]
         assert calculate_mae(results) == 10.0
 

@@ -1,15 +1,14 @@
 """Tests for EMOS calibration module."""
 
 import numpy as np
-import pytest
 
 from value_forecasting.calibration import (
+    CalibratedForecast,
+    QuantileForecast,
+    apply_calibration,
+    calibrate_spread,
     compute_crps,
     quantiles_to_gaussian,
-    calibrate_spread,
-    apply_calibration,
-    QuantileForecast,
-    CalibratedForecast,
 )
 
 

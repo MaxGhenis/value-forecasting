@@ -14,7 +14,13 @@ class TestGSSVariables:
 
     def test_gss_variables_has_required_keys(self):
         """Each variable should have required metadata."""
-        required_keys = {"question", "responses", "liberal_response", "first_year", "description"}
+        required_keys = {
+            "question",
+            "responses",
+            "liberal_response",
+            "first_year",
+            "description",
+        }
         for var_name, var_info in GSS_VARIABLES.items():
             assert required_keys.issubset(var_info.keys()), f"{var_name} missing keys"
 
@@ -29,11 +35,18 @@ class TestGSSVariables:
         assert GSS_VARIABLES["GRASS"]["first_year"] == 1973
 
     def test_liberal_response_in_valid_range(self):
-        """Liberal response should be a valid response code."""
+        """Every liberal response code should be a valid response code.
+
+        Scale items such as EQWLTH and POLVIEWS list several codes.
+        """
         for var_name, var_info in GSS_VARIABLES.items():
-            assert var_info["liberal_response"] in var_info["responses"], (
-                f"{var_name} liberal_response not in responses"
-            )
+            liberal = var_info["liberal_response"]
+            codes = liberal if isinstance(liberal, list) else [liberal]
+            assert codes, f"{var_name} has no liberal_response"
+            for code in codes:
+                assert code in var_info["responses"], (
+                    f"{var_name} liberal_response {code} not in responses"
+                )
 
 
 class TestHistoricalTrajectories:

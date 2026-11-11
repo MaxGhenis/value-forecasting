@@ -2,7 +2,7 @@
 
 import json
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from anthropic import Anthropic
 
@@ -170,7 +170,10 @@ def forecast_distribution(
         uncertainty = se * (1 + years_out * 0.05) * 1.645
 
         predicted[category] = pred
-        predicted_ci[category] = (max(0, pred - uncertainty), min(100, pred + uncertainty))
+        predicted_ci[category] = (
+            max(0, pred - uncertainty),
+            min(100, pred + uncertainty),
+        )
 
     # Normalize to sum to 100
     total = sum(predicted.values())
@@ -226,7 +229,7 @@ Respond in JSON format:
     }},
     "reasoning": "Brief explanation"
 }}
-"""
+"""  # noqa: E501
 
     system = f"""You are a social scientist conducting research in {cutoff_year}.
 You have access only to information available up to {cutoff_year}.

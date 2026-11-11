@@ -1,3 +1,6 @@
+# Superseded December 2025 draft, kept as a record. The pre-registered evaluation in
+# ../../paper/main.md replaces it; under that evaluation no language model beat
+# last-value persistence, so do not cite the abstract below.
 version: 1
 project:
   title: Can Language Models Forecast Human Value Evolution?

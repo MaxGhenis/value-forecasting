@@ -145,10 +145,7 @@ def run_linear_forecast(
     mse = np.sum(residuals ** 2) / (n - 2)
     se_residual = np.sqrt(mse)
 
-    # Standard error of slope and intercept
     ss_x = np.sum((x - x_mean) ** 2)
-    se_slope = se_residual / np.sqrt(ss_x)
-    se_intercept = se_residual * np.sqrt(1 / n + x_mean ** 2 / ss_x)
 
     forecasts = []
     for target_year in target_years:
@@ -183,7 +180,9 @@ def run_linear_forecast(
                 lower_bound=lower,
                 upper_bound=upper,
                 model="linear_logit",
-                raw_response=f"Logit linear: slope={slope:.4f}, intercept={intercept:.4f}",
+                raw_response=(
+                    f"Logit linear: slope={slope:.4f}, intercept={intercept:.4f}"
+                ),
             )
         )
 
@@ -240,9 +239,21 @@ def run_arima_forecast(
             if idx < 0 or idx >= len(logit_pred):
                 continue
 
-            logit_point = float(logit_pred.iloc[idx]) if hasattr(logit_pred, 'iloc') else float(logit_pred[idx])
-            logit_lower = float(logit_conf_int.iloc[idx, 0]) if hasattr(logit_conf_int, 'iloc') else float(logit_conf_int[idx, 0])
-            logit_upper = float(logit_conf_int.iloc[idx, 1]) if hasattr(logit_conf_int, 'iloc') else float(logit_conf_int[idx, 1])
+            logit_point = (
+                float(logit_pred.iloc[idx])
+                if hasattr(logit_pred, 'iloc')
+                else float(logit_pred[idx])
+            )
+            logit_lower = (
+                float(logit_conf_int.iloc[idx, 0])
+                if hasattr(logit_conf_int, 'iloc')
+                else float(logit_conf_int[idx, 0])
+            )
+            logit_upper = (
+                float(logit_conf_int.iloc[idx, 1])
+                if hasattr(logit_conf_int, 'iloc')
+                else float(logit_conf_int[idx, 1])
+            )
 
             # Back-transform to probability space
             point = inverse_logit(logit_point) * 100
@@ -324,7 +335,11 @@ def run_ets_forecast(
             if idx < 0 or idx >= len(logit_predictions):
                 continue
 
-            logit_point = float(logit_predictions.iloc[idx]) if hasattr(logit_predictions, 'iloc') else float(logit_predictions[idx])
+            logit_point = (
+                float(logit_predictions.iloc[idx])
+                if hasattr(logit_predictions, 'iloc')
+                else float(logit_predictions[idx])
+            )
 
             # Uncertainty grows with horizon in logit space
             steps = idx + 1
@@ -344,7 +359,9 @@ def run_ets_forecast(
                     lower_bound=lower,
                     upper_bound=upper,
                     model="ets_logit",
-                    raw_response=f"ETS logit forecast: {logit_point:.3f} -> {point:.1f}%",
+                    raw_response=(
+                        f"ETS logit forecast: {logit_point:.3f} -> {point:.1f}%"
+                    ),
                 )
             )
 

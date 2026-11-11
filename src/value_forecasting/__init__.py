@@ -12,8 +12,8 @@ from value_forecasting.calibration import (
     CalibratedForecast,
     QuantileForecast,
     apply_calibration,
-    calibrate_spread,
     calculate_coverage,
+    calibrate_spread,
     compute_crps,
     mean_crps,
     quantiles_to_gaussian,
@@ -41,9 +41,9 @@ from value_forecasting.heterogeneity import (
     forecast_distribution_llm,
 )
 from value_forecasting.models import (
+    SUPPORTED_MODELS,
     ModelComparisonResult,
     ModelConfig,
-    SUPPORTED_MODELS,
     calculate_cost,
     compare_models,
     create_client,

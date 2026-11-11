@@ -8,12 +8,10 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
@@ -52,9 +50,6 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -81,18 +76,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra latexmk texlive-xetex
 
-      - name: Build paper
+      # The PDF builds first so the site build attaches it to the paper page.
+      - name: Build PDF
+        run: myst build --pdf
+
+      - name: Build site
+        env:
+          BASE_URL: /value-forecasting
         run: |
-          cd paper
-          export BASE_URL="/value-forecasting"
           myst build --html
           touch _build/html/.nojekyll
 
-      - name: Build PDF
-        run: |
-          cd paper
-          myst build --pdf
-          cp exports/*.pdf _build/exports/*.pdf _build/html/ 2>/dev/null || true
+      - name: Check that the site carries the paper PDF
+        run: find _build/html -name '*.pdf' | grep -q .
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -102,9 +98,24 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: paper/_build/html
+          path: _build/html
 
+  # The github-pages environment admits only main, so the deploy job alone
+  # names it and pull requests still run the build above.
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: docs
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         id: deployment
         uses: actions/deploy-pages@v4

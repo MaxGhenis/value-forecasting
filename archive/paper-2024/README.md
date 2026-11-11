@@ -1,0 +1,1 @@
+Superseded (2026-07) — this draft rested on a leaky identity-conditioned pilot (n = 2 items, targets inside the model training window) and EMOS long-term projections; the current paper at `paper/` reports the pre-registered replacement experiment.

@@ -1,6 +1,6 @@
 """Evaluation metrics for value forecasting."""
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass

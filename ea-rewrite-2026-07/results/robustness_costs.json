@@ -1,0 +1,26 @@
+{
+  "o3": {
+    "in": 0,
+    "out": 0,
+    "usd": 0.0,
+    "calls": 0
+  },
+  "gpt-5-mini-medium": {
+    "in": 0,
+    "out": 0,
+    "usd": 0.0,
+    "calls": 0
+  },
+  "gpt-5-mini-high": {
+    "in": 11727,
+    "out": 440745,
+    "usd": 0.88442175,
+    "calls": 30
+  },
+  "deepseek-v4-flash": {
+    "in": 0,
+    "out": 0,
+    "usd": 0.0,
+    "calls": 0
+  }
+}

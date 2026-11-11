@@ -7,8 +7,7 @@ from dataclasses import dataclass
 from anthropic import Anthropic
 from openai import OpenAI
 
-from .gss_variables import GSS_VARIABLES, get_historical_context
-
+from .gss_variables import get_historical_context
 
 # Model cutoff dates for reference
 MODEL_CUTOFFS = {
@@ -43,7 +42,6 @@ def create_forecast_prompt(
 ) -> str:
     """Create a prompt for value forecasting."""
     context = get_historical_context(variable, cutoff_year)
-    var_info = GSS_VARIABLES[variable]
 
     prompt = f"""{context}
 

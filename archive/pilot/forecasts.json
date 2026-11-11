@@ -1,0 +1,286 @@
+{
+  "baseline": [
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2000,
+      "predicted": 14.61872146118722,
+      "actual": 27,
+      "lower": 8.802237072893075,
+      "upper": 20.435205849481367,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2010,
+      "predicted": 15.646118721461193,
+      "actual": 41,
+      "lower": 6.921392139019975,
+      "upper": 24.37084530390241,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2018,
+      "predicted": 16.468036529680376,
+      "actual": 58,
+      "lower": 5.4167161919215,
+      "upper": 27.51935686743925,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2021,
+      "predicted": 16.776255707762573,
+      "actual": 64,
+      "lower": 4.852462711759577,
+      "upper": 28.700048703765567,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 2000,
+      "target_year": 2010,
+      "predicted": 29.007798440311944,
+      "actual": 41,
+      "lower": 13.681249618080802,
+      "upper": 44.33434726254309,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 2000,
+      "target_year": 2018,
+      "predicted": 33.216556688662195,
+      "actual": 58,
+      "lower": 11.759388337538596,
+      "upper": 54.67372503978579,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 2000,
+      "target_year": 2021,
+      "predicted": 34.79484103179357,
+      "actual": 64,
+      "lower": 11.038690357335295,
+      "upper": 58.550991706251835,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2000,
+      "predicted": 15.705479452054817,
+      "actual": 31,
+      "lower": 0,
+      "upper": 35.041359986113676,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2010,
+      "predicted": 13.445205479452113,
+      "actual": 44,
+      "lower": 0,
+      "upper": 42.4490262805404,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2018,
+      "predicted": 11.636986301369916,
+      "actual": 61,
+      "lower": 0,
+      "upper": 48.37515931608175,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2021,
+      "predicted": 10.95890410958907,
+      "actual": 68,
+      "lower": 0,
+      "upper": 50.59745920440973,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 2000,
+      "target_year": 2010,
+      "predicted": 29.95080983803234,
+      "actual": 44,
+      "lower": 7.156593916353916,
+      "upper": 52.74502575971077,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 2000,
+      "target_year": 2018,
+      "predicted": 32.326334733053386,
+      "actual": 61,
+      "lower": 0.4144324427035926,
+      "upper": 64.23823702340317,
+      "model": "linear_extrapolation"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 2000,
+      "target_year": 2021,
+      "predicted": 33.217156568686164,
+      "actual": 68,
+      "lower": 0,
+      "upper": 68.54819124728772,
+      "model": "linear_extrapolation"
+    }
+  ],
+  "llm": [
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2000,
+      "predicted": 18,
+      "actual": 27,
+      "lower": 12,
+      "upper": 25,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2010,
+      "predicted": 28,
+      "actual": 41,
+      "lower": 18,
+      "upper": 40,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2018,
+      "predicted": 42,
+      "actual": 58,
+      "lower": 28,
+      "upper": 58,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 1990,
+      "target_year": 2021,
+      "predicted": 48,
+      "actual": 64,
+      "lower": 32,
+      "upper": 65,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 2000,
+      "target_year": 2010,
+      "predicted": 42,
+      "actual": 41,
+      "lower": 35,
+      "upper": 50,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 2000,
+      "target_year": 2018,
+      "predicted": 55,
+      "actual": 58,
+      "lower": 45,
+      "upper": 65,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "HOMOSEX",
+      "cutoff_year": 2000,
+      "target_year": 2021,
+      "predicted": 60,
+      "actual": 64,
+      "lower": 50,
+      "upper": 70,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2000,
+      "predicted": 22,
+      "actual": 31,
+      "lower": 18,
+      "upper": 28,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2010,
+      "predicted": 28,
+      "actual": 44,
+      "lower": 22,
+      "upper": 35,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2018,
+      "predicted": 35,
+      "actual": 61,
+      "lower": 28,
+      "upper": 43,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 1990,
+      "target_year": 2021,
+      "predicted": 38,
+      "actual": 68,
+      "lower": 30,
+      "upper": 47,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 2000,
+      "target_year": 2010,
+      "predicted": 42,
+      "actual": 44,
+      "lower": 35,
+      "upper": 50,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 2000,
+      "target_year": 2018,
+      "predicted": 48,
+      "actual": 61,
+      "lower": 38,
+      "upper": 58,
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "variable": "GRASS",
+      "cutoff_year": 2000,
+      "target_year": 2021,
+      "predicted": 51,
+      "actual": 68,
+      "lower": 40,
+      "upper": 62,
+      "model": "claude-sonnet-4-20250514"
+    }
+  ]
+}

@@ -1,0 +1,2423 @@
+{
+  "model_name": "talkie-1930-13b-it",
+  "style": "it",
+  "device": "cuda",
+  "cuda_name": "NVIDIA A100-SXM4-40GB",
+  "load_seconds": 149.11712491100002,
+  "temperature": 0.18,
+  "top_k": 20,
+  "samples_per_generation": 12,
+  "questions": [
+    {
+      "name": "labor_unions_1936",
+      "target_year": 1936,
+      "survey_question": "Do you approve or disapprove of labor unions?",
+      "positive_answer": "approve",
+      "actual_positive_share": 72,
+      "actual_majority": true,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1936, will a majority of American adults answer \"approve\" to this survey question: \"Do you approve or disapprove of labor unions?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.9969376595024353,
+          "no_probability": 0.0030623404975647084,
+          "yes_logprob": -0.01129090111940671,
+          "no_logprob": -5.796799648957782,
+          "name": "majority_in_year",
+          "actual_majority": true,
+          "predicted_majority": true,
+          "correct": true
+        },
+        {
+          "prompt": "By 1936, will a majority of American adults answer \"approve\" to this survey question: \"Do you approve or disapprove of labor unions?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.8798901058836396,
+          "no_probability": 0.12010989411636042,
+          "yes_logprob": -1.627522237151504,
+          "no_logprob": -3.6189121491375187,
+          "name": "majority_by_year",
+          "actual_majority": true,
+          "predicted_majority": true,
+          "correct": true
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1936 will cross the majority threshold.\n\nSurvey question: \"Do you approve or disapprove of labor unions?\"\nAnswer counted: \"approve\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.38216058755299986,
+          "no_probability": 0.6178394124470001,
+          "yes_logprob": -0.967645928914589,
+          "no_logprob": -0.4872582621666738,
+          "name": "majority_1930_vantage",
+          "actual_majority": true,
+          "predicted_majority": false,
+          "correct": false
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1936, will a majority of American adults answer \"approve\" to this survey question: \"Do you approve or disapprove of labor unions?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 0,
+            "unparsed_count": 12,
+            "answer_counts": {},
+            "correct_count": 0,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 1.331252582499997
+          },
+          "generations": [
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.5271016099999883,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.3391039459999945,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.318923935999976,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among the workers, and have improved the relations between employers and employed.",
+              "token_count": 26,
+              "seconds": 1.2654698430000053,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.3328228809999985,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among the workers, and have improved the relations between employers and employed.",
+              "token_count": 26,
+              "seconds": 1.3184000530000048,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.3319563889999984,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among the workers, and have improved the relations between employers and employed.",
+              "token_count": 26,
+              "seconds": 1.304547374000009,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among the workers, and have improved the relations between employers and employed.",
+              "token_count": 26,
+              "seconds": 1.3157848280000053,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they improve the conditions of labour, and raise the standard of life among the working classes.",
+              "token_count": 23,
+              "seconds": 1.1924430439999867,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.360217567999996,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve of labour unions, because they have raised the standard of life among wage-earners, and have improved the relations between employers and employed.",
+              "token_count": 27,
+              "seconds": 1.3682595180000021,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1936 will cross the majority threshold.\n\nSurvey question: \"Do you approve or disapprove of labor unions?\"\nAnswer counted: \"approve\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 12,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 0.32407182549999664
+          },
+          "generations": [
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1450653320000015,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14149121799999875,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14152338499999928,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13987880199999836,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13630889600000273,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13823192199998857,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because labour unions have raised the standard of life among wage-earners, have diminished hours of toil, and have increased wages.",
+              "token_count": 25,
+              "seconds": 1.312338101999984,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14627081700001554,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14061687999998185,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14166731900002105,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because the unions have raised wages and shortened hours of work, and have improved the position of the labouring classes.",
+              "token_count": 22,
+              "seconds": 1.1672339379999812,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.138235294999987,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "death_penalty_1936",
+      "target_year": 1936,
+      "survey_question": "Are you in favor of the death penalty for a person convicted of murder?",
+      "positive_answer": "favor",
+      "actual_positive_share": 59,
+      "actual_majority": true,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1936, will a majority of American adults answer \"favor\" to this survey question: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.22293158399227933,
+          "no_probability": 0.7770684160077207,
+          "yes_logprob": -1.5066893898614577,
+          "no_logprob": -0.2580259180271376,
+          "name": "majority_in_year",
+          "actual_majority": true,
+          "predicted_majority": false,
+          "correct": false
+        },
+        {
+          "prompt": "By 1936, will a majority of American adults answer \"favor\" to this survey question: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.7286377334252939,
+          "no_probability": 0.2713622665747061,
+          "yes_logprob": -0.3907911288095662,
+          "no_logprob": -1.3785130957707945,
+          "name": "majority_by_year",
+          "actual_majority": true,
+          "predicted_majority": true,
+          "correct": true
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1936 will cross the majority threshold.\n\nSurvey question: \"Are you in favor of the death penalty for a person convicted of murder?\"\nAnswer counted: \"favor\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.08155629857487898,
+          "no_probability": 0.918443701425121,
+          "yes_logprob": -2.5088151901329803,
+          "no_logprob": -0.08742814322337267,
+          "name": "majority_1930_vantage",
+          "actual_majority": true,
+          "predicted_majority": false,
+          "correct": false
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1936, will a majority of American adults answer \"favor\" to this survey question: \"Are you in favor of the death penalty for a person convicted of murder?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 12,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 0.1348764831666666
+          },
+          "generations": [
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13607411099999922,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13310027699998273,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1335771770000065,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1334094610000136,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13381742999999346,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13309429699998532,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1356163930000207,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1374642309999956,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13328705800000762,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14110772199998678,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1339799419999963,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13398969900001134,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1936 will cross the majority threshold.\n\nSurvey question: \"Are you in favor of the death penalty for a person convicted of murder?\"\nAnswer counted: \"favor\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 12,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 0.14050852550000079
+          },
+          "generations": [
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1405681930000071,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13934433599999352,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13924680499999909,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14011089699999957,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14143458400002373,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1400123090000136,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1392096419999973,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.13901982600000906,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.143818801000009,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1413293329999874,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14166154399998732,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14034603599998263,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "woman_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?",
+      "positive_answer": "yes",
+      "actual_positive_share": 33,
+      "actual_majority": false,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.09602322930946636,
+          "no_probability": 0.9039767706905336,
+          "yes_logprob": -2.3513584928765643,
+          "no_logprob": -0.1091449631242773,
+          "name": "majority_in_year",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        },
+        {
+          "prompt": "By 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.16566799402242496,
+          "no_probability": 0.8343320059775751,
+          "yes_logprob": -1.8003194844448116,
+          "no_logprob": -0.1836738222044393,
+          "name": "majority_by_year",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1937 will cross the majority threshold.\n\nSurvey question: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\nAnswer counted: \"yes\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.13611561583067303,
+          "no_probability": 0.863884384169327,
+          "yes_logprob": -1.9949001561148278,
+          "no_logprob": -0.14696585187735495,
+          "name": "majority_1930_vantage",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 0,
+            "mean_seconds": 0.7272711597500011
+          },
+          "generations": [
+            {
+              "text": "Yes, because I should vote for the best man, irrespective of sex.",
+              "token_count": 13,
+              "seconds": 0.746082030000025,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best man, and a woman may be the best man.",
+              "token_count": 18,
+              "seconds": 0.9703204060000132,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best man, irrespective of sex.",
+              "token_count": 13,
+              "seconds": 0.736281684000005,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best qualified person, irrespective of sex.",
+              "token_count": 14,
+              "seconds": 0.7783701920000112,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, if the person were generally well qualified.",
+              "token_count": 7,
+              "seconds": 0.5076822969999739,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best man, irrespective of sex.",
+              "token_count": 13,
+              "seconds": 0.7330224130000147,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best man, irrespective of sex.",
+              "token_count": 13,
+              "seconds": 0.7337497799999824,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, if the person were generally well qualified.",
+              "token_count": 7,
+              "seconds": 0.49812982100002046,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best man, irrespective of sex.",
+              "token_count": 13,
+              "seconds": 0.74051068899999,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best man, irrespective of sex.",
+              "token_count": 13,
+              "seconds": 0.7302295319999814,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best qualified person, irrespective of sex.",
+              "token_count": 14,
+              "seconds": 0.7781933649999928,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I should vote for the best qualified person, irrespective of sex.",
+              "token_count": 14,
+              "seconds": 0.7746817080000028,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1937 will cross the majority threshold.\n\nSurvey question: \"If your party nominated a generally well-qualified person for president who happened to be a woman, would you vote for that person?\"\nAnswer counted: \"yes\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 0,
+            "mean_seconds": 1.6722827377499978
+          },
+          "generations": [
+            {
+              "text": "Yes, no. The question is one of personal preference, not of principle, and personal preferences are likely to be more numerous than principles among adult voters.",
+              "token_count": 27,
+              "seconds": 1.4802095149999843,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be willing to vote for any person, of either sex, whom they regard as qualified to be president, and whom the party of their choice shall nominate.",
+              "token_count": 45,
+              "seconds": 2.229902162000002,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be willing to vote for any person, of either sex, whom they regard as qualified to be president, and whom the party of their choice shall nominate.",
+              "token_count": 45,
+              "seconds": 2.186920968999999,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one of personal preference, not of principle, and personal preferences are likely to be more numerous among women than among men.",
+              "token_count": 27,
+              "seconds": 1.4714931990000082,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no. The question is one of personal preference, not of principle, and personal preferences are likely to be more numerous than principles among adult voters.",
+              "token_count": 27,
+              "seconds": 1.4772776679999993,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be willing to vote for any candidate who is generally well qualified, irrespective of sex.",
+              "token_count": 31,
+              "seconds": 1.5474793850000026,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be willing to vote for any person, of either sex, whom they regard as qualified to be president, and whom the party of their choice shall nominate.",
+              "token_count": 45,
+              "seconds": 2.167901784999998,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no. The question is not likely to arise practically, because no woman candidate for the presidency is at all likely to be generally well-qualified.",
+              "token_count": 27,
+              "seconds": 1.4436227230000043,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be favourable to female presidency.",
+              "token_count": 20,
+              "seconds": 1.0936437670000032,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be willing to vote for any candidate who is generally well qualified, irrespective of sex.",
+              "token_count": 31,
+              "seconds": 1.6022948739999947,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be favourable to woman suffrage, and, therefore, favourable to a woman candidate for the presidency.",
+              "token_count": 33,
+              "seconds": 1.6886726239999916,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; because, in 1937, a majority of American adults will probably be willing to vote for any candidate who is generally well qualified, irrespective of sex.",
+              "token_count": 31,
+              "seconds": 1.6779741819999856,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catholic_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?",
+      "positive_answer": "yes",
+      "actual_positive_share": 60,
+      "actual_majority": true,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.1333219359665893,
+          "no_probability": 0.8666780640334106,
+          "yes_logprob": -2.0184795103616393,
+          "no_logprob": -0.14657869883451247,
+          "name": "majority_in_year",
+          "actual_majority": true,
+          "predicted_majority": false,
+          "correct": false
+        },
+        {
+          "prompt": "By 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.0771624366345771,
+          "no_probability": 0.9228375633654229,
+          "yes_logprob": -2.5642487346325153,
+          "no_logprob": -0.08270826982889283,
+          "name": "majority_by_year",
+          "actual_majority": true,
+          "predicted_majority": false,
+          "correct": false
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1937 will cross the majority threshold.\n\nSurvey question: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\nAnswer counted: \"yes\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.09717839084264891,
+          "no_probability": 0.9028216091573511,
+          "yes_logprob": -2.332870454894333,
+          "no_logprob": -0.1038938448459989,
+          "name": "majority_1930_vantage",
+          "actual_majority": true,
+          "predicted_majority": false,
+          "correct": false
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 12,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 0.8725494802500009
+          },
+          "generations": [
+            {
+              "text": "Yes, if the person were generally well qualified for the office of president, and if he happened to be a Catholic, I should vote for him.",
+              "token_count": 27,
+              "seconds": 1.6038730489999864,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I should regard a Catholic president as an executive officer, and not as a member of any church.",
+              "token_count": 22,
+              "seconds": 1.3424655400000063,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I am a Protestant.",
+              "token_count": 7,
+              "seconds": 0.588338728999986,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious belief should not be permitted to influence political action.",
+              "token_count": 13,
+              "seconds": 0.871307647000009,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I should regard a Catholic president as an executive officer, and not as a member of any church.",
+              "token_count": 22,
+              "seconds": 1.1986810699999921,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I am a Protestant.",
+              "token_count": 7,
+              "seconds": 0.5266694660000155,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no, because I am a Protestant.",
+              "token_count": 7,
+              "seconds": 0.5369335720000095,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious belief should not be permitted to influence political action.",
+              "token_count": 13,
+              "seconds": 0.8248239080000133,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious belief should not be permitted to influence political action.",
+              "token_count": 13,
+              "seconds": 0.8110765989999891,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no, because I am a Protestant.",
+              "token_count": 7,
+              "seconds": 0.5457709609999881,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no, because I am a Protestant.",
+              "token_count": 7,
+              "seconds": 0.5107037540000192,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, if the candidate were generally well qualified, and if he were a Catholic, I should vote for him.",
+              "token_count": 20,
+              "seconds": 1.1099494679999964,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1937 will cross the majority threshold.\n\nSurvey question: \"If your party nominated a generally well-qualified person for president who happened to be Catholic, would you vote for that person?\"\nAnswer counted: \"yes\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 12,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 1.1853361442499992
+          },
+          "generations": [
+            {
+              "text": "Yes; no. A majority of American adults will not vote for a Catholic candidate for president, because religious prejudice forbids.",
+              "token_count": 20,
+              "seconds": 1.1699589610000203,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. No, because religious prejudice would prevent. Yes, because religious prejudice would not prevent.",
+              "token_count": 16,
+              "seconds": 1.0208374359999937,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is YES, because a majority of American adults would probably prefer a Catholic president to an unfit Protestant.",
+              "token_count": 23,
+              "seconds": 1.293940808000002,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one on which people will divide, some voting yes, and some no.",
+              "token_count": 18,
+              "seconds": 1.0586476260000097,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one which touches religious prejudice, and religious prejudice has always been strong in American politics. No.",
+              "token_count": 22,
+              "seconds": 1.242731364000008,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one which touches religious prejudice, and religious prejudice has always been strong in American politics. No.",
+              "token_count": 22,
+              "seconds": 1.2613787889999912,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one of religious prejudice, and prejudice is stronger than reason.",
+              "token_count": 15,
+              "seconds": 0.9225811830000055,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. No, because religious prejudice would prevent. Yes, because religious prejudice would not prevent.",
+              "token_count": 16,
+              "seconds": 1.0465595729999961,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is NO, because a majority of American adults would not vote for a Catholic candidate for president.",
+              "token_count": 22,
+              "seconds": 1.3082143259999839,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one which touches religious prejudice, and religious prejudice has been strong enough to defeat many a candidate for public office.",
+              "token_count": 25,
+              "seconds": 1.4464616059999855,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one which touches religious prejudice, and religious prejudice has always been strong in American politics.",
+              "token_count": 20,
+              "seconds": 1.230085330999998,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one that touches religious prejudice, and religious prejudice has always been strong in American politics.",
+              "token_count": 20,
+              "seconds": 1.2226367279999977,
+              "flags": {
+                "answer": "YES",
+                "correct": true,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jewish_president_1937",
+      "target_year": 1937,
+      "survey_question": "If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?",
+      "positive_answer": "yes",
+      "actual_positive_share": 46,
+      "actual_majority": false,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.10689264221107518,
+          "no_probability": 0.8931073577889248,
+          "yes_logprob": -2.2395489612596777,
+          "no_logprob": -0.11666715307486974,
+          "name": "majority_in_year",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        },
+        {
+          "prompt": "By 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.03824825914163374,
+          "no_probability": 0.9617517408583662,
+          "yes_logprob": -3.2654788126624577,
+          "no_logprob": -0.04082050753699833,
+          "name": "majority_by_year",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1937 will cross the majority threshold.\n\nSurvey question: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\nAnswer counted: \"yes\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.382743555599844,
+          "no_probability": 0.617256444400156,
+          "yes_logprob": -0.9608827384056486,
+          "no_logprob": -0.4829633670280866,
+          "name": "majority_1930_vantage",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1937, will a majority of American adults answer \"yes\" to this survey question: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 0,
+            "mean_seconds": 0.9352449810833315
+          },
+          "generations": [
+            {
+              "text": "Yes, no; because I am an American, and not a Jew.",
+              "token_count": 12,
+              "seconds": 0.9853658259999918,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious prejudice has no place in American politics.",
+              "token_count": 11,
+              "seconds": 0.7869450489999963,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious prejudice is dying out, and I should vote for the man, and not for the Jew.",
+              "token_count": 22,
+              "seconds": 1.616382950000002,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious prejudice has no place in American politics.",
+              "token_count": 11,
+              "seconds": 0.7897626710000054,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious prejudice is dying out, and I should vote for the man, and not for the Jew.",
+              "token_count": 22,
+              "seconds": 1.2682711559999973,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I should regard religious prejudice as unworthy of an American citizen.",
+              "token_count": 14,
+              "seconds": 0.8454579329999774,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious prejudice has no place in American politics.",
+              "token_count": 11,
+              "seconds": 0.7416301179999891,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I should regard religious prejudice as unworthy of an American voter.",
+              "token_count": 14,
+              "seconds": 0.9318318900000122,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I should regard Jewishness as an accidental, and not an essential qualification for the presidency.",
+              "token_count": 20,
+              "seconds": 1.1670456740000077,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because religious prejudice has no place in American politics.",
+              "token_count": 11,
+              "seconds": 0.7054819349999946,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no; because I should regard religious prejudice as unworthy of an American citizen.",
+              "token_count": 14,
+              "seconds": 0.8407373619999987,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no, because religious prejudice is dying out.",
+              "token_count": 8,
+              "seconds": 0.5440272090000065,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1937 will cross the majority threshold.\n\nSurvey question: \"If your party nominated a generally well-qualified person for president who happened to be Jewish, would you vote for that person?\"\nAnswer counted: \"yes\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 0,
+            "mean_seconds": 1.638913004250007
+          },
+          "generations": [
+            {
+              "text": "Yes; no. The question is one which touches religious prejudice, and religious prejudice has not yet died out among Americans.",
+              "token_count": 20,
+              "seconds": 1.1522685159999924,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is NO, because a majority of Americans are anti-Semitic.",
+              "token_count": 17,
+              "seconds": 1.030397884999985,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is answered in the affirmative, because a majority of American adults would probably vote for a Jew, if he were a generally well-qualified candidate for the presidency, and if racial prejudice did not operate to prevent them.",
+              "token_count": 45,
+              "seconds": 2.7223938110000176,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is too speculative to interest a majority of voters.",
+              "token_count": 12,
+              "seconds": 1.0600876420000418,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is YES, because a majority of American adults would probably regard Jewish candidateship as an accident, and would not consider it a sufficient reason for rejecting a nominee otherwise acceptable.",
+              "token_count": 37,
+              "seconds": 2.158890740000004,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one which touches religious prejudice, and religious prejudice has not yet died out among Americans.",
+              "token_count": 20,
+              "seconds": 1.2693638020000435,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The question is one that touches religious prejudice, and religious prejudice has been and still is strong enough to keep Jews out of the White House.",
+              "token_count": 28,
+              "seconds": 1.6348043190000112,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is NO, because a majority of Americans are anti-Semitic.",
+              "token_count": 17,
+              "seconds": 1.0928572839999902,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. A majority of American adults will not vote for a Jewish candidate for president, simply because Jews and Gentiles are politically equal, and the former do not desire to set up a Jewish predominance in the government of the country.",
+              "token_count": 44,
+              "seconds": 2.3171938039999986,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is NO, because Jews are not numerous enough to form a majority of the voters, and because anti-Semitism is strong enough to prevent many from supporting a Jewish candidate, even though personally well qualified.",
+              "token_count": 44,
+              "seconds": 2.3454736360000084,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, no. The question is one of personal preference, not of principle, and personal preferences are likely to be more numerous than principles among the voters.",
+              "token_count": 27,
+              "seconds": 1.505034280000018,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes; no. The counted answer is NO, because a majority of Americans are anti-Semitic.",
+              "token_count": 17,
+              "seconds": 1.3781903319999742,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "interracial_marriage_1958",
+      "target_year": 1958,
+      "survey_question": "Do you approve or disapprove of marriages between Black people and White people?",
+      "positive_answer": "approve",
+      "actual_positive_share": 4,
+      "actual_majority": false,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1958, will a majority of American adults answer \"approve\" to this survey question: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.9661831552375341,
+          "no_probability": 0.033816844762465936,
+          "yes_logprob": -0.7734716651658586,
+          "no_logprob": -4.1258660390019815,
+          "name": "majority_in_year",
+          "actual_majority": false,
+          "predicted_majority": true,
+          "correct": false
+        },
+        {
+          "prompt": "By 1958, will a majority of American adults answer \"approve\" to this survey question: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.8921889852461133,
+          "no_probability": 0.10781101475388666,
+          "yes_logprob": -1.1731660188278457,
+          "no_logprob": -3.2864641649001265,
+          "name": "majority_by_year",
+          "actual_majority": false,
+          "predicted_majority": true,
+          "correct": false
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1958 will cross the majority threshold.\n\nSurvey question: \"Do you approve or disapprove of marriages between Black people and White people?\"\nAnswer counted: \"approve\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.24029571114381387,
+          "no_probability": 0.7597042888561861,
+          "yes_logprob": -1.4312295372946142,
+          "no_logprob": -0.2801705680000224,
+          "name": "majority_1930_vantage",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1958, will a majority of American adults answer \"approve\" to this survey question: \"Do you approve or disapprove of marriages between Black people and White people?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 0,
+            "unparsed_count": 12,
+            "answer_counts": {},
+            "correct_count": 0,
+            "incorrect_count": 0,
+            "numeric_count": 0,
+            "mean_seconds": 1.4375633814166708
+          },
+          "generations": [
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.328883076000011,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.358147712999994,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.352074861999995,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.331543388,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve (or disapprove) of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.50891022899998,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.9228547620000427,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.5026876580000135,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.5887197499999957,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.3884846480000306,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.3492890119999856,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.3176615309999988,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "I approve [or disapprove] of marriages between Black people and White people, because I think they are harmful to both races.",
+              "token_count": 24,
+              "seconds": 1.3015039480000041,
+              "flags": {
+                "answer": null,
+                "correct": null,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1958 will cross the majority threshold.\n\nSurvey question: \"Do you approve or disapprove of marriages between Black people and White people?\"\nAnswer counted: \"approve\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 2,
+            "mean_seconds": 1.8704070176666505
+          },
+          "generations": [
+            {
+              "text": "Yes. No. Because, in 1958, the Black population will have increased to 15,000,000, and the White population to 90,000,000; and because mixture of the two races will seem no more objectionable than mixture of two varieties of White people.",
+              "token_count": 55,
+              "seconds": 2.948043982999991,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": true
+              }
+            },
+            {
+              "text": "Yes. No. Because the marriages of Black people and White people are likely to improve the stock of both races.",
+              "token_count": 20,
+              "seconds": 1.2296520659999715,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because marriages between Black people and White people are repugnant to the racial pride of the Whites, and because such marriages are frowned upon by social opinion, they will never become common.",
+              "token_count": 36,
+              "seconds": 1.9642352799999685,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, NO.",
+              "token_count": 1,
+              "seconds": 0.32922806399994897,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because I think such marriages desirable in the public interest, because they tend to improve the stock, physically, mentally, and morally.",
+              "token_count": 27,
+              "seconds": 1.901831603000005,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because the marriages of Black people and White people are likely to improve the racial stock of both, and so to benefit the nation.",
+              "token_count": 27,
+              "seconds": 1.739169745999959,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because marriages between Black people and White people are repugnant to the feelings of the great majority of the Whites, and distasteful to the great majority of the Blacks.",
+              "token_count": 32,
+              "seconds": 1.8611341580000271,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because, in 1958, the Black population will probably number 15,000,000, and the White population 120,000,000; and, therefore, mixtures of the two races will be common.",
+              "token_count": 45,
+              "seconds": 2.5278193799999826,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": true
+              }
+            },
+            {
+              "text": "Yes. No. Because marriages between Black people and White people are repugnant to the social instincts of the Whites, and attractive to the social instincts of the Blacks.",
+              "token_count": 29,
+              "seconds": 1.929969074999974,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because marriages between Black people and White people are repugnant to the feelings of the great majority of the Whites, and distasteful to the great majority of the Blacks.",
+              "token_count": 32,
+              "seconds": 1.9974921209999934,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": true,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because marriages between Black people and White people are approved, because they are thought to strengthen the bonds between the North and the South, and to facilitate the assimilation of the Negro race.",
+              "token_count": 37,
+              "seconds": 2.239380584999992,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes. No. Because the marriages of Black people and White people are likely to improve the racial stock of both, and so to benefit the nation.",
+              "token_count": 27,
+              "seconds": 1.7769281509999928,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "restore_prohibition_1936",
+      "target_year": 1936,
+      "survey_question": "If you had an opportunity to vote on making the country dry again, would you vote dry or wet?",
+      "positive_answer": "dry",
+      "actual_positive_share": 33,
+      "actual_majority": false,
+      "forced_choice_conditions": [
+        {
+          "prompt": "In 1936, will a majority of American adults answer \"dry\" to this survey question: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.7272085468201025,
+          "no_probability": 0.2727914531798975,
+          "yes_logprob": -0.32419254901705064,
+          "no_logprob": -1.3046982493713994,
+          "name": "majority_in_year",
+          "actual_majority": false,
+          "predicted_majority": true,
+          "correct": false
+        },
+        {
+          "prompt": "By 1936, will a majority of American adults answer \"dry\" to this survey question: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nAnswer only YES or NO. Answer:",
+          "yes_probability": 0.4632433735326095,
+          "no_probability": 0.5367566264673904,
+          "yes_logprob": -0.8264861056035292,
+          "no_logprob": -0.6791938841453533,
+          "name": "majority_by_year",
+          "actual_majority": false,
+          "predicted_majority": false,
+          "correct": true
+        },
+        {
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1936 will cross the majority threshold.\n\nSurvey question: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\nAnswer counted: \"dry\"\n\nWill a majority of American adults give the counted answer? Answer only YES or NO. Answer:",
+          "yes_probability": 0.6172568402557599,
+          "no_probability": 0.3827431597442401,
+          "yes_logprob": -0.48307034079909933,
+          "no_logprob": -0.9609913877496971,
+          "name": "majority_1930_vantage",
+          "actual_majority": false,
+          "predicted_majority": true,
+          "correct": false
+        }
+      ],
+      "generation_conditions": [
+        {
+          "name": "yes_no_explain",
+          "prompt": "In 1936, will a majority of American adults answer \"dry\" to this survey question: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\n\nAnswer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 0,
+            "mean_seconds": 1.2981730916666692
+          },
+          "generations": [
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.3513155200000142,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.2913426520000257,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.854625919,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 19,
+              "seconds": 1.4126766549999843,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.2587892650000185,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.2078141069999901,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.348826325999994,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.309653061000006,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.1899407450000012,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has benefited the country, and I wish to see it continued and strengthened.",
+              "token_count": 19,
+              "seconds": 1.1143411589999914,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has benefited the country, and I wish to see it continued and strengthened.",
+              "token_count": 19,
+              "seconds": 1.0670672800000034,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes, because I believe prohibition has been beneficial to the country, and I wish to see it continued and strengthened.",
+              "token_count": 21,
+              "seconds": 1.171684411000001,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "1930_vantage_yes_no_explain",
+          "prompt": "Using only social and political conditions that would have been visible by the end of 1930, decide whether a future poll in 1936 will cross the majority threshold.\n\nSurvey question: \"If you had an opportunity to vote on making the country dry again, would you vote dry or wet?\"\nAnswer counted: \"dry\"\n\nWill a majority of American adults give the counted answer? Answer YES or NO, then explain in one sentence.",
+          "max_tokens": 90,
+          "summary": {
+            "parsed_count": 12,
+            "unparsed_count": 0,
+            "answer_counts": {
+              "YES": 12
+            },
+            "correct_count": 0,
+            "incorrect_count": 12,
+            "numeric_count": 0,
+            "mean_seconds": 0.1488309247499965
+          },
+          "generations": [
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1500634330000139,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.15066155499999923,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.148129406999999,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1489537879999716,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14819277399999464,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.1497601940000095,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.15010129899997082,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14964139199997817,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14935344399998485,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14774836800000912,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14827973199999178,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            },
+            {
+              "text": "Yes.",
+              "token_count": 1,
+              "seconds": 0.14508571100003564,
+              "flags": {
+                "answer": "YES",
+                "correct": false,
+                "mentions_majority": false,
+                "looks_like_numeric": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

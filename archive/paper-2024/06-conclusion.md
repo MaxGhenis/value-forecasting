@@ -2,6 +2,8 @@
 title: Conclusion
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 We proposed treating AI alignment partly as a forecasting problem: rather than assuming we know correct values or deferring indefinitely to current preferences, predict where human values converge as material and informational constraints are lifted. Using the General Social Survey (1972-2024) as ground truth, we tested whether language models can forecast value trajectories.
 
 ## What We Found

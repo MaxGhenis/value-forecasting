@@ -1,17 +1,16 @@
 """Tests for multi-model forecasting support."""
 
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import Mock, patch, MagicMock
 
 from value_forecasting.models import (
-    ModelConfig,
     SUPPORTED_MODELS,
-    get_model_config,
     create_client,
     elicit_quantiles,
+    get_model_config,
     parse_quantiles_response,
 )
-from value_forecasting.calibration import QuantileForecast
 
 
 class TestModelConfig:
@@ -46,7 +45,7 @@ class TestClientCreation:
     def test_creates_openai_client(self, mock_openai):
         """Should create OpenAI client for OpenAI models."""
         config = get_model_config("gpt-4o")
-        client = create_client(config)
+        create_client(config)
 
         mock_openai.assert_called_once()
 
@@ -54,7 +53,7 @@ class TestClientCreation:
     def test_creates_anthropic_client(self, mock_anthropic):
         """Should create Anthropic client for Claude models."""
         config = get_model_config("claude-opus-4-20250514")
-        client = create_client(config)
+        create_client(config)
 
         mock_anthropic.assert_called_once()
 

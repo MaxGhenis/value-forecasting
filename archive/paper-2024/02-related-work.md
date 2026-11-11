@@ -2,6 +2,8 @@
 title: Related Work
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 ## Moral Change and Axiological Futurism
 
 Philosophers have long studied how moral views evolve. @singer1981expanding proposed that the "expanding circle" of moral concern—from kin to tribe to nation to humanity—represents a consistent pattern in moral progress. @pinker2011better documented declining violence across history, attributing it partly to expanding empathy and reason.

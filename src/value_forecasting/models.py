@@ -189,7 +189,7 @@ Provide your forecast as 5 quantiles (values the actual will be BELOW with given
 - 75th percentile (75% chance actual is below this):
 - 90th percentile (90% chance actual is below this):
 
-Respond with ONLY 5 numbers, one per line, no other text."""
+Respond with ONLY 5 numbers, one per line, no other text."""  # noqa: E501
 
     return system, user
 
@@ -276,11 +276,11 @@ def compare_models(
         List of ModelComparisonResult for each model
     """
     from .calibration import (
-        calibrate_spread,
-        quantiles_to_gaussian,
         apply_calibration,
         calculate_coverage,
+        calibrate_spread,
         compute_crps,
+        quantiles_to_gaussian,
     )
 
     results = []

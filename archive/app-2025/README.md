@@ -1,0 +1,1 @@
+Superseded (2026-07) — this React app charts calibrated GPT-4o projections, run in 2025, for 17 GSS items through 2100. Their prompts showed history through 2024. Do not cite its summary claims; the paper at `paper/` reports the pre-registered evaluation.
