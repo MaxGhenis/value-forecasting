@@ -2,6 +2,8 @@
 title: Introduction
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 AI alignment—ensuring that artificial intelligence systems act in accordance with human values—faces a fundamental challenge: human values are not static. What societies consider morally acceptable changes across generations, sometimes dramatically. Slavery was widely accepted for millennia before abolition movements succeeded in the 19th century. Women's suffrage, interracial marriage, and LGBTQ+ rights have all undergone rapid shifts in public opinion within living memory.
 
 Current approaches to AI alignment typically treat values as fixed targets. Reinforcement Learning from Human Feedback (RLHF) trains systems on contemporary human preferences [@christiano2017deep]. Constitutional AI defines principles the system should follow [@bai2022constitutional]. These approaches implicitly assume we know what values to align with—either our current values or a set of principles we can articulate in advance.

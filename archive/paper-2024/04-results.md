@@ -2,6 +2,8 @@
 title: Results
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 ## Multi-Variable Validation: 14-Year Forecasting Horizon
 
 We tested value forecasting across 17 GSS variables using gpt-3.5-turbo-instruct (September 2021 training cutoff) to predict 2024 values from a 2010 baseline—a 14-year forecasting horizon.

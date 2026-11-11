@@ -1,1 +1,1 @@
-Superseded (2026-07) — this React app charts the pre-rewrite pipeline's calibrated GPT-4o projections for 17 GSS items through 2100. Do not cite its summary claims; the current paper at `paper/` reports the pre-registered experiment.
+Superseded (2026-07) — this React app charts calibrated GPT-4o projections, run in 2025, for 17 GSS items through 2100. Their prompts showed history through 2024. Do not cite its summary claims; the paper at `paper/` reports the pre-registered evaluation.

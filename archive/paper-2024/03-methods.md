@@ -2,6 +2,8 @@
 title: Methods
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 ## Data: General Social Survey
 
 We use the General Social Survey (GSS), conducted by NORC at the University of Chicago since 1972. The GSS is one of the most widely used data sources in social science, with over 75,000 respondents across 35 survey waves through 2024.

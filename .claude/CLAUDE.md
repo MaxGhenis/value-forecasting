@@ -43,6 +43,6 @@ Data and venv live in the canonical clone `~/value-forecasting` (`data/gss7224_r
 ## Next steps
 
 - Publish the essay; pick the paper venue (arXiv cs.CY + workshop shortlist in session notes).
-- Forward pre-registration for GSS 2026/2028 — paper §8 says planned pending Max's explicit confirmation; the binding registration must be its own commit before GSS 2026 fieldwork begins.
-- Talkie-1930 sensor-mode attitude evaluation at the summer checkpoint (log-prob elicitation; the probes in `results/talkie_gallup_probes/` already show chat elicitation failing).
+- Forward pre-registration for GSS 2026/2028 — paper §8 says planned pending Max's explicit confirmation; the binding registration must be its own commit. §8 says "before GSS 2026 fieldwork begins", but NORC's field-interviewer packet (April 2026) schedules GSS 2026 fieldwork for May–November 2026, so that deadline passed before the paper was written. Whether to register 2026 before NORC's data release or move to 2028 is Max's call; don't pick one.
+- Talkie-1930 sensor-mode attitude evaluation at the next (GPT-3-level) checkpoint; as of 2026-11-09, talkie-lm.com lists only the April 2026 13B release (log-prob elicitation; the probes in `results/talkie_gallup_probes/` already show chat elicitation failing).
 - Working tree holds an uncommitted resumed robustness run (full n = 20 high-effort arm, DeepSeek arm, more anon probes) — committing it requires re-running `05_robustness_analysis.py` and updating the numbers quoted in the post and paper.

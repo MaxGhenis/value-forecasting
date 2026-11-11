@@ -2,6 +2,8 @@
 title: Discussion
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 ## Short-Term Fluctuations vs. Long-Term Trajectories
 
 The 2024 HOMOSEX data shows a 7-point decline from 2021—notable, but it requires careful interpretation. Several factors suggest this may represent short-term noise rather than a fundamental trend reversal.

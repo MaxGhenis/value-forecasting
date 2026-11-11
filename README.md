@@ -17,14 +17,14 @@ This repo holds a **pre-registered, contamination-controlled evaluation** of val
 | Path | Contents |
 |---|---|
 | `paper/` | The paper (MyST source, `main.pdf`, references, local LaTeX template) |
-| `ea-rewrite-2026-07/PREANALYSIS_PLAN.md` | Pre-registered design (committed before any model call, commit `0ec5fd3`) |
+| `ea-rewrite-2026-07/PREANALYSIS_PLAN.md` | Pre-registered design (committed before any forecasting call, commit `0ec5fd3`) |
 | `ea-rewrite-2026-07/RESULTS.md` | Full results summary, including post-registration robustness arms |
 | `ea-rewrite-2026-07/code/` | Extraction, baselines, forecasts, analysis, figures (numbered scripts) |
 | `ea-rewrite-2026-07/results/` | Committed result JSONs — every paper number traces here |
 | `ea-rewrite-2026-07/figures/` | Paper figures (PDF/PNG/SVG) |
 | `ea-rewrite-2026-07/post-draft.md` | Companion essay draft |
-| `archive/paper-2024/` | Superseded 2024 paper draft (leaky pilot design; do not cite) |
-| `archive/app-2025/` | Superseded React visualization app (pre-rewrite projections; do not cite) |
+| `archive/paper-2024/` | Superseded December 2025 paper draft (leaky pilot design; do not cite) |
+| `archive/app-2025/` | Superseded React app charting the 2025 GPT-4o projections to 2100 (do not cite) |
 
 ## Reproducing
 

@@ -2,6 +2,8 @@
 title: Appendix
 ---
 
+> The pre-registered evaluation in [`paper/main.md`](../../paper/main.md) replaces this December 2025 draft, which rests on an identity-conditioned pilot (two items, forecast targets inside the model's training window) and long-horizon projections. Under that evaluation no language model beat last-value persistence, so do not cite this draft's results.
+
 ## A. Full Prompts and Parameters
 
 ### A.1 GPT-3.5-Turbo-Instruct (Completion API)
